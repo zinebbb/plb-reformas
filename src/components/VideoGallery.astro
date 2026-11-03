@@ -2,11 +2,11 @@
 const projects = [
   {
     id: 1,
-    title: "Cocina Equipada & Encimera de Granito",
+    title: "Cocina Equipada con Encimera de Granito",
     tag: "Cocinas",
     video: "/videos/video-1.mp4",
     thumb: "/images/thumbnails/thumb-1.jpg",
-    desc: "Instalación de campana decorativa, alicatado clásico y placa de gas integrada."
+    desc: "Instalación de campana decorativa, alicatado clásico y placa de gas integrada con acabados precisos."
   },
   {
     id: 2,
@@ -14,80 +14,79 @@ const projects = [
     tag: "Mobiliario y Encimeras",
     video: "/videos/video-2.mp4",
     thumb: "/images/thumbnails/thumb-2.jpg",
-    desc: "Muebles de cocina lacados en blanco, placa vitrocerámica y distribución lineal."
+    desc: "Cocina con muebles lacados en blanco mate, placa vitrocerámica y distribución ergonómica."
   },
   {
     id: 3,
-    title: "Transformación en Marcha: Antes y Después",
-    tag: "Proceso de Obra",
+    title: "Fase de Transformación en Directo",
+    tag: "Evolución de Obra",
     video: "/videos/video-3.mp4",
     thumb: "/images/thumbnails/thumb-3.jpg",
-    desc: "Fase de transición mostrando el paso de estancia antigua a espacio moderno."
+    desc: "Momento clave de la transición entre la estructura original y la renovación arquitectónica."
   },
   {
     id: 4,
-    title: "Piso Moderno con Iluminación LED Indirecta",
+    title: "Piso Terminado con Iluminación LED Cálida",
     tag: "Reforma Integral",
     video: "/videos/video-4.mp4",
     thumb: "/images/thumbnails/thumb-4.jpg",
-    desc: "Suelo laminado continuo, puertas lacadas en blanco y panelado de madera con luz cálida."
+    desc: "Suelo laminado continuo, panelados en madera noble, puertas enrasadas y foseados de luz indirecta."
   },
   {
     id: 5,
-    title: "Trabajos de Exterior, Pavimentos y Fachada",
-    tag: "Exteriores",
+    title: "Acondicionamiento de Accesos y Pavimento",
+    tag: "Zonas Exteriores",
     video: "/videos/video-5.mp4",
     thumb: "/images/thumbnails/thumb-5.jpg",
-    desc: "Rehabilitación de accesos exteriores, albañilería pesada y acondicionamiento."
+    desc: "Rehabilitación de paso exterior, albañilería estructural y preparación de superficies de tránsito."
   },
   {
     id: 6,
-    title: "Fase de Demolición y Desescombro",
-    tag: "Albañilería y Estructura",
+    title: "Demolición y Desescombro Controlado",
+    tag: "Fase Inicial",
     video: "/videos/video-6.mp4",
     thumb: "/images/thumbnails/thumb-6.jpg",
-    desc: "Apertura de espacios diáfanos, retirada controlada de escombros e instalaciones."
+    desc: "Retirada meticulosa de tabiquería antigua y escombros, dejando el espacio diáfano y limpio."
   },
   {
     id: 7,
-    title: "Vivienda Previa a la Transformación",
-    tag: "Estado Inicial",
+    title: "Estado Original de la Vivienda",
+    tag: "Antes de la Reforma",
     video: "/videos/video-7.mp4",
     thumb: "/images/thumbnails/thumb-7.jpg",
-    desc: "Diagnóstico inicial de la vivienda antes de aplicar los acabados de alta gama."
+    desc: "Inspección técnica previa para proyectar la redistribución de espacios y optimización de luz."
   }
 ];
 ---
 
-<section id="proyectos" class="py-20 bg-[#10141d] relative">
+<section id="obras" class="py-24 bg-[#FAF8F5] relative">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     
     <!-- Section Header -->
-    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
-      <div>
-        <span class="text-gold-400 font-semibold tracking-wider uppercase text-sm">Nuestras Obras Reales</span>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">
-          Vídeos y Proyectos en Ejecución
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
+      <div class="max-w-2xl">
+        <span class="text-xs font-semibold tracking-widest uppercase text-[#9C7334]">Evidencia Real</span>
+        <h2 class="text-3xl sm:text-4xl font-serif text-[#1F1D1A] mt-2 mb-3">
+          Vídeos y proyectos en ejecución
         </h2>
-        <p class="text-slate-400 mt-2 max-w-2xl text-base">
-          Nada habla mejor de nuestro trabajo que los resultados reales. Explora vídeos directos desde nuestras reformas en curso y terminadas.
+        <p class="text-[#57534E] text-base leading-relaxed">
+          La mejor garantía es ver cómo trabajamos. Grabaciones reales desde nuestras obras en marcha y terminadas.
         </p>
       </div>
-      <div class="mt-4 md:mt-0">
-        <span class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-gold-500/10 text-gold-400 text-xs font-medium border border-gold-500/20">
-          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-          7 Proyectos en Vídeo
-        </span>
+
+      <div class="mt-4 md:mt-0 flex items-center gap-2 text-xs font-semibold text-[#57534E] bg-white px-4 py-2 rounded-full border border-[#EAE3D7] shadow-xs">
+        <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+        <span>7 Vídeos de obras documentadas</span>
       </div>
     </div>
 
-    <!-- Video Cards Grid -->
+    <!-- Video Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {projects.map((item) => (
-        <div class="bg-[#151b26] rounded-2xl overflow-hidden border border-slate-800 shadow-xl flex flex-col group hover:border-gold-500/40 transition-all duration-300">
+        <div class="bg-white rounded-2xl overflow-hidden border border-[#EAE3D7] shadow-xs hover:shadow-md hover:border-[#B58C42]/50 transition-all duration-300 flex flex-col group">
           
-          <!-- Video Container -->
-          <div class="relative aspect-video bg-black/80 overflow-hidden">
+          <!-- Video Frame -->
+          <div class="relative aspect-video bg-[#1F1D1A] overflow-hidden">
             <video 
               controls 
               preload="metadata"
@@ -98,31 +97,31 @@ const projects = [
               Tu navegador no soporta la reproducción de vídeo.
             </video>
             
-            <span class="absolute top-3 left-3 bg-black/70 backdrop-blur-md text-gold-300 border border-gold-500/30 text-[11px] font-semibold px-2.5 py-1 rounded-md">
+            <span class="absolute top-3 left-3 bg-white/95 backdrop-blur-xs text-[#1F1D1A] border border-[#EAE3D7] text-[11px] font-medium px-2.5 py-1 rounded-full shadow-xs">
               {item.tag}
             </span>
           </div>
 
-          <!-- Card Content -->
-          <div class="p-5 flex-1 flex flex-col justify-between">
+          <!-- Content -->
+          <div class="p-6 flex-1 flex flex-col justify-between">
             <div>
-              <h3 class="font-bold text-white text-lg mb-1 group-hover:text-gold-400 transition-colors">
+              <h3 class="font-semibold text-[#1F1D1A] text-base mb-2 group-hover:text-[#9C7334] transition-colors">
                 {item.title}
               </h3>
-              <p class="text-slate-400 text-sm leading-relaxed">
+              <p class="text-xs sm:text-sm text-[#57534E] leading-relaxed">
                 {item.desc}
               </p>
             </div>
             
-            <div class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
-              <span class="flex items-center gap-1.5 text-gold-400/90 font-medium">
-                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+            <div class="mt-5 pt-4 border-t border-[#F4EFE8] flex items-center justify-between text-xs text-[#78716C]">
+              <span class="inline-flex items-center gap-1.5 font-medium text-[#9C7334]">
+                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"></path>
                 </svg>
-                Vídeo Real de Obra
+                Vídeo Real
               </span>
-              <a href="#contacto" class="text-slate-400 hover:text-white transition-colors">
-                Consultar reforma →
+              <a href="#contacto" class="hover:text-[#1F1D1A] transition-colors font-medium">
+                Pedir presupuesto similar →
               </a>
             </div>
           </div>

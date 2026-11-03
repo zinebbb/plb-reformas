@@ -1,65 +1,70 @@
 ---
 ---
 
-<section class="relative overflow-hidden pt-12 pb-20 lg:pt-20 lg:pb-32 bg-gradient-to-b from-[#10141d] via-[#141a26] to-[#0f131a]">
-  <!-- Decorative background glow -->
-  <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-gold-500/10 rounded-full blur-3xl pointer-events-none"></div>
+<section class="relative overflow-hidden pt-12 pb-20 lg:pt-20 lg:pb-28 bg-gradient-to-b from-[#FAF8F5] via-[#F4EFE8] to-[#FAF8F5]">
+  
+  <!-- Subtle architectural background lines -->
+  <div class="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#1F1D1A_1px,transparent_1px)] [background-size:24px_24px]"></div>
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-    <div class="text-center max-w-3xl mx-auto">
+    <div class="max-w-3xl mx-auto text-center">
       
-      <!-- Top Pill -->
-      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-400 text-xs sm:text-sm font-semibold tracking-wide uppercase mb-6 animate-pulse">
-        <span>✨ Excelencia en Reformas & Multisericios</span>
+      <!-- Top Trust Pill -->
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-[#EAE3D7] text-[#9C7334] text-xs font-semibold tracking-wider uppercase shadow-xs mb-8">
+        <svg class="w-3.5 h-3.5 text-[#B58C42]" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+        </svg>
+        <span>Empresa de Reformas Integrales y Multiservicios</span>
       </div>
 
-      <!-- Main Heading -->
-      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-6 leading-tight">
-        Reformamos tu espacio con <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-300 via-gold-400 to-gold-500">calidad premium</span>
+      <!-- Main Headline -->
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-serif text-[#1F1D1A] leading-tight tracking-tight mb-6">
+        Reformas con calma, <br class="hidden sm:inline" />
+        <span class="italic font-normal text-[#9C7334]">rigor y garantía</span>
       </h1>
 
-      <!-- Description -->
-      <p class="text-lg sm:text-xl text-slate-300 mb-10 leading-relaxed font-light">
-        Especialistas en reformas integrales, cocinas, baños, albañilería, fontanería, electricidad y pintura. Nos encargamos de todo el proceso para que tú solo disfrutes del resultado.
+      <!-- Subtitle -->
+      <p class="text-lg sm:text-xl text-[#57534E] mb-10 leading-relaxed font-light">
+        Cuidamos cada detalle de tu vivienda o negocio. Te acompañamos desde el primer plano hasta la entrega de llaves, con presupuesto cerrado por escrito y cumplimiento riguroso de plazos.
       </p>
 
-      <!-- CTAs -->
+      <!-- Action Buttons -->
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
         <a 
           href="#contacto" 
-          class="w-full sm:w-auto px-8 py-4 rounded-xl font-bold text-slate-950 bg-gradient-to-r from-gold-400 to-gold-500 hover:from-gold-300 hover:to-gold-400 shadow-xl shadow-gold-500/25 transition-all duration-300 transform hover:-translate-y-0.5 text-center text-base"
+          class="w-full sm:w-auto px-8 py-4 rounded-full font-medium text-white bg-[#1F1D1A] hover:bg-[#B58C42] shadow-sm hover:shadow-md transition-all duration-300 text-center text-sm tracking-wide"
         >
-          Solicitar Presupuesto Gratis
+          Solicitar Presupuesto Gratuito
         </a>
         <a 
-          href="#proyectos" 
-          class="w-full sm:w-auto px-8 py-4 rounded-xl font-semibold text-white bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700 transition-all duration-300 text-center text-base flex items-center justify-center gap-2"
+          href="#obras" 
+          class="w-full sm:w-auto px-8 py-4 rounded-full font-medium text-[#1F1D1A] bg-white hover:bg-[#F4EFE8] border border-[#EAE3D7] shadow-xs transition-all duration-300 text-center text-sm flex items-center justify-center gap-2.5"
         >
-          <span>Ver Vídeos de Obras</span>
-          <svg class="w-5 h-5 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg class="w-4 h-4 text-[#B58C42]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
           </svg>
+          <span>Ver Vídeos de Obras</span>
         </a>
       </div>
 
-      <!-- Trust Badges -->
-      <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 pt-10 border-t border-slate-800/80 text-center">
-        <div>
-          <div class="text-3xl font-extrabold text-gold-400">+10</div>
-          <div class="text-xs sm:text-sm text-slate-400 mt-1">Años de Experiencia</div>
+      <!-- Trust Badges Bar -->
+      <div class="mt-16 pt-8 border-t border-[#EAE3D7] grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div class="p-3">
+          <div class="text-2xl font-serif font-bold text-[#1F1D1A]">+15</div>
+          <div class="text-xs text-[#78716C] mt-1 font-medium">Años de oficio</div>
         </div>
-        <div>
-          <div class="text-3xl font-extrabold text-gold-400">100%</div>
-          <div class="text-xs sm:text-sm text-slate-400 mt-1">Garantía Profesional</div>
+        <div class="p-3">
+          <div class="text-2xl font-serif font-bold text-[#1F1D1A]">100%</div>
+          <div class="text-xs text-[#78716C] mt-1 font-medium">Presupuesto cerrado</div>
         </div>
-        <div>
-          <div class="text-3xl font-extrabold text-gold-400">360°</div>
-          <div class="text-xs sm:text-sm text-slate-400 mt-1">Servicio Llave en Mano</div>
+        <div class="p-3">
+          <div class="text-2xl font-serif font-bold text-[#1F1D1A]">1</div>
+          <div class="text-xs text-[#78716C] mt-1 font-medium">Interlocutor único</div>
         </div>
-        <div>
-          <div class="text-3xl font-extrabold text-gold-400">0€</div>
-          <div class="text-xs sm:text-sm text-slate-400 mt-1">Presupuesto sin Compromiso</div>
+        <div class="p-3">
+          <div class="text-2xl font-serif font-bold text-[#1F1D1A]">2 Años</div>
+          <div class="text-xs text-[#78716C] mt-1 font-medium">Garantía por escrito</div>
         </div>
       </div>
 
