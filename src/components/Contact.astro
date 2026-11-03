@@ -1,0 +1,143 @@
+---
+---
+
+<section id="contacto" class="py-20 bg-gradient-to-b from-[#10141d] to-[#0a0c10] relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      
+      <!-- Contact Info -->
+      <div class="lg:col-span-5">
+        <span class="text-gold-400 font-semibold tracking-wider uppercase text-sm">Hablemos de tu proyecto</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2 mb-6">
+          Pide tu presupuesto sin compromiso
+        </h2>
+        <p class="text-slate-300 text-base leading-relaxed mb-8">
+          Cuéntanos qué necesitas reformar. Visitamos tu vivienda o local, tomamos medidas y te entregamos una propuesta personalizada y detallada.
+        </p>
+
+        <div class="space-y-6">
+          
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/20 flex items-center justify-center text-xl text-gold-400 flex-shrink-0">
+              📞
+            </div>
+            <div>
+              <div class="text-sm text-slate-400">Llámanos directamente</div>
+              <a href="tel:+34600000000" class="text-lg font-bold text-white hover:text-gold-400 transition-colors">
+                +34 600 000 000
+              </a>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-xl text-emerald-400 flex-shrink-0">
+              💬
+            </div>
+            <div>
+              <div class="text-sm text-slate-400">WhatsApp inmediato</div>
+              <a 
+                href="https://wa.me/34600000000?text=Hola,%20quisiera%20pedir%20presupuesto%20para%20una%20reforma" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="text-lg font-bold text-emerald-400 hover:text-emerald-300 transition-colors"
+              >
+                Enviar mensaje por WhatsApp →
+              </a>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/20 flex items-center justify-center text-xl text-gold-400 flex-shrink-0">
+              📍
+            </div>
+            <div>
+              <div class="text-sm text-slate-400">Zona de Cobertura</div>
+              <div class="text-base font-semibold text-white">
+                Servicio en toda la Comunidad y alrededores
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="lg:col-span-7 bg-[#151c27] p-8 sm:p-10 rounded-3xl border border-slate-800 shadow-2xl">
+        <h3 class="text-2xl font-bold text-white mb-2">Solicitud de Presupuesto Rápido</h3>
+        <p class="text-slate-400 text-sm mb-6">Completa el formulario y te responderemos en menos de 24 horas laborables.</p>
+
+        <form class="space-y-4" onsubmit="event.preventDefault(); alert('¡Gracias! Hemos recibido tu solicitud. Nos pondremos en contacto contigo lo antes posible.');">
+          
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Nombre completo</label>
+              <input 
+                type="text" 
+                required 
+                placeholder="Tu nombre" 
+                class="w-full px-4 py-3 rounded-xl bg-[#0f141d] border border-slate-700/80 text-white placeholder-slate-500 focus:outline-none focus:border-gold-500 transition-colors"
+              />
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Teléfono de contacto</label>
+              <input 
+                type="tel" 
+                required 
+                placeholder="Ej. 612 345 678" 
+                class="w-full px-4 py-3 rounded-xl bg-[#0f141d] border border-slate-700/80 text-white placeholder-slate-500 focus:outline-none focus:border-gold-500 transition-colors"
+              />
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Tipo de Reforma</label>
+              <select 
+                class="w-full px-4 py-3 rounded-xl bg-[#0f141d] border border-slate-700/80 text-white focus:outline-none focus:border-gold-500 transition-colors"
+              >
+                <option value="integral">Reforma Integral</option>
+                <option value="cocina">Reforma de Cocina</option>
+                <option value="bano">Reforma de Baño</option>
+                <option value="pintura">Pintura y Alisado</option>
+                <option value="fontaneria">Fontanería o Electricidad</option>
+                <option value="otro">Otros servicios / Multisericio</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Población / Zona</label>
+              <input 
+                type="text" 
+                placeholder="Ciudad o barrio" 
+                class="w-full px-4 py-3 rounded-xl bg-[#0f141d] border border-slate-700/80 text-white placeholder-slate-500 focus:outline-none focus:border-gold-500 transition-colors"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Detalles del proyecto</label>
+            <textarea 
+              rows="4" 
+              placeholder="Cuéntanos brevemente qué deseas reformar, metros aproximados, etc." 
+              class="w-full px-4 py-3 rounded-xl bg-[#0f141d] border border-slate-700/80 text-white placeholder-slate-500 focus:outline-none focus:border-gold-500 transition-colors"
+            ></textarea>
+          </div>
+
+          <button 
+            type="submit" 
+            class="w-full py-4 rounded-xl font-bold text-slate-950 bg-gradient-to-r from-gold-400 via-gold-500 to-gold-600 hover:from-gold-300 hover:to-gold-500 shadow-xl shadow-gold-500/20 transition-all duration-300 cursor-pointer text-base"
+          >
+            Enviar Solicitud Gratuita
+          </button>
+
+          <p class="text-xs text-center text-slate-500 mt-2">
+            🔒 Respetamos tu privacidad. Tus datos no se compartirán con terceros.
+          </p>
+
+        </form>
+      </div>
+
+    </div>
+
+  </div>
+</section>

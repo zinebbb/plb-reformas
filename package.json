@@ -1,0 +1,21 @@
+{
+  "name": "plb-reformas-premium",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Sitio web oficial de PLB Reformas Premium S.L. - Reformas integrales y servicios del hogar",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "dev:host": "astro dev --host",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.3.4",
+    "astro": "^7.4.5",
+    "tailwindcss": "^4.3.4"
+  }
+}

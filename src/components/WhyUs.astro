@@ -1,0 +1,62 @@
+---
+const reasons = [
+  {
+    title: "Presupuestos Claros y Cerrados",
+    desc: "Desglosamos cada partida al detalle. Sin sobrecostes ocultos ni sorpresas de última hora.",
+    icon: "📋"
+  },
+  {
+    title: "Cumplimiento Estricto de Plazos",
+    desc: "Fijamos una fecha de inicio y una fecha de finalización por contrato para que planifiques tu mudanza con tranquilidad.",
+    icon: "⏱️"
+  },
+  {
+    title: "Equipo Multidisciplinar Propio",
+    desc: "Albañiles, electricistas, fontaneros, instaladores y pintores coordinados por un único jefe de obra.",
+    icon: "👷"
+  },
+  {
+    title: "Materiales y Acabados de Primera",
+    desc: "Trabajamos únicamente con marcas homologadas y materiales con sello de garantía europea.",
+    icon: "💎"
+  },
+  {
+    title: "Limpieza y Protección del Entorno",
+    desc: "Cuidamos las zonas comunes del edificio y dejamos la vivienda lista y limpia para entrar a vivir.",
+    icon: "🧹"
+  },
+  {
+    title: "Garantía por Escrito",
+    desc: "Todos nuestros trabajos cuentan con garantía post-obra y servicio de atención rápida ante cualquier incidencia.",
+    icon: "🛡️"
+  }
+];
+---
+
+<section id="por-que-nosotros" class="py-20 bg-[#0d1017] relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <span class="text-gold-400 font-semibold tracking-wider uppercase text-sm">Garantía de Confianza</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2 mb-4">
+        ¿Por qué confiar tu proyecto a PLB Reformas?
+      </h2>
+      <p class="text-slate-400 text-base sm:text-lg">
+        Sabemos que reformar un hogar o negocio es una decisión importante. Por eso trabajamos con seriedad, transparencia y profesionalidad en cada detalle.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {reasons.map((item) => (
+        <div class="flex gap-4 p-6 rounded-2xl bg-[#131822] border border-slate-800 hover:border-gold-500/30 transition-all">
+          <div class="text-3xl flex-shrink-0">{item.icon}</div>
+          <div>
+            <h3 class="text-lg font-bold text-white mb-2">{item.title}</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">{item.desc}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

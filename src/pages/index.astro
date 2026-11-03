@@ -1,0 +1,25 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import Services from '../components/Services.astro';
+import VideoGallery from '../components/VideoGallery.astro';
+import WhyUs from '../components/WhyUs.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout 
+  title="PLB Reformas Premium S.L. | Reformas Integrales y Multisericios"
+  description="Especialistas en reformas integrales, cocinas, baños, pintura, albañilería, fontanería y electricidad. Calidad garantizada, vídeos de proyectos reales y presupuestos sin compromiso."
+>
+  <Navbar />
+  <main class="flex-grow">
+    <Hero />
+    <Services />
+    <VideoGallery />
+    <WhyUs />
+    <Contact />
+  </main>
+  <Footer />
+</Layout>
