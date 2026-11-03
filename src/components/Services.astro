@@ -1,43 +1,52 @@
 ---
-const services = [
+const flagshipServices = [
   {
     title: "Reformas Integrales",
-    desc: "Transformación completa de pisos, viviendas y locales. Gestión integral llave en mano: desde la distribución inicial hasta el último remate.",
-    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>`
+    badge: "Servicio Llave en Mano",
+    desc: "Rediseño completo de viviendas y pisos. Nos encargamos de licencias, demoliciones, instalaciones, aislamientos y decoración final.",
+    image: "/images/gallery/living-1.jpg",
+    features: ["Proyecto 3D previo", "Jefe de obra asignado", "Limpieza de fin de obra"]
   },
   {
-    title: "Cocinas a Medida",
-    desc: "Diseños funcionales con mobiliario de alta durabilidad, encimeras de piedra natural o cuarzo, iluminación integrada y montaje de electrodomésticos.",
-    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>`
+    title: "Cocinas de Autor",
+    badge: "Mobiliario & Encimeras",
+    desc: "Espacios abiertos, islas centrales y cocinas lineales con materiales resistentes a manchas y calor, integrando electrodomésticos de bajo consumo.",
+    image: "/images/gallery/kitchen-2.jpg",
+    features: ["Encimeras de cuarzo y granito", "Muebles con freno amortiguado", "Iluminación bajo muebles"]
   },
   {
     title: "Baños y Espacios de Agua",
-    desc: "Sustitución de bañera por plato de ducha antideslizante a ras de suelo, mamparas de perfil fino, alicatados rectificados y grifería termostática.",
-    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>`
-  },
+    badge: "Confort & Estanqueidad",
+    desc: "Cambio de bañera por plato de ducha antideslizante a ras de suelo, impermeabilización de zonas húmedas, mamparas a medida y griferías empotradas.",
+    image: "/images/gallery/bedroom-1.jpg",
+    features: ["Platos de resina mineral", "Inodoros suspendidos", "Tratamiento antical"]
+  }
+];
+
+const specializedTrades = [
   {
     title: "Albañilería y Pladur",
-    desc: "Tabiquería seca, foseados para luz indirecta, falsos techos acústicos y térmicos, y nivelación impecable de paramentos.",
+    desc: "Tabiquería seca, falsos techos foseados para iluminación indirecta y aislamiento acústico/térmico.",
     icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>`
   },
   {
     title: "Pintura y Alisado",
-    desc: "Eliminación profesional de gotelé, lijado aspirado sin polvo, alisado de paredes con masilla fina y aplicación de pinturas ecológicas lavables.",
+    desc: "Eliminación de gotelé con lijado aspirado sin polvo, alisado fino y aplicación de pinturas ecológicas.",
     icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/>`
   },
   {
-    title: "Fontanería y Climatización",
-    desc: "Instalación completa de redes de agua multicapa, aerotermia, calderas de condensación, radiadores y preinstalación de aire acondicionado.",
+    title: "Fontanería y Clima",
+    desc: "Renovación integral de tuberías multicapa, suelo radiante, aerotermia y preinstalación de aire acondicionado.",
     icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/>`
   },
   {
-    title: "Electricidad e Iluminación",
-    desc: "Renovación integral del cuadro eléctrico con certificación oficial, cableado libre de halógenos y diseño lumínico arquitectónico con tiras LED.",
+    title: "Electricidad y Boletines",
+    desc: "Cuadros eléctricos certificados, líneas independientes de fuerza, mecanismos de diseño y domótica.",
     icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>`
   },
   {
-    title: "Suelos y Pavimentos",
-    desc: "Suministro y colocación de tarima flotante AC5, gres porcelánico rectificado de gran formato, microcemento continuo y rodapiés integrados.",
+    title: "Suelos y Tarimas",
+    desc: "Instalación de parquets multicapa, laminados AC5 de alta resistencia y porcelánicos de gran formato rectificados.",
     icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/>`
   }
 ];
@@ -48,40 +57,87 @@ const services = [
     
     <!-- Section Header -->
     <div class="fade-up text-center max-w-2xl mx-auto mb-16">
-      <span class="text-xs font-semibold tracking-widest uppercase text-[#9C7334]">Especialidades</span>
+      <span class="text-xs font-semibold tracking-widest uppercase text-[#9C7334]">Soluciones Constructivas</span>
       <h2 class="text-3xl sm:text-4xl font-serif text-[#1F1D1A] mt-2 mb-4">
-        Servicios completos para tu hogar
+        Servicios a la medida de tu proyecto
       </h2>
-      <p class="text-[#57534E] text-base leading-relaxed">
-        Gestionamos todos los oficios de la construcción con personal cualificado y un único coordinador técnico para que no tengas que preocuparte por nada.
+      <p class="text-[#57534E] text-sm sm:text-base leading-relaxed">
+        Un equipo coordinado para cada oficio técnico. Garantizamos materiales certificados, acabados milimétricos y limpieza constante.
       </p>
     </div>
 
-    <!-- Services Grid -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      {services.map((item, idx) => (
+    <!-- Flagship Visual Services (Top 3) -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+      {flagshipServices.map((item, idx) => (
         <div 
-          class={`fade-up delay-${((idx % 4) + 1) * 100} bg-white p-7 rounded-2xl border border-[#EAE3D7] shadow-xs hover:border-[#B58C42] hover:shadow-md transition-all duration-300 flex flex-col justify-between group transform hover:-translate-y-1`}
+          class={`fade-up delay-${(idx + 1) * 100} bg-white rounded-3xl overflow-hidden border border-[#EAE3D7] shadow-xs hover:shadow-xl hover:border-[#B58C42]/50 transition-all duration-300 flex flex-col group`}
         >
-          <div>
-            <div class="w-11 h-11 rounded-xl bg-[#FAF8F5] border border-[#EAE3D7] flex items-center justify-center text-[#B58C42] mb-5 group-hover:bg-[#F4EFE8] group-hover:border-[#B58C42]/40 transition-colors">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={item.icon}></svg>
-            </div>
-            <h3 class="text-base font-semibold text-[#1F1D1A] mb-2 group-hover:text-[#9C7334] transition-colors">
-              {item.title}
-            </h3>
-            <p class="text-xs sm:text-sm text-[#57534E] leading-relaxed">
-              {item.desc}
-            </p>
+          <!-- Photo Header -->
+          <div class="relative h-56 overflow-hidden bg-[#FAF8F5]">
+            <img 
+              src={item.image} 
+              alt={item.title} 
+              class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+            />
+            <span class="absolute top-4 left-4 bg-white/90 backdrop-blur-md text-[#1F1D1A] text-[11px] font-semibold px-3 py-1 rounded-full shadow-xs border border-[#EAE3D7]">
+              {item.badge}
+            </span>
           </div>
-          <div class="mt-6 pt-4 border-t border-[#F4EFE8] flex items-center justify-between text-xs font-medium text-[#78716C] group-hover:text-[#9C7334] transition-colors">
-            <span>Consultar disponibilidad</span>
-            <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-            </svg>
+
+          <!-- Body -->
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="text-xl font-serif font-bold text-[#1F1D1A] mb-2 group-hover:text-[#9C7334] transition-colors">
+                {item.title}
+              </h3>
+              <p class="text-xs sm:text-sm text-[#57534E] leading-relaxed mb-6">
+                {item.desc}
+              </p>
+
+              <!-- Feature Bullets -->
+              <div class="space-y-2 py-4 border-t border-[#F4EFE8] text-xs text-[#1F1D1A]">
+                {item.features.map(feat => (
+                  <div class="flex items-center gap-2">
+                    <svg class="w-4 h-4 text-[#B58C42] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <span>{feat}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div class="pt-4">
+              <a 
+                href="#contacto" 
+                class="inline-flex items-center gap-2 text-xs font-semibold text-[#9C7334] group-hover:gap-3 transition-all"
+              >
+                <span>Pedir valoración para {item.title}</span>
+                <span>→</span>
+              </a>
+            </div>
           </div>
         </div>
       ))}
+    </div>
+
+    <!-- Specialized Trades Row -->
+    <div class="fade-up pt-8 border-t border-[#EAE3D7]">
+      <div class="text-center mb-10">
+        <span class="text-xs font-semibold tracking-wider uppercase text-[#78716C]">Oficios & Gremios Especializados</span>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
+        {specializedTrades.map((trade) => (
+          <div class="bg-white p-5 rounded-2xl border border-[#EAE3D7] hover:border-[#B58C42] hover:shadow-sm transition-all duration-300">
+            <div class="w-10 h-10 rounded-xl bg-[#FAF8F5] border border-[#EAE3D7] flex items-center justify-center text-[#B58C42] mb-3">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={trade.icon}></svg>
+            </div>
+            <h4 class="text-sm font-semibold text-[#1F1D1A] mb-1.5">{trade.title}</h4>
+            <p class="text-xs text-[#57534E] leading-relaxed">{trade.desc}</p>
+          </div>
+        ))}
+      </div>
     </div>
 
   </div>

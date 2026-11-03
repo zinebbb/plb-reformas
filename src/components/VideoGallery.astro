@@ -1,165 +1,127 @@
 ---
-const projects = [
+const featuredProjects = [
   {
-    id: 1,
-    title: "Cocina Equipada con Encimera de Granito",
-    category: "cocinas",
-    tag: "Cocinas",
-    video: "/videos/video-1.mp4",
-    thumb: "/images/thumbnails/thumb-1.jpg",
-    desc: "Instalación de campana decorativa, alicatado clásico y placa de gas integrada con acabados precisos."
+    id: "apt-1",
+    title: "Vivienda Contemporánea con Luz Cálida Indirecta",
+    category: "Reforma Integral",
+    durationBadge: "18 seg · Tour Rápido",
+    video: "/videos/featured-apartment.mp4",
+    poster: "/images/gallery/thumb-featured-apt.jpg",
+    specs: [
+      { label: "Duración de obra", val: "5 semanas" },
+      { label: "Material clave", val: "Suelo laminado AC5 & Roble" },
+      { label: "Iluminación", val: "Foseados LED 3000K" }
+    ],
+    desc: "Redistribución completa de tabiquería, aislamiento acústico en paredes medianeras, panelado de madera natural y carpintería interior lacada en blanco."
   },
   {
-    id: 2,
-    title: "Renovación Integral de Mobiliario",
-    category: "cocinas",
-    tag: "Cocinas",
-    video: "/videos/video-2.mp4",
-    thumb: "/images/thumbnails/thumb-2.jpg",
-    desc: "Cocina con muebles lacados en blanco mate, placa vitrocerámica y distribución ergonómica."
+    id: "kit-1",
+    title: "Cocina de Diseño con Barra y Mobiliario a Medida",
+    category: "Cocinas de Autor",
+    durationBadge: "14 seg · Detalle",
+    video: "/videos/featured-kitchen.mp4",
+    poster: "/images/gallery/thumb-featured-kit.jpg",
+    specs: [
+      { label: "Duración de obra", val: "2 semanas" },
+      { label: "Encimera", val: "Granito pulido de alta resistencia" },
+      { label: "Distribución", val: "Lineal abierta con barra" }
+    ],
+    desc: "Fabricación de armarios con cierre amortiguado, integración oculta de electrodomésticos, fontanería multicapa y alicatado cerámico rectificado."
   },
   {
-    id: 3,
-    title: "Fase de Transformación en Directo",
-    category: "obra",
-    tag: "Evolución de Obra",
-    video: "/videos/video-3.mp4",
-    thumb: "/images/thumbnails/thumb-3.jpg",
-    desc: "Momento clave de la transición entre la estructura original y la renovación arquitectónica."
-  },
-  {
-    id: 4,
-    title: "Piso Terminado con Iluminación LED Cálida",
-    category: "integrales",
-    tag: "Reforma Integral",
-    video: "/videos/video-4.mp4",
-    thumb: "/images/thumbnails/thumb-4.jpg",
-    desc: "Suelo laminado continuo, panelados en madera noble, puertas enrasadas y foseados de luz indirecta."
-  },
-  {
-    id: 5,
-    title: "Acondicionamiento de Accesos y Pavimento",
-    category: "exteriores",
-    tag: "Zonas Exteriores",
-    video: "/videos/video-5.mp4",
-    thumb: "/images/thumbnails/thumb-5.jpg",
-    desc: "Rehabilitación de paso exterior, albañilería estructural y preparación de superficies de tránsito."
-  },
-  {
-    id: 6,
-    title: "Demolición y Desescombro Controlado",
-    category: "obra",
-    tag: "Evolución de Obra",
-    video: "/videos/video-6.mp4",
-    thumb: "/images/thumbnails/thumb-6.jpg",
-    desc: "Retirada meticulosa de tabiquería antigua y escombros, dejando el espacio diáfano y limpio."
-  },
-  {
-    id: 7,
-    title: "Estado Original de la Vivienda",
-    category: "integrales",
-    tag: "Reforma Integral",
-    video: "/videos/video-7.mp4",
-    thumb: "/images/thumbnails/thumb-7.jpg",
-    desc: "Inspección técnica previa para proyectar la redistribución de espacios y optimización de luz."
+    id: "trans-1",
+    title: "Fase de Demolición y Proceso de Transformación",
+    category: "Evolución en Directo",
+    durationBadge: "10 seg · Obra Real",
+    video: "/videos/featured-transition.mp4",
+    poster: "/images/gallery/thumb-featured-tra.jpg",
+    specs: [
+      { label: "Seguridad", val: "Protección integral comunitaria" },
+      { label: "Desescombro", val: "Contenedores homologados" },
+      { label: "Estructura", val: "Apertura de huecos diáfanos" }
+    ],
+    desc: "Retirada meticulosa de tabiquería antigua sin dañar elementos estructurales, canalizaciones de instalaciones y saneado de solera."
   }
-];
-
-const categories = [
-  { id: "todos", label: "Todas las Obras" },
-  { id: "cocinas", label: "Cocinas" },
-  { id: "integrales", label: "Reformas Integrales" },
-  { id: "obra", label: "Proceso y Demolición" },
-  { id: "exteriores", label: "Exteriores" }
 ];
 ---
 
-<section id="obras" class="py-24 bg-[#FAF8F5] relative">
+<section id="obras" class="py-24 bg-[#F4EFE8] border-t border-[#EAE3D7]">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     
     <!-- Section Header -->
-    <div class="fade-up flex flex-col md:flex-row md:items-end justify-between mb-10">
-      <div class="max-w-2xl">
-        <span class="text-xs font-semibold tracking-widest uppercase text-[#9C7334]">Evidencia Real</span>
-        <h2 class="text-3xl sm:text-4xl font-serif text-[#1F1D1A] mt-2 mb-3">
-          Vídeos y proyectos en ejecución
-        </h2>
-        <p class="text-[#57534E] text-base leading-relaxed">
-          Explora los proyectos reales documentados por nuestro equipo. Filtra por categoría para ver el tipo de trabajo que necesitas.
-        </p>
-      </div>
-
-      <div class="mt-4 md:mt-0 flex items-center gap-2 text-xs font-semibold text-[#57534E] bg-white px-4 py-2 rounded-full border border-[#EAE3D7] shadow-xs">
-        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-        <span>7 Proyectos grabados en obra</span>
-      </div>
+    <div class="fade-up text-center max-w-2xl mx-auto mb-16">
+      <span class="text-xs font-semibold tracking-widest uppercase text-[#9C7334]">Selección de Proyectos</span>
+      <h2 class="text-3xl sm:text-4xl font-serif text-[#1F1D1A] mt-2 mb-3">
+        Obras destacadas en vídeo
+      </h2>
+      <p class="text-[#57534E] text-sm sm:text-base leading-relaxed">
+        Hemos seleccionado 3 intervenciones clave editadas en formato breve para que aprecies los detalles constructivos y la calidad final sin perder tiempo.
+      </p>
     </div>
 
-    <!-- Interactive Filter Buttons -->
-    <div class="fade-up delay-100 flex items-center gap-2 overflow-x-auto pb-4 mb-10 no-scrollbar">
-      {categories.map((cat, idx) => (
-        <button
-          type="button"
-          data-filter={cat.id}
-          class={`filter-btn px-4 py-2 rounded-full text-xs font-semibold transition-all duration-300 cursor-pointer whitespace-nowrap ${
-            idx === 0 
-              ? 'bg-[#1F1D1A] text-white shadow-xs' 
-              : 'bg-white text-[#57534E] border border-[#EAE3D7] hover:border-[#B58C42] hover:text-[#1F1D1A]'
-          }`}
-        >
-          {cat.label}
-        </button>
-      ))}
-    </div>
-
-    <!-- Video Grid -->
-    <div id="video-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {projects.map((item, idx) => (
+    <!-- 3 Featured Projects Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      {featuredProjects.map((item, idx) => (
         <div 
-          data-category={item.category}
-          class={`video-card fade-up delay-${((idx % 3) + 1) * 100} bg-white rounded-2xl overflow-hidden border border-[#EAE3D7] shadow-xs hover:shadow-md hover:border-[#B58C42]/50 transition-all duration-300 flex flex-col group`}
+          class={`fade-up delay-${(idx + 1) * 100} bg-white rounded-3xl overflow-hidden border border-[#EAE3D7] shadow-sm hover:shadow-xl hover:border-[#B58C42]/50 transition-all duration-300 flex flex-col justify-between group`}
         >
           
-          <!-- Video Frame with Play Overlay -->
-          <div class="relative aspect-video bg-[#1F1D1A] overflow-hidden">
-            <video 
-              id={`video-${item.id}`}
-              controls 
-              preload="metadata"
-              poster={item.thumb}
-              class="w-full h-full object-cover"
-            >
-              <source src={item.video} type="video/mp4" />
-              Tu navegador no soporta la reproducción de vídeo.
-            </video>
-            
-            <span class="absolute top-3 left-3 bg-white/95 backdrop-blur-xs text-[#1F1D1A] border border-[#EAE3D7] text-[11px] font-medium px-2.5 py-1 rounded-full shadow-xs pointer-events-none">
-              {item.tag}
-            </span>
-          </div>
+          <!-- Top Video Frame -->
+          <div>
+            <div class="relative aspect-video bg-[#1F1D1A] overflow-hidden">
+              <video 
+                id={`featured-vid-${item.id}`}
+                controls 
+                preload="metadata"
+                poster={item.poster}
+                class="w-full h-full object-cover"
+              >
+                <source src={item.video} type="video/mp4" />
+                Tu navegador no soporta la reproducción de vídeo.
+              </video>
+              
+              <!-- Category Badge -->
+              <div class="absolute top-3 left-3 bg-[#1F1D1A]/85 backdrop-blur-md text-[#dec593] text-[11px] font-semibold px-3 py-1 rounded-full border border-[#B58C42]/30 pointer-events-none">
+                {item.category}
+              </div>
 
-          <!-- Content -->
-          <div class="p-6 flex-1 flex flex-col justify-between">
-            <div>
-              <h3 class="font-semibold text-[#1F1D1A] text-base mb-2 group-hover:text-[#9C7334] transition-colors">
+              <!-- Duration Badge -->
+              <div class="absolute top-3 right-3 bg-white/90 backdrop-blur-md text-[#1F1D1A] text-[10px] font-medium px-2.5 py-1 rounded-full pointer-events-none">
+                {item.durationBadge}
+              </div>
+            </div>
+
+            <!-- Card Body -->
+            <div class="p-6">
+              <h3 class="font-serif font-bold text-lg text-[#1F1D1A] mb-2 leading-snug group-hover:text-[#9C7334] transition-colors">
                 {item.title}
               </h3>
-              <p class="text-xs sm:text-sm text-[#57534E] leading-relaxed">
+              
+              <p class="text-xs sm:text-sm text-[#57534E] leading-relaxed mb-6">
                 {item.desc}
               </p>
+
+              <!-- Technical Specs List -->
+              <div class="space-y-2 py-4 border-t border-[#F4EFE8] text-xs">
+                {item.specs.map(spec => (
+                  <div class="flex items-center justify-between">
+                    <span class="text-[#78716C] font-medium">{spec.label}</span>
+                    <span class="text-[#1F1D1A] font-semibold">{spec.val}</span>
+                  </div>
+                ))}
+              </div>
             </div>
-            
-            <div class="mt-5 pt-4 border-t border-[#F4EFE8] flex items-center justify-between text-xs text-[#78716C]">
-              <span class="inline-flex items-center gap-1.5 font-medium text-[#9C7334]">
-                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"></path>
-                </svg>
-                Vídeo Original
-              </span>
-              <a href="#contacto" class="hover:text-[#1F1D1A] transition-colors font-medium">
-                Pedir presupuesto similar →
-              </a>
-            </div>
+          </div>
+
+          <!-- Bottom CTA -->
+          <div class="px-6 pb-6 pt-2">
+            <a 
+              href="#contacto" 
+              class="w-full py-3 rounded-xl font-medium text-xs text-center text-[#1F1D1A] bg-[#FAF8F5] hover:bg-[#1F1D1A] hover:text-white border border-[#EAE3D7] transition-all duration-300 flex items-center justify-center gap-2"
+            >
+              <span>Consultar proyecto similar</span>
+              <span>→</span>
+            </a>
           </div>
 
         </div>
@@ -168,41 +130,3 @@ const categories = [
 
   </div>
 </section>
-
-<!-- Interactive Filter Script -->
-<script>
-  const filterButtons = document.querySelectorAll<HTMLButtonElement>('.filter-btn');
-  const videoCards = document.querySelectorAll<HTMLElement>('.video-card');
-
-  filterButtons.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const filter = btn.getAttribute('data-filter');
-
-      // Update button styles
-      filterButtons.forEach((b) => {
-        b.classList.remove('bg-[#1F1D1A]', 'text-white', 'shadow-xs');
-        b.classList.add('bg-white', 'text-[#57534E]', 'border', 'border-[#EAE3D7]');
-      });
-      btn.classList.add('bg-[#1F1D1A]', 'text-white', 'shadow-xs');
-      btn.classList.remove('bg-white', 'text-[#57534E]', 'border', 'border-[#EAE3D7]');
-
-      // Filter cards with smooth fade
-      videoCards.forEach((card) => {
-        const category = card.getAttribute('data-category');
-        if (filter === 'todos' || category === filter) {
-          card.style.display = 'flex';
-          setTimeout(() => {
-            card.style.opacity = '1';
-            card.style.transform = 'translateY(0)';
-          }, 20);
-        } else {
-          card.style.opacity = '0';
-          card.style.transform = 'translateY(12px)';
-          setTimeout(() => {
-            card.style.display = 'none';
-          }, 250);
-        }
-      });
-    });
-  });
-</script>

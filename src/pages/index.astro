@@ -2,27 +2,31 @@
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Hero from '../components/Hero.astro';
+import BeforeAfter from '../components/BeforeAfter.astro';
 import Services from '../components/Services.astro';
-import Process from '../components/Process.astro';
 import VideoGallery from '../components/VideoGallery.astro';
+import Process from '../components/Process.astro';
 import BudgetCalculator from '../components/BudgetCalculator.astro';
 import WhyUs from '../components/WhyUs.astro';
+import Testimonials from '../components/Testimonials.astro';
 import Contact from '../components/Contact.astro';
 import Footer from '../components/Footer.astro';
 ---
 
 <Layout 
   title="PLB Reformas Premium S.L. | Reformas Integrales y Espacios a Medida"
-  description="Especialistas en reformas integrales, cocinas y baños de alta calidad. Compromiso, presupuesto cerrado y acabados impecables sin imprevistos."
+  description="Especialistas en reformas integrales, cocinas y baños de alta gama. Presupuesto cerrado, dirección técnica personalizada y garantía por escrito."
 >
   <Navbar />
   <main class="flex-grow">
     <Hero />
+    <BeforeAfter />
     <Services />
-    <Process />
     <VideoGallery />
+    <Process />
     <BudgetCalculator />
     <WhyUs />
+    <Testimonials />
     <Contact />
   </main>
   <Footer />

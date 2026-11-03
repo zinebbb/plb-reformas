@@ -1,77 +1,125 @@
 ---
 ---
 
-<section class="relative overflow-hidden pt-12 pb-20 lg:pt-20 lg:pb-28 bg-gradient-to-b from-[#FAF8F5] via-[#F4EFE8] to-[#FAF8F5]">
+<section class="relative overflow-hidden pt-10 pb-20 lg:pt-16 lg:pb-28 bg-gradient-to-b from-[#FAF8F5] via-[#F4EFE8]/70 to-[#FAF8F5]">
   
-  <!-- Subtle architectural background lines -->
-  <div class="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#1F1D1A_1px,transparent_1px)] [background-size:24px_24px]"></div>
+  <!-- Subtle decorative ambient glows -->
+  <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-[#dec593]/20 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="absolute bottom-1/4 right-10 w-96 h-96 bg-[#c5b6a1]/20 rounded-full blur-3xl pointer-events-none"></div>
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-    <div class="max-w-3xl mx-auto text-center">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
       
-      <!-- Top Trust Pill -->
-      <div class="fade-up inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-[#EAE3D7] text-[#9C7334] text-xs font-semibold tracking-wider uppercase shadow-xs mb-8">
-        <svg class="w-3.5 h-3.5 text-[#B58C42]" fill="currentColor" viewBox="0 0 20 20">
-          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-        </svg>
-        <span>Empresa de Reformas Integrales y Multiservicios</span>
+      <!-- Left Column: Copy & CTAs -->
+      <div class="lg:col-span-7 max-w-2xl">
+        
+        <!-- Trust Tag -->
+        <div class="fade-up inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-[#EAE3D7] text-[#9C7334] text-xs font-semibold tracking-wider uppercase shadow-xs mb-6">
+          <span class="w-2 h-2 rounded-full bg-[#B58C42]"></span>
+          <span>Reformas Integrales & Espacios Singulares</span>
+        </div>
+
+        <!-- Headline -->
+        <h1 class="fade-up delay-100 text-4xl sm:text-5xl lg:text-6xl font-serif text-[#1F1D1A] leading-[1.15] tracking-tight mb-6">
+          Espacios con alma, <br />
+          reformas con <span class="italic font-normal text-[#9C7334]">rigor y calma</span>
+        </h1>
+
+        <!-- Subtitle -->
+        <p class="fade-up delay-200 text-base sm:text-lg text-[#57534E] mb-8 leading-relaxed font-light">
+          En <strong>PLB Reformas Premium</strong> convertimos tu vivienda o negocio en el espacio que siempre has imaginado. Gestión técnica integral, presupuesto cerrado por escrito y cumplimiento riguroso de plazos.
+        </p>
+
+        <!-- Actions -->
+        <div class="fade-up delay-300 flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-10">
+          <a 
+            href="#contacto" 
+            class="px-8 py-4 rounded-full font-semibold text-white bg-[#1F1D1A] hover:bg-[#B58C42] shadow-sm hover:shadow-md transition-all duration-300 text-center text-sm tracking-wide"
+          >
+            Solicitar Presupuesto Gratuito
+          </a>
+          <a 
+            href="#antes-despues" 
+            class="px-8 py-4 rounded-full font-medium text-[#1F1D1A] bg-white hover:bg-[#F4EFE8] border border-[#EAE3D7] shadow-xs transition-all duration-300 text-center text-sm flex items-center justify-center gap-2.5"
+          >
+            <span>Ver Antes y Después</span>
+            <svg class="w-4 h-4 text-[#B58C42]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Metric Badges -->
+        <div class="fade-up delay-400 pt-6 border-t border-[#EAE3D7] grid grid-cols-3 gap-4">
+          <div>
+            <div class="text-2xl sm:text-3xl font-serif font-bold text-[#1F1D1A]">
+              <span class="counter" data-target="15" data-prefix="+">0</span>
+            </div>
+            <div class="text-xs text-[#78716C] mt-0.5">Años de oficio</div>
+          </div>
+          <div>
+            <div class="text-2xl sm:text-3xl font-serif font-bold text-[#1F1D1A]">
+              <span class="counter" data-target="100" data-suffix="%">0</span>
+            </div>
+            <div class="text-xs text-[#78716C] mt-0.5">Precio cerrado</div>
+          </div>
+          <div>
+            <div class="text-2xl sm:text-3xl font-serif font-bold text-[#1F1D1A]">
+              <span class="counter" data-target="2" data-suffix=" Años">0</span>
+            </div>
+            <div class="text-xs text-[#78716C] mt-0.5">Garantía oficial</div>
+          </div>
+        </div>
+
       </div>
 
-      <!-- Main Headline -->
-      <h1 class="fade-up delay-100 text-4xl sm:text-5xl lg:text-6xl font-serif text-[#1F1D1A] leading-tight tracking-tight mb-6">
-        Reformas con calma, <br class="hidden sm:inline" />
-        <span class="italic font-normal text-[#9C7334]">rigor y garantía</span>
-      </h1>
+      <!-- Right Column: Visual Composition with Real Project Photos -->
+      <div class="fade-up delay-200 lg:col-span-5 relative">
+        <div class="relative mx-auto max-w-md lg:max-w-none">
+          
+          <!-- Main Visual Card (Completed Luxury Reform) -->
+          <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-white group">
+            <img 
+              src="/images/thumbnails/thumb-4.jpg" 
+              alt="Reforma integral terminada con iluminación LED indirecta" 
+              class="w-full h-[460px] object-cover object-center transform group-hover:scale-105 transition-transform duration-700"
+            />
+            
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+            
+            <div class="absolute bottom-6 left-6 right-6 text-white">
+              <span class="inline-block px-3 py-1 rounded-full bg-white/20 backdrop-blur-md text-[11px] font-semibold tracking-wider uppercase mb-2 border border-white/30">
+                Obra Real PLB · Acabado de Lujo
+              </span>
+              <h3 class="text-lg font-serif font-bold">Vivienda con Luz Cálida y Panelado</h3>
+              <p class="text-xs text-slate-200 mt-1">Parquet continuo, puertas enrasadas y foseados perimetrales.</p>
+            </div>
+          </div>
 
-      <!-- Subtitle -->
-      <p class="fade-up delay-200 text-lg sm:text-xl text-[#57534E] mb-10 leading-relaxed font-light">
-        Cuidamos cada detalle de tu vivienda o negocio. Te acompañamos desde el primer plano hasta la entrega de llaves, con presupuesto cerrado por escrito y cumplimiento riguroso de plazos.
-      </p>
+          <!-- Secondary Floating Card: Kitchen Accent -->
+          <div class="hidden sm:flex absolute -bottom-6 -left-8 bg-white p-3.5 rounded-2xl shadow-xl border border-[#EAE3D7] items-center gap-3.5 max-w-xs animate-bounce-subtle">
+            <img 
+              src="/images/gallery/kitchen-1.jpg" 
+              alt="Detalle de cocina" 
+              class="w-14 h-14 rounded-xl object-cover"
+            />
+            <div>
+              <div class="flex items-center gap-1 text-[#B58C42] text-xs">
+                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+              </div>
+              <div class="text-xs font-bold text-[#1F1D1A] mt-0.5">Calidad en cada remate</div>
+              <div class="text-[11px] text-[#78716C]">Materiales de primera gama</div>
+            </div>
+          </div>
 
-      <!-- Action Buttons -->
-      <div class="fade-up delay-300 flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a 
-          href="#contacto" 
-          class="w-full sm:w-auto px-8 py-4 rounded-full font-medium text-white bg-[#1F1D1A] hover:bg-[#B58C42] shadow-sm hover:shadow-md transition-all duration-300 text-center text-sm tracking-wide transform hover:-translate-y-0.5"
-        >
-          Solicitar Presupuesto Gratuito
-        </a>
-        <a 
-          href="#calculadora" 
-          class="w-full sm:w-auto px-8 py-4 rounded-full font-medium text-[#1F1D1A] bg-white hover:bg-[#F4EFE8] border border-[#EAE3D7] shadow-xs transition-all duration-300 text-center text-sm flex items-center justify-center gap-2.5 transform hover:-translate-y-0.5"
-        >
-          <svg class="w-4 h-4 text-[#B58C42]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
-          </svg>
-          <span>Calculadora Orientativa</span>
-        </a>
-      </div>
+          <!-- Floating Guarantee Pill -->
+          <div class="absolute -top-4 -right-4 bg-[#1F1D1A] text-white px-4 py-2 rounded-full shadow-lg text-xs font-semibold flex items-center gap-2 border border-white/20">
+            <svg class="w-4 h-4 text-[#B58C42]" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+            </svg>
+            <span>Seguro de Obra en Vigor</span>
+          </div>
 
-      <!-- Animated Counters Bar -->
-      <div class="fade-up delay-400 mt-16 pt-8 border-t border-[#EAE3D7] grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-        <div class="p-3">
-          <div class="text-3xl font-serif font-bold text-[#1F1D1A]">
-            <span class="counter" data-target="15" data-prefix="+">0</span>
-          </div>
-          <div class="text-xs text-[#78716C] mt-1 font-medium">Años de oficio</div>
-        </div>
-        <div class="p-3">
-          <div class="text-3xl font-serif font-bold text-[#1F1D1A]">
-            <span class="counter" data-target="100" data-suffix="%">0</span>
-          </div>
-          <div class="text-xs text-[#78716C] mt-1 font-medium">Presupuesto cerrado</div>
-        </div>
-        <div class="p-3">
-          <div class="text-3xl font-serif font-bold text-[#1F1D1A]">
-            <span class="counter" data-target="48" data-suffix="h">0</span>
-          </div>
-          <div class="text-xs text-[#78716C] mt-1 font-medium">Valoración inicial</div>
-        </div>
-        <div class="p-3">
-          <div class="text-3xl font-serif font-bold text-[#1F1D1A]">
-            <span class="counter" data-target="2" data-suffix=" Años">0</span>
-          </div>
-          <div class="text-xs text-[#78716C] mt-1 font-medium">Garantía por contrato</div>
         </div>
       </div>
 
@@ -79,7 +127,7 @@
   </div>
 </section>
 
-<!-- Smooth CountUp Script for Statistics -->
+<!-- Smooth CountUp Script -->
 <script>
   const counters = document.querySelectorAll('.counter');
   let hasAnimated = false;
@@ -89,14 +137,12 @@
       const target = Number(counter.getAttribute('data-target') || '0');
       const prefix = counter.getAttribute('data-prefix') || '';
       const suffix = counter.getAttribute('data-suffix') || '';
-      const duration = 1400; // ms
+      const duration = 1400;
       const startTime = performance.now();
 
       const updateCount = (currentTime: number) => {
         const elapsed = currentTime - startTime;
         const progress = Math.min(elapsed / duration, 1);
-        
-        // Easing: easeOutCubic
         const easeOut = 1 - Math.pow(1 - progress, 3);
         const currentVal = Math.floor(easeOut * target);
 
