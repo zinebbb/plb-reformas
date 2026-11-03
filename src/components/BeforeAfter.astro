@@ -1,38 +1,41 @@
 ---
 ---
 
-<section id="antes-despues" class="py-24 bg-[#FAF8F5] relative overflow-hidden">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<section id="antes-despues" class="py-24 bg-[#0f1115] text-white relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-8">
     
     <!-- Header -->
-    <div class="fade-up text-center max-w-2xl mx-auto mb-14">
-      <span class="text-xs font-semibold tracking-widest uppercase text-[#9C7334]">El Poder de la Transformación</span>
-      <h2 class="text-3xl sm:text-4xl font-serif text-[#1F1D1A] mt-2 mb-3">
-        Antes y Después de Nuestras Obras
+    <div class="fade-up text-center max-w-3xl mx-auto mb-16">
+      <span class="text-xs font-bold tracking-widest uppercase text-gold-500 block mb-2">
+        TRANSFORMACIÓN REAL
+      </span>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold uppercase tracking-tight text-white mb-4">
+        Antes y Después de Obra
       </h2>
-      <p class="text-[#57534E] text-sm sm:text-base leading-relaxed">
-        Desliza el divisor central para comprobar cómo transformamos estancias antiguas o en ruinas en espacios modernos, luminosos y confortables.
+      <div class="w-16 h-1 bg-gold-500 mx-auto mb-5"></div>
+      <p class="text-sm sm:text-base text-gray-400 leading-relaxed font-normal">
+        Desliza el divisor central para comprobar cómo transformamos un piso antiguo de origen en Benidorm en una vivienda moderna y luminosa.
       </p>
     </div>
 
     <!-- Comparison Slider Widget -->
-    <div class="fade-up delay-100 max-w-3xl mx-auto">
+    <div class="fade-up delay-100 max-w-4xl mx-auto">
       <div 
         id="comparison-container"
-        class="relative w-full aspect-[4/3] sm:aspect-[16/10] rounded-3xl overflow-hidden shadow-2xl border-4 border-white select-none cursor-ew-resize bg-[#1F1D1A]"
+        class="relative w-full aspect-[4/3] sm:aspect-[16/10] overflow-hidden select-none cursor-ew-resize bg-black rounded-sm border border-white/20 shadow-2xl"
       >
         
-        <!-- BEFORE Image (Base layer) -->
+        <!-- BEFORE Image (Base) -->
         <img 
           src="/images/thumbnails/thumb-7.jpg" 
-          alt="Estado previo antes de la reforma" 
+          alt="Vivienda de origen antes de la reforma" 
           class="absolute inset-0 w-full h-full object-cover pointer-events-none"
         />
-        <div class="absolute top-4 left-4 z-10 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md text-white text-xs font-semibold uppercase tracking-wider border border-white/20">
-          Antes
+        <div class="absolute top-4 left-4 z-10 px-3.5 py-1.5 font-bold text-xs uppercase tracking-wider bg-black/80 backdrop-blur-md text-white border border-white/20 rounded-xs">
+          Antes / Origen
         </div>
 
-        <!-- AFTER Image (Overlay layer clipped) -->
+        <!-- AFTER Image (Overlay) -->
         <div 
           id="comparison-after"
           class="absolute inset-0 overflow-hidden pointer-events-none"
@@ -40,42 +43,41 @@
         >
           <img 
             src="/images/thumbnails/thumb-4.jpg" 
-            alt="Reforma terminada con acabados de lujo" 
+            alt="Reforma terminada por PLB Reformas" 
             class="absolute top-0 left-0 h-full max-w-none object-cover"
             style="width: 100%;"
           />
-          <div class="absolute top-4 left-4 z-10 px-3 py-1 rounded-full bg-[#1F1D1A]/90 backdrop-blur-md text-[#dec593] text-xs font-semibold uppercase tracking-wider border border-[#B58C42]/40">
-            Después (PLB Premium)
+          <div class="absolute top-4 left-4 z-10 px-3.5 py-1.5 font-bold text-xs uppercase tracking-wider bg-gold-500 text-black border border-white/20 rounded-xs">
+            Después / PLB Reformas
           </div>
         </div>
 
         <!-- Draggable Handle Divider -->
         <div 
           id="comparison-handle"
-          class="absolute top-0 bottom-0 z-20 w-1 bg-white shadow-2xl pointer-events-none"
+          class="absolute top-0 bottom-0 z-20 w-1 bg-white pointer-events-none shadow-[0_0_15px_rgba(0,0,0,0.6)]"
           style="left: 50%;"
         >
-          <div class="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-11 h-11 rounded-full bg-[#1F1D1A] border-2 border-white shadow-xl flex items-center justify-center text-white text-sm">
-            <svg class="w-5 h-5 text-[#B58C42]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M8 9l-4 3 4 3m8-6l4 3-4 3"></path>
+          <div class="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-black border-2 border-gold-500 shadow-xl flex items-center justify-center text-white text-xs">
+            <svg class="w-5 h-5 text-gold-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l-4 3 4 3m8-6l4 3-4 3"></path>
             </svg>
           </div>
         </div>
 
       </div>
 
-      <!-- Slider Helper Caption -->
-      <div class="mt-4 flex items-center justify-between text-xs text-[#78716C] px-2">
-        <span>← Mueve para ver la vivienda de origen</span>
-        <span class="font-semibold text-[#9C7334]">Desliza para comparar</span>
-        <span>Mueve para ver el resultado final →</span>
+      <!-- Caption -->
+      <div class="mt-4 flex items-center justify-between text-xs text-gray-400 uppercase tracking-wider px-2">
+        <span>← Estado Inicial</span>
+        <span class="text-gold-500 font-bold">Desliza para comparar</span>
+        <span>Resultado Final →</span>
       </div>
     </div>
 
   </div>
 </section>
 
-<!-- Comparison Slider Script -->
 <script>
   const container = document.getElementById('comparison-container');
   const afterLayer = document.getElementById('comparison-after');
@@ -94,12 +96,9 @@
       const percentage = (offsetX / rect.width) * 100;
       afterLayer.style.width = `${percentage}%`;
       handle.style.left = `${percentage}%`;
-
-      // Keep image width matching container so it stays aligned
       afterImg.style.width = `${rect.width}px`;
     };
 
-    // Update on resize
     const updateSize = () => {
       const rect = container.getBoundingClientRect();
       afterImg.style.width = `${rect.width}px`;
@@ -107,7 +106,6 @@
     window.addEventListener('resize', updateSize);
     updateSize();
 
-    // Mouse events
     container.addEventListener('mousedown', (e) => {
       isDragging = true;
       setPosition(e.clientX);
@@ -122,7 +120,6 @@
       isDragging = false;
     });
 
-    // Touch events for mobile
     container.addEventListener('touchstart', (e) => {
       isDragging = true;
       if (e.touches[0]) setPosition(e.touches[0].clientX);

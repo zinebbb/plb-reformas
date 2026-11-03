@@ -1,59 +1,77 @@
 ---
 const steps = [
   {
-    number: "01",
-    title: "Visita y Asesoramiento Técnico",
-    desc: "Acudimos a tu vivienda o local, escuchamos tus ideas, analizamos el espacio y tomamos mediciones completas de forma gratuita y sin compromiso."
+    num: "01",
+    phase: "FASE 01",
+    title: "Visita y Asesoramiento In Situ",
+    desc: "Nos desplazamos a tu vivienda o local en Benidorm o cualquier punto de la Marina Baixa. Evaluamos el estado técnico, escuchamos tus ideas y realizamos mediciones precisas sin coste alguno."
   },
   {
-    number: "02",
-    title: "Presupuesto Detallado y Cerrado",
-    desc: "En un plazo máximo de 48 horas recibirás una propuesta clara con cada partida desglosada (materiales, mano de obra e impuestos). Sin sorpresas."
+    num: "02",
+    phase: "FASE 02",
+    title: "Presupuesto Cerrado por Contrato",
+    desc: "Elaboramos una propuesta técnica desglosada partida por partida con calidades y precios cerrados. Lo estipulado en contrato es lo que pagas, sin sorpresas ni costes ocultos."
   },
   {
-    number: "03",
-    title: "Ejecución con Jefe de Obra Dedicado",
-    desc: "Un único profesional supervisa los gremios diariamente, garantizando el cumplimiento del calendario de obra y manteniéndote informado."
+    num: "03",
+    phase: "FASE 03",
+    title: "Ejecución y Pago por Etapas",
+    desc: "Un jefe de obra coordina a nuestro equipo de especialistas. No abonas la totalidad por adelantado: los pagos se realizan de forma estructurada según avance certificado de la obra."
   },
   {
-    number: "04",
-    title: "Entrega de Llaves y Garantía Oficial",
-    desc: "Realizamos una revisión final contigo, dejamos la vivienda limpia para entrar a vivir y te entregamos la garantía oficial por escrito."
+    num: "04",
+    phase: "FASE 04",
+    title: "Entrega Impecable y Garantía Oficial",
+    desc: "Revisamos contigo cada acabado y detalle. Realizamos una limpieza exhaustiva post-obra y te hacemos entrega formal de la garantía por escrito de 2 años."
   }
 ];
 ---
 
-<section id="proceso" class="py-24 bg-[#F4EFE8] border-y border-[#EAE3D7]">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<section id="proceso" class="py-24 bg-white text-[#111317] relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-8">
     
-    <div class="fade-up text-center max-w-2xl mx-auto mb-16">
-      <span class="text-xs font-semibold tracking-widest uppercase text-[#9C7334]">Metodología de Trabajo</span>
-      <h2 class="text-3xl sm:text-4xl font-serif text-[#1F1D1A] mt-2 mb-4">
-        Tu reforma en 4 sencillos pasos
+    <!-- Section Header (Alfa Interiorismo Style) -->
+    <div class="fade-up text-center max-w-3xl mx-auto mb-16">
+      <span class="text-xs font-bold tracking-widest uppercase text-gold-600 block mb-2">
+        CÓMO TRABAJAMOS
+      </span>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold uppercase tracking-tight text-[#111317] mb-4">
+        Metodología y Fases de Obra
       </h2>
-      <p class="text-[#57534E] text-base leading-relaxed">
-        Un proceso estructurado y transparente para que disfrutes de la transformación de tu vivienda sin estrés ni incertidumbres.
+      <div class="w-16 h-1 bg-gold-500 mx-auto mb-5"></div>
+      <p class="text-sm sm:text-base text-gray-600 leading-relaxed font-normal">
+        Un proceso estructurado, transparente y riguroso para que disfrutes de la reforma de tu vivienda en la Costa Blanca con total tranquilidad.
       </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-      {steps.map((step, index) => (
+    <!-- Steps Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {steps.map((step, idx) => (
         <div 
-          class={`fade-up delay-${(index + 1) * 100} relative bg-white p-8 rounded-2xl border border-[#EAE3D7] shadow-xs flex flex-col justify-between hover:shadow-md hover:border-[#B58C42]/50 transition-all duration-300 transform hover:-translate-y-1`}
+          class={`fade-up delay-${(idx + 1) * 100} p-8 bg-[#f8fafc] border border-gray-200 hover:border-gold-500 hover:shadow-lg transition-all duration-300 rounded-sm flex flex-col justify-between group`}
         >
           <div>
             <div class="flex items-center justify-between mb-6">
-              <span class="text-2xl font-serif font-bold text-[#9C7334]">{step.number}</span>
-              <span class="w-8 h-8 rounded-full bg-[#FAF8F5] border border-[#EAE3D7] flex items-center justify-center text-xs font-semibold text-[#78716C]">
-                {index + 1}/4
+              <span class="text-3xl font-extrabold text-gold-600 group-hover:scale-105 transition-transform">
+                {step.num}
+              </span>
+              <span class="text-[10px] font-bold tracking-widest uppercase text-gray-400 bg-white px-2.5 py-1 border border-gray-200 rounded-xs">
+                {step.phase}
               </span>
             </div>
-            <h3 class="text-lg font-semibold text-[#1F1D1A] mb-3">
+
+            <h3 class="text-lg font-bold uppercase tracking-tight text-[#111317] mb-3 group-hover:text-gold-600 transition-colors">
               {step.title}
             </h3>
-            <p class="text-xs sm:text-sm text-[#57534E] leading-relaxed">
+
+            <p class="text-xs sm:text-sm text-gray-600 leading-relaxed font-normal">
               {step.desc}
             </p>
+          </div>
+
+          <div class="mt-8 pt-4 border-t border-gray-200 flex items-center justify-between text-[11px] font-semibold text-gray-400 uppercase tracking-wider">
+            <span>Paso {idx + 1} de 4</span>
+            <span class="text-gold-600 font-bold">PLB Premium</span>
           </div>
         </div>
       ))}
