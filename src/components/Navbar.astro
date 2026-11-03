@@ -21,16 +21,17 @@
       </a>
 
       <!-- Desktop Navigation -->
-      <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-[#4A4641]">
+      <nav class="hidden md:flex items-center space-x-7 text-sm font-medium text-[#4A4641]">
         <a href="#servicios" class="hover:text-[#B58C42] transition-colors">Servicios</a>
-        <a href="#obras" class="hover:text-[#B58C42] transition-colors">Vídeos de Obras</a>
         <a href="#proceso" class="hover:text-[#B58C42] transition-colors">Nuestro Proceso</a>
+        <a href="#obras" class="hover:text-[#B58C42] transition-colors">Vídeos de Obras</a>
+        <a href="#calculadora" class="hover:text-[#B58C42] transition-colors">Calculadora</a>
         <a href="#garantias" class="hover:text-[#B58C42] transition-colors">Garantías</a>
         <a href="#contacto" class="hover:text-[#B58C42] transition-colors">Contacto</a>
       </nav>
 
-      <!-- Right Contact Action -->
-      <div class="flex items-center gap-4">
+      <!-- Right Action & Mobile Toggle -->
+      <div class="flex items-center gap-3">
         <a 
           href="tel:+34600000000" 
           class="hidden lg:flex items-center gap-2 text-xs font-semibold text-[#4A4641] hover:text-[#B58C42] transition-colors"
@@ -43,12 +44,78 @@
 
         <a 
           href="#contacto" 
-          class="inline-flex items-center justify-center px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold text-white bg-[#1F1D1A] hover:bg-[#B58C42] shadow-sm hover:shadow-md transition-all duration-300"
+          class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold text-white bg-[#1F1D1A] hover:bg-[#B58C42] shadow-sm hover:shadow-md transition-all duration-300"
         >
-          Solicitar Presupuesto
+          Presupuesto
         </a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button
+          id="mobile-menu-btn"
+          type="button"
+          aria-label="Abrir menú de navegación"
+          class="md:hidden p-2 rounded-xl border border-[#EAE3D7] bg-white text-[#1F1D1A] hover:text-[#B58C42] transition-colors cursor-pointer"
+        >
+          <svg id="menu-icon-open" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+          <svg id="menu-icon-close" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
       </div>
 
     </div>
   </div>
+
+  <!-- Mobile Dropdown Menu -->
+  <div id="mobile-menu" class="hidden md:hidden border-t border-[#EAE3D7] bg-[#FAF8F5] px-4 pt-3 pb-6 space-y-3">
+    <a href="#servicios" class="mobile-nav-link block px-3 py-2 rounded-lg text-sm font-medium text-[#1F1D1A] hover:bg-[#F4EFE8]">Servicios</a>
+    <a href="#proceso" class="mobile-nav-link block px-3 py-2 rounded-lg text-sm font-medium text-[#1F1D1A] hover:bg-[#F4EFE8]">Nuestro Proceso</a>
+    <a href="#obras" class="mobile-nav-link block px-3 py-2 rounded-lg text-sm font-medium text-[#1F1D1A] hover:bg-[#F4EFE8]">Vídeos de Obras</a>
+    <a href="#calculadora" class="mobile-nav-link block px-3 py-2 rounded-lg text-sm font-medium text-[#1F1D1A] hover:bg-[#F4EFE8]">Calculadora</a>
+    <a href="#garantias" class="mobile-nav-link block px-3 py-2 rounded-lg text-sm font-medium text-[#1F1D1A] hover:bg-[#F4EFE8]">Garantías</a>
+    <a href="#contacto" class="mobile-nav-link block px-3 py-2 rounded-lg text-sm font-medium text-[#1F1D1A] hover:bg-[#F4EFE8]">Contacto</a>
+    <div class="pt-2">
+      <a 
+        href="#contacto" 
+        class="block w-full py-3 rounded-full text-center text-sm font-semibold text-white bg-[#1F1D1A]"
+      >
+        Pedir Presupuesto Gratuito
+      </a>
+    </div>
+  </div>
 </header>
+
+<script>
+  const menuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('menu-icon-open');
+  const iconClose = document.getElementById('menu-icon-close');
+  const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+  if (menuBtn && mobileMenu && iconOpen && iconClose) {
+    const toggleMenu = () => {
+      const isExpanded = !mobileMenu.classList.contains('hidden');
+      if (isExpanded) {
+        mobileMenu.classList.add('hidden');
+        iconOpen.classList.remove('hidden');
+        iconClose.classList.add('hidden');
+      } else {
+        mobileMenu.classList.remove('hidden');
+        iconOpen.classList.add('hidden');
+        iconClose.classList.remove('hidden');
+      }
+    };
+
+    menuBtn.addEventListener('click', toggleMenu);
+
+    mobileLinks.forEach((link) => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        iconOpen.classList.remove('hidden');
+        iconClose.classList.add('hidden');
+      });
+    });
+  }
+</script>

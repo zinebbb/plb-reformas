@@ -33,10 +33,10 @@ const guarantees = [
 ];
 ---
 
-<section id="garantias" class="py-24 bg-[#F4EFE8] border-t border-[#EAE3D7]">
+<section id="garantias" class="py-24 bg-[#FAF8F5]">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     
-    <div class="text-center max-w-2xl mx-auto mb-16">
+    <div class="fade-up text-center max-w-2xl mx-auto mb-16">
       <span class="text-xs font-semibold tracking-widest uppercase text-[#9C7334]">Tranquilidad Garantizada</span>
       <h2 class="text-3xl sm:text-4xl font-serif text-[#1F1D1A] mt-2 mb-4">
         Tu reforma con total seguridad
@@ -47,8 +47,10 @@ const guarantees = [
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {guarantees.map((item) => (
-        <div class="bg-white p-8 rounded-2xl border border-[#EAE3D7] shadow-xs flex flex-col justify-between hover:border-[#B58C42]/50 hover:shadow-md transition-all duration-300">
+      {guarantees.map((item, idx) => (
+        <div 
+          class={`fade-up delay-${((idx % 3) + 1) * 100} bg-white p-8 rounded-2xl border border-[#EAE3D7] shadow-xs flex flex-col justify-between hover:border-[#B58C42]/50 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1`}
+        >
           <div>
             <div class="w-12 h-12 rounded-xl bg-[#FAF8F5] border border-[#EAE3D7] text-[#B58C42] flex items-center justify-center mb-5">
               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={item.icon}></svg>

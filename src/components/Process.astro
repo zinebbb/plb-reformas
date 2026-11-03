@@ -26,7 +26,7 @@ const steps = [
 <section id="proceso" class="py-24 bg-[#F4EFE8] border-y border-[#EAE3D7]">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     
-    <div class="text-center max-w-2xl mx-auto mb-16">
+    <div class="fade-up text-center max-w-2xl mx-auto mb-16">
       <span class="text-xs font-semibold tracking-widest uppercase text-[#9C7334]">Metodología de Trabajo</span>
       <h2 class="text-3xl sm:text-4xl font-serif text-[#1F1D1A] mt-2 mb-4">
         Tu reforma en 4 sencillos pasos
@@ -38,7 +38,9 @@ const steps = [
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
       {steps.map((step, index) => (
-        <div class="relative bg-white p-8 rounded-2xl border border-[#EAE3D7] shadow-xs flex flex-col justify-between">
+        <div 
+          class={`fade-up delay-${(index + 1) * 100} relative bg-white p-8 rounded-2xl border border-[#EAE3D7] shadow-xs flex flex-col justify-between hover:shadow-md hover:border-[#B58C42]/50 transition-all duration-300 transform hover:-translate-y-1`}
+        >
           <div>
             <div class="flex items-center justify-between mb-6">
               <span class="text-2xl font-serif font-bold text-[#9C7334]">{step.number}</span>

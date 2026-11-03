@@ -3,6 +3,7 @@ const projects = [
   {
     id: 1,
     title: "Cocina Equipada con Encimera de Granito",
+    category: "cocinas",
     tag: "Cocinas",
     video: "/videos/video-1.mp4",
     thumb: "/images/thumbnails/thumb-1.jpg",
@@ -11,7 +12,8 @@ const projects = [
   {
     id: 2,
     title: "Renovación Integral de Mobiliario",
-    tag: "Mobiliario y Encimeras",
+    category: "cocinas",
+    tag: "Cocinas",
     video: "/videos/video-2.mp4",
     thumb: "/images/thumbnails/thumb-2.jpg",
     desc: "Cocina con muebles lacados en blanco mate, placa vitrocerámica y distribución ergonómica."
@@ -19,6 +21,7 @@ const projects = [
   {
     id: 3,
     title: "Fase de Transformación en Directo",
+    category: "obra",
     tag: "Evolución de Obra",
     video: "/videos/video-3.mp4",
     thumb: "/images/thumbnails/thumb-3.jpg",
@@ -27,6 +30,7 @@ const projects = [
   {
     id: 4,
     title: "Piso Terminado con Iluminación LED Cálida",
+    category: "integrales",
     tag: "Reforma Integral",
     video: "/videos/video-4.mp4",
     thumb: "/images/thumbnails/thumb-4.jpg",
@@ -35,6 +39,7 @@ const projects = [
   {
     id: 5,
     title: "Acondicionamiento de Accesos y Pavimento",
+    category: "exteriores",
     tag: "Zonas Exteriores",
     video: "/videos/video-5.mp4",
     thumb: "/images/thumbnails/thumb-5.jpg",
@@ -43,7 +48,8 @@ const projects = [
   {
     id: 6,
     title: "Demolición y Desescombro Controlado",
-    tag: "Fase Inicial",
+    category: "obra",
+    tag: "Evolución de Obra",
     video: "/videos/video-6.mp4",
     thumb: "/images/thumbnails/thumb-6.jpg",
     desc: "Retirada meticulosa de tabiquería antigua y escombros, dejando el espacio diáfano y limpio."
@@ -51,11 +57,20 @@ const projects = [
   {
     id: 7,
     title: "Estado Original de la Vivienda",
-    tag: "Antes de la Reforma",
+    category: "integrales",
+    tag: "Reforma Integral",
     video: "/videos/video-7.mp4",
     thumb: "/images/thumbnails/thumb-7.jpg",
     desc: "Inspección técnica previa para proyectar la redistribución de espacios y optimización de luz."
   }
+];
+
+const categories = [
+  { id: "todos", label: "Todas las Obras" },
+  { id: "cocinas", label: "Cocinas" },
+  { id: "integrales", label: "Reformas Integrales" },
+  { id: "obra", label: "Proceso y Demolición" },
+  { id: "exteriores", label: "Exteriores" }
 ];
 ---
 
@@ -63,31 +78,52 @@ const projects = [
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     
     <!-- Section Header -->
-    <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
+    <div class="fade-up flex flex-col md:flex-row md:items-end justify-between mb-10">
       <div class="max-w-2xl">
         <span class="text-xs font-semibold tracking-widest uppercase text-[#9C7334]">Evidencia Real</span>
         <h2 class="text-3xl sm:text-4xl font-serif text-[#1F1D1A] mt-2 mb-3">
           Vídeos y proyectos en ejecución
         </h2>
         <p class="text-[#57534E] text-base leading-relaxed">
-          La mejor garantía es ver cómo trabajamos. Grabaciones reales desde nuestras obras en marcha y terminadas.
+          Explora los proyectos reales documentados por nuestro equipo. Filtra por categoría para ver el tipo de trabajo que necesitas.
         </p>
       </div>
 
       <div class="mt-4 md:mt-0 flex items-center gap-2 text-xs font-semibold text-[#57534E] bg-white px-4 py-2 rounded-full border border-[#EAE3D7] shadow-xs">
-        <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
-        <span>7 Vídeos de obras documentadas</span>
+        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+        <span>7 Proyectos grabados en obra</span>
       </div>
     </div>
 
+    <!-- Interactive Filter Buttons -->
+    <div class="fade-up delay-100 flex items-center gap-2 overflow-x-auto pb-4 mb-10 no-scrollbar">
+      {categories.map((cat, idx) => (
+        <button
+          type="button"
+          data-filter={cat.id}
+          class={`filter-btn px-4 py-2 rounded-full text-xs font-semibold transition-all duration-300 cursor-pointer whitespace-nowrap ${
+            idx === 0 
+              ? 'bg-[#1F1D1A] text-white shadow-xs' 
+              : 'bg-white text-[#57534E] border border-[#EAE3D7] hover:border-[#B58C42] hover:text-[#1F1D1A]'
+          }`}
+        >
+          {cat.label}
+        </button>
+      ))}
+    </div>
+
     <!-- Video Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {projects.map((item) => (
-        <div class="bg-white rounded-2xl overflow-hidden border border-[#EAE3D7] shadow-xs hover:shadow-md hover:border-[#B58C42]/50 transition-all duration-300 flex flex-col group">
+    <div id="video-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {projects.map((item, idx) => (
+        <div 
+          data-category={item.category}
+          class={`video-card fade-up delay-${((idx % 3) + 1) * 100} bg-white rounded-2xl overflow-hidden border border-[#EAE3D7] shadow-xs hover:shadow-md hover:border-[#B58C42]/50 transition-all duration-300 flex flex-col group`}
+        >
           
-          <!-- Video Frame -->
+          <!-- Video Frame with Play Overlay -->
           <div class="relative aspect-video bg-[#1F1D1A] overflow-hidden">
             <video 
+              id={`video-${item.id}`}
               controls 
               preload="metadata"
               poster={item.thumb}
@@ -97,7 +133,7 @@ const projects = [
               Tu navegador no soporta la reproducción de vídeo.
             </video>
             
-            <span class="absolute top-3 left-3 bg-white/95 backdrop-blur-xs text-[#1F1D1A] border border-[#EAE3D7] text-[11px] font-medium px-2.5 py-1 rounded-full shadow-xs">
+            <span class="absolute top-3 left-3 bg-white/95 backdrop-blur-xs text-[#1F1D1A] border border-[#EAE3D7] text-[11px] font-medium px-2.5 py-1 rounded-full shadow-xs pointer-events-none">
               {item.tag}
             </span>
           </div>
@@ -118,7 +154,7 @@ const projects = [
                 <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"></path>
                 </svg>
-                Vídeo Real
+                Vídeo Original
               </span>
               <a href="#contacto" class="hover:text-[#1F1D1A] transition-colors font-medium">
                 Pedir presupuesto similar →
@@ -132,3 +168,41 @@ const projects = [
 
   </div>
 </section>
+
+<!-- Interactive Filter Script -->
+<script>
+  const filterButtons = document.querySelectorAll<HTMLButtonElement>('.filter-btn');
+  const videoCards = document.querySelectorAll<HTMLElement>('.video-card');
+
+  filterButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const filter = btn.getAttribute('data-filter');
+
+      // Update button styles
+      filterButtons.forEach((b) => {
+        b.classList.remove('bg-[#1F1D1A]', 'text-white', 'shadow-xs');
+        b.classList.add('bg-white', 'text-[#57534E]', 'border', 'border-[#EAE3D7]');
+      });
+      btn.classList.add('bg-[#1F1D1A]', 'text-white', 'shadow-xs');
+      btn.classList.remove('bg-white', 'text-[#57534E]', 'border', 'border-[#EAE3D7]');
+
+      // Filter cards with smooth fade
+      videoCards.forEach((card) => {
+        const category = card.getAttribute('data-category');
+        if (filter === 'todos' || category === filter) {
+          card.style.display = 'flex';
+          setTimeout(() => {
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+          }, 20);
+        } else {
+          card.style.opacity = '0';
+          card.style.transform = 'translateY(12px)';
+          setTimeout(() => {
+            card.style.display = 'none';
+          }, 250);
+        }
+      });
+    });
+  });
+</script>
