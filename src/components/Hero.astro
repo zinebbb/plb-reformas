@@ -1,9 +1,9 @@
 ---
 ---
 
-<section class="relative min-h-[92vh] flex items-center justify-center text-white overflow-hidden pt-28 pb-20">
+<section class="relative h-screen min-h-[640px] w-full flex flex-col justify-end text-white overflow-hidden">
   
-  <!-- Cinematic Background Video -->
+  <!-- Cinematic Background Video (Benidorm & Costa Blanca mix) -->
   <div class="absolute inset-0 z-0 pointer-events-none">
     <video 
       autoplay 
@@ -16,83 +16,59 @@
       <source src="/videos/hero-benidorm-costa-blanca.mp4" type="video/mp4" />
     </video>
     
-    <!-- Flat Dark Contrast Overlay (No blur, completely flat) -->
-    <div class="absolute inset-0 bg-black/60"></div>
+    <!-- Flat Dark Contrast Overlay (Clean contrast so white text floats clearly) -->
+    <div class="absolute inset-0 bg-black/45"></div>
   </div>
 
-  <!-- Content Container (Minimalist, completely flat, high contrast) -->
-  <div class="max-w-5xl mx-auto px-4 sm:px-8 relative z-10 text-center w-full">
-    
-    <!-- Main Headline (Flat, No text-shadows, No blurred boxes, High Contrast) -->
-    <h1 class="fade-up text-3xl sm:text-5xl md:text-6xl font-extrabold uppercase tracking-tight leading-tight text-white mb-6">
-      Construcción y Reformas Integrales <br />
-      <span class="text-gold-500">en la Comunidad Valenciana</span>
-    </h1>
-
-    <!-- Subtitle (Clean & Direct, Sharp Flat Text) -->
-    <p class="fade-up delay-100 text-sm sm:text-lg md:text-xl text-gray-200 max-w-3xl mx-auto font-normal leading-relaxed mb-10">
-      Especialistas en reformas integrales de viviendas, chalets, cocinas y baños en Benidorm y toda la Comunidad Valenciana. Proyectos llave en mano con dirección técnica propia.
-    </p>
-
-    <!-- Single Main CTA Button (Completely Flat, No drop-shadow, High Contrast) -->
-    <div class="fade-up delay-200 mb-20">
-      <a 
-        href="#contacto" 
-        class="inline-block px-10 py-4 text-xs sm:text-sm font-semibold uppercase tracking-widest text-black bg-gold-500 hover:bg-gold-400 transition-colors duration-200 text-center"
-      >
-        Obtener Presupuesto!
-      </a>
-    </div>
-
-    <!-- 3 Benefit Pillars: Floating directly on background, NO boxes, NO borders, NO backdrop-filter -->
-    <div class="fade-up delay-300 grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12 max-w-4xl mx-auto text-left">
+  <!-- Main Text Container (Bottom-Left corner, aligned to the left, floating cleanly) -->
+  <div class="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 pb-20 sm:pb-24 lg:pb-28 text-left">
+    <div class="max-w-3xl text-left">
       
-      <!-- Pillar 1 -->
-      <div class="space-y-3">
-        <svg class="w-8 h-8 text-gold-500" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
-        </svg>
-        <div>
-          <h3 class="text-sm sm:text-base font-bold text-white uppercase tracking-wider mb-1">
-            Proyecto Integral
-          </h3>
-          <p class="text-xs sm:text-sm text-gray-300 font-light leading-relaxed">
-            Desarrollo de proyectos llave en mano
-          </p>
-        </div>
-      </div>
+      <!-- Main Title: Sans-Serif limpia, grande pero elegante (3rem, font-weight: 300, line-height: 1.1) -->
+      <h1 
+        class="hero-title tracking-tight text-white mb-4 sm:mb-5"
+        style="font-family: 'Inter', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif; font-size: 3rem; font-weight: 300; line-height: 1.1; color: #ffffff;"
+      >
+        Construcción y Reformas Integrales <br class="hidden sm:inline" />
+        en la Comunidad Valenciana
+      </h1>
 
-      <!-- Pillar 2 -->
-      <div class="space-y-3">
-        <svg class="w-8 h-8 text-gold-500" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
-        </svg>
-        <div>
-          <h3 class="text-sm sm:text-base font-bold text-white uppercase tracking-wider mb-1">
-            Garantía por Contrato
-          </h3>
-          <p class="text-xs sm:text-sm text-gray-300 font-light leading-relaxed">
-            Servicio de mantenimiento de trabajos realizados durante 2 años
-          </p>
-        </div>
-      </div>
+      <!-- Subtitle: Clean & elegant, floating directly without boxes -->
+      <p 
+        class="hero-subtitle text-sm sm:text-base md:text-lg text-white/85 font-light leading-relaxed max-w-2xl mb-6 sm:mb-8"
+        style="font-family: 'Inter', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif; font-weight: 300;"
+      >
+        Especialistas en reformas integrales de viviendas, chalets, cocinas y baños en Benidorm y toda la Comunidad Valenciana. Proyectos llave en mano con dirección técnica propia.
+      </p>
 
-      <!-- Pillar 3 -->
-      <div class="space-y-3">
-        <svg class="w-8 h-8 text-gold-500" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path>
-        </svg>
-        <div>
-          <h3 class="text-sm sm:text-base font-bold text-white uppercase tracking-wider mb-1">
-            Pago por Etapas
-          </h3>
-          <p class="text-xs sm:text-sm text-gray-300 font-light leading-relaxed">
-            El pago se realiza después de cada etapa certificada
-          </p>
-        </div>
-      </div>
+      <!-- Fina barra horizontal blanca fija justo debajo del texto -->
+      <div 
+        class="hero-divider w-32 sm:w-48 h-[1px] bg-white" 
+        style="height: 1px; background-color: #ffffff;"
+        aria-hidden="true"
+      ></div>
 
     </div>
-
   </div>
+
+  <!-- Indicador de Scroll: Parte inferior central, texto pequeño semi-transparente -->
+  <div class="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 z-20 text-center pointer-events-none select-none">
+    <span 
+      class="text-[11px] sm:text-xs tracking-[0.2em] uppercase font-light block"
+      style="font-family: 'Inter', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif; font-weight: 300; color: rgba(255, 255, 255, 0.7);"
+    >
+      Haz scroll para continuar
+    </span>
+    <div class="w-[1px] h-3.5 bg-white/40 mx-auto mt-2"></div>
+  </div>
+
 </section>
+
+<style>
+  @media (max-width: 640px) {
+    .hero-title {
+      font-size: 2.15rem !important;
+      line-height: 1.15 !important;
+    }
+  }
+</style>

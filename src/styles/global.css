@@ -12,6 +12,7 @@
   --color-dark-600: #2d333e;
 
   --font-montserrat: 'Montserrat', system-ui, -apple-system, sans-serif;
+  --font-inter: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
 }
 
 :root {
