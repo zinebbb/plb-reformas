@@ -21,6 +21,12 @@
     
     <!-- Flat Dark Contrast Overlay (Clean contrast so white text floats clearly) -->
     <div class="absolute inset-0 bg-black/45"></div>
+
+    <!-- Soft dark gradient overlay for text readability -->
+    <div 
+      class="absolute inset-0 pointer-events-none" 
+      style="background: linear-gradient(to right, rgba(0,0,0,0.35), transparent 70%);"
+    ></div>
   </div>
 
   <!-- Main Text Container (Bottom-Left corner, aligned to the left, floating cleanly) -->
@@ -28,12 +34,8 @@
     <div class="max-w-3xl text-left">
       
       <!-- Main Title -->
-      <h1 
-        class="hero-title text-white mb-4 sm:mb-5 text-left"
-        style="font-size: clamp(2.35rem, 5.2vw, 3.8rem); line-height: 1.15; color: #ffffff; text-shadow: none;"
-      >
-        Construcción y Reformas Integrales <br class="hidden sm:inline" />
-        en la Comunidad Valenciana
+      <h1 class="hero-title text-white mb-4 sm:mb-5 text-left">
+        Construcción y Reformas Integrales
       </h1>
 
       <!-- Subtitle: Outfit, font-weight: 300, color: rgba(255, 255, 255, 0.85), line-height: 1.6, text-shadow: none, Sin Benidorm -->
@@ -68,10 +70,35 @@
 </section>
 
 <style>
-  @media (max-width: 640px) {
+  .hero-title {
+    font-family: var(--font-titulos);
+    font-weight: 200 !important;
+    font-style: normal !important;
+    font-optical-sizing: auto;
+    font-size: clamp(2.2rem, 5vw, 4.5rem) !important;
+    line-height: 1.1 !important;
+    letter-spacing: -0.02em;
+    color: #ffffff !important;
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.25);
+    text-wrap: balance;
+    animation: heroFadeIn 800ms ease-out forwards;
+    will-change: opacity, transform;
+  }
+
+  @keyframes heroFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (min-width: 1024px) {
     .hero-title {
-      font-size: 2.15rem !important;
-      line-height: 1.15 !important;
+      white-space: nowrap !important;
     }
   }
 </style>
