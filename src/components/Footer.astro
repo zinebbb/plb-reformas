@@ -9,7 +9,7 @@ const { lang = (Astro.currentLocale as Lang) || 'es' } = Astro.props;
 const t = useTranslations(lang);
 const currentYear = new Date().getFullYear();
 const copyrightText = t.footer.copyright.replace('{year}', String(currentYear));
-const whatsappUrl = `https://wa.me/34600000000?text=${encodeURIComponent(t.whatsapp.message)}`;
+const whatsappUrl = `https://wa.me/34602525866?text=${encodeURIComponent(t.whatsapp.message)}`;
 ---
 
 <footer class="bg-[#0a0c0f] border-t border-white/10 pt-20 pb-12 text-gray-400">
@@ -79,8 +79,12 @@ const whatsappUrl = `https://wa.me/34600000000?text=${encodeURIComponent(t.whats
         <ul class="space-y-3 text-xs sm:text-sm">
           <li>
             <span class="block text-[11px] uppercase tracking-wider text-gray-500">{t.footer.callLabel}</span>
-            <a href="tel:+34600000000" class="text-white hover:text-gold-500 font-bold transition-colors">
-              +34 600 000 000
+            <a 
+              href="tel:+34602525866" 
+              class="text-white hover:text-gold-500 transition-colors inline-block text-base"
+              style="font-family: 'Inter', system-ui, -apple-system, sans-serif; font-weight: 300; letter-spacing: 0.05em;"
+            >
+              +34 602 525 866
             </a>
           </li>
           <li>

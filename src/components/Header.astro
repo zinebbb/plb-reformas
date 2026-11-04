@@ -77,6 +77,16 @@ function getSectionHref(hash: string) {
         >
           {t.header.nav.contact}
         </a>
+
+        <!-- Enlace Directo de Teléfono en Cabecera (Desktop) -->
+        <a 
+          href="tel:+34602525866" 
+          class="header-phone-link hidden lg:inline-flex items-center text-[11px] sm:text-[12px] font-normal transition-colors"
+          style="font-family: 'Inter', system-ui, -apple-system, sans-serif; font-weight: 300; letter-spacing: 0.05em;"
+          aria-label="Llamar al +34 602 525 866"
+        >
+          +34 602 525 866
+        </a>
       </nav>
 
       <!-- Desktop Language Selector -->
@@ -143,6 +153,20 @@ function getSectionHref(hash: string) {
     id="mobile-drawer" 
     class="hidden md:hidden mobile-drawer px-6 py-6 pointer-events-auto"
   >
+    <!-- Teléfono Directo en Menú Móvil -->
+    <div class="mb-5 pb-4 border-b border-black/8">
+      <a 
+        href="tel:+34602525866" 
+        class="inline-flex items-baseline gap-2 transition-colors group"
+        style="font-family: 'Inter', system-ui, -apple-system, sans-serif; letter-spacing: 0.05em;"
+      >
+        <span class="text-[10px] uppercase tracking-widest text-[#8C6B3C] font-medium">CONTACTO ·</span>
+        <span class="text-sm font-light text-[#1E2229] group-hover:text-[#8C6B3C] transition-colors" style="font-weight: 300;">
+          +34 602 525 866
+        </span>
+      </a>
+    </div>
+
     <nav class="flex flex-col space-y-3 mb-6" aria-label="Navegación móvil">
       <a 
         href={getSectionHref('#')} 
@@ -317,6 +341,23 @@ function getSectionHref(hash: string) {
   }
   #site-header.header--solid .header-nav-link--contact:hover {
     color: #1a1a1a;
+  }
+
+  /* Enlace de Teléfono en Cabecera */
+  .header-phone-link {
+    color: rgba(255, 255, 255, 0.9);
+    transition: color 300ms ease;
+  }
+  .header-phone-link:hover {
+    color: #C5A880;
+  }
+  #site-header.header--solid .header-phone-link,
+  #site-header.header--menu-open .header-phone-link {
+    color: #1E2229;
+  }
+  #site-header.header--solid .header-phone-link:hover,
+  #site-header.header--menu-open .header-phone-link:hover {
+    color: #8C6B3C;
   }
 
   /* Selector de Idioma de Escritorio (Botón) */
