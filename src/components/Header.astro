@@ -15,29 +15,29 @@ function getSectionHref(hash: string) {
 }
 ---
 
-<header id="site-header" class="fixed inset-x-0 top-0 z-50 transition-colors duration-200 pointer-events-none">
-  <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 py-4 sm:py-5 flex items-center justify-between">
+<header id="site-header" class="fixed inset-x-0 top-0 z-50 pointer-events-none">
+  <div class="header-inner max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 flex items-center justify-between">
     
-    <!-- Bloque del Logotipo Corporativo (Esquina Superior Izquierda, Minimalista & Directo) -->
+    <!-- Bloque del Logotipo Corporativo -->
     <a 
       href={homeUrl} 
       class="inline-flex items-end gap-3 group pointer-events-auto" 
       aria-label="PLB Reformas Premium, inicio"
     >
-      <!-- Icono del Imagotipo (Dibujo de la casa con 'PLB', fondo 100% transparente sin recuadro blanco) -->
+      <!-- Icono del Imagotipo (fondo transparente) -->
       <img 
         src="/images/logo-icon-white.png" 
         alt="PLB Reformas Imagotipo" 
-        class="h-9 sm:h-11 w-auto object-contain shrink-0"
+        class="header-logo-img h-9 sm:h-11 w-auto object-contain shrink-0"
       />
 
-      <!-- Texto de Identidad: Como antes, posicionado más abajo, letra pequeña y minimalista -->
+      <!-- Texto de Identidad -->
       <div class="flex flex-col justify-end pb-1 sm:pb-1.5">
         <span 
-          class="text-[9px] sm:text-[10px] uppercase font-light text-white tracking-[0.22em] leading-none select-none"
-          style="font-family: 'Montserrat', system-ui, -apple-system, sans-serif; font-weight: 300; letter-spacing: 0.22em; color: #ffffff;"
+          class="header-brand-title text-[9px] sm:text-[10px] uppercase font-light tracking-[0.22em] leading-none select-none"
+          style="font-family: 'Montserrat', system-ui, -apple-system, sans-serif; font-weight: 300; letter-spacing: 0.22em;"
         >
-          {t.header.brandName} <span style="color: #C5A880; font-weight: 500;">{t.header.brandHighlight}</span>
+          <span class="header-brand-name">{t.header.brandName}</span> <span class="header-brand-highlight">{t.header.brandHighlight}</span>
         </span>
       </div>
     </a>
@@ -49,42 +49,42 @@ function getSectionHref(hash: string) {
       <nav class="hidden md:flex items-center gap-6 lg:gap-8 pointer-events-auto" aria-label="Navegación principal">
         <a 
           href={getSectionHref('#servicios')} 
-          class="text-[11px] font-medium tracking-[0.1em] uppercase text-white/80 hover:text-white transition-colors"
+          class="header-nav-link text-[11px] font-medium tracking-[0.1em] uppercase"
         >
           {t.header.nav.services}
         </a>
         <a 
           href={getSectionHref('#nosotros')} 
-          class="text-[11px] font-medium tracking-[0.1em] uppercase text-white/80 hover:text-white transition-colors"
+          class="header-nav-link text-[11px] font-medium tracking-[0.1em] uppercase"
         >
           {t.header.nav.about}
         </a>
         <a 
           href={getSectionHref('#proyectos')} 
-          class="text-[11px] font-medium tracking-[0.1em] uppercase text-white/80 hover:text-white transition-colors"
+          class="header-nav-link text-[11px] font-medium tracking-[0.1em] uppercase"
         >
           {t.header.nav.projects}
         </a>
         <a 
           href={getSectionHref('#proceso')} 
-          class="text-[11px] font-medium tracking-[0.1em] uppercase text-white/80 hover:text-white transition-colors"
+          class="header-nav-link text-[11px] font-medium tracking-[0.1em] uppercase"
         >
           {t.header.nav.process}
         </a>
         <a 
           href={getSectionHref('#contacto')} 
-          class="text-[11px] font-medium tracking-[0.1em] uppercase text-[#C5A880] hover:text-white transition-colors"
+          class="header-nav-link header-nav-link--contact text-[11px] font-medium tracking-[0.1em] uppercase"
         >
           {t.header.nav.contact}
         </a>
       </nav>
 
-      <!-- Desktop Language Selector (A la derecha del menú, minimalista y elegante) -->
+      <!-- Desktop Language Selector -->
       <div class="hidden md:block relative language-dropdown-container pointer-events-auto">
         <button 
           id="lang-btn" 
           type="button"
-          class="inline-flex items-center gap-1.5 text-[11px] font-medium tracking-[0.1em] uppercase text-white/90 hover:text-[#C5A880] py-1.5 px-2 rounded-xs transition-colors cursor-pointer select-none"
+          class="header-lang-btn inline-flex items-center gap-1.5 text-[11px] font-medium tracking-[0.1em] uppercase py-1.5 px-2 rounded-xs cursor-pointer select-none"
           aria-expanded="false"
           aria-haspopup="true"
           aria-label={t.header.langAria}
@@ -95,10 +95,10 @@ function getSectionHref(hash: string) {
           </svg>
         </button>
 
-        <!-- Dropdown Menu (Fade 200ms, tipografía de la web, letter-spacing 0.1em) -->
+        <!-- Dropdown Menu -->
         <div 
           id="lang-dropdown"
-          class="lang-dropdown absolute right-0 mt-2 w-32 py-1.5 bg-[#0f1115]/95 backdrop-blur-md border border-white/15 rounded-xs shadow-2xl z-50 opacity-0 pointer-events-none translate-y-1 transition-all duration-200"
+          class="lang-dropdown absolute right-0 mt-2 w-32 py-1.5 rounded-xs z-50 opacity-0 pointer-events-none translate-y-1 transition-all duration-200"
           role="menu"
         >
           {Object.entries(languages).map(([code, label]) => {
@@ -108,10 +108,8 @@ function getSectionHref(hash: string) {
               <a
                 href={targetUrl}
                 data-base-href={targetUrl}
-                class={`lang-link block px-3.5 py-1.5 text-[11px] font-medium tracking-[0.1em] transition-colors ${
-                  isCurrent 
-                    ? 'text-[#C5A880] font-semibold bg-white/5' 
-                    : 'text-gray-300 hover:text-white hover:bg-white/10'
+                class={`lang-dropdown-item lang-link block px-3.5 py-1.5 text-[11px] font-medium tracking-[0.1em] ${
+                  isCurrent ? 'is-active' : ''
                 }`}
                 role="menuitem"
               >
@@ -126,7 +124,7 @@ function getSectionHref(hash: string) {
       <button
         id="mobile-menu-btn"
         type="button"
-        class="md:hidden inline-flex items-center justify-center p-2 text-white hover:text-[#C5A880] focus:outline-none pointer-events-auto"
+        class="header-mobile-btn md:hidden inline-flex items-center justify-center p-2 focus:outline-none pointer-events-auto"
         aria-expanded="false"
         aria-label={t.header.mobileMenuAria}
       >
@@ -142,53 +140,53 @@ function getSectionHref(hash: string) {
 
   </div>
 
-  <!-- Mobile Drawer Menu (Contiene navegación y selector de idioma en móvil) -->
+  <!-- Mobile Drawer Menu -->
   <div 
     id="mobile-drawer" 
-    class="hidden md:hidden bg-[#0f1115]/98 backdrop-blur-lg border-b border-white/10 px-6 py-6 pointer-events-auto shadow-2xl"
+    class="hidden md:hidden mobile-drawer px-6 py-6 pointer-events-auto"
   >
     <nav class="flex flex-col space-y-3 mb-6" aria-label="Navegación móvil">
       <a 
         href={getSectionHref('#')} 
-        class="mobile-nav-link text-xs font-medium tracking-[0.1em] uppercase text-gray-200 hover:text-[#C5A880] py-1.5 transition-colors"
+        class="mobile-nav-link text-xs font-medium tracking-[0.1em] uppercase py-1.5"
       >
         {t.header.nav.home}
       </a>
       <a 
         href={getSectionHref('#servicios')} 
-        class="mobile-nav-link text-xs font-medium tracking-[0.1em] uppercase text-gray-200 hover:text-[#C5A880] py-1.5 transition-colors"
+        class="mobile-nav-link text-xs font-medium tracking-[0.1em] uppercase py-1.5"
       >
         {t.header.nav.services}
       </a>
       <a 
         href={getSectionHref('#nosotros')} 
-        class="mobile-nav-link text-xs font-medium tracking-[0.1em] uppercase text-gray-200 hover:text-[#C5A880] py-1.5 transition-colors"
+        class="mobile-nav-link text-xs font-medium tracking-[0.1em] uppercase py-1.5"
       >
         {t.header.nav.about}
       </a>
       <a 
         href={getSectionHref('#proyectos')} 
-        class="mobile-nav-link text-xs font-medium tracking-[0.1em] uppercase text-gray-200 hover:text-[#C5A880] py-1.5 transition-colors"
+        class="mobile-nav-link text-xs font-medium tracking-[0.1em] uppercase py-1.5"
       >
         {t.header.nav.projects}
       </a>
       <a 
         href={getSectionHref('#proceso')} 
-        class="mobile-nav-link text-xs font-medium tracking-[0.1em] uppercase text-gray-200 hover:text-[#C5A880] py-1.5 transition-colors"
+        class="mobile-nav-link text-xs font-medium tracking-[0.1em] uppercase py-1.5"
       >
         {t.header.nav.process}
       </a>
       <a 
         href={getSectionHref('#contacto')} 
-        class="mobile-nav-link text-xs font-medium tracking-[0.1em] uppercase text-[#C5A880] hover:text-white py-1.5 transition-colors"
+        class="mobile-nav-link mobile-nav-link--contact text-xs font-medium tracking-[0.1em] uppercase py-1.5"
       >
         {t.header.nav.contact}
       </a>
     </nav>
 
     <!-- Mobile Language Selector -->
-    <div class="pt-4 border-t border-white/10">
-      <span class="block text-[10px] font-bold uppercase tracking-widest text-[#C5A880] mb-3">
+    <div class="pt-4 border-t border-black/10">
+      <span class="block text-[10px] font-bold uppercase tracking-widest text-[#8C6B3C] mb-3">
         {t.header.langAria}
       </span>
       <div class="flex flex-wrap gap-2">
@@ -199,10 +197,8 @@ function getSectionHref(hash: string) {
             <a
               href={targetUrl}
               data-base-href={targetUrl}
-              class={`lang-link px-3 py-1.5 text-[11px] font-medium tracking-[0.1em] rounded-xs transition-colors ${
-                isCurrent 
-                  ? 'bg-[#C5A880]/20 text-[#C5A880] border border-[#C5A880]/50 font-semibold' 
-                  : 'bg-white/5 text-gray-300 border border-white/10 hover:text-white hover:bg-white/10'
+              class={`lang-link mobile-drawer-pill px-3 py-1.5 text-[11px] font-medium tracking-[0.1em] rounded-xs border ${
+                isCurrent ? 'is-active' : ''
               }`}
             >
               {label}
@@ -214,15 +210,312 @@ function getSectionHref(hash: string) {
   </div>
 </header>
 
+<style>
+  /* 1. Cabecera sobre la portada (scroll en la parte superior): fondo transparente */
+  #site-header {
+    transform: translateY(0);
+    background-color: transparent;
+    border-bottom: 1px solid transparent;
+    box-shadow: none;
+    transition: transform 400ms cubic-bezier(0.16, 1, 0.3, 1),
+                background-color 300ms ease,
+                border-color 300ms ease,
+                backdrop-filter 300ms ease,
+                -webkit-backdrop-filter 300ms ease;
+  }
+
+  /* Padding vertical: normal sobre la portada */
+  .header-inner {
+    padding-top: 1rem;       /* 16px */
+    padding-bottom: 1rem;    /* 16px */
+    transition: padding 300ms ease;
+  }
+  @media (min-width: 640px) {
+    .header-inner {
+      padding-top: 1.25rem;  /* 20px */
+      padding-bottom: 1.25rem; /* 20px */
+    }
+  }
+
+  /* 2. Oculto al bajar pasada la portada */
+  #site-header.header--hidden {
+    transform: translateY(-100%);
+    pointer-events: none !important;
+  }
+
+  /* 3. Reaparece al subir (Sólido translúcido arquitectónico) */
+  #site-header.header--solid {
+    background-color: rgba(247, 245, 240, 0.72);
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: none;
+    pointer-events: auto;
+  }
+
+  /* Padding vertical más compacto al reaparecer (20% de reducción) */
+  #site-header.header--solid .header-inner {
+    padding-top: 0.8rem;    /* 12.8px (16px - 20%) */
+    padding-bottom: 0.8rem; /* 12.8px (16px - 20%) */
+  }
+  @media (min-width: 640px) {
+    #site-header.header--solid .header-inner {
+      padding-top: 1rem;    /* 16px (20px - 20%) */
+      padding-bottom: 1rem; /* 16px (20px - 20%) */
+    }
+  }
+
+  /* Logotipo */
+  .header-logo-img {
+    filter: none;
+    transition: filter 300ms ease;
+  }
+  #site-header.header--solid .header-logo-img,
+  #site-header.header--menu-open .header-logo-img {
+    filter: invert(1) brightness(0.1);
+  }
+
+  /* Texto de Identidad de Marca */
+  .header-brand-name {
+    color: #ffffff;
+    transition: color 300ms ease;
+  }
+  .header-brand-highlight {
+    color: #C5A880;
+    font-weight: 500;
+    transition: color 300ms ease;
+  }
+  #site-header.header--solid .header-brand-name,
+  #site-header.header--menu-open .header-brand-name {
+    color: #1a1a1a;
+  }
+  #site-header.header--solid .header-brand-highlight,
+  #site-header.header--menu-open .header-brand-highlight {
+    color: #8C6B3C;
+  }
+
+  /* Enlaces de Navegación de Escritorio */
+  .header-nav-link {
+    color: rgba(255, 255, 255, 0.85);
+    transition: color 300ms ease;
+  }
+  .header-nav-link:hover {
+    color: #ffffff;
+  }
+  .header-nav-link--contact {
+    color: #C5A880;
+  }
+  .header-nav-link--contact:hover {
+    color: #ffffff;
+  }
+
+  #site-header.header--solid .header-nav-link {
+    color: #1a1a1a;
+  }
+  #site-header.header--solid .header-nav-link:hover {
+    color: #8C6B3C;
+  }
+  #site-header.header--solid .header-nav-link--contact {
+    color: #8C6B3C;
+    font-weight: 600;
+  }
+  #site-header.header--solid .header-nav-link--contact:hover {
+    color: #1a1a1a;
+  }
+
+  /* Selector de Idioma de Escritorio */
+  .header-lang-btn {
+    color: rgba(255, 255, 255, 0.9);
+    transition: color 300ms ease;
+  }
+  .header-lang-btn:hover {
+    color: #C5A880;
+  }
+  #site-header.header--solid .header-lang-btn {
+    color: #1a1a1a;
+  }
+  #site-header.header--solid .header-lang-btn:hover {
+    color: #8C6B3C;
+  }
+
+  /* Desplegable de Idioma */
+  .lang-dropdown {
+    background-color: rgba(15, 17, 21, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
+  }
+  .lang-dropdown-item {
+    color: #d1d5db;
+    transition: color 150ms ease, background-color 150ms ease;
+  }
+  .lang-dropdown-item:hover {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  .lang-dropdown-item.is-active {
+    color: #C5A880;
+    font-weight: 600;
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+
+  #site-header.header--solid .lang-dropdown {
+    background-color: rgba(255, 255, 255, 0.97);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.08);
+  }
+  #site-header.header--solid .lang-dropdown-item {
+    color: #4a5568;
+  }
+  #site-header.header--solid .lang-dropdown-item:hover {
+    color: #1a1a1a;
+    background-color: rgba(0, 0, 0, 0.04);
+  }
+  #site-header.header--solid .lang-dropdown-item.is-active {
+    color: #8C6B3C;
+    font-weight: 600;
+    background-color: rgba(140, 107, 60, 0.08);
+  }
+
+  /* Botón Hamburguesa Móvil */
+  .header-mobile-btn {
+    color: #ffffff;
+    transition: color 300ms ease;
+  }
+  .header-mobile-btn:hover {
+    color: #C5A880;
+  }
+  #site-header.header--solid .header-mobile-btn,
+  #site-header.header--menu-open .header-mobile-btn {
+    color: #1a1a1a;
+  }
+
+  /* 6. Móvil con Menú Abierto */
+  #site-header.header--menu-open {
+    transform: translateY(0) !important;
+    background-color: rgba(247, 245, 240, 0.98) !important;
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    pointer-events: auto;
+  }
+
+  /* Cajón Menú Móvil */
+  .mobile-drawer {
+    background-color: rgba(247, 245, 240, 0.98);
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.08);
+  }
+  .mobile-nav-link {
+    color: #2d3748;
+    transition: color 200ms ease;
+  }
+  .mobile-nav-link:hover {
+    color: #8C6B3C;
+  }
+  .mobile-nav-link--contact {
+    color: #8C6B3C;
+    font-weight: 600;
+  }
+  .mobile-drawer-pill {
+    transition: all 200ms ease;
+  }
+  .mobile-drawer-pill.is-active {
+    background-color: rgba(140, 107, 60, 0.12);
+    color: #8C6B3C;
+    border-color: rgba(140, 107, 60, 0.4);
+    font-weight: 600;
+  }
+  .mobile-drawer-pill:not(.is-active) {
+    background-color: rgba(0, 0, 0, 0.04);
+    color: #4a5568;
+    border-color: rgba(0, 0, 0, 0.08);
+  }
+  .mobile-drawer-pill:not(.is-active):hover {
+    background-color: rgba(0, 0, 0, 0.08);
+    color: #1a1a1a;
+  }
+
+  /* Accesibilidad: Respetar prefers-reduced-motion */
+  @media (prefers-reduced-motion: reduce) {
+    #site-header,
+    #site-header *,
+    .header-inner,
+    .header-logo-img,
+    .header-brand-name,
+    .header-brand-highlight,
+    .header-nav-link,
+    .header-lang-btn,
+    .lang-dropdown,
+    .mobile-drawer,
+    .mobile-nav-link,
+    .mobile-drawer-pill {
+      transition: none !important;
+      animation: none !important;
+    }
+  }
+</style>
+
 <script>
-  // Scroll Background Transition
+  // Control de scroll y visibilidad de cabecera con requestAnimationFrame
   const header = document.getElementById('site-header');
-  window.addEventListener('scroll', () => {
+  let lastScrollY = typeof window !== 'undefined' ? window.scrollY : 0;
+  let ticking = false;
+
+  function getHeroThreshold(): number {
+    const hero = document.querySelector('section');
+    return hero ? Math.max(hero.offsetHeight - 100, 300) : 400;
+  }
+
+  function handleScrollUpdate() {
     if (!header) return;
-    if (window.scrollY > 40) {
-      header.classList.add('bg-[#0f1115]/95', 'backdrop-blur-md', 'border-b', 'border-white/10');
-    } else {
-      header.classList.remove('bg-[#0f1115]/95', 'backdrop-blur-md', 'border-b', 'border-white/10');
+
+    // Con el menú móvil abierto, no ocultar la cabecera
+    if (header.classList.contains('header--menu-open')) {
+      ticking = false;
+      return;
+    }
+
+    const currentScrollY = Math.max(0, window.scrollY);
+    const heroThreshold = getHeroThreshold();
+    const delta = currentScrollY - lastScrollY;
+
+    // 1. Arriba del todo (scroll = 0 o muy cerca de 0)
+    if (currentScrollY <= 15) {
+      header.classList.remove('header--hidden');
+      header.classList.remove('header--solid');
+    }
+    // 2. Pasada la portada
+    else if (currentScrollY > heroThreshold) {
+      // Al bajar: ocultar suavemente (transform: translateY(-100%))
+      if (delta > 4) {
+        header.classList.add('header--hidden');
+      }
+      // Al subir: reaparecer con estilo sólido
+      else if (delta < -4) {
+        header.classList.remove('header--hidden');
+        header.classList.add('header--solid');
+      }
+    }
+    // 3. Dentro de la portada (entre 15px y heroThreshold)
+    else {
+      // Si el usuario sube desde abajo con el estilo sólido, mantenerlo visible
+      if (delta < -4 && header.classList.contains('header--solid')) {
+        header.classList.remove('header--hidden');
+      }
+    }
+
+    lastScrollY = currentScrollY;
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(handleScrollUpdate);
+      ticking = true;
     }
   }, { passive: true });
 
@@ -270,36 +563,50 @@ function getSectionHref(hash: string) {
   const menuIconOpen = document.getElementById('menu-icon-open');
   const menuIconClose = document.getElementById('menu-icon-close');
 
-  if (mobileMenuBtn && mobileDrawer) {
+  if (mobileMenuBtn && mobileDrawer && header) {
+    function openMobileMenu() {
+      mobileDrawer?.classList.remove('hidden');
+      menuIconOpen?.classList.add('hidden');
+      menuIconClose?.classList.remove('hidden');
+      mobileMenuBtn?.setAttribute('aria-expanded', 'true');
+      header?.classList.add('header--menu-open');
+      header?.classList.remove('header--hidden');
+    }
+
+    function closeMobileMenu() {
+      mobileDrawer?.classList.add('hidden');
+      menuIconOpen?.classList.remove('hidden');
+      menuIconClose?.classList.add('hidden');
+      mobileMenuBtn?.setAttribute('aria-expanded', 'false');
+      header?.classList.remove('header--menu-open');
+      handleScrollUpdate();
+    }
+
     mobileMenuBtn.addEventListener('click', () => {
       const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
       if (isExpanded) {
-        mobileDrawer.classList.add('hidden');
-        menuIconOpen?.classList.remove('hidden');
-        menuIconClose?.classList.add('hidden');
-        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        closeMobileMenu();
       } else {
-        mobileDrawer.classList.remove('hidden');
-        menuIconOpen?.classList.add('hidden');
-        menuIconClose?.classList.remove('hidden');
-        mobileMenuBtn.setAttribute('aria-expanded', 'true');
+        openMobileMenu();
       }
     });
 
-    // Close mobile drawer upon clicking any nav link
+    // Cerrar al hacer clic en enlaces de navegación móvil
     document.querySelectorAll('.mobile-nav-link').forEach((link) => {
-      link.addEventListener('click', () => {
-        mobileDrawer.classList.add('hidden');
-        menuIconOpen?.classList.remove('hidden');
-        menuIconClose?.classList.add('hidden');
-        mobileMenuBtn.setAttribute('aria-expanded', 'false');
-      });
+      link.addEventListener('click', closeMobileMenu);
     });
+
+    // Cerrar drawer en caso de redimensionar a pantalla de escritorio
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 768 && header.classList.contains('header--menu-open')) {
+        closeMobileMenu();
+      }
+    }, { passive: true });
   }
 
-  // Preserve Section Hash on Language Switch
+  // Preservar hash de sección al cambiar de idioma
   document.querySelectorAll('a.lang-link').forEach((link) => {
-    link.addEventListener('click', (e) => {
+    link.addEventListener('click', () => {
       const hash = window.location.hash;
       if (hash) {
         const baseHref = link.getAttribute('data-base-href');
