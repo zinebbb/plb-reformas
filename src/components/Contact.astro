@@ -36,27 +36,58 @@ const whatsappUrl = `https://wa.me/34602525866?text=${encodeURIComponent(t.whats
           {t.contact.desc}
         </p>
 
-        <!-- Apartado Visual Exclusivo para el Teléfono (Minimalista, tipografía Inter, sin iconos estridentes) -->
-        <div class="py-6 border-y border-gray-200/80 my-7">
-          <a 
-            href="tel:+34602525866" 
-            class="group inline-flex flex-col sm:flex-row sm:items-baseline gap-1.5 sm:gap-3 transition-colors cursor-pointer"
-            style="font-family: 'Inter', system-ui, -apple-system, sans-serif; letter-spacing: 0.05em;"
-            aria-label="Llamar a PLB Reformas: +34 602 525 866"
-          >
-            <span 
-              class="text-[11px] uppercase tracking-[0.2em] text-[#8C6B3C] font-medium select-none"
-              style="letter-spacing: 0.2em;"
+        <!-- Apartado Visual Exclusivo para el Teléfono e Instagram (Minimalista, tipografía Inter, sin iconos estridentes) -->
+        <div class="py-6 border-y border-gray-200/80 my-7 space-y-4">
+          <div>
+            <a 
+              href="tel:+34602525866" 
+              class="group inline-flex flex-col sm:flex-row sm:items-baseline gap-1.5 sm:gap-3 transition-colors cursor-pointer"
+              style="font-family: 'Inter', system-ui, -apple-system, sans-serif; letter-spacing: 0.05em;"
+              aria-label="Llamar a PLB Reformas: +34 602 525 866"
             >
-              CONTACTO ·
-            </span>
-            <span 
-              class="text-2xl sm:text-3xl lg:text-[2.1rem] leading-none transition-colors group-hover:text-[#8C6B3C]"
-              style="font-weight: 300; color: #1E2229; letter-spacing: 0.05em;"
+              <span 
+                class="text-[11px] uppercase tracking-[0.2em] text-[#8C6B3C] font-medium select-none"
+                style="letter-spacing: 0.2em;"
+              >
+                CONTACTO ·
+              </span>
+              <span 
+                class="text-2xl sm:text-3xl lg:text-[2.1rem] leading-none transition-colors group-hover:text-[#8C6B3C]"
+                style="font-weight: 300; color: #1E2229; letter-spacing: 0.05em;"
+              >
+                +34 602 525 866
+              </span>
+            </a>
+          </div>
+
+          <div>
+            <a 
+              href="https://www.instagram.com/plb_reformaspremium/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="group inline-flex flex-col sm:flex-row sm:items-baseline gap-1.5 sm:gap-3 transition-colors cursor-pointer"
+              style="font-family: 'Inter', system-ui, -apple-system, sans-serif; letter-spacing: 0.05em;"
+              aria-label="Instagram oficial: @plb_reformaspremium"
             >
-              +34 602 525 866
-            </span>
-          </a>
+              <span 
+                class="text-[11px] uppercase tracking-[0.2em] text-[#8C6B3C] font-medium select-none"
+                style="letter-spacing: 0.2em;"
+              >
+                INSTAGRAM ·
+              </span>
+              <span 
+                class="text-xl sm:text-2xl lg:text-[1.8rem] leading-none transition-colors group-hover:text-[#8C6B3C] inline-flex items-center gap-2.5"
+                style="font-weight: 300; color: #1E2229; letter-spacing: 0.05em;"
+              >
+                <svg class="w-5 h-5 stroke-current shrink-0 text-[#8C6B3C] group-hover:scale-105 transition-transform" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+                <span>@plb_reformaspremium</span>
+              </span>
+            </a>
+          </div>
         </div>
 
         <!-- Direct Channels -->
@@ -77,6 +108,36 @@ const whatsappUrl = `https://wa.me/34602525866?text=${encodeURIComponent(t.whats
                 class="text-base font-bold text-[#111317] hover:text-[#25D366] transition-colors inline-flex items-center gap-1.5"
               >
                 <span>{t.contact.whatsappCta}</span>
+                <span>→</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Instagram Direct Channel -->
+          <div class="flex items-center gap-4">
+            <a 
+              href="https://www.instagram.com/plb_reformaspremium/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="w-11 h-11 bg-black text-white hover:bg-[#8C6B3C] rounded-full flex items-center justify-center shrink-0 transition-colors shadow-sm"
+              aria-label="Perfil de Instagram @plb_reformaspremium"
+            >
+              <svg class="w-5 h-5 stroke-current" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <div>
+              <span class="text-xs font-bold uppercase tracking-wider text-gray-400 block mb-0.5">Instagram</span>
+              <a 
+                href="https://www.instagram.com/plb_reformaspremium/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="text-base text-[#111317] hover:text-[#8C6B3C] transition-colors inline-flex items-center gap-1.5"
+                style="font-family: 'Inter', system-ui, -apple-system, sans-serif; font-weight: 300; letter-spacing: 0.05em;"
+              >
+                <span>@plb_reformaspremium</span>
                 <span>→</span>
               </a>
             </div>
