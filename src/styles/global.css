@@ -13,7 +13,7 @@
 
   --font-montserrat: 'Montserrat', system-ui, -apple-system, sans-serif;
   --font-inter: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
-  --font-serif: 'Playfair Display', Didot, 'Times New Roman', serif;
+  --font-outfit: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
 }
 
 :root {

@@ -1,48 +1,55 @@
 ---
 ---
 
-<section id="presentacion" class="relative bg-white text-[#1E2229] py-24 sm:py-32 lg:py-36 overflow-hidden border-b border-gray-100" style="font-family: 'Inter', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;">
+<section 
+  id="presentacion" 
+  class="relative bg-white text-[#1E2229] py-24 sm:py-32 lg:py-36 overflow-hidden border-b border-gray-100" 
+  style="font-family: 'Outfit', 'Inter', system-ui, -apple-system, sans-serif;"
+>
   <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
     
-    <!-- BLOQUE 1: Presentación Corporativa (Estilo Minimalista Puro con Inter: Título grande a la izquierda + 2 columnas) -->
+    <!-- BLOQUE 1: Presentación Corporativa (Diseño Editorial, Arquitectónico & Minimalista) -->
     <div class="fade-up">
       
-      <!-- Subtítulo / Tagline sutil en Dorado Corporativo -->
+      <!-- 3. Antetítulo ("FILOSOFÍA & TRAYECTORIA"): Pequeño, letter-spacing amplio (0.25em+), Dorado corporativo suave -->
       <span 
-        class="text-xs font-semibold tracking-[0.25em] uppercase text-[#C5A880] block mb-6"
-        style="font-family: 'Inter', system-ui, -apple-system, sans-serif;"
+        class="text-[10px] sm:text-[11px] font-normal uppercase text-[#C5A880] block mb-6 select-none"
+        style="letter-spacing: 0.28em; color: #C5A880;"
       >
-        Filosofía & Trayectoria
+        FILOSOFÍA & TRAYECTORIA
       </span>
 
-      <!-- Título Principal H2: Inter, Grosor Ligero (font-weight: 300), Grande y Limpio -->
+      <!-- 2. Título Principal (H2): Tamaño grande (3.8rem+), Ultra fino (font-weight: 200), line-height compacto (1.1) -->
       <h2 
-        class="text-3xl sm:text-5xl lg:text-[3.25rem] font-light text-[#1E2229] tracking-tight leading-[1.15] max-w-2xl text-left"
-        style="font-family: 'Inter', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif; font-weight: 300; color: #1E2229;"
+        class="text-[#1E2229] max-w-3xl text-left"
+        style="font-family: 'Outfit', 'Inter', sans-serif; font-size: clamp(2.35rem, 5.2vw, 3.85rem); font-weight: 200; line-height: 1.1; color: #1E2229; letter-spacing: -0.025em;"
       >
         PLB Reformas Premium: <br class="hidden sm:inline" />
         interiorismo, arquitectura y <br />
         reformas con alma.
       </h2>
 
-      <!-- Dos Columnas Asimétricas de Texto -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-14 lg:gap-20 mt-12 sm:mt-16 text-left">
+      <!-- 4. Bloques de texto inferiores: Separación (margin-top: 3rem;), Grosor fino (300), line-height: 1.8, #5A606A -->
+      <div 
+        class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 lg:gap-20 text-left"
+        style="margin-top: 3rem;"
+      >
         
         <!-- Columna Izquierda -->
         <div>
           <p 
-            class="text-sm sm:text-base text-[#4A505A] font-light leading-[1.65]"
-            style="font-family: 'Inter', system-ui, -apple-system, sans-serif; line-height: 1.65; color: #4A505A;"
+            class="text-sm sm:text-base text-[#5A606A]"
+            style="font-family: 'Inter', system-ui, sans-serif; font-weight: 300; line-height: 1.8; color: #5A606A;"
           >
-            En <strong class="font-medium text-[#1E2229]">PLB Obras y Reformas Premium S.L.</strong> transformamos espacios residenciales y comerciales con calidad, compromiso y plena dirección técnica. Con más de 15 años de experiencia en la Comunidad Valenciana, nos implicamos en cada fase del proyecto para ofrecerte absoluta tranquilidad, confianza y un servicio integral llave en mano desde el primer contacto hasta la entrega de llaves.
+            En <strong class="font-normal text-[#1E2229]">PLB Obras y Reformas Premium S.L.</strong> transformamos espacios residenciales y comerciales con calidad, compromiso y plena dirección técnica. Con más de 15 años de experiencia en la Comunidad Valenciana, nos implicamos en cada fase del proyecto para ofrecerte absoluta tranquilidad, confianza y un servicio integral llave en mano desde el primer contacto hasta la entrega de llaves.
           </p>
         </div>
 
         <!-- Columna Derecha -->
         <div>
           <p 
-            class="text-sm sm:text-base text-[#4A505A] font-light leading-[1.65]"
-            style="font-family: 'Inter', system-ui, -apple-system, sans-serif; line-height: 1.65; color: #4A505A;"
+            class="text-sm sm:text-base text-[#5A606A]"
+            style="font-family: 'Inter', system-ui, sans-serif; font-weight: 300; line-height: 1.8; color: #5A606A;"
           >
             Cada espacio empieza escuchando tus necesidades. No nos limitamos a ejecutar una obra: coordinamos de forma meticulosa todos los gremios implicados, fusionando decoración, interiorismo y acabados impecables para convertir tus ideas en una realidad funcional, elegante y con identidad propia.
           </p>
@@ -53,103 +60,103 @@
     </div>
 
     <!-- Fina Barra Divisoria Minimalista -->
-    <div class="w-full h-[1px] bg-gray-200/80 my-16 sm:my-24" aria-hidden="true"></div>
+    <div class="w-full h-[1px] bg-gray-200/70 my-20 sm:my-28" aria-hidden="true"></div>
 
-    <!-- BLOQUE 2: Arquitectura y Diseño 3D + Listado de Especialidades Minimalista -->
+    <!-- BLOQUE 2: Arquitectura y Diseño 3D + Especialidades -->
     <div class="fade-up">
       
       <!-- Cabecera de Bloque 2 -->
       <div class="max-w-3xl text-left mb-12 sm:mb-16">
         
-        <!-- Tagline sutil en Dorado Corporativo -->
+        <!-- Antetítulo de Bloque 2 -->
         <span 
-          class="text-xs font-semibold tracking-[0.25em] uppercase text-[#C5A880] block mb-4"
-          style="font-family: 'Inter', system-ui, -apple-system, sans-serif;"
+          class="text-[10px] sm:text-[11px] font-normal uppercase text-[#C5A880] block mb-5 select-none"
+          style="letter-spacing: 0.28em; color: #C5A880;"
         >
-          Visualización & Proyectos 3D
+          VISUALIZACIÓN & PROYECTOS 3D
         </span>
 
-        <!-- Título Secundario H2: Inter, Grosor Ligero (font-weight: 300), Sin Serifs ni remates -->
+        <!-- Título H2 Bloque 2: Ultra fino (font-weight: 200), line-height: 1.1 -->
         <h2 
-          class="text-2xl sm:text-4xl lg:text-[2.5rem] font-light text-[#1E2229] tracking-tight leading-[1.2]"
-          style="font-family: 'Inter', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif; font-weight: 300; color: #1E2229;"
+          class="text-[#1E2229]"
+          style="font-family: 'Outfit', 'Inter', sans-serif; font-size: clamp(2rem, 4.2vw, 3.15rem); font-weight: 200; line-height: 1.1; color: #1E2229; letter-spacing: -0.02em;"
         >
           Arquitectura y Diseño 3D: <br class="hidden sm:inline" />
           Visualiza antes de construir.
         </h2>
 
-        <!-- Texto Descriptivo Fluido -->
+        <!-- Texto Descriptivo con line-height 1.8 y font-weight 300 -->
         <p 
-          class="mt-6 text-sm sm:text-base text-[#4A505A] font-light leading-[1.65] max-w-2xl"
-          style="font-family: 'Inter', system-ui, -apple-system, sans-serif; line-height: 1.65; color: #4A505A;"
+          class="text-sm sm:text-base text-[#5A606A] max-w-2xl"
+          style="font-family: 'Inter', system-ui, sans-serif; font-weight: 300; line-height: 1.8; color: #5A606A; margin-top: 2.25rem;"
         >
           Contamos con un departamento técnico de arquitectura para desarrollar planos y diseños personalizados en 3D. Podrás estudiar diferentes opciones de distribución y seleccionar los materiales idénticos antes de comenzar la obra, asegurando que cada detalle esté pensado de antemano.
         </p>
 
       </div>
 
-      <!-- Listado de Especialidades Minimalista (Líneas finas sin iconos pesados, títulos en Dorado #C5A880, 100% Inter) -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-14 lg:gap-x-20 gap-y-8 pt-8 border-t border-gray-200/80 text-left">
+      <!-- Listado de Especialidades Minimalista (Líneas finas, tipografía geométrica, títulos dorados #C5A880) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-14 lg:gap-x-20 gap-y-10 pt-10 border-t border-gray-200/70 text-left">
         
         <!-- Especialidad 1 -->
-        <div class="space-y-1.5">
+        <div class="space-y-2">
           <span 
-            class="text-xs font-semibold tracking-[0.2em] uppercase text-[#C5A880] block"
-            style="font-family: 'Inter', system-ui, -apple-system, sans-serif; color: #C5A880;"
+            class="text-xs font-normal tracking-[0.22em] uppercase text-[#C5A880] block"
+            style="letter-spacing: 0.22em; color: #C5A880;"
           >
             Reformas Integrales
           </span>
           <p 
-            class="text-sm text-[#4A505A] font-light leading-relaxed"
-            style="font-family: 'Inter', system-ui, -apple-system, sans-serif;"
+            class="text-sm text-[#5A606A] leading-[1.75]"
+            style="font-family: 'Inter', system-ui, sans-serif; font-weight: 300; line-height: 1.75; color: #5A606A;"
           >
             Viviendas, apartamentos y locales comerciales en la Comunidad Valenciana.
           </p>
         </div>
 
         <!-- Especialidad 2 -->
-        <div class="space-y-1.5">
+        <div class="space-y-2">
           <span 
-            class="text-xs font-semibold tracking-[0.2em] uppercase text-[#C5A880] block"
-            style="font-family: 'Inter', system-ui, -apple-system, sans-serif; color: #C5A880;"
+            class="text-xs font-normal tracking-[0.22em] uppercase text-[#C5A880] block"
+            style="letter-spacing: 0.22em; color: #C5A880;"
           >
             Construcción y Arquitectura
           </span>
           <p 
-            class="text-sm text-[#4A505A] font-light leading-relaxed"
-            style="font-family: 'Inter', system-ui, -apple-system, sans-serif;"
+            class="text-sm text-[#5A606A] leading-[1.75]"
+            style="font-family: 'Inter', system-ui, sans-serif; font-weight: 300; line-height: 1.75; color: #5A606A;"
           >
             Proyectos a medida, diseño conceptual y dirección técnica de obra.
           </p>
         </div>
 
         <!-- Especialidad 3 -->
-        <div class="space-y-1.5">
+        <div class="space-y-2">
           <span 
-            class="text-xs font-semibold tracking-[0.2em] uppercase text-[#C5A880] block"
-            style="font-family: 'Inter', system-ui, -apple-system, sans-serif; color: #C5A880;"
+            class="text-xs font-normal tracking-[0.22em] uppercase text-[#C5A880] block"
+            style="letter-spacing: 0.22em; color: #C5A880;"
           >
             Diseño de Interiores & 3D
           </span>
           <p 
-            class="text-sm text-[#4A505A] font-light leading-relaxed"
-            style="font-family: 'Inter', system-ui, -apple-system, sans-serif;"
+            class="text-sm text-[#5A606A] leading-[1.75]"
+            style="font-family: 'Inter', system-ui, sans-serif; font-weight: 300; line-height: 1.75; color: #5A606A;"
           >
             Estudio ergonómico de espacios, iluminación escenográfica y selección de acabados nobles.
           </p>
         </div>
 
         <!-- Especialidad 4 -->
-        <div class="space-y-1.5">
+        <div class="space-y-2">
           <span 
-            class="text-xs font-semibold tracking-[0.2em] uppercase text-[#C5A880] block"
-            style="font-family: 'Inter', system-ui, -apple-system, sans-serif; color: #C5A880;"
+            class="text-xs font-normal tracking-[0.22em] uppercase text-[#C5A880] block"
+            style="letter-spacing: 0.22em; color: #C5A880;"
           >
             Gestión Integral Llave en Mano
           </span>
           <p 
-            class="text-sm text-[#4A505A] font-light leading-relaxed"
-            style="font-family: 'Inter', system-ui, -apple-system, sans-serif;"
+            class="text-sm text-[#5A606A] leading-[1.75]"
+            style="font-family: 'Inter', system-ui, sans-serif; font-weight: 300; line-height: 1.75; color: #5A606A;"
           >
             Contrato oficial, presupuesto cerrado partida a partida y garantía por escrito de 2 años.
           </p>
