@@ -1,0 +1,54 @@
+---
+---
+
+<header id="site-header" class="fixed inset-x-0 top-0 z-50 transition-colors duration-200 pointer-events-none">
+  <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 py-5 sm:py-6 flex items-center justify-between">
+    
+    <!-- Bloque del Logotipo Corporativo (Esquina Superior Izquierda, Minimalista & Directo) -->
+    <a 
+      href="#" 
+      class="inline-flex items-center gap-3.5 group pointer-events-auto" 
+      aria-label="PLB Reformas Premium S.L., inicio"
+    >
+      <!-- Icono del Imagotipo (Dibujo de la casa con 'PLB', fondo 100% transparente sin recuadro blanco) -->
+      <img 
+        src="/images/logo-icon-white.png" 
+        alt="PLB Reformas Imagotipo" 
+        class="h-10 sm:h-12 w-auto object-contain shrink-0"
+      />
+
+      <!-- Texto de Identidad de Marca Organizado en Exactamente Dos Líneas -->
+      <div class="flex flex-col justify-center">
+        <!-- Línea 1: 'PLB' en mayúsculas, tipografía geométrica Montserrat Bold, blanco puro -->
+        <span 
+          class="text-xl sm:text-2xl font-extrabold uppercase leading-none text-white tracking-wide"
+          style="font-family: 'Montserrat', system-ui, -apple-system, sans-serif; font-weight: 800; color: #ffffff;"
+        >
+          PLB
+        </span>
+
+        <!-- Línea 2: 'REFORMAS PREMIUM S.L.' en mayúsculas, Montserrat Regular/Light, menor tamaño, letter-spacing: 0.15em -->
+        <span 
+          class="text-[9px] sm:text-[10px] uppercase leading-tight text-white mt-1.5"
+          style="font-family: 'Montserrat', system-ui, -apple-system, sans-serif; font-weight: 300; letter-spacing: 0.15em; color: #ffffff;"
+        >
+          REFORMAS <span style="color: #C5A880; font-weight: 500;">PREMIUM</span> S.L.
+        </span>
+      </div>
+    </a>
+
+  </div>
+</header>
+
+<script>
+  const header = document.getElementById('site-header');
+
+  window.addEventListener('scroll', () => {
+    if (!header) return;
+    if (window.scrollY > 40) {
+      header.classList.add('bg-[#0f1115]/90', 'backdrop-blur-sm', 'border-b', 'border-white/10');
+    } else {
+      header.classList.remove('bg-[#0f1115]/90', 'backdrop-blur-sm', 'border-b', 'border-white/10');
+    }
+  }, { passive: true });
+</script>
