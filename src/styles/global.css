@@ -14,10 +14,30 @@
   --font-montserrat: 'Montserrat', system-ui, -apple-system, sans-serif;
   --font-inter: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
   --font-outfit: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+  --font-titulos: 'Fraunces', serif;
 }
 
 :root {
   color-scheme: light;
+  --font-titulos: 'Fraunces', serif;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-titulos);
+  font-weight: 200 !important;
+  font-style: normal !important;
+  font-optical-sizing: auto;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+h1 strong, h1 em, h1 span,
+h2 strong, h2 em, h2 span,
+h3 strong, h3 em, h3 span {
+  font-weight: inherit !important;
+  font-style: inherit !important;
+  color: inherit !important;
+  font-family: inherit !important;
 }
 
 html {
