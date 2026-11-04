@@ -9,7 +9,7 @@
   <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
     
     <!-- BLOQUE 1: Presentación Corporativa (Maquetación Asimétrica & Editorial de Lujo) -->
-    <div class="fade-up">
+    <div class="filosofia fade-up">
       
       <!-- 3. Estilo del Antetítulo: Reducido, letter-spacing drásticamente ampliado (0.28em), Dorado corporativo -->
       <span 
@@ -19,13 +19,10 @@
         FILOSOFÍA & TRAYECTORIA
       </span>
 
-      <!-- 2. Estilo del Título Principal (H2): font-size: 3.8rem; font-weight: 200 (ultra fino); line-height: 1.1; -->
-      <h2 
-        class="text-[#1E2229] max-w-3xl text-left"
-        style="font-family: 'Outfit', 'Inter', system-ui, sans-serif; font-size: clamp(2.4rem, 5.5vw, 3.8rem); font-weight: 200; line-height: 1.1; color: #1E2229; letter-spacing: -0.025em;"
-      >
-        PLB Reformas Premium: <br class="hidden sm:inline" />
-        interiorismo, arquitectura y <br />
+      <!-- 2. Estilo del Título Principal (H2): Cormorant Garamond -->
+      <h2 class="max-w-4xl text-left">
+        <strong>PLB Reformas Premium:</strong> <br class="hidden sm:inline" />
+        <em>interiorismo, arquitectura y</em> <br />
         reformas con alma.
       </h2>
 
@@ -168,3 +165,19 @@
 
   </div>
 </section>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&display=swap');
+
+  .filosofia h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(2.8rem, 6vw, 5.5rem);
+    line-height: 1.05;
+    letter-spacing: -0.015em;
+    color: #1a1a1a;
+    text-wrap: balance;
+  }
+  .filosofia h2 strong { font-weight: 400; }
+  .filosofia h2 em { font-style: italic; color: #b08d6a; }
+</style>
