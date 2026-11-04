@@ -95,10 +95,10 @@ function getSectionHref(hash: string) {
           </svg>
         </button>
 
-        <!-- Dropdown Menu -->
+        <!-- Dropdown Menu (Fondo claro translúcido siempre, apertura fade-in + translateY(-6px) a 0) -->
         <div 
           id="lang-dropdown"
-          class="lang-dropdown absolute right-0 mt-2 w-32 py-1.5 rounded-xs z-50 opacity-0 pointer-events-none translate-y-1 transition-all duration-200"
+          class="lang-dropdown"
           role="menu"
         >
           {Object.entries(languages).map(([code, label]) => {
@@ -108,9 +108,7 @@ function getSectionHref(hash: string) {
               <a
                 href={targetUrl}
                 data-base-href={targetUrl}
-                class={`lang-dropdown-item lang-link block px-3.5 py-1.5 text-[11px] font-medium tracking-[0.1em] ${
-                  isCurrent ? 'is-active' : ''
-                }`}
+                class={`lang-dropdown-item lang-link ${isCurrent ? 'is-active' : ''}`}
                 role="menuitem"
               >
                 {label}
@@ -184,9 +182,9 @@ function getSectionHref(hash: string) {
       </a>
     </nav>
 
-    <!-- Mobile Language Selector -->
+    <!-- Mobile Language Selector (Estilo claro, sin recuadro ni fondo negro) -->
     <div class="pt-4 border-t border-black/10">
-      <span class="block text-[10px] font-bold uppercase tracking-widest text-[#8C6B3C] mb-3">
+      <span class="block text-[10px] font-bold uppercase tracking-widest text-[#B08D6A] mb-3">
         {t.header.langAria}
       </span>
       <div class="flex flex-wrap gap-2">
@@ -197,9 +195,7 @@ function getSectionHref(hash: string) {
             <a
               href={targetUrl}
               data-base-href={targetUrl}
-              class={`lang-link mobile-drawer-pill px-3 py-1.5 text-[11px] font-medium tracking-[0.1em] rounded-xs border ${
-                isCurrent ? 'is-active' : ''
-              }`}
+              class={`lang-link mobile-drawer-pill ${isCurrent ? 'is-active' : ''}`}
             >
               {label}
             </a>
@@ -323,7 +319,7 @@ function getSectionHref(hash: string) {
     color: #1a1a1a;
   }
 
-  /* Selector de Idioma de Escritorio */
+  /* Selector de Idioma de Escritorio (Botón) */
   .header-lang-btn {
     color: rgba(255, 255, 255, 0.9);
     transition: color 300ms ease;
@@ -338,44 +334,58 @@ function getSectionHref(hash: string) {
     color: #8C6B3C;
   }
 
-  /* Desplegable de Idioma */
+  /* Desplegable de Idioma (Desktop) - Estilo claro translúcido SIEMPRE */
   .lang-dropdown {
-    background-color: rgba(15, 17, 21, 0.95);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
-  }
-  .lang-dropdown-item {
-    color: #d1d5db;
-    transition: color 150ms ease, background-color 150ms ease;
-  }
-  .lang-dropdown-item:hover {
-    color: #ffffff;
-    background-color: rgba(255, 255, 255, 0.1);
-  }
-  .lang-dropdown-item.is-active {
-    color: #C5A880;
-    font-weight: 600;
-    background-color: rgba(255, 255, 255, 0.05);
+    position: absolute;
+    right: 0;
+    top: 100%;
+    margin-top: 8px;
+    min-width: max-content;
+    padding: 8px 0;
+    background: rgba(247, 245, 240, 0.85);
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-6px);
+    transition: opacity 200ms ease, transform 200ms ease;
+    z-index: 60;
   }
 
-  #site-header.header--solid .lang-dropdown {
-    background-color: rgba(255, 255, 255, 0.97);
-    border: 1px solid rgba(0, 0, 0, 0.08);
-    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.08);
+  .lang-dropdown.is-open {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
   }
-  #site-header.header--solid .lang-dropdown-item {
-    color: #4a5568;
-  }
-  #site-header.header--solid .lang-dropdown-item:hover {
+
+  .lang-dropdown-item {
+    display: block;
+    padding: 6px 18px;
     color: #1a1a1a;
-    background-color: rgba(0, 0, 0, 0.04);
+    background: transparent;
+    border: none;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    text-align: left;
+    white-space: nowrap;
+    text-decoration: none;
+    transition: color 200ms ease;
   }
-  #site-header.header--solid .lang-dropdown-item.is-active {
-    color: #8C6B3C;
+
+  .lang-dropdown-item:hover {
+    color: #B08D6A;
+    background: transparent;
+  }
+
+  .lang-dropdown-item.is-active {
+    color: #B08D6A;
     font-weight: 600;
-    background-color: rgba(140, 107, 60, 0.08);
+    background: transparent;
+    border: none;
   }
 
   /* Botón Hamburguesa Móvil */
@@ -391,7 +401,7 @@ function getSectionHref(hash: string) {
     color: #1a1a1a;
   }
 
-  /* 6. Móvil con Menú Abierto */
+  /* Móvil con Menú Abierto */
   #site-header.header--menu-open {
     transform: translateY(0) !important;
     background-color: rgba(247, 245, 240, 0.98) !important;
@@ -420,23 +430,28 @@ function getSectionHref(hash: string) {
     color: #8C6B3C;
     font-weight: 600;
   }
+
+  /* Selector de idioma móvil (Sin fondo negro ni recuadros) */
   .mobile-drawer-pill {
-    transition: all 200ms ease;
+    display: inline-block;
+    padding: 4px 10px;
+    color: #1a1a1a;
+    background: transparent;
+    border: none;
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    transition: color 200ms ease;
+  }
+  .mobile-drawer-pill:hover {
+    color: #B08D6A;
+    background: transparent;
   }
   .mobile-drawer-pill.is-active {
-    background-color: rgba(140, 107, 60, 0.12);
-    color: #8C6B3C;
-    border-color: rgba(140, 107, 60, 0.4);
+    color: #B08D6A;
     font-weight: 600;
-  }
-  .mobile-drawer-pill:not(.is-active) {
-    background-color: rgba(0, 0, 0, 0.04);
-    color: #4a5568;
-    border-color: rgba(0, 0, 0, 0.08);
-  }
-  .mobile-drawer-pill:not(.is-active):hover {
-    background-color: rgba(0, 0, 0, 0.08);
-    color: #1a1a1a;
+    background: transparent;
+    border: none;
   }
 
   /* Accesibilidad: Respetar prefers-reduced-motion */
@@ -450,6 +465,7 @@ function getSectionHref(hash: string) {
     .header-nav-link,
     .header-lang-btn,
     .lang-dropdown,
+    .lang-dropdown-item,
     .mobile-drawer,
     .mobile-nav-link,
     .mobile-drawer-pill {
@@ -519,11 +535,21 @@ function getSectionHref(hash: string) {
     }
   }, { passive: true });
 
-  // Desktop Language Dropdown Toggle
+  // Desktop Language Dropdown Toggle (Apertura: fade-in + translateY(-6px) a 0 en 200ms)
   const langBtn = document.getElementById('lang-btn');
   const langDropdown = document.getElementById('lang-dropdown');
 
   if (langBtn && langDropdown) {
+    function openDropdown() {
+      langBtn?.setAttribute('aria-expanded', 'true');
+      langDropdown?.classList.add('is-open');
+    }
+
+    function closeDropdown() {
+      langBtn?.setAttribute('aria-expanded', 'false');
+      langDropdown?.classList.remove('is-open');
+    }
+
     langBtn.addEventListener('click', (e) => {
       e.stopPropagation();
       const isOpen = langBtn.getAttribute('aria-expanded') === 'true';
@@ -533,18 +559,6 @@ function getSectionHref(hash: string) {
         openDropdown();
       }
     });
-
-    function openDropdown() {
-      langBtn?.setAttribute('aria-expanded', 'true');
-      langDropdown?.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-1');
-      langDropdown?.classList.add('opacity-100', 'pointer-events-auto', 'translate-y-0');
-    }
-
-    function closeDropdown() {
-      langBtn?.setAttribute('aria-expanded', 'false');
-      langDropdown?.classList.remove('opacity-100', 'pointer-events-auto', 'translate-y-0');
-      langDropdown?.classList.add('opacity-0', 'pointer-events-none', 'translate-y-1');
-    }
 
     document.addEventListener('click', (e) => {
       if (langDropdown && langBtn && !langDropdown.contains(e.target as Node) && !langBtn.contains(e.target as Node)) {
