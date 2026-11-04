@@ -39,7 +39,7 @@ const t = useTranslations(lang);
 
   <!-- Main Text Container (Bottom-Left corner, aligned to the left, floating cleanly) -->
   <div class="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 pb-20 sm:pb-24 lg:pb-28 text-left">
-    <div class="max-w-3xl text-left">
+    <div class="max-w-5xl text-left">
       
       <!-- Main Title -->
       <h1 class="hero-title text-white mb-4 sm:mb-5 text-left">
@@ -89,8 +89,17 @@ const t = useTranslations(lang);
     color: #ffffff !important;
     text-shadow: 0 2px 20px rgba(0, 0, 0, 0.25);
     text-wrap: balance;
+    word-break: normal;
+    overflow-wrap: break-word;
     animation: heroFadeIn 800ms ease-out forwards;
     will-change: opacity, transform;
+  }
+
+  /* Respaldo para Cirílico en Ruso (Fraunces no cubre Cirílico) */
+  :global(html[lang="ru"]) .hero-title,
+  html[lang="ru"] .hero-title {
+    font-family: 'Cormorant Garamond', 'Fraunces', serif !important;
+    font-weight: 300 !important;
   }
 
   @keyframes heroFadeIn {
@@ -106,7 +115,8 @@ const t = useTranslations(lang);
 
   @media (min-width: 1024px) {
     .hero-title {
-      white-space: nowrap !important;
+      /* Permite mantenerse en una línea si hay espacio, o 2 líneas balanceadas si excede el ancho */
+      max-width: 100%;
     }
   }
 </style>
