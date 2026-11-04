@@ -1,4 +1,15 @@
 ---
+import { useTranslations, type Lang } from '../i18n/utils';
+
+interface Props {
+  lang?: Lang;
+}
+
+const { lang = (Astro.currentLocale as Lang) || 'es' } = Astro.props;
+const t = useTranslations(lang);
+const currentYear = new Date().getFullYear();
+const copyrightText = t.footer.copyright.replace('{year}', String(currentYear));
+const whatsappUrl = `https://wa.me/34600000000?text=${encodeURIComponent(t.whatsapp.message)}`;
 ---
 
 <footer class="bg-[#0a0c0f] border-t border-white/10 pt-20 pb-12 text-gray-400">
@@ -22,86 +33,69 @@
           </div>
         </div>
         <p class="text-xs sm:text-sm text-gray-400 leading-relaxed font-normal">
-          Empresa de reformas integrales, diseño de interiores y construcción en la Comunidad Valenciana. Proyectos llave en mano con contrato cerrado, pago por etapas y garantía por escrito de 2 años.
+          {t.footer.desc}
         </p>
         <div class="text-xs text-gold-500 font-semibold tracking-wider uppercase">
-          Proyectos en toda la Comunidad Valenciana
+          {t.footer.coverageBadge}
         </div>
       </div>
 
       <!-- Services Links -->
       <div>
         <h4 class="text-xs font-bold text-white uppercase tracking-widest mb-5">
-          Servicios
+          {t.footer.servicesTitle}
         </h4>
         <ul class="space-y-3 text-xs sm:text-sm">
-          <li><a href="#servicios" class="hover:text-gold-500 transition-colors">Reformas Integrales de Pisos</a></li>
-          <li><a href="#servicios" class="hover:text-gold-500 transition-colors">Reformas de Cocinas de Diseño</a></li>
-          <li><a href="#servicios" class="hover:text-gold-500 transition-colors">Reformas de Baños Modernos</a></li>
-          <li><a href="#servicios" class="hover:text-gold-500 transition-colors">Albañilería y Tabiquería Pladur</a></li>
-          <li><a href="#servicios" class="hover:text-gold-500 transition-colors">Suelos y Revestimientos Porcelánicos</a></li>
-          <li><a href="#servicios" class="hover:text-gold-500 transition-colors">Electricidad, Climatización y LED</a></li>
+          {t.footer.services.map((serviceName) => (
+            <li>
+              <a href="#servicios" class="hover:text-gold-500 transition-colors">
+                {serviceName}
+              </a>
+            </li>
+          ))}
         </ul>
       </div>
 
       <!-- Coverage Areas -->
       <div>
         <h4 class="text-xs font-bold text-white uppercase tracking-widest mb-5">
-          Zonas de Cobertura
+          {t.footer.coverageTitle}
         </h4>
         <ul class="space-y-2.5 text-xs text-gray-400">
-          <li class="flex items-center gap-2">
-            <span class="w-1.5 h-1.5 rounded-full bg-gold-500"></span>
-            <span>Toda la Comunidad Valenciana</span>
-          </li>
-          <li class="flex items-center gap-2">
-            <span class="w-1.5 h-1.5 rounded-full bg-gold-500"></span>
-            <span>Reformas integrales residenciales</span>
-          </li>
-          <li class="flex items-center gap-2">
-            <span class="w-1.5 h-1.5 rounded-full bg-gold-500"></span>
-            <span>Chalets, villas y viviendas unifamiliares</span>
-          </li>
-          <li class="flex items-center gap-2">
-            <span class="w-1.5 h-1.5 rounded-full bg-gold-500"></span>
-            <span>Locales comerciales y oficinas</span>
-          </li>
-          <li class="flex items-center gap-2">
-            <span class="w-1.5 h-1.5 rounded-full bg-gold-500"></span>
-            <span>Medición y asesoramiento in situ sin coste</span>
-          </li>
-          <li class="flex items-center gap-2">
-            <span class="w-1.5 h-1.5 rounded-full bg-gold-500"></span>
-            <span>Dirección facultativa y gremios propios</span>
-          </li>
+          {t.footer.coverage.map((area) => (
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-gold-500"></span>
+              <span>{area}</span>
+            </li>
+          ))}
         </ul>
       </div>
 
       <!-- Contact & Hours -->
       <div>
         <h4 class="text-xs font-bold text-white uppercase tracking-widest mb-5">
-          Contacto y Asistencia
+          {t.footer.contactTitle}
         </h4>
         <ul class="space-y-3 text-xs sm:text-sm">
           <li>
-            <span class="block text-[11px] uppercase tracking-wider text-gray-500">Llámanos</span>
+            <span class="block text-[11px] uppercase tracking-wider text-gray-500">{t.footer.callLabel}</span>
             <a href="tel:+34600000000" class="text-white hover:text-gold-500 font-bold transition-colors">
               +34 600 000 000
             </a>
           </li>
           <li>
-            <span class="block text-[11px] uppercase tracking-wider text-gray-500">Email</span>
+            <span class="block text-[11px] uppercase tracking-wider text-gray-500">{t.footer.emailLabel}</span>
             <a href="mailto:info@plbreformas.es" class="text-white hover:text-gold-500 transition-colors">
               info@plbreformas.es
             </a>
           </li>
           <li>
-            <span class="block text-[11px] uppercase tracking-wider text-gray-500">Horario de Oficina</span>
-            <span class="text-gray-300">Lunes a Viernes: 8:00 - 19:00</span>
+            <span class="block text-[11px] uppercase tracking-wider text-gray-500">{t.footer.hoursLabel}</span>
+            <span class="text-gray-300">{t.footer.hoursVal}</span>
           </li>
           <li>
-            <span class="block text-[11px] uppercase tracking-wider text-gray-500">Visitas Técnicas</span>
-            <span class="text-gold-500 font-medium">Medición in situ sin coste</span>
+            <span class="block text-[11px] uppercase tracking-wider text-gray-500">{t.footer.technicalVisitsLabel}</span>
+            <span class="text-gold-500 font-medium">{t.footer.technicalVisitsVal}</span>
           </li>
         </ul>
       </div>
@@ -110,11 +104,11 @@
 
     <!-- Bottom Copyright -->
     <div class="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 gap-4">
-      <p>© {new Date().getFullYear()} PLB REFORMAS PREMIUM S.L. Todos los derechos reservados. Comunidad Valenciana.</p>
+      <p>{copyrightText}</p>
       <div class="flex gap-6">
-        <a href="#" class="hover:text-gold-500 transition-colors">Aviso Legal</a>
-        <a href="#" class="hover:text-gold-500 transition-colors">Política de Privacidad</a>
-        <a href="#" class="hover:text-gold-500 transition-colors">Política de Cookies</a>
+        <a href="#" class="hover:text-gold-500 transition-colors">{t.footer.legal}</a>
+        <a href="#" class="hover:text-gold-500 transition-colors">{t.footer.privacy}</a>
+        <a href="#" class="hover:text-gold-500 transition-colors">{t.footer.cookies}</a>
       </div>
     </div>
 
@@ -122,11 +116,11 @@
 
   <!-- Floating WhatsApp Circular Button -->
   <a 
-    href="https://wa.me/34600000000?text=Hola,%20quisiera%20solicitar%20presupuesto%20para%20una%20reforma%20en%20la%20Comunidad%20Valenciana" 
+    href={whatsappUrl} 
     target="_blank" 
     rel="noopener noreferrer"
-    aria-label="Escríbenos por WhatsApp"
-    title="Escríbenos por WhatsApp"
+    aria-label={t.whatsapp.ariaLabel}
+    title={t.whatsapp.title}
     class="whatsapp-float fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-50 flex items-center justify-center text-white"
   >
     <span class="whatsapp-pulse-ring" aria-hidden="true"></span>

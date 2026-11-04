@@ -1,4 +1,12 @@
 ---
+import { useTranslations, type Lang } from '../i18n/utils';
+
+interface Props {
+  lang?: Lang;
+}
+
+const { lang = (Astro.currentLocale as Lang) || 'es' } = Astro.props;
+const t = useTranslations(lang);
 ---
 
 <section 
@@ -11,20 +19,20 @@
     <!-- BLOQUE 1: Presentación Corporativa (Maquetación Asimétrica & Editorial de Lujo) -->
     <div class="filosofia fade-up">
       
-      <!-- 3. Estilo del Antetítulo: Reducido, letter-spacing drásticamente ampliado (0.28em), Dorado corporativo -->
+      <!-- Antetítulo -->
       <span 
         class="text-[10px] sm:text-[11px] font-normal uppercase text-[#C5A880] block mb-6 select-none"
         style="letter-spacing: 0.28em; color: #C5A880;"
       >
-        FILOSOFÍA & TRAYECTORIA
+        {t.intro.eyebrow1}
       </span>
 
-      <!-- 2. Titular Principal (H2): Fraunces peso 200 via CSS global -->
+      <!-- Titular Principal (H2): Fraunces peso 200 via CSS global -->
       <h2 class="max-w-4xl text-left" style="font-size: clamp(2.8rem, 6vw, 5.5rem); line-height: 1.05;">
-        PLB Reformas Premium: interiorismo, arquitectura y reformas con alma.
+        {t.intro.title1}
       </h2>
 
-      <!-- 1. Desplazamiento Asimétrico de Columnas & 4. Párrafos inferiores con line-height 1.8 y #5A606A -->
+      <!-- Desplazamiento Asimétrico de Columnas & Párrafos inferiores -->
       <div 
         class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 lg:gap-20 text-left items-start"
         style="margin-top: 3rem;"
@@ -36,17 +44,17 @@
             class="text-sm sm:text-base text-[#5A606A]"
             style="font-family: 'Inter', system-ui, sans-serif; font-weight: 300; line-height: 1.8; color: #5A606A;"
           >
-            En <strong class="font-normal text-[#1E2229]">PLB Obras y Reformas Premium S.L.</strong> transformamos espacios residenciales y comerciales con calidad, compromiso y plena dirección técnica. Con más de 15 años de experiencia en la Comunidad Valenciana, nos implicamos en cada fase del proyecto para ofrecerte absoluta tranquilidad, confianza y un servicio integral llave en mano desde el primer contacto hasta la entrega de llaves.
+            {t.intro.col1}
           </p>
         </div>
 
-        <!-- Columna Derecha: Desplazamiento asimétrico (comienza ~2.75rem / 3rem más abajo que la columna izquierda) -->
+        <!-- Columna Derecha: Desplazamiento asimétrico -->
         <div class="md:translate-y-11 lg:translate-y-12">
           <p 
             class="text-sm sm:text-base text-[#5A606A]"
             style="font-family: 'Inter', system-ui, sans-serif; font-weight: 300; line-height: 1.8; color: #5A606A;"
           >
-            Cada espacio empieza escuchando tus necesidades. No nos limitamos a ejecutar una obra: coordinamos de forma meticulosa todos los gremios implicados, fusionando decoración, interiorismo y acabados impecables para convertir tus ideas en una realidad funcional, elegante y con identidad propia.
+            {t.intro.col2}
           </p>
         </div>
 
@@ -68,7 +76,7 @@
           class="text-[10px] sm:text-[11px] font-normal uppercase text-[#C5A880] block mb-5 select-none"
           style="letter-spacing: 0.28em; color: #C5A880;"
         >
-          VISUALIZACIÓN & PROYECTOS 3D
+          {t.intro.eyebrow2}
         </span>
 
         <!-- Título H2 Bloque 2 -->
@@ -76,8 +84,7 @@
           class="text-[#1E2229]"
           style="font-size: clamp(2rem, 4.2vw, 3.15rem); line-height: 1.1; color: #1E2229;"
         >
-          Arquitectura y Diseño 3D: <br class="hidden sm:inline" />
-          Visualiza antes de construir.
+          {t.intro.title2}
         </h2>
 
         <!-- Texto Descriptivo con line-height 1.8 y font-weight 300 -->
@@ -85,78 +92,29 @@
           class="text-sm sm:text-base text-[#5A606A] max-w-2xl"
           style="font-family: 'Inter', system-ui, sans-serif; font-weight: 300; line-height: 1.8; color: #5A606A; margin-top: 2.25rem;"
         >
-          Contamos con un departamento técnico de arquitectura para desarrollar planos y diseños personalizados en 3D. Podrás estudiar diferentes opciones de distribución y seleccionar los materiales idénticos antes de comenzar la obra, asegurando que cada detalle esté pensado de antemano.
+          {t.intro.desc2}
         </p>
 
       </div>
 
-      <!-- Listado de Especialidades Minimalista (Líneas finas, tipografía geométrica, títulos dorados #C5A880) -->
+      <!-- Listado de Especialidades Minimalista -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-x-14 lg:gap-x-20 gap-y-10 pt-10 border-t border-gray-200/70 text-left">
-        
-        <!-- Especialidad 1 -->
-        <div class="space-y-2">
-          <span 
-            class="text-xs font-normal tracking-[0.22em] uppercase text-[#C5A880] block"
-            style="letter-spacing: 0.22em; color: #C5A880;"
-          >
-            Reformas Integrales
-          </span>
-          <p 
-            class="text-sm text-[#5A606A] leading-[1.75]"
-            style="font-family: 'Inter', system-ui, sans-serif; font-weight: 300; line-height: 1.75; color: #5A606A;"
-          >
-            Viviendas, apartamentos y locales comerciales en la Comunidad Valenciana.
-          </p>
-        </div>
-
-        <!-- Especialidad 2 -->
-        <div class="space-y-2">
-          <span 
-            class="text-xs font-normal tracking-[0.22em] uppercase text-[#C5A880] block"
-            style="letter-spacing: 0.22em; color: #C5A880;"
-          >
-            Construcción y Arquitectura
-          </span>
-          <p 
-            class="text-sm text-[#5A606A] leading-[1.75]"
-            style="font-family: 'Inter', system-ui, sans-serif; font-weight: 300; line-height: 1.75; color: #5A606A;"
-          >
-            Proyectos a medida, diseño conceptual y dirección técnica de obra.
-          </p>
-        </div>
-
-        <!-- Especialidad 3 -->
-        <div class="space-y-2">
-          <span 
-            class="text-xs font-normal tracking-[0.22em] uppercase text-[#C5A880] block"
-            style="letter-spacing: 0.22em; color: #C5A880;"
-          >
-            Diseño de Interiores & 3D
-          </span>
-          <p 
-            class="text-sm text-[#5A606A] leading-[1.75]"
-            style="font-family: 'Inter', system-ui, sans-serif; font-weight: 300; line-height: 1.75; color: #5A606A;"
-          >
-            Estudio ergonómico de espacios, iluminación escenográfica y selección de acabados nobles.
-          </p>
-        </div>
-
-        <!-- Especialidad 4 -->
-        <div class="space-y-2">
-          <span 
-            class="text-xs font-normal tracking-[0.22em] uppercase text-[#C5A880] block"
-            style="letter-spacing: 0.22em; color: #C5A880;"
-          >
-            Gestión Integral Llave en Mano
-          </span>
-          <p 
-            class="text-sm text-[#5A606A] leading-[1.75]"
-            style="font-family: 'Inter', system-ui, sans-serif; font-weight: 300; line-height: 1.75; color: #5A606A;"
-          >
-            Contrato oficial, presupuesto cerrado partida a partida y garantía por escrito de 2 años.
-          </p>
-        </div>
-
+        {t.intro.specialties.map((item) => (
+          <div class="space-y-2">
+            <span 
+              class="text-xs font-normal tracking-[0.22em] uppercase text-[#C5A880] block"
+              style="letter-spacing: 0.22em; color: #C5A880;"
+            >
+              {item.title}
+            </span>
+            <p 
+              class="text-sm text-[#5A606A] leading-[1.75]"
+              style="font-family: 'Inter', system-ui, sans-serif; font-weight: 300; line-height: 1.75; color: #5A606A;"
+            >
+              {item.desc}
+            </p>
+          </div>
+        ))}
       </div>
 
     </div>

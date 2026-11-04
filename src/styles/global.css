@@ -19,7 +19,11 @@
 
 :root {
   color-scheme: light;
-  --font-titulos: 'Fraunces', serif;
+  --font-titulos: 'Fraunces', 'Cormorant Garamond', serif;
+}
+
+html[lang="ru"] {
+  --font-titulos: 'Cormorant Garamond', 'Fraunces', serif;
 }
 
 h1, h2, h3 {

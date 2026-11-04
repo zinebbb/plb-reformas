@@ -1,0 +1,350 @@
+{
+  "meta": {
+    "title": "PLB Reformas · Construction, Luxury Renovations & Interior Architecture in the Valencian Community",
+    "description": "Specialists in comprehensive renovations, designer kitchens, and luxury bathrooms in the Valencian Community. Official contract, fixed price, phased payments, and a 2-year warranty."
+  },
+  "header": {
+    "brandName": "REFORMAS",
+    "brandHighlight": "PREMIUM",
+    "nav": {
+      "home": "Home",
+      "intro": "Philosophy",
+      "services": "Services",
+      "about": "About Us",
+      "projects": "Projects",
+      "process": "Process",
+      "contact": "Contact"
+    },
+    "langAria": "Language selector",
+    "mobileMenuAria": "Open navigation menu"
+  },
+  "hero": {
+    "title": "Construcción y Reformas Integrales",
+    "subtitle": "Specialists in comprehensive renovations of homes, villas, kitchens, and luxury bathrooms in the Valencian Community. Turnkey projects with dedicated technical direction.",
+    "scrollIndicator": "Scroll down to explore"
+  },
+  "intro": {
+    "eyebrow1": "PHILOSOPHY & EXPERIENCE",
+    "title1": "PLB Reformas Premium: interior architecture and renovations with soul.",
+    "col1": "At PLB Obras y Reformas Premium S.L., we transform residential and commercial properties with uncompromising quality, rigorous commitment, and expert technical direction. Backed by more than 15 years of proven experience across the Valencian Community, we guide every stage of your project to provide absolute peace of mind and an all-inclusive turnkey service from initial concept to key handover.",
+    "col2": "Every exceptional space begins by listening closely to your lifestyle. We never just execute construction work: our team meticulously coordinates every trade, harmonizing architectural layout, interior design, and flawless finishes to transform your vision into an elegant, functional sanctuary with genuine identity.",
+    "eyebrow2": "3D VISUALIZATION & ARCHITECTURE",
+    "title2": "Architecture and 3D Design: Visualize before you build.",
+    "desc2": "Our in-house architectural department develops precise custom plans and photorealistic 3D renderings. You can explore layout alternatives, lighting scenes, and select exact textures and finishes before construction begins, ensuring perfection in every detail.",
+    "specialties": [
+      {
+        "title": "Comprehensive Renovations",
+        "desc": "High-end homes, luxury apartments, and commercial spaces throughout the Valencian Community."
+      },
+      {
+        "title": "Construction & Architecture",
+        "desc": "Bespoke projects, conceptual design, structural calculations, and full on-site management."
+      },
+      {
+        "title": "Interior Architecture & 3D",
+        "desc": "Ergonomic spatial planning, architectural lighting schemes, and curated noble materials."
+      },
+      {
+        "title": "Turnkey Project Management",
+        "desc": "Official binding contract, itemized fixed pricing, and an official written 2-year warranty."
+      }
+    ]
+  },
+  "services": {
+    "eyebrow": "WHAT WE DO",
+    "title": "High-End Renovation Services in the Valencian Community",
+    "subtitle": "We cover all construction and renovation disciplines with our own qualified master craftsmen, ensuring premier standards with zero delays.",
+    "learnMore": "Learn more",
+    "items": [
+      {
+        "title": "Comprehensive Renovations",
+        "tag": "Turnkey Service",
+        "desc": "Complete renovation of luxury apartments, villas, and commercial premises across the Valencian Community. We coordinate all trades for flawless delivery."
+      },
+      {
+        "title": "Designer Kitchens",
+        "tag": "Custom Built",
+        "desc": "Ergonomic layouts, bespoke cabinetry, porcelain or granite countertops, breakfast islands, and seamless built-in premium appliance installation."
+      },
+      {
+        "title": "Luxury Bathrooms & Wellness",
+        "tag": "Comfort & Waterproofing",
+        "desc": "Walk-in level-access resin shower trays, tempered glass screens, certified waterproofing membranes, and concealed designer brassware."
+      },
+      {
+        "title": "Masonry & Drywall Systems",
+        "tag": "Structure & Insulation",
+        "desc": "Acoustic and thermal partitions, perimeter ceiling recesses with indirect LED coving, and millimeter-level wall skimming."
+      },
+      {
+        "title": "Plumbing & Climate Control",
+        "tag": "Energy Efficiency",
+        "desc": "Multi-layer pipe networks, ducted concealed air conditioning, inverter heat pumps, aerothermal energy, and high-efficiency boilers."
+      },
+      {
+        "title": "Electrical & Lighting Design",
+        "tag": "Certified Installations",
+        "desc": "Complete rewiring, certified distribution panels, smart home automation, high-end switchgear, and architectural LED illumination."
+      },
+      {
+        "title": "Hardwood & Porcelain Flooring",
+        "tag": "Noble Materials",
+        "desc": "Heavy-duty AC5 engineered laminate flooring, large-format rectified porcelain tiles, and color-matched lacquered skirting boards."
+      },
+      {
+        "title": "Fine Painting & Wall Finishes",
+        "tag": "Dust-Free Process",
+        "desc": "Popcorn texture removal with vacuum-assisted extraction, velvet-smooth wall plastering, and washable, eco-friendly luxury paint finishes."
+      }
+    ]
+  },
+  "about": {
+    "eyebrow": "PHILOSOPHY & EXPERTISE",
+    "title": "About Us",
+    "imageAlt": "Completed luxury interior renovation by PLB Reformas",
+    "badgeTitle": "Master Craftsman Guarantee",
+    "badgeDesc": "In-house team of master masons, finish carpenters, plumbers, and certified electricians.",
+    "narrativeTitle": "A holistic approach to create <br /> spaces where life unfolds beautifully",
+    "p1": "For more than 12 years, we have dedicated ourselves to high-end building, complete home remodeling, and interior architecture across Spain. We founded PLB Reformas with an unwavering commitment: bringing together under a single technical management team every phase a home requires, from initial spatial advice to the finest indirect lighting and pristine finishing touches.",
+    "p2": "Today, alongside our own project managers, certified installers, and seasoned construction masters, we execute technical projects of any scale in Benidorm and throughout the Valencian Community. We do not rely on disconnected subcontractors: we maintain dedicated in-house specialists for each craft, allowing us to guarantee flawless precision down to the millimeter.",
+    "quote": "\"To us, a renovation is far more than tearing down partitions and laying cables; it is conceiving a serene, luminous, and refined haven where your family enjoys exceptional living.\"",
+    "p3": "We work with complete integrity, binding contracts, firm schedules, and certified milestone payments. It is this absolute rigor that leads our clients to place their complete trust in us and recommend us time and again.",
+    "signatureRole": "Technical Direction & Project Management",
+    "signatureCompany": "PLB Reformas Premium S.L. · Valencian Community",
+    "pillarsEyebrow": "NON-NEGOTIABLE COMMITMENTS",
+    "pillarsTitle": "Why Choose PLB Reformas?",
+    "pillars": [
+      {
+        "num": "01",
+        "title": "Punctual & Fast Start",
+        "highlight": "Starts in 2 days",
+        "desc": "We mobilize on site just 2 days after contract signing. We establish a legally binding milestone schedule and adhere strictly to agreed delivery dates."
+      },
+      {
+        "num": "02",
+        "title": "Official Binding Contract",
+        "highlight": "Fixed itemized quote",
+        "desc": "We sign an official contract for the full duration of the works, itemized trade by trade. What is written is exactly what you pay, with zero surprises or hidden costs."
+      },
+      {
+        "num": "03",
+        "title": "Post-Construction Detailing",
+        "highlight": "Turnkey handover",
+        "desc": "We protect community corridors and elevators during works, and perform a deep professional clean upon completion. You receive the keys ready to move straight in."
+      }
+    ]
+  },
+  "gallery": {
+    "eyebrow": "OUR PROJECTS",
+    "title": "Real Works on Video",
+    "subtitle": "Unfiltered footage recorded directly on site from our completed and active renovations in the Valencian Community.",
+    "videoFallback": "Your browser does not support HTML5 video playback.",
+    "consultSimilar": "Request similar project quote",
+    "projects": [
+      {
+        "title": "Contemporary Residence with Architectural LED",
+        "category": "Comprehensive Renovation",
+        "location": "Valencian Community",
+        "duration": "18 sec",
+        "specs": [
+          { "label": "Execution time", "val": "5 weeks" },
+          { "label": "Flooring", "val": "AC5 natural oak laminate" },
+          { "label": "Lighting", "val": "3000K indirect LED coving" }
+        ],
+        "desc": "Open-concept layout redistribution, white lacquered millwork, custom timber wall paneling, and acoustic soundproofing throughout."
+      },
+      {
+        "title": "Bespoke Open Kitchen with Island Bar",
+        "category": "Custom Kitchen",
+        "location": "Valencian Community",
+        "duration": "14 sec",
+        "specs": [
+          { "label": "Execution time", "val": "2 weeks" },
+          { "label": "Countertop", "val": "Polished high-resistance granite" },
+          { "label": "Cabinetry", "val": "Matte white with soft-close hinges" }
+        ],
+        "desc": "Custom made cabinetry, fully integrated tower appliances, under-cabinet ambient lighting, and breakfast bar with stools."
+      },
+      {
+        "title": "Demolition Phase & Structural Preparation",
+        "category": "Work in Progress",
+        "location": "Valencian Community",
+        "duration": "10 sec",
+        "specs": [
+          { "label": "Phase", "val": "Demolition & Sanitation" },
+          { "label": "Safety", "val": "Full communal area protection" },
+          { "label": "MEP Works", "val": "New recessed conduits & pipes" }
+        ],
+        "desc": "Controlled removal of existing partitions, certified rubble management in compliant sacks, and laser subfloor leveling."
+      }
+    ]
+  },
+  "process": {
+    "eyebrow": "HOW WE WORK",
+    "title": "How We Work",
+    "subtitle": "A structured, transparent, and rigorous methodology so you can enjoy your renovation in the Valencian Community with total tranquility.",
+    "stepBadge": "Step {step} of 4",
+    "tag": "PLB Premium",
+    "steps": [
+      {
+        "num": "01",
+        "phase": "PHASE 01",
+        "title": "On-Site Consultation & Survey",
+        "desc": "We visit your property anywhere in the Valencian Community. We inspect structural conditions, listen to your desires, and take accurate laser measurements free of charge."
+      },
+      {
+        "num": "02",
+        "phase": "PHASE 02",
+        "title": "Itemized Fixed-Price Contract",
+        "desc": "We draft a comprehensive technical proposal itemized trade by trade with fixed prices and certified material grades. What you sign is exactly what you pay."
+      },
+      {
+        "num": "03",
+        "phase": "PHASE 03",
+        "title": "Execution & Certified Milestone Payments",
+        "desc": "A dedicated site manager supervises our specialized craftsmen. You never pay everything upfront: payments are released strictly upon certified work progress."
+      },
+      {
+        "num": "04",
+        "phase": "PHASE 04",
+        "title": "Flawless Handover & Official Warranty",
+        "desc": "We inspect every finish with you down to the last detail. We perform an exhaustive post-construction deep clean and deliver your written 2-year warranty."
+      }
+    ]
+  },
+  "whyUs": {
+    "eyebrow": "WHY PLB",
+    "title": "Why Choose PLB Reformas",
+    "subtitle": "We operate under the highest building standards in the Valencian Community, delivering solid contractual commitments that safeguard your investment.",
+    "pillars": [
+      {
+        "title": "Prompt Start & Guaranteed Deadlines",
+        "desc": "We specify exact start and completion dates in our contract. We strictly adhere to agreed milestones for your complete peace of mind."
+      },
+      {
+        "title": "Official Contract & Fixed Price",
+        "desc": "Completely transparent quote itemized trade by trade. What you sign is strictly what you pay, free from unexpected surcharges."
+      },
+      {
+        "title": "Rigorous Post-Work Cleaning",
+        "desc": "We protect building common areas, elevators, and entrances. Upon completion, we deliver your home spotless, ready for immediate move-in."
+      },
+      {
+        "title": "Certified Milestone Payments",
+        "desc": "We never demand total payment in advance. Billing is divided into scheduled milestones tied directly to certified progress on site."
+      },
+      {
+        "title": "Official 2-Year Written Warranty",
+        "desc": "We issue an official signed warranty covering all installations, structural works, and finishes, backed by prompt post-sale assistance."
+      },
+      {
+        "title": "Dedicated In-House Multidisciplinary Team",
+        "desc": "Zero middlemen. Skilled masons, plumbers, certified electricians, and carpenters overseen by an assigned project manager."
+      }
+    ]
+  },
+  "testimonials": {
+    "eyebrow": "SATISFIED CLIENTS",
+    "title": "Verified Client Reviews",
+    "subtitle": "Over 85% of our new projects in the Valencian Community originate from direct recommendations by satisfied homeowners.",
+    "verified": "Verified Client",
+    "reviews": [
+      {
+        "num": "01",
+        "author": "Gómez R. Family",
+        "location": "Valencian Community",
+        "project": "Full Apartment Renovation · 95 m²",
+        "tag": "Deadlines Met",
+        "quote": "We completely renovated our beachfront apartment. They delivered the keys on the exact day agreed, the quote did not deviate by a single euro, and the architectural LED lighting and drywall work transformed the space completely. Highly recommended."
+      },
+      {
+        "num": "02",
+        "author": "Elena & Marcus V.",
+        "location": "Valencian Community",
+        "project": "Designer Kitchen Island & Luxury Bathrooms",
+        "tag": "Quality & Craftsmanship",
+        "quote": "The kitchen turned out exactly as we dreamed. They guided us on every detail regarding flow, stone worktops, and hidden joinery. The milestone payment system gave us complete confidence and they left the property spotless."
+      },
+      {
+        "num": "03",
+        "author": "David M.",
+        "location": "Valencian Community",
+        "project": "Porcelain Flooring, Ducted Climate & Paint",
+        "tag": "Official Warranty",
+        "quote": "Outstanding professionalism and discipline. The site manager was constantly available to coordinate the trades. They took immense care of the building common areas and the contractual warranty provides total peace of mind."
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "DIRECT CONTACT",
+    "title": "Request a Quote",
+    "callout": "Request your free on-site survey and laser measurement consultation on the same day.",
+    "desc": "Every project begins with a personal conversation. Leave your details or contact us directly to receive expert consultation on your renovation, alongside an itemized cost estimate and guaranteed completion dates.",
+    "phoneLabel": "Telephone Assistance",
+    "whatsappLabel": "Direct WhatsApp",
+    "whatsappCta": "Chat via WhatsApp",
+    "areaLabel": "Service Area",
+    "areaVal": "Throughout the entire Valencian Community and neighboring regions",
+    "formTitle": "Send us your inquiry",
+    "formSubtitle": "We will contact you within 24 hours to schedule your complimentary on-site technical visit.",
+    "nameLabel": "Full name *",
+    "namePlaceholder": "Your name",
+    "phoneInputLabel": "Contact telephone *",
+    "phonePlaceholder": "+34 600 000 000",
+    "projectLabel": "Project Type",
+    "projectOptions": {
+      "integral": "Full Apartment Renovation",
+      "chalet": "Villa / Detached Home Renovation",
+      "cocina": "Custom Designer Kitchen",
+      "bano": "Bathroom Remodel / Walk-in Shower",
+      "local": "Commercial Space / Retail",
+      "otro": "Multiple Trades / Other"
+    },
+    "locationLabel": "Town or Municipality",
+    "locationPlaceholder": "E.g. Municipality in the Valencian Community...",
+    "messageLabel": "Tell us about your project",
+    "messagePlaceholder": "Indicate approximate square meters, key modifications you have in mind, or your desired start date...",
+    "feedback": "Your request has been received successfully. We will be in touch with you shortly.",
+    "submitBtn": "Request Quote",
+    "submitSuccess": "Inquiry Sent Successfully",
+    "privacyNote": "Your information is 100% confidential. No-obligation personalized quote."
+  },
+  "footer": {
+    "desc": "Comprehensive renovations, interior architecture, and luxury construction in the Valencian Community. Turnkey projects with binding contracts, milestone payments, and an official 2-year warranty.",
+    "coverageBadge": "Projects throughout the Valencian Community",
+    "servicesTitle": "Services",
+    "services": [
+      "Full Apartment Renovations",
+      "Custom Designer Kitchens",
+      "Modern Luxury Bathrooms",
+      "Masonry & Drywall Solutions",
+      "Hardwood & Porcelain Flooring",
+      "Electrical, Climate Control & LED"
+    ],
+    "coverageTitle": "Coverage Areas",
+    "coverage": [
+      "Throughout the Valencian Community",
+      "High-end residential renovations",
+      "Luxury villas, chalets & country houses",
+      "Commercial premises & boutique offices",
+      "Complimentary on-site measurement & advice",
+      "Full site management with dedicated in-house trades"
+    ],
+    "contactTitle": "Contact & Assistance",
+    "callLabel": "Call us",
+    "emailLabel": "Email",
+    "hoursLabel": "Office Hours",
+    "hoursVal": "Monday to Friday: 8:00 - 19:00",
+    "technicalVisitsLabel": "Technical Visits",
+    "technicalVisitsVal": "On-site survey free of charge",
+    "copyright": "© {year} PLB REFORMAS PREMIUM S.L. All rights reserved. Valencian Community.",
+    "legal": "Legal Notice",
+    "privacy": "Privacy Policy",
+    "cookies": "Cookie Policy"
+  },
+  "whatsapp": {
+    "ariaLabel": "Message us on WhatsApp",
+    "title": "Message us on WhatsApp",
+    "message": "Hello, I would like to request a quote for a renovation in the Valencian Community"
+  }
+}

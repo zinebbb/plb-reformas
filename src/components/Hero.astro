@@ -1,4 +1,12 @@
 ---
+import { useTranslations, type Lang } from '../i18n/utils';
+
+interface Props {
+  lang?: Lang;
+}
+
+const { lang = (Astro.currentLocale as Lang) || 'es' } = Astro.props;
+const t = useTranslations(lang);
 ---
 
 <section 
@@ -35,7 +43,7 @@
       
       <!-- Main Title -->
       <h1 class="hero-title text-white mb-4 sm:mb-5 text-left">
-        Construcción y Reformas Integrales
+        {t.hero.title}
       </h1>
 
       <!-- Subtitle: Outfit, font-weight: 300, color: rgba(255, 255, 255, 0.85), line-height: 1.6, text-shadow: none, Sin Benidorm -->
@@ -43,7 +51,7 @@
         class="hero-subtitle text-sm sm:text-base md:text-lg max-w-2xl mb-6 sm:mb-8 text-left"
         style="font-family: 'Outfit', system-ui, -apple-system, sans-serif; font-weight: 300; line-height: 1.6; color: rgba(255, 255, 255, 0.85); text-shadow: none;"
       >
-        Especialistas en reformas integrales de viviendas, chalets, cocinas y baños en la Comunidad Valenciana. Proyectos llave en mano con dirección técnica propia.
+        {t.hero.subtitle}
       </p>
 
       <!-- Fina barra horizontal blanca fija justo debajo del texto -->
@@ -62,7 +70,7 @@
       class="text-[11px] sm:text-xs tracking-[0.25em] uppercase font-light block"
       style="font-family: 'Outfit', system-ui, -apple-system, sans-serif; font-weight: 300; color: rgba(255, 255, 255, 0.7); text-shadow: none;"
     >
-      Haz scroll para continuar
+      {t.hero.scrollIndicator}
     </span>
     <div class="w-[1px] h-3.5 bg-white/40 mx-auto mt-2"></div>
   </div>

@@ -1,0 +1,350 @@
+{
+  "meta": {
+    "title": "PLB Reformas · Construction, Rénovation Complète & Architecture d'Intérieur dans la Communauté Valencienne",
+    "description": "Entreprise de rénovation intégrale, cuisines sur mesure et salles de bains dans la Communauté Valencienne. Contrat officiel, devis ferme, paiement par étapes et garantie de 2 ans."
+  },
+  "header": {
+    "brandName": "REFORMAS",
+    "brandHighlight": "PREMIUM",
+    "nav": {
+      "home": "Accueil",
+      "intro": "Philosophie",
+      "services": "Services",
+      "about": "À Propos",
+      "projects": "Réalisations",
+      "process": "Démarche",
+      "contact": "Contact"
+    },
+    "langAria": "Sélecteur de langue",
+    "mobileMenuAria": "Ouvrir le menu de navigation"
+  },
+  "hero": {
+    "title": "Construcción y Reformas Integrales",
+    "subtitle": "Spécialistes en rénovations intégrales d'appartements, villas, cuisines et salles de bains de standing dans la Communauté Valencienne. Projets clé en main avec direction technique intégrée.",
+    "scrollIndicator": "Faites défiler pour découvrir"
+  },
+  "intro": {
+    "eyebrow1": "PHILOSOPHIE & SAVOIR-FAIRE",
+    "title1": "PLB Reformas Premium: architecture d'intérieur et rénovations avec âme.",
+    "col1": "Chez PLB Obras y Reformas Premium S.L., nous métamorphosons les espaces résidentiels et commerciaux avec exigence, dévouement et une direction technique rigoureuse. Avec plus de 15 ans d'expérience dans la Communauté Valencienne, nous nous impliquons à chaque étape pour vous garantir une sérénité absolue, une relation de confiance et un service clé en main complet, du premier rendez-vous jusqu'à la remise des clés.",
+    "col2": "Chaque espace d'exception naît de l'écoute attentive de vos besoins. Nous ne nous contentons pas de mener un chantier : nous coordonnons minutieusement tous les corps de métier, alliant agencement architectural, décoration intérieure et finitions soignées pour concrétiser vos projets dans un cadre fonctionnel, élégant et doté d'une véritable identité.",
+    "eyebrow2": "VISUALISATION & ARCHITECTURE 3D",
+    "title2": "Architecture et Modélisation 3D: Visualisez avant de bâtir.",
+    "desc2": "Notre bureau d'études techniques et d'architecture conçoit des plans sur mesure et des modélisations 3D photoréalistes. Vous visualisez les différentes variantes d'agencement, les éclairages et les matériaux exacts avant le début des travaux, assurant la parfaite maîtrise de chaque détail.",
+    "specialties": [
+      {
+        "title": "Rénovations Intégrales",
+        "desc": "Appartements de standing, villas et espaces professionnels dans toute la Communauté Valencienne."
+      },
+      {
+        "title": "Construction & Architecture",
+        "desc": "Conception architecturale, plans d'exécution et pilotage technique complet de chantier."
+      },
+      {
+        "title": "Architecture d'Intérieur & 3D",
+        "desc": "Étude ergonomique des volumes, scénographies lumineuses et sélection de matériaux nobles."
+      },
+      {
+        "title": "Gestion Clé en Main",
+        "desc": "Contrat officiel, devis détaillé poste par poste et garantie légale écrite de 2 ans."
+      }
+    ]
+  },
+  "services": {
+    "eyebrow": "NOTRE EXPERTISE",
+    "title": "Prestations de Rénovation Haut de Gamme dans la Communauté Valencienne",
+    "subtitle": "Nous maîtrisons l'ensemble des corps d'état du bâtiment avec nos propres artisans qualifiés, garantissant des finitions impeccables et le respect des délais.",
+    "learnMore": "En savoir plus",
+    "items": [
+      {
+        "title": "Rénovation Complète",
+        "tag": "Service Clé en Main",
+        "desc": "Rénovation intégrale d'appartements, villas et commerces dans la Communauté Valencienne. Coordination experte de tous les corps d'état pour un rendu parfait."
+      },
+      {
+        "title": "Cuisines Design sur Mesure",
+        "tag": "Conception Personnalisée",
+        "desc": "Agencement ergonomique, mobilier sur mesure, plans de travail en céramique ou granit, îlots conviviaux et intégration soignée de l'électroménager."
+      },
+      {
+        "title": "Salles de Bains & Espaces d'Eau",
+        "tag": "Confort & Étanchéité",
+        "desc": "Douches à l'italienne de plain-pied, parois en verre trempé sécurit, étanchéité certifiée sous carrelage et robinetterie encastrée design."
+      },
+      {
+        "title": "Plâtrerie & Cloisons Sèches",
+        "tag": "Isolation & Volumes",
+        "desc": "Doublages thermiques et phoniques, gorges lumineuses avec LED indirectes, faux plafonds décoratifs et lissage millimétrique des surfaces."
+      },
+      {
+        "title": "Plomberie & Climatisation",
+        "tag": "Efficacité Énergétique",
+        "desc": "Réseaux multicouches hydro-sanitaires, climatisation gainable réversible, pompes à chaleur aérothermiques et chauffe-eau haute performance."
+      },
+      {
+        "title": "Électricité & Éclairage Architectural",
+        "tag": "Installations Certifiées",
+        "desc": "Mise aux normes complète, tableaux électriques divisionnaires, domotique, appareillages haut de gamme et conception d'éclairages d'ambiance."
+      },
+      {
+        "title": "Parquets & Revêtements Porcelaine",
+        "tag": "Matériaux d'Exception",
+        "desc": "Pose de parquets stratifiés AC5 à haute résistance, grès cérame grand format rectifié et plinthes laquées assorties."
+      },
+      {
+        "title": "Peinture & Finitions Délicates",
+        "tag": "Chantier Propre",
+        "desc": "Élimination des crépis avec ponçage sous aspiration, ratissage complet des murs et plafonds, et peintures dépolluantes lavables haute durabilité."
+      }
+    ]
+  },
+  "about": {
+    "eyebrow": "EXPÉRIENCE & ENGAGEMENT",
+    "title": "À Propos de Nous",
+    "imageAlt": "Intérieur rénové avec finitions haut de gamme par PLB Reformas",
+    "badgeTitle": "Garantie Artisanale",
+    "badgeDesc": "Équipe intégrée de maîtres maçons, menuisiers, plombiers et électriciens agréés.",
+    "narrativeTitle": "Une vision globale pour concevoir <br /> des espaces où il fait bon vivre",
+    "p1": "Depuis plus de 12 ans, nous nous consacrons avec passion à la construction, la rénovation complète et l'architecture d'intérieur en Espagne. Nous avons fondé PLB Reformas avec une vocation essentielle : réunir sous une unique direction technique l'intégralité des corps d'état nécessaires à une habitation, de l'étude architecturale initiale jusqu'aux corniches d'éclairage et aux finitions les plus exigeantes.",
+    "p2": "Aujourd'hui, avec nos propres conducteurs de travaux, installateurs agréés et artisans bâtisseurs, nous concrétisons des projets de toute complexité technique à Benidorm et dans toute la Communauté Valencienne. Nous ne dépendons d'aucun intermédiaire impersonnel : nous disposons de nos propres équipes pour chaque métier, ce qui nous permet d'assurer une précision millimétrique sur chaque réalisation.",
+    "quote": "\"Pour notre équipe, rénover ne consiste pas seulement à abattre des cloisons et tirer des câbles ; c'est façonner un havre lumineux, élégant et confortable où votre famille profite d'une qualité de vie incomparable.\"",
+    "p3": "Nous travaillons avec transparence, contrat officiel, planning signé et paiements échelonnés par tranches validées. C'est cette rigueur constante qui inspire une confiance totale à nos clients et motive leurs recommandations continues.",
+    "signatureRole": "Direction Technique & Pilotage de Projets",
+    "signatureCompany": "PLB Reformas Premium S.L. · Communauté Valencienne",
+    "pillarsEyebrow": "NOS ENGAGEMENTS FONDAMENTAUX",
+    "pillarsTitle": "Pourquoi Choisir PLB Reformas ?",
+    "pillars": [
+      {
+        "num": "01",
+        "title": "Démarrage Rapide & Ponctualité",
+        "highlight": "Début sous 2 jours",
+        "desc": "Nous lançons les travaux sur site 2 jours seulement après la signature du contrat. Nous fixons un calendrier ferme et respectons scrupuleusement les délais convenus."
+      },
+      {
+        "num": "02",
+        "title": "Contrat Officiel & Prix Fixe",
+        "highlight": "Devis détaillé garanti",
+        "desc": "Nous formalisons un contrat officiel détaillé poste par poste pour la durée globale du chantier. Le montant stipulé est exactement ce que vous réglez, sans surcoûts imprévus."
+      },
+      {
+        "num": "03",
+        "title": "Nettoyage Approfondi Post-Chantier",
+        "highlight": "Livraison impeccable",
+        "desc": "Nous protégeons scrupuleusement les parties communes de l'immeuble et réalisons un nettoyage minutieux à l'achèvement. Vous recevez les clés prêt à habiter immédiatement."
+      }
+    ]
+  },
+  "gallery": {
+    "eyebrow": "NOS CHANTIERS",
+    "title": "Nos Réalisations en Vidéo",
+    "subtitle": "Captures authentiques filmées au cœur de nos rénovations livrées et en cours dans la Communauté Valencienne.",
+    "videoFallback": "Votre navigateur ne permet pas la lecture directe de cette vidéo.",
+    "consultSimilar": "Étudier un projet similaire",
+    "projects": [
+      {
+        "title": "Appartement Contemporain avec Gorges Lumineuses LED",
+        "category": "Rénovation Complète",
+        "location": "Communauté Valencienne",
+        "duration": "18 sec",
+        "specs": [
+          { "label": "Délai d'exécution", "val": "5 semaines" },
+          { "label": "Revêtement de sol", "val": "Stratifié AC5 chêne naturel" },
+          { "label": "Éclairage", "val": "Gorges LED indirectes 3000K" }
+        ],
+        "desc": "Réagencement décloisonné et lumineux, menuiseries laquées blanches, boiseries murales et isolation acoustique complète."
+      },
+      {
+        "title": "Cuisine Ouverte avec Îlot et Bar Convivial",
+        "category": "Cuisine sur Mesure",
+        "location": "Communauté Valencienne",
+        "duration": "14 sec",
+        "specs": [
+          { "label": "Délai d'exécution", "val": "2 semaines" },
+          { "label": "Plan de travail", "val": "Granit poli haute résistance" },
+          { "label": "Mobilier", "val": "Blanc mat avec amortisseurs" }
+        ],
+        "desc": "Fabrication sur mesure, électroménager encastré en colonne, éclairage sous meubles et espace petit-déjeuner avec tabourets."
+      },
+      {
+        "title": "Phase de Démolition & Préparation Structurelle",
+        "category": "Suivi de Chantier",
+        "location": "Communauté Valencienne",
+        "duration": "10 sec",
+        "specs": [
+          { "label": "Étape", "val": "Curage & Assainissement" },
+          { "label": "Sécurité", "val": "Protection intégrale des parties communes" },
+          { "label": "Réseaux", "val": "Nouvelles saignées et canalisations encastrées" }
+        ],
+        "desc": "Dépose méthodique des anciennes cloisons, évacuation des gravats en sacs homologués et nivellement de chape au laser."
+      }
+    ]
+  },
+  "process": {
+    "eyebrow": "NOTRE MÉTHODE",
+    "title": "Comment Nous Travaillons",
+    "subtitle": "Une méthodologie structurée, transparente et rigoureuse pour mener la rénovation de votre bien dans la Communauté Valencienne en toute sérénité.",
+    "stepBadge": "Étape {step} sur 4",
+    "tag": "PLB Premium",
+    "steps": [
+      {
+        "num": "01",
+        "phase": "ÉTAPE 01",
+        "title": "Visite Conseil & Diagnostic sur Place",
+        "desc": "Nous nous déplaçons dans votre bien partout dans la Communauté Valencienne. Nous analysons l'état technique, écoutons vos souhaits et effectuons les relevés précis sans frais."
+      },
+      {
+        "num": "02",
+        "phase": "ÉTAPE 02",
+        "title": "Devis Ferme & Contrat Détaillé",
+        "desc": "Nous élaborons une offre technique exhaustive détaillée poste par poste avec descriptif des matériaux et prix garantis. Ce qui est signé est ce que vous payez."
+      },
+      {
+        "num": "03",
+        "phase": "ÉTAPE 03",
+        "title": "Réalisation & Règlement Échelonné",
+        "desc": "Un conducteur de travaux dédié supervise nos spécialistes. Aucun paiement intégral anticipé : les versements s'effectuent par tranches selon l'avancement certifié."
+      },
+      {
+        "num": "04",
+        "phase": "ÉTAPE 04",
+        "title": "Réception Minutieuse & Garantie 2 Ans",
+        "desc": "Nous inspectons avec vous chaque finition dans les moindres détails. Nous réalisons un nettoyage approfondi et vous remettons le document officiel de garantie de 2 ans."
+      }
+    ]
+  },
+  "whyUs": {
+    "eyebrow": "NOTRE DIFFÉRENCE",
+    "title": "Pourquoi Choisir PLB Reformas",
+    "subtitle": "Nous appliquons les critères de construction les plus rigoureux dans la Communauté Valencienne, vous apportant des garanties solides pour sécuriser votre patrimoine.",
+    "pillars": [
+      {
+        "title": "Délais Tenus & Démarrage Immédiat",
+        "desc": "Dates de lancement et de livraison convenues contractuellement. Nous respectons scrupuleusement le calendrier convenu."
+      },
+      {
+        "title": "Contrat Officiel & Prix Fixe Garanti",
+        "desc": "Devis limpide et détaillé poste par poste. Votre investissement est entièrement maîtrisé, sans surprises ni dépassements de budget."
+      },
+      {
+        "title": "Nettoyage Approfondi Après Chantier",
+        "desc": "Protection soignée des accès, halls et ascenseurs. À la livraison, votre logement est impeccable, prêt à emménager immédiatement."
+      },
+      {
+        "title": "Paiement par Tranches Certifiées",
+        "desc": "Nous n'exigeons jamais l'intégralité des fonds à l'avance. Le règlement est structuré en plusieurs phases corrélées à l'avancement effectif."
+      },
+      {
+        "title": "Garantie Contractuelle Écrite de 2 Ans",
+        "desc": "Certificat de garantie officiel de 2 ans sur l'ensemble de nos ouvrages et installations, complété par un service après-vente réactif."
+      },
+      {
+        "title": "Équipe Métiers Intégrée sans Intermédiaires",
+        "desc": "Maçons, électriciens certifiés, plombiers et menuisiers qualifiés coordonnés en direct par un conducteur de travaux dédié."
+      }
+    ]
+  },
+  "testimonials": {
+    "eyebrow": "AVIS CLIENTS",
+    "title": "Témoignages & Retours d'Expérience",
+    "subtitle": "Plus de 85 % de nos nouveaux chantiers dans la Communauté Valencienne proviennent de recommandations directes de propriétaires satisfaits.",
+    "verified": "Client Vérifié",
+    "reviews": [
+      {
+        "num": "01",
+        "author": "Famille Gómez R.",
+        "location": "Communauté Valencienne",
+        "project": "Rénovation Complète d'Appartement · 95 m²",
+        "tag": "Délais Respectés",
+        "quote": "Nous avons entièrement rénové notre appartement face à la mer. Les clés nous ont été remises le jour convenu, le devis n'a pas bougé d'un centime et le travail des éclairages LED et du placo a magnifié l'espace. Nous recommandons vivement."
+      },
+      {
+        "num": "02",
+        "author": "Elena & Marcus V.",
+        "location": "Communauté Valencienne",
+        "project": "Cuisine Ouverte avec Îlot & Salles de Bains",
+        "tag": "Qualité & Finitions",
+        "quote": "La cuisine correspond exactement à ce que nous imaginions. Leurs conseils pour les plans de travail et la menuiserie ont été précieux. Le paiement par étapes nous a énormément rassurés et le logement a été rendu d'une propreté parfaite."
+      },
+      {
+        "num": "03",
+        "author": "David M.",
+        "location": "Communauté Valencienne",
+        "project": "Grès Cérame, Climatisation Gainable & Peintures",
+        "tag": "Garantie Officielle",
+        "quote": "Grand professionnalisme et discipline exemplaire. Le conducteur de travaux était disponible en permanence pour orchestrer les différents corps d'état. Ils ont grandement pris soin de l'immeuble et la garantie contractuelle offre une vraie tranquillité."
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "CONTACTEZ-NOUS",
+    "title": "Demander un Devis",
+    "callout": "Planifiez votre visite technique et votre métré sur place sans frais le jour même de votre demande.",
+    "desc": "Chaque projet d'envergure débute par un échange personnalisé. Transmettez-nous vos coordonnées ou contactez-nous directement pour bénéficier d'une étude technique approfondie, d'un devis détaillé et de délais de réalisation garantis.",
+    "phoneLabel": "Ligne Téléphonique",
+    "whatsappLabel": "WhatsApp Direct",
+    "whatsappCta": "Échanger sur WhatsApp",
+    "areaLabel": "Périmètre d'Intervention",
+    "areaVal": "Ensemble de la Communauté Valencienne et communes limitrophes",
+    "formTitle": "Transmettez-nous votre projet",
+    "formSubtitle": "Nous vous répondrons sous 24 heures pour convenir de votre visite technique gratuite.",
+    "nameLabel": "Nom et prénom *",
+    "namePlaceholder": "Votre nom",
+    "phoneInputLabel": "Numéro de téléphone *",
+    "phonePlaceholder": "+34 600 000 000",
+    "projectLabel": "Nature du Projet",
+    "projectOptions": {
+      "integral": "Rénovation Complète d'Appartement",
+      "chalet": "Rénovation de Villa / Maison Individuelle",
+      "cocina": "Cuisine sur Mesure",
+      "bano": "Salle de Bains / Douche à l'Italienne",
+      "local": "Local Commercial / Espace Professionnel",
+      "otro": "Travaux Divers / Autre"
+    },
+    "locationLabel": "Commune ou Secteur",
+    "locationPlaceholder": "Ex. Commune dans la Communauté Valencienne...",
+    "messageLabel": "Parlez-nous de votre projet",
+    "messagePlaceholder": "Indiquez la surface approximative, vos souhaits d'aménagement ou la date de démarrage souhaitée...",
+    "feedback": "Votre demande a bien été enregistrée. Nous vous contacterons dans les plus brefs délais.",
+    "submitBtn": "Demander un Devis",
+    "submitSuccess": "Demande Envoyée avec Succès",
+    "privacyNote": "Vos données restent strictement confidentielles. Devis gratuit et sans engagement."
+  },
+  "footer": {
+    "desc": "Entreprise de rénovation intégrale, architecture d'intérieur et construction dans la Communauté Valencienne. Projets clé en main avec contrat officiel, paiements échelonnés et garantie écrite de 2 ans.",
+    "coverageBadge": "Interventions dans toute la Communauté Valencienne",
+    "servicesTitle": "Prestations",
+    "services": [
+      "Rénovations Complètes d'Appartements",
+      "Cuisines Contemporaines sur Mesure",
+      "Salles de Bains Modernes & Douches",
+      "Plâtrerie & Cloisonnement Plaque de Plâtre",
+      "Parquets & Revêtements Grès Cérame",
+      "Électricité, Climatisation & Éclairage LED"
+    ],
+    "coverageTitle": "Secteurs Desservis",
+    "coverage": [
+      "Ensemble de la Communauté Valencienne",
+      "Rénovations résidentielles de haut standing",
+      "Villas prestigieuses et propriétés de charme",
+      "Locaux commerciaux et bureaux d'affaires",
+      "Métré et conseil technique sur site sans frais",
+      "Direction de chantier et artisans intégrés"
+    ],
+    "contactTitle": "Contact & Assistance",
+    "callLabel": "Téléphone",
+    "emailLabel": "Email",
+    "hoursLabel": "Horaires de Bureau",
+    "hoursVal": "Du lundi au vendredi : 8h00 - 19h00",
+    "technicalVisitsLabel": "Visites Techniques",
+    "technicalVisitsVal": "Métré sur place sans frais",
+    "copyright": "© {year} PLB REFORMAS PREMIUM S.L. Tous droits réservés. Communauté Valencienne.",
+    "legal": "Mentions Légales",
+    "privacy": "Politique de Confidentialité",
+    "cookies": "Politique des Cookies"
+  },
+  "whatsapp": {
+    "ariaLabel": "Écrivez-nous sur WhatsApp",
+    "title": "Écrivez-nous sur WhatsApp",
+    "message": "Bonjour, je souhaiterais demander un devis pour une rénovation dans la Communauté Valencienne"
+  }
+}

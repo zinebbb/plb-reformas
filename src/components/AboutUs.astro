@@ -1,24 +1,12 @@
 ---
-const pillars = [
-  {
-    num: "01",
-    title: "Rápido y Puntual",
-    highlight: "Comienzo en 2 días",
-    desc: "Iniciamos los trabajos en tan solo 2 días tras la firma del contrato. Establecemos un calendario vinculante y cumplimos rigurosamente los plazos de entrega pactados para tu tranquilidad."
-  },
-  {
-    num: "02",
-    title: "Contrato Oficial",
-    highlight: "Presupuesto cerrado",
-    desc: "Firmamos un contrato oficial para todo el período de la reforma, detallado partida por partida. Lo estipulado por escrito es exactamente lo que pagas, sin sorpresas ni costes ocultos."
-  },
-  {
-    num: "03",
-    title: "Limpieza Post-Obra",
-    highlight: "Entrega impecable",
-    desc: "Cuidamos las zonas comunes del edificio durante la obra y realizamos una limpieza exhaustiva y profesional al finalizar los trabajos. Recibes las llaves con tu vivienda lista para entrar a vivir."
-  }
-];
+import { useTranslations, type Lang } from '../i18n/utils';
+
+interface Props {
+  lang?: Lang;
+}
+
+const { lang = (Astro.currentLocale as Lang) || 'es' } = Astro.props;
+const t = useTranslations(lang);
 ---
 
 <section id="nosotros" class="py-24 bg-[#0f1115] text-white relative border-b border-white/10 overflow-hidden">
@@ -31,10 +19,10 @@ const pillars = [
     <!-- Top Sub-header -->
     <div class="fade-up mb-16 text-center max-w-3xl mx-auto">
       <span class="text-xs font-bold tracking-widest uppercase text-gold-500 block mb-3">
-        FILOSOFÍA & EXPERIENCIA
+        {t.about.eyebrow}
       </span>
       <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold uppercase tracking-tight text-white mb-4">
-        Sobre Nosotros
+        {t.about.title}
       </h2>
       <div class="w-16 h-1 bg-gold-500 mx-auto"></div>
     </div>
@@ -47,7 +35,7 @@ const pillars = [
         <div class="relative z-10 rounded-sm overflow-hidden border border-white/15 shadow-2xl">
           <img 
             src="/images/thumbnails/thumb-4.jpg" 
-            alt="Interiorismo y reforma terminada por PLB Reformas" 
+            alt={t.about.imageAlt} 
             class="w-full h-[460px] object-cover"
           />
           <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
@@ -55,10 +43,10 @@ const pillars = [
           <!-- Bottom Floating Badge -->
           <div class="absolute bottom-6 left-6 right-6 p-4 bg-black/80 backdrop-blur-md border border-white/10 rounded-sm">
             <span class="text-[11px] font-bold text-gold-500 uppercase tracking-widest block mb-1">
-              Compromiso de Autor
+              {t.about.badgeTitle}
             </span>
             <p class="text-xs text-gray-300 font-light leading-relaxed">
-              Equipo propio de maestros albañiles, carpinteros, fontaneros e instaladores certificados.
+              {t.about.badgeDesc}
             </p>
           </div>
         </div>
@@ -67,29 +55,26 @@ const pillars = [
         <div class="absolute -inset-3 border border-gold-500/30 rounded-sm pointer-events-none -z-0 translate-x-2 translate-y-2 hidden sm:block"></div>
       </div>
 
-      <!-- Right Column: Personal Narrative / Letter (Alfa Interiorismo Style) -->
+      <!-- Right Column: Personal Narrative / Letter -->
       <div class="fade-up delay-100 lg:col-span-7 space-y-6">
         
-        <h3 class="text-2xl sm:text-3xl font-extrabold uppercase tracking-tight text-white leading-snug">
-          Un enfoque integral para crear <br />
-          espacios en los que apetece vivir
-        </h3>
+        <h3 class="text-2xl sm:text-3xl font-extrabold uppercase tracking-tight text-white leading-snug" set:html={t.about.narrativeTitle}></h3>
 
         <div class="space-y-4 text-sm sm:text-base text-gray-300 leading-relaxed font-light">
           <p>
-            Llevamos más de 12 años dedicados a la construcción, las reformas integrales y la renovación de interiores en España. Creamos <strong class="text-white font-semibold">PLB Reformas</strong> con un propósito irrenunciable: reunir bajo una sola dirección técnica todas las fases que requiere una vivienda, desde el asesoramiento arquitectónico inicial hasta el último foseado de iluminación y los remates más exigentes.
+            {t.about.p1}
           </p>
 
           <p>
-            Hoy, junto a nuestro equipo propio de jefes de obra, instaladores certificados y maestros de la construcción, ejecutamos proyectos de cualquier nivel de complejidad técnica en Benidorm y toda la Comunidad Valenciana. No trabajamos con subcontratas impersonales: disponemos de profesionales propios para cada oficio, lo que nos permite responder con absoluta solvencia de cada milímetro ejecutado.
+            {t.about.p2}
           </p>
 
           <p class="text-white/90 border-l-2 border-gold-500 pl-4 italic font-normal py-1">
-            "Para nosotros una reforma no es solo tirar tabiques y tender cableado; es concebir un espacio luminoso, equilibrado y confortable donde tu familia disfrute de una calidad de vida excepcional."
+            {t.about.quote}
           </p>
 
           <p>
-            Trabajamos con honestidad, contrato oficial, calendario firmado y pago por etapas certificadas. Es este rigor el que hace que nuestros clientes confíen plenamente en nosotros y nos recomienden continuamente.
+            {t.about.p3}
           </p>
         </div>
 
@@ -99,8 +84,8 @@ const pillars = [
             PLB
           </div>
           <div>
-            <div class="text-sm font-bold uppercase tracking-wider text-white">Dirección Técnica & Gestión de Proyectos</div>
-            <div class="text-xs text-gold-500 font-medium">PLB Reformas Premium S.L. · Comunidad Valenciana</div>
+            <div class="text-sm font-bold uppercase tracking-wider text-white">{t.about.signatureRole}</div>
+            <div class="text-xs text-gold-500 font-medium">{t.about.signatureCompany}</div>
           </div>
         </div>
 
@@ -108,20 +93,20 @@ const pillars = [
 
     </div>
 
-    <!-- ¿POR QUÉ ELEGIR PLB REFORMAS? (Direct from Alfa Interiorismo) -->
+    <!-- ¿POR QUÉ ELEGIR PLB REFORMAS? -->
     <div class="pt-16 border-t border-white/10">
       
       <div class="fade-up text-center mb-12">
         <span class="text-xs font-bold tracking-widest uppercase text-gold-500 block mb-2">
-          COMPROMISOS INNEGOCIABLES
+          {t.about.pillarsEyebrow}
         </span>
         <h3 class="text-2xl sm:text-3xl md:text-4xl font-extrabold uppercase tracking-tight text-white">
-          ¿Por Qué Elegir PLB Reformas?
+          {t.about.pillarsTitle}
         </h3>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {pillars.map((item, idx) => (
+        {t.about.pillars.map((item, idx) => (
           <div 
             class={`fade-up delay-${(idx + 1) * 100} p-8 bg-[#16191f] border border-white/10 hover:border-gold-500 transition-all duration-300 rounded-sm flex flex-col justify-between group`}
           >
@@ -142,11 +127,6 @@ const pillars = [
               <p class="text-xs sm:text-sm text-gray-400 leading-relaxed font-light">
                 {item.desc}
               </p>
-            </div>
-
-            <div class="mt-8 pt-4 border-t border-white/10 flex items-center justify-between text-[11px] font-semibold text-gray-500 uppercase tracking-wider">
-              <span>Garantía Oficial</span>
-              <span class="text-gold-500 font-bold">100% Verificado</span>
             </div>
           </div>
         ))}

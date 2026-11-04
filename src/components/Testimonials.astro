@@ -1,30 +1,12 @@
 ---
-const reviews = [
-  {
-    num: "01",
-    author: "Familia Gómez R.",
-    location: "Comunidad Valenciana",
-    project: "Reforma Integral de Apartamento · 95 m²",
-    tag: "Plazos Cumplidos",
-    quote: "Reformamos por completo nuestro piso frente al mar. Cumplieron con la fecha de entrega al día pactado, el presupuesto no varió un solo euro y los acabados de iluminación LED y pladur han transformado toda la estancia. Totalmente recomendables."
-  },
-  {
-    num: "02",
-    author: "Elena & Marcus V.",
-    location: "Comunidad Valenciana",
-    project: "Cocina con Isla y Baños de Diseño",
-    tag: "Calidad y Acabados",
-    quote: "La cocina quedó exactamente como la habíamos soñado. Nos asesoraron en cada detalle de la distribución, encimera y carpintería oculta. El sistema de pago por etapas nos dio muchísima seguridad y dejaron todo impecable."
-  },
-  {
-    num: "03",
-    author: "David M.",
-    location: "Comunidad Valenciana",
-    project: "Pavimento Porcelánico, Clima y Pintura",
-    tag: "Garantía Oficial",
-    quote: "Gran seriedad y rigor profesional. El jefe de obra estuvo permanentemente localizable para coordinar a los gremios. Cuidaron muchísimo la finca comunitaria y la garantía por contrato te permite estar totalmente tranquilo."
-  }
-];
+import { useTranslations, type Lang } from '../i18n/utils';
+
+interface Props {
+  lang?: Lang;
+}
+
+const { lang = (Astro.currentLocale as Lang) || 'es' } = Astro.props;
+const t = useTranslations(lang);
 ---
 
 <section id="testimonios" class="py-24 bg-[#0f1115] text-white relative border-t border-white/10">
@@ -33,20 +15,20 @@ const reviews = [
     <!-- Section Header (Alfa Interiorismo Style) -->
     <div class="fade-up text-center max-w-3xl mx-auto mb-16">
       <span class="text-xs font-bold tracking-widest uppercase text-gold-500 block mb-2">
-        CLIENTES SATISFECHOS
+        {t.testimonials.eyebrow}
       </span>
       <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold uppercase tracking-tight text-white mb-4">
-        Opiniones y Experiencias Reales
+        {t.testimonials.title}
       </h2>
       <div class="w-16 h-1 bg-gold-500 mx-auto mb-5"></div>
       <p class="text-sm sm:text-base text-gray-400 leading-relaxed font-normal">
-        Más del 85% de nuestros nuevos proyectos en la Comunidad Valenciana provienen de recomendaciones directas de familias y propietarios.
+        {t.testimonials.subtitle}
       </p>
     </div>
 
     <!-- Testimonials Cards Grid -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      {reviews.map((rev, idx) => (
+      {t.testimonials.reviews.map((rev, idx) => (
         <div 
           class={`fade-up delay-${(idx + 1) * 100} p-8 sm:p-10 bg-[#16191f] border border-white/10 hover:border-gold-500 transition-all duration-300 rounded-sm flex flex-col justify-between group`}
         >
@@ -60,22 +42,27 @@ const reviews = [
                   </svg>
                 ))}
               </div>
-              <span class="text-[10px] font-bold uppercase tracking-wider text-gold-500/90 border border-gold-500/30 px-2 py-0.5 rounded-xs">
+              <span class="text-[10px] font-bold uppercase tracking-widest text-gold-400 bg-gold-500/10 border border-gold-500/30 px-2 py-0.5 rounded-xs">
                 {rev.tag}
               </span>
             </div>
 
             <!-- Quote Text -->
-            <p class="text-sm sm:text-base text-gray-300 leading-relaxed font-normal mb-8 italic">
+            <p class="text-xs sm:text-sm text-gray-300 leading-relaxed italic mb-8 font-light">
               "{rev.quote}"
             </p>
           </div>
 
           <!-- Author Info -->
-          <div class="pt-6 border-t border-white/10">
-            <div class="font-bold text-sm text-white uppercase tracking-wider">{rev.author}</div>
-            <div class="text-xs text-gold-500 font-medium mt-1">{rev.location}</div>
-            <div class="text-[11px] text-gray-400 mt-0.5 uppercase tracking-wide">{rev.project}</div>
+          <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+            <div>
+              <div class="text-sm font-bold text-white uppercase tracking-wider">{rev.author}</div>
+              <div class="text-xs text-gold-500 font-medium">{rev.project}</div>
+              <div class="text-[11px] text-gray-500">{rev.location}</div>
+            </div>
+            <div class="text-[11px] text-gray-500 font-semibold tracking-wider uppercase">
+              {t.testimonials.verified}
+            </div>
           </div>
         </div>
       ))}

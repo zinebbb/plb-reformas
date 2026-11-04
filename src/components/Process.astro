@@ -1,30 +1,12 @@
 ---
-const steps = [
-  {
-    num: "01",
-    phase: "FASE 01",
-    title: "Visita y Asesoramiento In Situ",
-    desc: "Nos desplazamos a tu vivienda o local en cualquier punto de la Comunidad Valenciana. Evaluamos el estado técnico, escuchamos tus ideas y realizamos mediciones precisas sin coste alguno."
-  },
-  {
-    num: "02",
-    phase: "FASE 02",
-    title: "Presupuesto Cerrado por Contrato",
-    desc: "Elaboramos una propuesta técnica desglosada partida por partida con calidades y precios cerrados. Lo estipulado en contrato es lo que pagas, sin sorpresas ni costes ocultos."
-  },
-  {
-    num: "03",
-    phase: "FASE 03",
-    title: "Ejecución y Pago por Etapas",
-    desc: "Un jefe de obra coordina a nuestro equipo de especialistas. No abonas la totalidad por adelantado: los pagos se realizan de forma estructurada según avance certificado de la obra."
-  },
-  {
-    num: "04",
-    phase: "FASE 04",
-    title: "Entrega Impecable y Garantía Oficial",
-    desc: "Revisamos contigo cada acabado y detalle. Realizamos una limpieza exhaustiva post-obra y te hacemos entrega formal de la garantía por escrito de 2 años."
-  }
-];
+import { useTranslations, type Lang } from '../i18n/utils';
+
+interface Props {
+  lang?: Lang;
+}
+
+const { lang = (Astro.currentLocale as Lang) || 'es' } = Astro.props;
+const t = useTranslations(lang);
 ---
 
 <section id="proceso" class="py-24 bg-white text-[#111317] relative">
@@ -33,20 +15,20 @@ const steps = [
     <!-- Section Header (Alfa Interiorismo Style) -->
     <div class="fade-up text-center max-w-3xl mx-auto mb-16">
       <span class="text-xs font-bold tracking-widest uppercase text-gold-600 block mb-2">
-        CÓMO TRABAJAMOS
+        {t.process.eyebrow}
       </span>
       <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold uppercase tracking-tight text-[#111317] mb-4">
-        Cómo Trabajamos
+        {t.process.title}
       </h2>
       <div class="w-16 h-1 bg-gold-500 mx-auto mb-5"></div>
       <p class="text-sm sm:text-base text-gray-600 leading-relaxed font-normal">
-        Un proceso estructurado, transparente y riguroso para que disfrutes de la reforma de tu vivienda en la Comunidad Valenciana con total tranquilidad.
+        {t.process.subtitle}
       </p>
     </div>
 
     <!-- Steps Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-      {steps.map((step, idx) => (
+      {t.process.steps.map((step, idx) => (
         <div 
           class={`fade-up delay-${(idx + 1) * 100} p-8 bg-[#f8fafc] border border-gray-200 hover:border-gold-500 hover:shadow-lg transition-all duration-300 rounded-sm flex flex-col justify-between group`}
         >
@@ -70,8 +52,8 @@ const steps = [
           </div>
 
           <div class="mt-8 pt-4 border-t border-gray-200 flex items-center justify-between text-[11px] font-semibold text-gray-400 uppercase tracking-wider">
-            <span>Paso {idx + 1} de 4</span>
-            <span class="text-gold-600 font-bold">PLB Premium</span>
+            <span>{t.process.stepBadge.replace('{step}', String(idx + 1))}</span>
+            <span class="text-gold-600 font-bold">{t.process.tag}</span>
           </div>
         </div>
       ))}

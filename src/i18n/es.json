@@ -1,0 +1,350 @@
+{
+  "meta": {
+    "title": "PLB Reformas · Construcción, Reformas e Interiorismo en la Comunidad Valenciana",
+    "description": "Empresa de reformas integrales, cocinas y baños en la Comunidad Valenciana. Contrato oficial, presupuesto cerrado, pago por etapas y garantía por escrito de 2 años."
+  },
+  "header": {
+    "brandName": "REFORMAS",
+    "brandHighlight": "PREMIUM",
+    "nav": {
+      "home": "Inicio",
+      "intro": "Filosofía",
+      "services": "Servicios",
+      "about": "Nosotros",
+      "projects": "Obras",
+      "process": "Proceso",
+      "contact": "Contacto"
+    },
+    "langAria": "Selector de idioma",
+    "mobileMenuAria": "Abrir menú de navegación"
+  },
+  "hero": {
+    "title": "Construcción y Reformas Integrales",
+    "subtitle": "Especialistas en reformas integrales de viviendas, chalets, cocinas y baños en la Comunidad Valenciana. Proyectos llave en mano con dirección técnica propia.",
+    "scrollIndicator": "Haz scroll para continuar"
+  },
+  "intro": {
+    "eyebrow1": "FILOSOFÍA & TRAYECTORIA",
+    "title1": "PLB Reformas Premium: interiorismo, arquitectura y reformas con alma.",
+    "col1": "En PLB Obras y Reformas Premium S.L. transformamos espacios residenciales y comerciales con calidad, compromiso y plena dirección técnica. Con más de 15 años de experiencia en la Comunidad Valenciana, nos implicamos en cada fase del proyecto para ofrecerte absoluta tranquilidad, confianza y un servicio integral llave en mano desde el primer contacto hasta la entrega de llaves.",
+    "col2": "Cada espacio empieza escuchando tus necesidades. No nos limitamos a ejecutar una obra: coordinamos de forma meticulosa todos los gremios implicados, fusionando decoración, interiorismo y acabados impecables para convertir tus ideas en una realidad funcional, elegante y con identidad propia.",
+    "eyebrow2": "VISUALIZACIÓN & PROYECTOS 3D",
+    "title2": "Arquitectura y Diseño 3D: Visualiza antes de construir.",
+    "desc2": "Contamos con un departamento técnico de arquitectura para desarrollar planos y diseños personalizados en 3D. Podrás estudiar diferentes opciones de distribución y seleccionar los materiales idénticos antes de comenzar la obra, asegurando que cada detalle esté pensado de antemano.",
+    "specialties": [
+      {
+        "title": "Reformas Integrales",
+        "desc": "Viviendas, apartamentos y locales comerciales en la Comunidad Valenciana."
+      },
+      {
+        "title": "Construcción y Arquitectura",
+        "desc": "Proyectos a medida, diseño conceptual y dirección técnica de obra."
+      },
+      {
+        "title": "Diseño de Interiores & 3D",
+        "desc": "Estudio ergonómico de espacios, iluminación escenográfica y selección de acabados nobles."
+      },
+      {
+        "title": "Gestión Integral Llave en Mano",
+        "desc": "Contrato oficial, presupuesto cerrado partida a partida y garantía por escrito de 2 años."
+      }
+    ]
+  },
+  "services": {
+    "eyebrow": "QUÉ HACEMOS",
+    "title": "Servicios de Alta Gama en la Comunidad Valenciana",
+    "subtitle": "Abarcamos todos los oficios de la construcción y reforma con personal propio cualificado, garantizando acabados de alta gama y sin retrasos.",
+    "learnMore": "Saber más",
+    "items": [
+      {
+        "title": "Reformas Integrales",
+        "tag": "Servicio Completo",
+        "desc": "Renovación integral de pisos, chalets y locales comerciales en la Comunidad Valenciana. Coordinamos todos los gremios técnicos para una entrega perfecta."
+      },
+      {
+        "title": "Cocinas de Diseño",
+        "tag": "A Medida",
+        "desc": "Diseño ergonómico, fabricación propia de muebles, encimeras porcelánicas o de granito, barras americanas y montaje completo de electrodomésticos."
+      },
+      {
+        "title": "Baños y Espacios de Agua",
+        "tag": "Confort & Estanqueidad",
+        "desc": "Cambio de bañera por plato de ducha antideslizante a ras de suelo, mamparas de cristal templado, impermeabilización y grifería empotrada."
+      },
+      {
+        "title": "Albañilería y Pladur",
+        "tag": "Estructura & Aislamiento",
+        "desc": "Tabiques secos, foseados perimetrales con luz LED indirecta, falsos techos acústicos y térmicos y nivelación milimétrica de paramentos."
+      },
+      {
+        "title": "Fontanería y Climatización",
+        "tag": "Eficiencia Energética",
+        "desc": "Instalaciones de agua multicapa, aire acondicionado por conductos, splits inverter, aerotermia y calderas de última generación."
+      },
+      {
+        "title": "Electricidad e Iluminación",
+        "tag": "Boletines Oficiales",
+        "desc": "Renovación completa de cableado, cuadros eléctricos certificados, mecanismos modernos, domótica e iluminación arquitectónica indirecta."
+      },
+      {
+        "title": "Suelos y Pavimentos",
+        "tag": "Materiales Nobles",
+        "desc": "Colocación de tarima laminada AC5 de alta resistencia, gres porcelánico rectificado de gran formato y rodapiés lacados a juego."
+      },
+      {
+        "title": "Pintura y Acabados Finos",
+        "tag": "Sin Polvo",
+        "desc": "Eliminación de gotelé con lijado aspirado profesional, alisado perfecto de paredes y techos, y pintura plástica lavable de alta durabilidad."
+      }
+    ]
+  },
+  "about": {
+    "eyebrow": "FILOSOFÍA & EXPERIENCIA",
+    "title": "Sobre Nosotros",
+    "imageAlt": "Interiorismo y reforma terminada por PLB Reformas",
+    "badgeTitle": "Compromiso de Autor",
+    "badgeDesc": "Equipo propio de maestros albañiles, carpinteros, fontaneros e instaladores certificados.",
+    "narrativeTitle": "Un enfoque integral para crear <br /> espacios en los que apetece vivir",
+    "p1": "Llevamos más de 12 años dedicados a la construcción, las reformas integrales y la renovación de interiores en España. Creamos PLB Reformas con un propósito irrenunciable: reunir bajo una sola dirección técnica todas las fases que requiere una vivienda, desde el asesoramiento arquitectónico inicial hasta el último foseado de iluminación y los remates más exigentes.",
+    "p2": "Hoy, junto a nuestro equipo propio de jefes de obra, instaladores certificados y maestros de la construcción, ejecutamos proyectos de cualquier nivel de complejidad técnica en Benidorm y toda la Comunidad Valenciana. No trabajamos con subcontratas impersonales: disponemos de profesionales propios para cada oficio, lo que nos permite responder con absoluta solvencia de cada milímetro ejecutado.",
+    "quote": "\"Para nosotros una reforma no es solo tirar tabiques y tender cableado; es concebir un espacio luminoso, equilibrado y confortable donde tu familia disfrute de una calidad de vida excepcional.\"",
+    "p3": "Trabajamos con honestidad, contrato oficial, calendario firmado y pago por etapas certificadas. Es este rigor el que hace que nuestros clientes confíen plenamente en nosotros y nos recomienden continuamente.",
+    "signatureRole": "Dirección Técnica & Gestión de Proyectos",
+    "signatureCompany": "PLB Reformas Premium S.L. · Comunidad Valenciana",
+    "pillarsEyebrow": "COMPROMISOS INNEGOCIABLES",
+    "pillarsTitle": "¿Por Qué Elegir PLB Reformas?",
+    "pillars": [
+      {
+        "num": "01",
+        "title": "Rápido y Puntual",
+        "highlight": "Comienzo en 2 días",
+        "desc": "Iniciamos los trabajos en tan solo 2 días tras la firma del contrato. Establecemos un calendario vinculante y cumplimos rigurosamente los plazos de entrega pactados para tu tranquilidad."
+      },
+      {
+        "num": "02",
+        "title": "Contrato Oficial",
+        "highlight": "Presupuesto cerrado",
+        "desc": "Firmamos un contrato oficial para todo el período de la reforma, detallado partida por partida. Lo estipulado por escrito es exactamente lo que pagas, sin sorpresas ni costes ocultos."
+      },
+      {
+        "num": "03",
+        "title": "Limpieza Post-Obra",
+        "highlight": "Entrega impecable",
+        "desc": "Cuidamos las zonas comunes del edificio durante la obra y realizamos una limpieza exhaustiva y profesional al finalizar los trabajos. Recibes las llaves con tu vivienda lista para entrar a vivir."
+      }
+    ]
+  },
+  "gallery": {
+    "eyebrow": "NUESTRAS OBRAS",
+    "title": "Obras Reales en Vídeo",
+    "subtitle": "Grabaciones directas desde nuestras reformas finalizadas y en ejecución en la Comunidad Valenciana.",
+    "videoFallback": "Tu navegador no soporta la reproducción de vídeo.",
+    "consultSimilar": "Consultar reforma similar",
+    "projects": [
+      {
+        "title": "Vivienda Contemporánea con Iluminación LED",
+        "category": "Reforma Integral",
+        "location": "Comunidad Valenciana",
+        "duration": "18 seg",
+        "specs": [
+          { "label": "Plazo de ejecución", "val": "5 semanas" },
+          { "label": "Pavimento", "val": "Laminado AC5 roble natural" },
+          { "label": "Iluminación", "val": "Foseados LED indirectos 3000K" }
+        ],
+        "desc": "Redistribución diáfana de espacios, carpintería lacada en blanco, panelado de madera y aislamiento acústico integral."
+      },
+      {
+        "title": "Cocina de Diseño Abierta con Barra",
+        "category": "Cocina a Medida",
+        "location": "Comunidad Valenciana",
+        "duration": "14 seg",
+        "specs": [
+          { "label": "Plazo de ejecución", "val": "2 semanas" },
+          { "label": "Encimera", "val": "Granito pulido de alta resistencia" },
+          { "label": "Mobiliario", "val": "Blanco mate con freno amortiguado" }
+        ],
+        "desc": "Mobiliario de fabricación a medida, electrodomésticos integrados en columna y zona de desayuno con taburetes."
+      },
+      {
+        "title": "Fase de Demolición y Proceso Constructivo",
+        "category": "Evolución de Obra",
+        "location": "Comunidad Valenciana",
+        "duration": "10 seg",
+        "specs": [
+          { "label": "Fase", "val": "Demolición & Saneado" },
+          { "label": "Seguridad", "val": "Protección integral comunitaria" },
+          { "label": "Instalaciones", "val": "Nuevas canalizaciones empotradas" }
+        ],
+        "desc": "Retirada controlada de tabiquería antigua, desescombro en sacos homologados y preparación de solera."
+      }
+    ]
+  },
+  "process": {
+    "eyebrow": "CÓMO TRABAJAMOS",
+    "title": "Cómo Trabajamos",
+    "subtitle": "Un proceso estructurado, transparente y riguroso para que disfrutes de la reforma de tu vivienda en la Comunidad Valenciana con total tranquilidad.",
+    "stepBadge": "Paso {step} de 4",
+    "tag": "PLB Premium",
+    "steps": [
+      {
+        "num": "01",
+        "phase": "FASE 01",
+        "title": "Visita y Asesoramiento In Situ",
+        "desc": "Nos desplazamos a tu vivienda o local en cualquier punto de la Comunidad Valenciana. Evaluamos el estado técnico, escuchamos tus ideas y realizamos mediciones precisas sin coste alguno."
+      },
+      {
+        "num": "02",
+        "phase": "FASE 02",
+        "title": "Presupuesto Cerrado por Contrato",
+        "desc": "Elaboramos una propuesta técnica desglosada partida por partida con calidades y precios cerrados. Lo estipulado en contrato es lo que pagas, sin sorpresas ni costes ocultos."
+      },
+      {
+        "num": "03",
+        "phase": "FASE 03",
+        "title": "Ejecución y Pago por Etapas",
+        "desc": "Un jefe de obra coordina a nuestro equipo de especialistas. No abonas la totalidad por adelantado: los pagos se realizan de forma estructurada según avance certificado de la obra."
+      },
+      {
+        "num": "04",
+        "phase": "FASE 04",
+        "title": "Entrega Impecable y Garantía Oficial",
+        "desc": "Revisamos contigo cada acabado y detalle. Realizamos una limpieza exhaustiva post-obra y te hacemos entrega formal de la garantía por escrito de 2 años."
+      }
+    ]
+  },
+  "whyUs": {
+    "eyebrow": "NOSOTROS",
+    "title": "Por Qué Elegir PLB Reformas",
+    "subtitle": "Trabajamos bajo estándares rigurosos de calidad en la Comunidad Valenciana, ofreciendo compromisos reales que protegen tu inversión.",
+    "pillars": [
+      {
+        "title": "Rápido y Plazos Cumplidos",
+        "desc": "Fijamos contractualmente la fecha de inicio y de entrega de llaves. Cumplimos escrupulosamente los tiempos pactados para tu tranquilidad."
+      },
+      {
+        "title": "Contrato Oficial y Precio Cerrado",
+        "desc": "Presupuesto transparente y detallado partida a partida. Lo que firmas es exactamente lo que pagas, sin sorpresas ni sobrecostes."
+      },
+      {
+        "title": "Limpieza Rigurosa Post-Obra",
+        "desc": "Cuidamos las zonas comunes del edificio, ascensores y portales. Al finalizar, entregamos la vivienda impecable, lista para entrar a vivir."
+      },
+      {
+        "title": "Pago por Etapas Certificadas",
+        "desc": "No exigimos desembolsos totales por adelantado. Los pagos se estructuran en fases vinculadas al avance real de los trabajos."
+      },
+      {
+        "title": "Garantía Oficial por Contrato",
+        "desc": "Entregamos documento oficial de garantía por 2 años en todas nuestras instalaciones y revestimientos, con servicio de asistencia técnica."
+      },
+      {
+        "title": "Equipo Multidisciplinar Propio",
+        "desc": "Sin intermediarios. Albañiles, fontaneros, instaladores y carpinteros supervisados por un jefe de obra dedicado en la Comunidad Valenciana."
+      }
+    ]
+  },
+  "testimonials": {
+    "eyebrow": "CLIENTES SATISFECHOS",
+    "title": "Opiniones y Experiencias Reales",
+    "subtitle": "Más del 85% de nuestros nuevos proyectos en la Comunidad Valenciana provienen de recomendaciones directas de familias y propietarios.",
+    "verified": "Cliente Verificado",
+    "reviews": [
+      {
+        "num": "01",
+        "author": "Familia Gómez R.",
+        "location": "Comunidad Valenciana",
+        "project": "Reforma Integral de Apartamento · 95 m²",
+        "tag": "Plazos Cumplidos",
+        "quote": "Reformamos por completo nuestro piso frente al mar. Cumplieron con la fecha de entrega al día pactado, el presupuesto no varió un solo euro y los acabados de iluminación LED y pladur han transformado toda la estancia. Totalmente recomendables."
+      },
+      {
+        "num": "02",
+        "author": "Elena & Marcus V.",
+        "location": "Comunidad Valenciana",
+        "project": "Cocina con Isla y Baños de Diseño",
+        "tag": "Calidad y Acabados",
+        "quote": "La cocina quedó exactamente como la habíamos soñado. Nos asesoraron en cada detalle de la distribución, encimera y carpintería oculta. El sistema de pago por etapas nos dio muchísima seguridad y dejaron todo impecable."
+      },
+      {
+        "num": "03",
+        "author": "David M.",
+        "location": "Comunidad Valenciana",
+        "project": "Pavimento Porcelánico, Clima y Pintura",
+        "tag": "Garantía Oficial",
+        "quote": "Gran seriedad y rigor profesional. El jefe de obra estuvo permanentemente localizable para coordinar a los gremios. Cuidaron muchísimo la finca comunitaria y la garantía por contrato te permite estar totalmente tranquilo."
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "CONTACTO DIRECTO",
+    "title": "Obtener Presupuesto",
+    "callout": "Pide la visita técnica gratuita de medición el mismo día que lo solicitas.",
+    "desc": "Todos nuestros proyectos comienzan con una reunión. Déjanos tus datos o contáctanos directamente para recibir una consulta detallada sobre tu proyecto, así como un desglose de costes y plazos de obra garantizados.",
+    "phoneLabel": "Atención Telefónica",
+    "whatsappLabel": "WhatsApp Directo",
+    "whatsappCta": "Chatear por WhatsApp",
+    "areaLabel": "Zona de Operación",
+    "areaVal": "Toda la Comunidad Valenciana y municipios limítrofes",
+    "formTitle": "Envíanos tu consulta",
+    "formSubtitle": "Te contactaremos en menos de 24 horas para coordinar la visita técnica gratuita.",
+    "nameLabel": "Nombre completo *",
+    "namePlaceholder": "Tu nombre",
+    "phoneInputLabel": "Teléfono de contacto *",
+    "phonePlaceholder": "600 000 000",
+    "projectLabel": "Tipo de Proyecto",
+    "projectOptions": {
+      "integral": "Reforma Integral de Piso",
+      "chalet": "Reforma de Chalet / Villa",
+      "cocina": "Cocina a Medida",
+      "bano": "Baño / Plato de ducha",
+      "local": "Local Comercial / Negocio",
+      "otro": "Varios Oficios / Otros"
+    },
+    "locationLabel": "Municipio o Zona",
+    "locationPlaceholder": "Ej. Localidad en la Comunidad Valenciana...",
+    "messageLabel": "Cuéntanos sobre tu reforma",
+    "messagePlaceholder": "Indícanos los metros aproximados, qué cambios te gustaría realizar o cuándo te gustaría empezar...",
+    "feedback": "Solicitud recibida correctamente. Nos pondremos en contacto contigo a la mayor brevedad.",
+    "submitBtn": "Obtener Presupuesto",
+    "submitSuccess": "Solicitud Enviada Correctamente",
+    "privacyNote": "Tus datos son 100% confidenciales. Presupuesto sin compromiso."
+  },
+  "footer": {
+    "desc": "Empresa de reformas integrales, diseño de interiores y construcción en la Comunidad Valenciana. Proyectos llave en mano con contrato cerrado, pago por etapas y garantía por escrito de 2 años.",
+    "coverageBadge": "Proyectos en toda la Comunidad Valenciana",
+    "servicesTitle": "Servicios",
+    "services": [
+      "Reformas Integrales de Pisos",
+      "Reformas de Cocinas de Diseño",
+      "Reformas de Baños Modernos",
+      "Albañilería y Tabiquería Pladur",
+      "Suelos y Revestimientos Porcelánicos",
+      "Electricidad, Climatización y LED"
+    ],
+    "coverageTitle": "Zonas de Cobertura",
+    "coverage": [
+      "Toda la Comunidad Valenciana",
+      "Reformas integrales residenciales",
+      "Chalets, villas y viviendas unifamiliares",
+      "Locales comerciales y oficinas",
+      "Medición y asesoramiento in situ sin coste",
+      "Dirección facultativa y gremios propios"
+    ],
+    "contactTitle": "Contacto y Asistencia",
+    "callLabel": "Llámanos",
+    "emailLabel": "Email",
+    "hoursLabel": "Horario de Oficina",
+    "hoursVal": "Lunes a Viernes: 8:00 - 19:00",
+    "technicalVisitsLabel": "Visitas Técnicas",
+    "technicalVisitsVal": "Medición in situ sin coste",
+    "copyright": "© {year} PLB REFORMAS PREMIUM S.L. Todos los derechos reservados. Comunidad Valenciana.",
+    "legal": "Aviso Legal",
+    "privacy": "Política de Privacidad",
+    "cookies": "Política de Cookies"
+  },
+  "whatsapp": {
+    "ariaLabel": "Escríbenos por WhatsApp",
+    "title": "Escríbenos por WhatsApp",
+    "message": "Hola, quisiera solicitar presupuesto para una reforma en la Comunidad Valenciana"
+  }
+}

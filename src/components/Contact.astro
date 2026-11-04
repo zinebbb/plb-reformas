@@ -1,4 +1,13 @@
 ---
+import { useTranslations, type Lang } from '../i18n/utils';
+
+interface Props {
+  lang?: Lang;
+}
+
+const { lang = (Astro.currentLocale as Lang) || 'es' } = Astro.props;
+const t = useTranslations(lang);
+const whatsappUrl = `https://wa.me/34600000000?text=${encodeURIComponent(t.whatsapp.message)}`;
 ---
 
 <section id="contacto" class="py-24 bg-white text-[#111317] relative">
@@ -9,22 +18,22 @@
       <!-- Left Column: Direct Info -->
       <div class="fade-up lg:col-span-5">
         <span class="text-xs font-bold tracking-widest uppercase text-gold-600 block mb-2">
-          CONTACTO DIRECTO
+          {t.contact.eyebrow}
         </span>
         <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold uppercase tracking-tight text-[#111317] mb-4">
-          Obtener Presupuesto
+          {t.contact.title}
         </h2>
         <div class="w-16 h-1 bg-gold-500 mb-6"></div>
 
-        <!-- Alfa Interiorismo High-trust Callout -->
+        <!-- High-trust Callout -->
         <div class="p-4 bg-gold-500/10 border-l-4 border-gold-500 rounded-xs mb-6">
           <p class="text-xs sm:text-sm font-semibold text-[#111317]">
-            Pide la visita técnica gratuita de medición el mismo día que lo solicitas.
+            {t.contact.callout}
           </p>
         </div>
         
         <p class="text-sm sm:text-base text-gray-600 leading-relaxed mb-8">
-          Todos nuestros proyectos comienzan con una reunión. Déjanos tus datos o contáctanos directamente para recibir una consulta detallada sobre tu proyecto, así como un desglose de costes y plazos de obra garantizados.
+          {t.contact.desc}
         </p>
 
         <!-- Direct Channels -->
@@ -37,7 +46,7 @@
               </svg>
             </div>
             <div>
-              <span class="text-xs font-bold uppercase tracking-wider text-gray-400 block mb-0.5">Atención Telefónica</span>
+              <span class="text-xs font-bold uppercase tracking-wider text-gray-400 block mb-0.5">{t.contact.phoneLabel}</span>
               <a href="tel:+34600000000" class="text-xl sm:text-2xl font-extrabold text-[#111317] hover:text-gold-600 transition-colors">
                 +34 600 000 000
               </a>
@@ -51,14 +60,14 @@
               </svg>
             </div>
             <div>
-              <span class="text-xs font-bold uppercase tracking-wider text-gray-400 block mb-0.5">WhatsApp Directo</span>
+              <span class="text-xs font-bold uppercase tracking-wider text-gray-400 block mb-0.5">{t.contact.whatsappLabel}</span>
               <a 
-                href="https://wa.me/34600000000?text=Hola,%20quisiera%20solicitar%20presupuesto%20para%20una%20reforma%20en%20la%20Comunidad%20Valenciana" 
+                href={whatsappUrl} 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 class="text-base font-bold text-[#111317] hover:text-[#25D366] transition-colors inline-flex items-center gap-1.5"
               >
-                <span>Chatear por WhatsApp</span>
+                <span>{t.contact.whatsappCta}</span>
                 <span>→</span>
               </a>
             </div>
@@ -72,9 +81,9 @@
               </svg>
             </div>
             <div>
-              <span class="text-xs font-bold uppercase tracking-wider text-gray-400 block mb-0.5">Zona de Operación</span>
+              <span class="text-xs font-bold uppercase tracking-wider text-gray-400 block mb-0.5">{t.contact.areaLabel}</span>
               <span class="text-sm font-semibold text-[#111317]">
-                Toda la Comunidad Valenciana y municipios limítrofes
+                {t.contact.areaVal}
               </span>
             </div>
           </div>
@@ -85,32 +94,32 @@
       <!-- Right Column: Contact Form Box -->
       <div class="fade-up delay-100 lg:col-span-7 bg-[#f8fafc] p-8 sm:p-12 border border-gray-200 rounded-sm shadow-md">
         <h3 class="text-2xl font-extrabold uppercase tracking-tight text-[#111317] mb-2">
-          Envíanos tu consulta
+          {t.contact.formTitle}
         </h3>
         <p class="text-xs text-gray-500 mb-8 font-medium">
-          Te contactaremos en menos de 24 horas para coordinar la visita técnica gratuita.
+          {t.contact.formSubtitle}
         </p>
 
         <form id="contact-form" class="space-y-5">
           
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
             <div>
-              <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-2">Nombre completo *</label>
+              <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-2">{t.contact.nameLabel}</label>
               <input 
                 type="text" 
                 name="name" 
                 required 
-                placeholder="Tu nombre" 
+                placeholder={t.contact.namePlaceholder} 
                 class="w-full px-4 py-3 bg-white border border-gray-300 text-sm text-[#111317] focus:border-gold-500 focus:outline-none rounded-sm transition-colors"
               />
             </div>
             <div>
-              <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-2">Teléfono de contacto *</label>
+              <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-2">{t.contact.phoneInputLabel}</label>
               <input 
                 type="tel" 
                 name="phone" 
                 required 
-                placeholder="600 000 000" 
+                placeholder={t.contact.phonePlaceholder} 
                 class="w-full px-4 py-3 bg-white border border-gray-300 text-sm text-[#111317] focus:border-gold-500 focus:outline-none rounded-sm transition-colors"
               />
             </div>
@@ -118,53 +127,54 @@
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
             <div>
-              <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-2">Tipo de Proyecto</label>
+              <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-2">{t.contact.projectLabel}</label>
               <select 
                 name="project" 
                 class="w-full px-4 py-3 bg-white border border-gray-300 text-sm text-[#111317] focus:border-gold-500 focus:outline-none rounded-sm transition-colors"
               >
-                <option value="integral">Reforma Integral de Piso</option>
-                <option value="chalet">Reforma de Chalet / Villa</option>
-                <option value="cocina">Cocina a Medida</option>
-                <option value="bano">Baño / Plato de ducha</option>
-                <option value="local">Local Comercial / Negocio</option>
-                <option value="otro">Varios Oficios / Otros</option>
+                <option value="integral">{t.contact.projectOptions.integral}</option>
+                <option value="chalet">{t.contact.projectOptions.chalet}</option>
+                <option value="cocina">{t.contact.projectOptions.cocina}</option>
+                <option value="bano">{t.contact.projectOptions.bano}</option>
+                <option value="local">{t.contact.projectOptions.local}</option>
+                <option value="otro">{t.contact.projectOptions.otro}</option>
               </select>
             </div>
             <div>
-              <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-2">Municipio o Zona</label>
+              <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-2">{t.contact.locationLabel}</label>
               <input 
                 type="text" 
                 name="location" 
-                placeholder="Ej. Localidad en la Comunidad Valenciana..." 
+                placeholder={t.contact.locationPlaceholder} 
                 class="w-full px-4 py-3 bg-white border border-gray-300 text-sm text-[#111317] focus:border-gold-500 focus:outline-none rounded-sm transition-colors"
               />
             </div>
           </div>
 
           <div>
-            <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-2">Cuéntanos sobre tu reforma</label>
+            <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-2">{t.contact.messageLabel}</label>
             <textarea 
               name="message" 
               rows="4" 
-              placeholder="Indícanos los metros aproximados, qué cambios te gustaría realizar o cuándo te gustaría empezar..." 
+              placeholder={t.contact.messagePlaceholder} 
               class="w-full px-4 py-3 bg-white border border-gray-300 text-sm text-[#111317] focus:border-gold-500 focus:outline-none rounded-sm transition-colors"
             ></textarea>
           </div>
 
           <div id="contact-feedback" class="hidden p-4 bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-bold uppercase tracking-wider">
-            Solicitud recibida correctamente. Nos pondremos en contacto contigo a la mayor brevedad.
+            {t.contact.feedback}
           </div>
 
           <button 
             type="submit" 
+            data-success-text={t.contact.submitSuccess}
             class="w-full py-4 bg-gold-500 hover:bg-gold-400 text-black font-extrabold text-sm uppercase tracking-widest rounded-sm shadow-md transition-colors cursor-pointer"
           >
-            Obtener Presupuesto!
+            {t.contact.submitBtn}
           </button>
 
           <p class="text-[11px] text-center text-gray-500">
-            Tus datos son 100% confidenciales. Presupuesto sin compromiso.
+            {t.contact.privacyNote}
           </p>
 
         </form>
@@ -186,7 +196,8 @@
       const submitBtn = form.querySelector('button[type="submit"]') as HTMLButtonElement | null;
       if (submitBtn) {
         submitBtn.disabled = true;
-        submitBtn.textContent = "Solicitud Enviada Correctamente";
+        const successText = submitBtn.getAttribute('data-success-text') || "Solicitud Enviada Correctamente";
+        submitBtn.textContent = successText;
         submitBtn.classList.remove('bg-gold-500', 'hover:bg-gold-400');
         submitBtn.classList.add('bg-black', 'text-white', 'cursor-not-allowed');
       }

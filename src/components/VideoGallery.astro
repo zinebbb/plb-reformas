@@ -1,46 +1,25 @@
 ---
-const featuredProjects = [
+import { useTranslations, type Lang } from '../i18n/utils';
+
+interface Props {
+  lang?: Lang;
+}
+
+const { lang = (Astro.currentLocale as Lang) || 'es' } = Astro.props;
+const t = useTranslations(lang);
+
+const media = [
   {
-    title: "Vivienda Contemporánea con Iluminación LED",
-    category: "Reforma Integral",
-    location: "Comunidad Valenciana",
-    duration: "18 seg",
     video: "/videos/featured-apartment.mp4",
-    poster: "/images/gallery/thumb-featured-apt.jpg",
-    specs: [
-      { label: "Plazo de ejecución", val: "5 semanas" },
-      { label: "Pavimento", val: "Laminado AC5 roble natural" },
-      { label: "Iluminación", val: "Foseados LED indirectos 3000K" }
-    ],
-    desc: "Redistribución diáfana de espacios, carpintería lacada en blanco, panelado de madera y aislamiento acústico integral."
+    poster: "/images/gallery/thumb-featured-apt.jpg"
   },
   {
-    title: "Cocina de Diseño Abierta con Barra",
-    category: "Cocina a Medida",
-    location: "Comunidad Valenciana",
-    duration: "14 seg",
     video: "/videos/featured-kitchen.mp4",
-    poster: "/images/gallery/thumb-featured-kit.jpg",
-    specs: [
-      { label: "Plazo de ejecución", val: "2 semanas" },
-      { label: "Encimera", val: "Granito pulido de alta resistencia" },
-      { label: "Mobiliario", val: "Blanco mate con freno amortiguado" }
-    ],
-    desc: "Mobiliario de fabricación a medida, electrodomésticos integrados en columna y zona de desayuno con taburetes."
+    poster: "/images/gallery/thumb-featured-kit.jpg"
   },
   {
-    title: "Fase de Demolición y Proceso Constructivo",
-    category: "Evolución de Obra",
-    location: "Comunidad Valenciana",
-    duration: "10 seg",
     video: "/videos/featured-transition.mp4",
-    poster: "/images/gallery/thumb-featured-tra.jpg",
-    specs: [
-      { label: "Fase", val: "Demolición & Saneado" },
-      { label: "Seguridad", val: "Protección integral comunitaria" },
-      { label: "Instalaciones", val: "Nuevas canalizaciones empotradas" }
-    ],
-    desc: "Retirada controlada de tabiquería antigua, desescombro en sacos homologados y preparación de solera."
+    poster: "/images/gallery/thumb-featured-tra.jpg"
   }
 ];
 ---
@@ -51,82 +30,85 @@ const featuredProjects = [
     <!-- Header -->
     <div class="fade-up text-center max-w-3xl mx-auto mb-16">
       <span class="text-xs font-bold tracking-widest uppercase text-gold-600 block mb-2">
-        NUESTRAS OBRAS
+        {t.gallery.eyebrow}
       </span>
       <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold uppercase tracking-tight text-[#111317] mb-4">
-        Obras Reales en Vídeo
+        {t.gallery.title}
       </h2>
       <div class="w-16 h-1 bg-gold-500 mx-auto mb-5"></div>
       <p class="text-sm sm:text-base text-gray-600 leading-relaxed font-normal">
-        Grabaciones directas desde nuestras reformas finalizadas y en ejecución en la Comunidad Valenciana.
+        {t.gallery.subtitle}
       </p>
     </div>
 
     <!-- 3 Curated Projects Grid -->
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-      {featuredProjects.map((item, idx) => (
-        <div 
-          class={`fade-up delay-${(idx + 1) * 100} bg-[#f8fafc] border border-gray-200 rounded-sm overflow-hidden shadow-sm hover:shadow-xl hover:border-gold-500 transition-all duration-300 flex flex-col justify-between group`}
-        >
-          <!-- Video Frame -->
-          <div>
-            <div class="relative aspect-[16/10] bg-black overflow-hidden">
-              <video 
-                controls 
-                preload="metadata"
-                poster={item.poster}
-                class="w-full h-full object-cover"
-              >
-                <source src={item.video} type="video/mp4" />
-                Tu navegador no soporta la reproducción de vídeo.
-              </video>
-              
-              <!-- Badges -->
-              <span class="absolute top-3 left-3 bg-black/80 backdrop-blur-md text-gold-400 text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-sm border border-gold-500/30 pointer-events-none">
-                {item.category}
-              </span>
-              <span class="absolute top-3 right-3 bg-black/70 text-white text-[10px] font-medium px-2 py-1 rounded-sm pointer-events-none">
-                {item.duration}
-              </span>
-            </div>
+      {t.gallery.projects.map((item, idx) => {
+        const itemMedia = media[idx] || media[0];
+        return (
+          <div 
+            class={`fade-up delay-${(idx + 1) * 100} bg-[#f8fafc] border border-gray-200 rounded-sm overflow-hidden shadow-sm hover:shadow-xl hover:border-gold-500 transition-all duration-300 flex flex-col justify-between group`}
+          >
+            <!-- Video Frame -->
+            <div>
+              <div class="relative aspect-[16/10] bg-black overflow-hidden">
+                <video 
+                  controls 
+                  preload="metadata"
+                  poster={itemMedia.poster}
+                  class="w-full h-full object-cover"
+                >
+                  <source src={itemMedia.video} type="video/mp4" />
+                  {t.gallery.videoFallback}
+                </video>
+                
+                <!-- Badges -->
+                <span class="absolute top-3 left-3 bg-black/80 backdrop-blur-md text-gold-400 text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-sm border border-gold-500/30 pointer-events-none">
+                  {item.category}
+                </span>
+                <span class="absolute top-3 right-3 bg-black/70 text-white text-[10px] font-medium px-2 py-1 rounded-sm pointer-events-none">
+                  {item.duration}
+                </span>
+              </div>
 
-            <!-- Content -->
-            <div class="p-6">
-              <span class="text-[11px] font-bold uppercase tracking-wider text-gold-600 block mb-1">
-                {item.location}
-              </span>
-              <h3 class="text-lg font-bold text-[#111317] uppercase tracking-wide mb-2 group-hover:text-gold-600 transition-colors">
-                {item.title}
-              </h3>
-              <p class="text-xs sm:text-sm text-gray-600 leading-relaxed mb-6 font-normal">
-                {item.desc}
-              </p>
+              <!-- Content -->
+              <div class="p-6">
+                <span class="text-[11px] font-bold uppercase tracking-wider text-gold-600 block mb-1">
+                  {item.location}
+                </span>
+                <h3 class="text-lg font-bold text-[#111317] uppercase tracking-wide mb-2 group-hover:text-gold-600 transition-colors">
+                  {item.title}
+                </h3>
+                <p class="text-xs sm:text-sm text-gray-600 leading-relaxed mb-6 font-normal">
+                  {item.desc}
+                </p>
 
-              <!-- Technical Specs -->
-              <div class="space-y-2 py-4 border-t border-gray-200/80 text-xs">
-                {item.specs.map(spec => (
-                  <div class="flex items-center justify-between">
-                    <span class="text-gray-500">{spec.label}</span>
-                    <span class="font-bold text-[#111317]">{spec.val}</span>
-                  </div>
-                ))}
+                <!-- Technical Specs -->
+                <div class="space-y-2 py-4 border-t border-gray-200/80 text-xs">
+                  {item.specs.map(spec => (
+                    <div class="flex items-center justify-between">
+                      <span class="text-gray-500">{spec.label}</span>
+                      <span class="font-bold text-[#111317]">{spec.val}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
 
-          <!-- Bottom Action -->
-          <div class="px-6 pb-6 pt-2">
-            <a 
-              href="#contacto" 
-              class="w-full py-3 bg-[#111317] text-white hover:bg-gold-500 hover:text-black font-bold text-xs uppercase tracking-wider text-center transition-colors flex items-center justify-center gap-2 rounded-sm"
-            >
-              <span>Consultar reforma similar</span>
-              <span>→</span>
-            </a>
-          </div>
+            <!-- Bottom Action -->
+            <div class="px-6 pb-6 pt-2">
+              <a 
+                href="#contacto" 
+                class="w-full py-3 bg-[#111317] text-white hover:bg-gold-500 hover:text-black font-bold text-xs uppercase tracking-wider text-center transition-colors flex items-center justify-center gap-2 rounded-sm"
+              >
+                <span>{t.gallery.consultSimilar}</span>
+                <span>→</span>
+              </a>
+            </div>
 
-        </div>
-      ))}
+          </div>
+        );
+      })}
     </div>
 
   </div>

@@ -1,12 +1,26 @@
 ---
+import { useTranslations, languages, type Lang } from '../i18n/utils';
+
+interface Props {
+  lang?: Lang;
+}
+
+const { lang = (Astro.currentLocale as Lang) || 'es' } = Astro.props;
+const t = useTranslations(lang);
+const homeUrl = lang === 'es' ? '/' : `/${lang}/`;
+
+function getSectionHref(hash: string) {
+  if (hash === '#') return homeUrl;
+  return `${homeUrl}${hash}`;
+}
 ---
 
 <header id="site-header" class="fixed inset-x-0 top-0 z-50 transition-colors duration-200 pointer-events-none">
-  <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 py-5 sm:py-6 flex items-center justify-between">
+  <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 py-4 sm:py-5 flex items-center justify-between">
     
     <!-- Bloque del Logotipo Corporativo (Esquina Superior Izquierda, Minimalista & Directo) -->
     <a 
-      href="#" 
+      href={homeUrl} 
       class="inline-flex items-end gap-3 group pointer-events-auto" 
       aria-label="PLB Reformas Premium, inicio"
     >
@@ -14,7 +28,7 @@
       <img 
         src="/images/logo-icon-white.png" 
         alt="PLB Reformas Imagotipo" 
-        class="h-10 sm:h-12 w-auto object-contain shrink-0"
+        class="h-9 sm:h-11 w-auto object-contain shrink-0"
       />
 
       <!-- Texto de Identidad: Como antes, posicionado más abajo, letra pequeña y minimalista -->
@@ -23,23 +37,276 @@
           class="text-[9px] sm:text-[10px] uppercase font-light text-white tracking-[0.22em] leading-none select-none"
           style="font-family: 'Montserrat', system-ui, -apple-system, sans-serif; font-weight: 300; letter-spacing: 0.22em; color: #ffffff;"
         >
-          REFORMAS <span style="color: #C5A880; font-weight: 500;">PREMIUM</span>
+          {t.header.brandName} <span style="color: #C5A880; font-weight: 500;">{t.header.brandHighlight}</span>
         </span>
       </div>
     </a>
 
+    <!-- Right Side: Navigation Menu & Language Selector -->
+    <div class="flex items-center gap-6 lg:gap-8">
+      
+      <!-- Desktop Navigation Menu -->
+      <nav class="hidden md:flex items-center gap-6 lg:gap-8 pointer-events-auto" aria-label="Navegación principal">
+        <a 
+          href={getSectionHref('#servicios')} 
+          class="text-[11px] font-medium tracking-[0.1em] uppercase text-white/80 hover:text-white transition-colors"
+        >
+          {t.header.nav.services}
+        </a>
+        <a 
+          href={getSectionHref('#nosotros')} 
+          class="text-[11px] font-medium tracking-[0.1em] uppercase text-white/80 hover:text-white transition-colors"
+        >
+          {t.header.nav.about}
+        </a>
+        <a 
+          href={getSectionHref('#proyectos')} 
+          class="text-[11px] font-medium tracking-[0.1em] uppercase text-white/80 hover:text-white transition-colors"
+        >
+          {t.header.nav.projects}
+        </a>
+        <a 
+          href={getSectionHref('#proceso')} 
+          class="text-[11px] font-medium tracking-[0.1em] uppercase text-white/80 hover:text-white transition-colors"
+        >
+          {t.header.nav.process}
+        </a>
+        <a 
+          href={getSectionHref('#contacto')} 
+          class="text-[11px] font-medium tracking-[0.1em] uppercase text-[#C5A880] hover:text-white transition-colors"
+        >
+          {t.header.nav.contact}
+        </a>
+      </nav>
+
+      <!-- Desktop Language Selector (A la derecha del menú, minimalista y elegante) -->
+      <div class="hidden md:block relative language-dropdown-container pointer-events-auto">
+        <button 
+          id="lang-btn" 
+          type="button"
+          class="inline-flex items-center gap-1.5 text-[11px] font-medium tracking-[0.1em] uppercase text-white/90 hover:text-[#C5A880] py-1.5 px-2 rounded-xs transition-colors cursor-pointer select-none"
+          aria-expanded="false"
+          aria-haspopup="true"
+          aria-label={t.header.langAria}
+        >
+          <span class="font-semibold">{lang.toUpperCase()}</span>
+          <svg class="w-3 h-3 transition-transform duration-200 stroke-current" fill="none" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+
+        <!-- Dropdown Menu (Fade 200ms, tipografía de la web, letter-spacing 0.1em) -->
+        <div 
+          id="lang-dropdown"
+          class="lang-dropdown absolute right-0 mt-2 w-32 py-1.5 bg-[#0f1115]/95 backdrop-blur-md border border-white/15 rounded-xs shadow-2xl z-50 opacity-0 pointer-events-none translate-y-1 transition-all duration-200"
+          role="menu"
+        >
+          {Object.entries(languages).map(([code, label]) => {
+            const isCurrent = code === lang;
+            const targetUrl = code === 'es' ? '/' : `/${code}/`;
+            return (
+              <a
+                href={targetUrl}
+                data-base-href={targetUrl}
+                class={`lang-link block px-3.5 py-1.5 text-[11px] font-medium tracking-[0.1em] transition-colors ${
+                  isCurrent 
+                    ? 'text-[#C5A880] font-semibold bg-white/5' 
+                    : 'text-gray-300 hover:text-white hover:bg-white/10'
+                }`}
+                role="menuitem"
+              >
+                {label}
+              </a>
+            );
+          })}
+        </div>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button
+        id="mobile-menu-btn"
+        type="button"
+        class="md:hidden inline-flex items-center justify-center p-2 text-white hover:text-[#C5A880] focus:outline-none pointer-events-auto"
+        aria-expanded="false"
+        aria-label={t.header.mobileMenuAria}
+      >
+        <svg id="menu-icon-open" class="w-6 h-6 stroke-current" fill="none" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <svg id="menu-icon-close" class="hidden w-6 h-6 stroke-current" fill="none" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+    </div>
+
+  </div>
+
+  <!-- Mobile Drawer Menu (Contiene navegación y selector de idioma en móvil) -->
+  <div 
+    id="mobile-drawer" 
+    class="hidden md:hidden bg-[#0f1115]/98 backdrop-blur-lg border-b border-white/10 px-6 py-6 pointer-events-auto shadow-2xl"
+  >
+    <nav class="flex flex-col space-y-3 mb-6" aria-label="Navegación móvil">
+      <a 
+        href={getSectionHref('#')} 
+        class="mobile-nav-link text-xs font-medium tracking-[0.1em] uppercase text-gray-200 hover:text-[#C5A880] py-1.5 transition-colors"
+      >
+        {t.header.nav.home}
+      </a>
+      <a 
+        href={getSectionHref('#servicios')} 
+        class="mobile-nav-link text-xs font-medium tracking-[0.1em] uppercase text-gray-200 hover:text-[#C5A880] py-1.5 transition-colors"
+      >
+        {t.header.nav.services}
+      </a>
+      <a 
+        href={getSectionHref('#nosotros')} 
+        class="mobile-nav-link text-xs font-medium tracking-[0.1em] uppercase text-gray-200 hover:text-[#C5A880] py-1.5 transition-colors"
+      >
+        {t.header.nav.about}
+      </a>
+      <a 
+        href={getSectionHref('#proyectos')} 
+        class="mobile-nav-link text-xs font-medium tracking-[0.1em] uppercase text-gray-200 hover:text-[#C5A880] py-1.5 transition-colors"
+      >
+        {t.header.nav.projects}
+      </a>
+      <a 
+        href={getSectionHref('#proceso')} 
+        class="mobile-nav-link text-xs font-medium tracking-[0.1em] uppercase text-gray-200 hover:text-[#C5A880] py-1.5 transition-colors"
+      >
+        {t.header.nav.process}
+      </a>
+      <a 
+        href={getSectionHref('#contacto')} 
+        class="mobile-nav-link text-xs font-medium tracking-[0.1em] uppercase text-[#C5A880] hover:text-white py-1.5 transition-colors"
+      >
+        {t.header.nav.contact}
+      </a>
+    </nav>
+
+    <!-- Mobile Language Selector -->
+    <div class="pt-4 border-t border-white/10">
+      <span class="block text-[10px] font-bold uppercase tracking-widest text-[#C5A880] mb-3">
+        {t.header.langAria}
+      </span>
+      <div class="flex flex-wrap gap-2">
+        {Object.entries(languages).map(([code, label]) => {
+          const isCurrent = code === lang;
+          const targetUrl = code === 'es' ? '/' : `/${code}/`;
+          return (
+            <a
+              href={targetUrl}
+              data-base-href={targetUrl}
+              class={`lang-link px-3 py-1.5 text-[11px] font-medium tracking-[0.1em] rounded-xs transition-colors ${
+                isCurrent 
+                  ? 'bg-[#C5A880]/20 text-[#C5A880] border border-[#C5A880]/50 font-semibold' 
+                  : 'bg-white/5 text-gray-300 border border-white/10 hover:text-white hover:bg-white/10'
+              }`}
+            >
+              {label}
+            </a>
+          );
+        })}
+      </div>
+    </div>
   </div>
 </header>
 
 <script>
+  // Scroll Background Transition
   const header = document.getElementById('site-header');
-
   window.addEventListener('scroll', () => {
     if (!header) return;
     if (window.scrollY > 40) {
-      header.classList.add('bg-[#0f1115]/90', 'backdrop-blur-sm', 'border-b', 'border-white/10');
+      header.classList.add('bg-[#0f1115]/95', 'backdrop-blur-md', 'border-b', 'border-white/10');
     } else {
-      header.classList.remove('bg-[#0f1115]/90', 'backdrop-blur-sm', 'border-b', 'border-white/10');
+      header.classList.remove('bg-[#0f1115]/95', 'backdrop-blur-md', 'border-b', 'border-white/10');
     }
   }, { passive: true });
+
+  // Desktop Language Dropdown Toggle
+  const langBtn = document.getElementById('lang-btn');
+  const langDropdown = document.getElementById('lang-dropdown');
+
+  if (langBtn && langDropdown) {
+    langBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = langBtn.getAttribute('aria-expanded') === 'true';
+      if (isOpen) {
+        closeDropdown();
+      } else {
+        openDropdown();
+      }
+    });
+
+    function openDropdown() {
+      langBtn?.setAttribute('aria-expanded', 'true');
+      langDropdown?.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-1');
+      langDropdown?.classList.add('opacity-100', 'pointer-events-auto', 'translate-y-0');
+    }
+
+    function closeDropdown() {
+      langBtn?.setAttribute('aria-expanded', 'false');
+      langDropdown?.classList.remove('opacity-100', 'pointer-events-auto', 'translate-y-0');
+      langDropdown?.classList.add('opacity-0', 'pointer-events-none', 'translate-y-1');
+    }
+
+    document.addEventListener('click', (e) => {
+      if (langDropdown && langBtn && !langDropdown.contains(e.target as Node) && !langBtn.contains(e.target as Node)) {
+        closeDropdown();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeDropdown();
+    });
+  }
+
+  // Mobile Menu Toggle
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileDrawer = document.getElementById('mobile-drawer');
+  const menuIconOpen = document.getElementById('menu-icon-open');
+  const menuIconClose = document.getElementById('menu-icon-close');
+
+  if (mobileMenuBtn && mobileDrawer) {
+    mobileMenuBtn.addEventListener('click', () => {
+      const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
+      if (isExpanded) {
+        mobileDrawer.classList.add('hidden');
+        menuIconOpen?.classList.remove('hidden');
+        menuIconClose?.classList.add('hidden');
+        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+      } else {
+        mobileDrawer.classList.remove('hidden');
+        menuIconOpen?.classList.add('hidden');
+        menuIconClose?.classList.remove('hidden');
+        mobileMenuBtn.setAttribute('aria-expanded', 'true');
+      }
+    });
+
+    // Close mobile drawer upon clicking any nav link
+    document.querySelectorAll('.mobile-nav-link').forEach((link) => {
+      link.addEventListener('click', () => {
+        mobileDrawer.classList.add('hidden');
+        menuIconOpen?.classList.remove('hidden');
+        menuIconClose?.classList.add('hidden');
+        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
+  // Preserve Section Hash on Language Switch
+  document.querySelectorAll('a.lang-link').forEach((link) => {
+    link.addEventListener('click', (e) => {
+      const hash = window.location.hash;
+      if (hash) {
+        const baseHref = link.getAttribute('data-base-href');
+        if (baseHref) {
+          (link as HTMLAnchorElement).href = baseHref.endsWith('/') ? `${baseHref}${hash}` : `${baseHref}/${hash}`;
+        }
+      }
+    });
+  });
 </script>
