@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "PLB Reformas · Construction, Luxury Renovations & Interior Architecture in the Valencian Community",
-    "description": "Specialists in comprehensive renovations, designer kitchens, and luxury bathrooms in the Valencian Community. Official contract, fixed price, phased payments, and a 2-year warranty."
+    "description": "Specialists in comprehensive renovations, designer kitchens, and luxury bathrooms in the Valencian Community. Official contract, fixed price, and a 2-year warranty."
   },
   "header": {
     "brandName": "REFORMAS",
@@ -108,7 +108,7 @@
     "p1": "For more than 12 years, we have dedicated ourselves to high-end building, complete home remodeling, and interior architecture across Spain. We founded PLB Reformas with an unwavering commitment: bringing together under a single technical management team every phase a home requires, from initial spatial advice to the finest indirect lighting and pristine finishing touches.",
     "p2": "Today, alongside our own project managers, certified installers, and seasoned construction masters, we execute technical projects of any scale in Benidorm and throughout the Valencian Community. We do not rely on disconnected subcontractors: we maintain dedicated in-house specialists for each craft, allowing us to guarantee flawless precision down to the millimeter.",
     "quote": "\"To us, a renovation is far more than tearing down partitions and laying cables; it is conceiving a serene, luminous, and refined haven where your family enjoys exceptional living.\"",
-    "p3": "We work with complete integrity, binding contracts, firm schedules, and certified milestone payments. It is this absolute rigor that leads our clients to place their complete trust in us and recommend us time and again.",
+    "p3": "We work with complete integrity, binding contracts, clear pricing, and guaranteed schedules. It is this absolute rigor that leads our clients to place their complete trust in us and recommend us time and again.",
     "signatureRole": "Technical Direction & Project Management",
     "signatureCompany": "PLB Reformas Premium S.L. · Valencian Community",
     "pillarsEyebrow": "NON-NEGOTIABLE COMMITMENTS",
@@ -201,8 +201,8 @@
       {
         "num": "03",
         "phase": "PHASE 03",
-        "title": "Execution & Certified Milestone Payments",
-        "desc": "A dedicated site manager supervises our specialized craftsmen. You never pay everything upfront: payments are released strictly upon certified work progress."
+        "title": "Execution & On-Site Supervision",
+        "desc": "A dedicated project manager oversees our technical specialists. Continuous supervision, rigorous quality control, and strict compliance with the agreed schedule."
       },
       {
         "num": "04",
@@ -228,10 +228,6 @@
       {
         "title": "Rigorous Post-Work Cleaning",
         "desc": "We protect building common areas, elevators, and entrances. Upon completion, we deliver your home spotless, ready for immediate move-in."
-      },
-      {
-        "title": "Certified Milestone Payments",
-        "desc": "We never demand total payment in advance. Billing is divided into scheduled milestones tied directly to certified progress on site."
       },
       {
         "title": "Official 2-Year Written Warranty",
@@ -263,7 +259,7 @@
         "location": "Valencian Community",
         "project": "Designer Kitchen Island & Luxury Bathrooms",
         "tag": "Quality & Craftsmanship",
-        "quote": "The kitchen turned out exactly as we dreamed. They guided us on every detail regarding flow, stone worktops, and hidden joinery. The milestone payment system gave us complete confidence and they left the property spotless."
+        "quote": "The kitchen turned out exactly as we dreamed. They guided us on every detail regarding flow, stone worktops, and hidden joinery. The strict adherence to deadlines and the team's professionalism gave us complete peace of mind, leaving everything spotless."
       },
       {
         "num": "03",
@@ -310,7 +306,7 @@
     "privacyNote": "Your information is 100% confidential. No-obligation personalized quote."
   },
   "footer": {
-    "desc": "Comprehensive renovations, interior architecture, and luxury construction in the Valencian Community. Turnkey projects with binding contracts, milestone payments, and an official 2-year warranty.",
+    "desc": "Comprehensive renovations, interior architecture, and luxury construction in the Valencian Community. Turnkey projects with binding contracts, total transparency, and an official 2-year warranty.",
     "coverageBadge": "Projects throughout the Valencian Community",
     "servicesTitle": "Services",
     "services": [

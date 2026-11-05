@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "PLB Reformas · Construction, Rénovation Complète & Architecture d'Intérieur dans la Communauté Valencienne",
-    "description": "Entreprise de rénovation intégrale, cuisines sur mesure et salles de bains dans la Communauté Valencienne. Contrat officiel, devis ferme, paiement par étapes et garantie de 2 ans."
+    "description": "Entreprise de rénovation intégrale, cuisines sur mesure et salles de bains dans la Communauté Valencienne. Contrat officiel, devis ferme et garantie de 2 ans."
   },
   "header": {
     "brandName": "REFORMAS",
@@ -108,7 +108,7 @@
     "p1": "Depuis plus de 12 ans, nous nous consacrons avec passion à la construction, la rénovation complète et l'architecture d'intérieur en Espagne. Nous avons fondé PLB Reformas avec une vocation essentielle : réunir sous une unique direction technique l'intégralité des corps d'état nécessaires à une habitation, de l'étude architecturale initiale jusqu'aux corniches d'éclairage et aux finitions les plus exigeantes.",
     "p2": "Aujourd'hui, avec nos propres conducteurs de travaux, installateurs agréés et artisans bâtisseurs, nous concrétisons des projets de toute complexité technique à Benidorm et dans toute la Communauté Valencienne. Nous ne dépendons d'aucun intermédiaire impersonnel : nous disposons de nos propres équipes pour chaque métier, ce qui nous permet d'assurer une précision millimétrique sur chaque réalisation.",
     "quote": "\"Pour notre équipe, rénover ne consiste pas seulement à abattre des cloisons et tirer des câbles ; c'est façonner un havre lumineux, élégant et confortable où votre famille profite d'une qualité de vie incomparable.\"",
-    "p3": "Nous travaillons avec transparence, contrat officiel, planning signé et paiements échelonnés par tranches validées. C'est cette rigueur constante qui inspire une confiance totale à nos clients et motive leurs recommandations continues.",
+    "p3": "Nous travaillons avec transparence, contrat officiel, prix garantis et planning scrupuleusement respecté. C'est cette rigueur constante qui inspire une confiance totale à nos clients et motive leurs recommandations continues.",
     "signatureRole": "Direction Technique & Pilotage de Projets",
     "signatureCompany": "PLB Reformas Premium S.L. · Communauté Valencienne",
     "pillarsEyebrow": "NOS ENGAGEMENTS FONDAMENTAUX",
@@ -201,8 +201,8 @@
       {
         "num": "03",
         "phase": "ÉTAPE 03",
-        "title": "Réalisation & Règlement Échelonné",
-        "desc": "Un conducteur de travaux dédié supervise nos spécialistes. Aucun paiement intégral anticipé : les versements s'effectuent par tranches selon l'avancement certifié."
+        "title": "Exécution & Maîtrise d'Œuvre",
+        "desc": "Un conducteur de travaux dédié supervise nos équipes et spécialistes. Contrôle qualité rigoureux et respect absolu du calendrier convenu."
       },
       {
         "num": "04",
@@ -228,10 +228,6 @@
       {
         "title": "Nettoyage Approfondi Après Chantier",
         "desc": "Protection soignée des accès, halls et ascenseurs. À la livraison, votre logement est impeccable, prêt à emménager immédiatement."
-      },
-      {
-        "title": "Paiement par Tranches Certifiées",
-        "desc": "Nous n'exigeons jamais l'intégralité des fonds à l'avance. Le règlement est structuré en plusieurs phases corrélées à l'avancement effectif."
       },
       {
         "title": "Garantie Contractuelle Écrite de 2 Ans",
@@ -263,7 +259,7 @@
         "location": "Communauté Valencienne",
         "project": "Cuisine Ouverte avec Îlot & Salles de Bains",
         "tag": "Qualité & Finitions",
-        "quote": "La cuisine correspond exactement à ce que nous imaginions. Leurs conseils pour les plans de travail et la menuiserie ont été précieux. Le paiement par étapes nous a énormément rassurés et le logement a été rendu d'une propreté parfaite."
+        "quote": "La cuisine correspond exactement à ce que nous imaginions. Leurs conseils pour les plans de travail et la menuiserie ont été précieux. Le respect scrupuleux des délais et le professionnalisme de l'équipe nous ont totalement rassurés et le logement a été rendu d'une propreté parfaite."
       },
       {
         "num": "03",
@@ -310,7 +306,7 @@
     "privacyNote": "Vos données restent strictement confidentielles. Devis gratuit et sans engagement."
   },
   "footer": {
-    "desc": "Entreprise de rénovation intégrale, architecture d'intérieur et construction dans la Communauté Valencienne. Projets clé en main avec contrat officiel, paiements échelonnés et garantie écrite de 2 ans.",
+    "desc": "Entreprise de rénovation intégrale, architecture d'intérieur et construction dans la Communauté Valencienne. Projets clé en main avec contrat officiel, transparence totale et garantie écrite de 2 ans.",
     "coverageBadge": "Interventions dans toute la Communauté Valencienne",
     "servicesTitle": "Prestations",
     "services": [

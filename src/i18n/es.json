@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "PLB Reformas · Construcción, Reformas e Interiorismo en la Comunidad Valenciana",
-    "description": "Empresa de reformas integrales, cocinas y baños en la Comunidad Valenciana. Contrato oficial, presupuesto cerrado, pago por etapas y garantía por escrito de 2 años."
+    "description": "Empresa de reformas integrales, cocinas y baños en la Comunidad Valenciana. Contrato oficial, presupuesto cerrado y garantía por escrito de 2 años."
   },
   "header": {
     "brandName": "REFORMAS",
@@ -108,7 +108,7 @@
     "p1": "Llevamos más de 12 años dedicados a la construcción, las reformas integrales y la renovación de interiores en España. Creamos PLB Reformas con un propósito irrenunciable: reunir bajo una sola dirección técnica todas las fases que requiere una vivienda, desde el asesoramiento arquitectónico inicial hasta el último foseado de iluminación y los remates más exigentes.",
     "p2": "Hoy, junto a nuestro equipo propio de jefes de obra, instaladores certificados y maestros de la construcción, ejecutamos proyectos de cualquier nivel de complejidad técnica en Benidorm y toda la Comunidad Valenciana. No trabajamos con subcontratas impersonales: disponemos de profesionales propios para cada oficio, lo que nos permite responder con absoluta solvencia de cada milímetro ejecutado.",
     "quote": "\"Para nosotros una reforma no es solo tirar tabiques y tender cableado; es concebir un espacio luminoso, equilibrado y confortable donde tu familia disfrute de una calidad de vida excepcional.\"",
-    "p3": "Trabajamos con honestidad, contrato oficial, calendario firmado y pago por etapas certificadas. Es este rigor el que hace que nuestros clientes confíen plenamente en nosotros y nos recomienden continuamente.",
+    "p3": "Trabajamos con honestidad, contrato oficial, presupuesto transparente y calendario con plazos garantizados. Es este rigor el que hace que nuestros clientes confíen plenamente en nosotros y nos recomienden continuamente.",
     "signatureRole": "Dirección Técnica & Gestión de Proyectos",
     "signatureCompany": "PLB Reformas Premium S.L. · Comunidad Valenciana",
     "pillarsEyebrow": "COMPROMISOS INNEGOCIABLES",
@@ -201,8 +201,8 @@
       {
         "num": "03",
         "phase": "FASE 03",
-        "title": "Ejecución y Pago por Etapas",
-        "desc": "Un jefe de obra coordina a nuestro equipo de especialistas. No abonas la totalidad por adelantado: los pagos se realizan de forma estructurada según avance certificado de la obra."
+        "title": "Ejecución y Dirección de Obra",
+        "desc": "Un jefe de obra dedicado coordina a nuestro equipo técnico y de especialistas. Supervisión continua de cada oficio, control riguroso de calidades y cumplimiento estricto del calendario pactado."
       },
       {
         "num": "04",
@@ -228,10 +228,6 @@
       {
         "title": "Limpieza Rigurosa Post-Obra",
         "desc": "Cuidamos las zonas comunes del edificio, ascensores y portales. Al finalizar, entregamos la vivienda impecable, lista para entrar a vivir."
-      },
-      {
-        "title": "Pago por Etapas Certificadas",
-        "desc": "No exigimos desembolsos totales por adelantado. Los pagos se estructuran en fases vinculadas al avance real de los trabajos."
       },
       {
         "title": "Garantía Oficial por Contrato",
@@ -263,7 +259,7 @@
         "location": "Comunidad Valenciana",
         "project": "Cocina con Isla y Baños de Diseño",
         "tag": "Calidad y Acabados",
-        "quote": "La cocina quedó exactamente como la habíamos soñado. Nos asesoraron en cada detalle de la distribución, encimera y carpintería oculta. El sistema de pago por etapas nos dio muchísima seguridad y dejaron todo impecable."
+        "quote": "La cocina quedó exactamente como la habíamos soñado. Nos asesoraron en cada detalle de la distribución, encimera y carpintería oculta. El cumplimiento del calendario y la seriedad del equipo nos dio muchísima seguridad y dejaron todo impecable."
       },
       {
         "num": "03",
@@ -310,7 +306,7 @@
     "privacyNote": "Tus datos son 100% confidenciales. Presupuesto sin compromiso."
   },
   "footer": {
-    "desc": "Empresa de reformas integrales, diseño de interiores y construcción en la Comunidad Valenciana. Proyectos llave en mano con contrato cerrado, pago por etapas y garantía por escrito de 2 años.",
+    "desc": "Empresa de reformas integrales, diseño de interiores y construcción en la Comunidad Valenciana. Proyectos llave en mano con contrato cerrado, máxima transparencia y garantía por escrito de 2 años.",
     "coverageBadge": "Proyectos en toda la Comunidad Valenciana",
     "servicesTitle": "Servicios",
     "services": [

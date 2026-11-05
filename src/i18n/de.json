@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "PLB Reformas · Bau, Komplettsanierungen & Innenarchitektur in der Region Valencia",
-    "description": "Fachbetrieb für Komplettrenovierungen, Designerküchen und Bäder in der Region Valencia. Offizieller Vertrag, garantierter Festpreis, Baufortschrittszahlung und 2 Jahre Gewährleistung."
+    "description": "Fachbetrieb für Komplettrenovierungen, Designerküchen und Bäder in der Region Valencia. Offizieller Vertrag, garantierter Festpreis und 2 Jahre Gewährleistung."
   },
   "header": {
     "brandName": "REFORMAS",
@@ -108,7 +108,7 @@
     "p1": "Seit mehr als 12 Jahren widmen wir uns mit Leidenschaft dem Hochbau, anspruchsvollen Kernsanierungen und dem gehobenen Innenausbau in Spanien. Wir haben PLB Reformas mit einem klaren Anspruch gegründet: alle Phasen, die ein Zuhause erfordert, unter einer einzigen technischen Leitung zu bündeln – von der ersten architektonischen Beratung bis zur letzten Lichtvoute und feinsten Ausführung.",
     "p2": "Heute realisieren wir gemeinsam mit unseren eigenen Bauleitern, zertifizierten Fachmonteuren und erfahrenen Handwerksmeistern Bauprojekte jeder technischen Komplexität in Benidorm und der gesamten Region Valencia. Wir arbeiten nicht mit anonymen Subunternehmern: Wir verfügen über eigene Fachleute für jedes Gewerk und stehen für jeden Millimeter persönlich ein.",
     "quote": "\"Für uns bedeutet eine Renovierung weit mehr als das Einreißen von Wänden und Verlegen von Kabeln; es ist die Erschaffung eines lichtdurchfluteten, harmonischen und behaglichen Rückzugsorts, an dem Ihre Familie Lebensqualität genießt.\"",
-    "p3": "Wir arbeiten mit Transparenz, rechtssicherem Vertrag, verbindlichem Terminplan und Zahlung nach Baufortschritt. Es ist diese Verlässlichkeit, der unsere Kunden vollauf vertrauen und weshalb sie uns immer wieder weiterempfehlen.",
+    "p3": "Wir arbeiten mit Transparenz, rechtssicherem Vertrag, transparenten Festpreisen und verbindlichen Bauzeiten. Es ist diese Verlässlichkeit, der unsere Kunden vollauf vertrauen und weshalb sie uns immer wieder weiterempfehlen.",
     "signatureRole": "Technische Leitung & Projektkoordination",
     "signatureCompany": "PLB Reformas Premium S.L. · Region Valencia",
     "pillarsEyebrow": "VERBINDLICHE GRUNDSÄTZE",
@@ -201,8 +201,8 @@
       {
         "num": "03",
         "phase": "PHASE 03",
-        "title": "Ausführung & Baufortschrittszahlungen",
-        "desc": "Ein engagierter Bauleiter koordiniert unsere Handwerksspezialisten. Keine Vorauskasse des Gesamtbetrags: Zahlungen erfolgen gestaffelt nach Baufortschritt."
+        "title": "Bauausführung & Bauleitung",
+        "desc": "Ein engagierter Bauleiter koordiniert alle Fachhandwerker vor Ort. Kontinuierliche Bauüberwachung, strenge Qualitätskontrolle und verlässliche Termintreue."
       },
       {
         "num": "04",
@@ -228,10 +228,6 @@
       {
         "title": "Sorgfältige Bauendreinigung",
         "desc": "Wir schützen Zugangswege und Aufzüge. Bei Übergabe ist Ihre Wohnung makellos sauber und sofort bezugsfertig."
-      },
-      {
-        "title": "Zahlung nach Baufortschritt",
-        "desc": "Keine Gesamtzahlung im Voraus. Die Abrechnung erfolgt transparent in Etappen gekoppelt an nachgewiesene Leistungen."
       },
       {
         "title": "2 Jahre schriftliche Gewährleistung",
@@ -263,7 +259,7 @@
         "location": "Region Valencia",
         "project": "Designerküche mit Kochinsel & Bäder",
         "tag": "Verarbeitung & Qualität",
-        "quote": "Die Küche ist genau so geworden, wie wir sie uns erträumt haben. Die Beratung zu Naturstein-Arbeitsplatten und verdeckten Schreinerelementen war erstklassig. Die Ratenzahlung nach Bauabschnitt gab uns großes Vertrauen."
+        "quote": "Die Küche ist genau so geworden, wie wir sie uns erträumt haben. Die Beratung zu Naturstein-Arbeitsplatten und verdeckten Schreinerelementen war erstklassig. Die strikte Termintreue und Professionalität des Teams gaben uns großes Vertrauen."
       },
       {
         "num": "03",
@@ -310,7 +306,7 @@
     "privacyNote": "Ihre Daten werden streng vertraulich behandelt. Kostenfrei & unverbindlich."
   },
   "footer": {
-    "desc": "Fachbetrieb für Komplettrenovierungen, Innenarchitektur und exklusiven Bau in der Region Valencia. Schlüsselfertige Ausführung mit bindendem Vertrag, Baufortschrittszahlung und 2 Jahren Garantie.",
+    "desc": "Fachbetrieb für Komplettrenovierungen, Innenarchitektur und exklusiven Bau in der Region Valencia. Schlüsselfertige Ausführung mit bindendem Vertrag, voller Transparenz und 2 Jahren Garantie.",
     "coverageBadge": "Projekte in der gesamten Region Valencia",
     "servicesTitle": "Leistungen",
     "services": [
