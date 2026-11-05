@@ -12,62 +12,58 @@ const copyrightText = t.footer.copyright.replace('{year}', String(currentYear));
 const whatsappUrl = `https://wa.me/34602525866?text=${encodeURIComponent(t.whatsapp.message)}`;
 ---
 
-<footer class="bg-[#0a0c0f] border-t border-white/10 pt-20 pb-12 text-gray-400">
-  <div class="max-w-7xl mx-auto px-4 sm:px-8">
+<footer class="mt-auto bg-[#EFEBE3] border-t border-black/8 pt-16 pb-12 text-[#1a1a1a]">
+  <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
     
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+    <!-- 3-Column Minimalist Layout in Desktop -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16 mb-16 items-start">
       
-      <!-- Brand & Description -->
+      <!-- Column 1: Brand & Description (Sin cajas ni iconos con borde) -->
       <div class="space-y-4">
         <div class="flex items-center gap-3">
-          <div class="p-1.5 bg-white/10 rounded-sm border border-white/20">
-            <img 
-              src="/images/logo.jpeg" 
-              alt="PLB Reformas Premium S.L." 
-              class="h-9 w-auto object-contain rounded-xs"
-            />
-          </div>
-          <div>
-            <span class="block text-base font-extrabold text-white tracking-widest uppercase">PLB</span>
-            <span class="block text-[10px] font-bold text-gold-500 tracking-widest uppercase">Reformas Premium S.L.</span>
+          <img 
+            src="/images/logo-icon-original.png" 
+            alt="PLB Reformas Premium S.L." 
+            class="h-9 w-auto object-contain"
+          />
+          <div class="flex flex-col">
+            <span 
+              class="text-xs uppercase font-light tracking-[0.22em] text-[#1a1a1a] leading-none"
+              style="font-family: 'Montserrat', system-ui, sans-serif; letter-spacing: 0.22em;"
+            >
+              PLB <span class="text-[#B08D6A] font-medium">REFORMAS</span>
+            </span>
+            <span 
+              class="text-[9px] uppercase tracking-[0.18em] text-[#706e6b] font-light mt-1"
+              style="letter-spacing: 0.18em;"
+            >
+              PREMIUM S.L.
+            </span>
           </div>
         </div>
-        <p class="text-xs sm:text-sm text-gray-400 leading-relaxed font-normal">
+        <p class="text-xs sm:text-sm text-[#55534e] leading-relaxed font-normal">
           {t.footer.desc}
         </p>
-        <div class="text-xs text-gold-500 font-semibold tracking-wider uppercase">
+        <p 
+          class="text-xs text-[#B08D6A] font-medium tracking-[0.1em] uppercase pt-1"
+          style="letter-spacing: 0.1em;"
+        >
           {t.footer.coverageBadge}
-        </div>
-        <div class="pt-2">
-          <a 
-            href="https://www.instagram.com/plb_reformaspremium/" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 text-xs text-gray-400 hover:text-gold-500 transition-colors group"
-            style="font-family: 'Inter', system-ui, -apple-system, sans-serif; font-weight: 300; letter-spacing: 0.05em;"
-            aria-label="Instagram @plb_reformaspremium"
-          >
-            <span class="w-7 h-7 rounded-full border border-white/15 flex items-center justify-center group-hover:border-gold-500 transition-colors">
-              <svg class="w-3.5 h-3.5 stroke-current" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-              </svg>
-            </span>
-            <span>@plb_reformaspremium</span>
-          </a>
-        </div>
+        </p>
       </div>
 
-      <!-- Services Links -->
+      <!-- Column 2: Services Links (Sin viñetas, hover a bronce) -->
       <div>
-        <h4 class="text-xs font-bold text-white uppercase tracking-widest mb-5">
+        <h4 
+          class="text-xs uppercase tracking-[0.2em] text-[#B08D6A] font-normal mb-5"
+          style="letter-spacing: 0.2em;"
+        >
           {t.footer.servicesTitle}
         </h4>
         <ul class="space-y-3 text-xs sm:text-sm">
           {t.footer.services.map((serviceName) => (
             <li>
-              <a href="#servicios" class="hover:text-gold-500 transition-colors">
+              <a href="#servicios" class="text-[#55534e] hover:text-[#B08D6A] transition-colors font-normal">
                 {serviceName}
               </a>
             </li>
@@ -75,68 +71,58 @@ const whatsappUrl = `https://wa.me/34602525866?text=${encodeURIComponent(t.whats
         </ul>
       </div>
 
-      <!-- Coverage Areas -->
+      <!-- Column 3: Contact & Hours (Teléfono, email, horario, visita técnica) -->
       <div>
-        <h4 class="text-xs font-bold text-white uppercase tracking-widest mb-5">
-          {t.footer.coverageTitle}
-        </h4>
-        <ul class="space-y-2.5 text-xs text-gray-400">
-          {t.footer.coverage.map((area) => (
-            <li class="flex items-center gap-2">
-              <span class="w-1.5 h-1.5 rounded-full bg-gold-500"></span>
-              <span>{area}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      <!-- Contact & Hours -->
-      <div>
-        <h4 class="text-xs font-bold text-white uppercase tracking-widest mb-5">
+        <h4 
+          class="text-xs uppercase tracking-[0.2em] text-[#B08D6A] font-normal mb-5"
+          style="letter-spacing: 0.2em;"
+        >
           {t.footer.contactTitle}
         </h4>
-        <ul class="space-y-3 text-xs sm:text-sm">
+        <ul class="space-y-3.5 text-xs sm:text-sm">
           <li>
-            <span class="block text-[11px] uppercase tracking-wider text-gray-500">{t.footer.callLabel}</span>
+            <span 
+              class="block text-[10px] uppercase tracking-[0.15em] text-[#B08D6A] font-normal mb-0.5"
+              style="letter-spacing: 0.15em;"
+            >
+              {t.footer.callLabel}
+            </span>
             <a 
               href="tel:+34602525866" 
-              class="text-white hover:text-gold-500 transition-colors inline-block text-base"
-              style="font-family: 'Inter', system-ui, -apple-system, sans-serif; font-weight: 300; letter-spacing: 0.05em;"
+              class="text-base text-[#1a1a1a] hover:text-[#B08D6A] transition-colors font-light"
+              style="font-family: 'Inter', system-ui, -apple-system, sans-serif; font-weight: 300;"
             >
               +34 602 525 866
             </a>
           </li>
           <li>
-            <span class="block text-[11px] uppercase tracking-wider text-gray-500">Instagram</span>
-            <a 
-              href="https://www.instagram.com/plb_reformaspremium/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              class="text-white hover:text-gold-500 transition-colors inline-flex items-center gap-2 text-base group"
-              style="font-family: 'Inter', system-ui, -apple-system, sans-serif; font-weight: 300; letter-spacing: 0.05em;"
-              aria-label="Perfil oficial de Instagram @plb_reformaspremium"
+            <span 
+              class="block text-[10px] uppercase tracking-[0.15em] text-[#B08D6A] font-normal mb-0.5"
+              style="letter-spacing: 0.15em;"
             >
-              <svg class="w-4 h-4 stroke-current shrink-0 text-gold-500 transition-transform group-hover:scale-110" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-              </svg>
-              <span>@plb_reformaspremium</span>
-            </a>
-          </li>
-          <li>
-            <span class="block text-[11px] uppercase tracking-wider text-gray-500">{t.footer.emailLabel}</span>
-            <a href="mailto:info@plbreformas.es" class="text-white hover:text-gold-500 transition-colors">
+              {t.footer.emailLabel}
+            </span>
+            <a href="mailto:info@plbreformas.es" class="text-xs sm:text-sm text-[#55534e] hover:text-[#B08D6A] transition-colors font-normal">
               info@plbreformas.es
             </a>
           </li>
           <li>
-            <span class="block text-[11px] uppercase tracking-wider text-gray-500">{t.footer.hoursLabel}</span>
-            <span class="text-gray-300">{t.footer.hoursVal}</span>
+            <span 
+              class="block text-[10px] uppercase tracking-[0.15em] text-[#B08D6A] font-normal mb-0.5"
+              style="letter-spacing: 0.15em;"
+            >
+              {t.footer.hoursLabel}
+            </span>
+            <span class="text-xs text-[#55534e] font-normal">{t.footer.hoursVal}</span>
           </li>
           <li>
-            <span class="block text-[11px] uppercase tracking-wider text-gray-500">{t.footer.technicalVisitsLabel}</span>
-            <span class="text-gold-500 font-medium">{t.footer.technicalVisitsVal}</span>
+            <span 
+              class="block text-[10px] uppercase tracking-[0.15em] text-[#B08D6A] font-normal mb-0.5"
+              style="letter-spacing: 0.15em;"
+            >
+              {t.footer.technicalVisitsLabel}
+            </span>
+            <span class="text-xs text-[#B08D6A] font-medium">{t.footer.technicalVisitsVal}</span>
           </li>
         </ul>
       </div>
@@ -144,18 +130,18 @@ const whatsappUrl = `https://wa.me/34602525866?text=${encodeURIComponent(t.whats
     </div>
 
     <!-- Bottom Copyright -->
-    <div class="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 gap-4">
-      <p>{copyrightText}</p>
+    <div class="border-t border-black/8 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-[#706e6b] gap-4">
+      <p class="font-normal">{copyrightText}</p>
       <div class="flex gap-6">
-        <a href="#" class="hover:text-gold-500 transition-colors">{t.footer.legal}</a>
-        <a href="#" class="hover:text-gold-500 transition-colors">{t.footer.privacy}</a>
-        <a href="#" class="hover:text-gold-500 transition-colors">{t.footer.cookies}</a>
+        <a href="#" class="hover:text-[#B08D6A] transition-colors font-normal">{t.footer.legal}</a>
+        <a href="#" class="hover:text-[#B08D6A] transition-colors font-normal">{t.footer.privacy}</a>
+        <a href="#" class="hover:text-[#B08D6A] transition-colors font-normal">{t.footer.cookies}</a>
       </div>
     </div>
 
   </div>
 
-  <!-- Floating WhatsApp Circular Button -->
+  <!-- Floating WhatsApp Circular Button (Intacto) -->
   <a 
     href={whatsappUrl} 
     target="_blank" 
