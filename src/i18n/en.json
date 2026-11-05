@@ -50,6 +50,14 @@
       }
     ]
   },
+  "manifesto": {
+    "step1": "A way of understanding home",
+    "step2": "Craftsmanship, vision, and soul",
+    "step3Part1": "Every space holds a story.",
+    "step3Number": "+15",
+    "step3Part2": "years helping write the next",
+    "counterTotal": "03"
+  },
   "services": {
     "eyebrow": "WHAT WE DO",
     "title": "High-End Renovation Services in the Valencian Community",

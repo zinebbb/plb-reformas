@@ -50,6 +50,14 @@
       }
     ]
   },
+  "manifesto": {
+    "step1": "Une façon de concevoir l'habitat",
+    "step2": "Savoir-faire, exigence et âme",
+    "step3Part1": "Chaque espace abrite une histoire.",
+    "step3Number": "+15",
+    "step3Part2": "ans à écrire la suivante",
+    "counterTotal": "03"
+  },
   "services": {
     "eyebrow": "NOTRE EXPERTISE",
     "title": "Prestations de Rénovation Haut de Gamme dans la Communauté Valencienne",

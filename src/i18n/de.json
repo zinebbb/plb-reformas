@@ -50,6 +50,14 @@
       }
     ]
   },
+  "manifesto": {
+    "step1": "Ein feines Gespür für das eigene Zuhause",
+    "step2": "Handwerk, Urteilskraft und Seele",
+    "step3Part1": "Jeder Raum birgt eine Geschichte.",
+    "step3Number": "+15",
+    "step3Part2": "Jahre Erfahrung, um die nächste zu schreiben",
+    "counterTotal": "03"
+  },
   "services": {
     "eyebrow": "UNSERE LEISTUNGEN",
     "title": "Erstklassige Renovierungsleistungen in der Region Valencia",

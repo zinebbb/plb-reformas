@@ -1,16 +1,28 @@
 import es from './es.json';
 import en from './en.json';
+import fr from './fr.json';
+import de from './de.json';
+import ru from './ru.json';
 
 export const languages = {
   es: 'Español',
   en: 'English',
+  fr: 'Français',
+  de: 'Deutsch',
+  ru: 'Русский',
 } as const;
+
+// Idiomas disponibles en el selector visible de la cabecera (Castellano e Inglés)
+export const selectorLanguages: Record<'es' | 'en', string> = {
+  es: 'Español',
+  en: 'English',
+};
 
 export type Lang = keyof typeof languages;
 
 export const defaultLang: Lang = 'es';
 
-export const translations = { es, en } as const;
+export const translations = { es, en, fr, de, ru } as const;
 
 export type Translations = typeof es;
 

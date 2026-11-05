@@ -1,5 +1,5 @@
 ---
-import { useTranslations, languages, type Lang } from '../i18n/utils';
+import { useTranslations, selectorLanguages, type Lang } from '../i18n/utils';
 
 interface Props {
   lang?: Lang;
@@ -101,7 +101,7 @@ function getSectionHref(hash: string) {
           class="lang-dropdown"
           role="menu"
         >
-          {Object.entries(languages).map(([code, label]) => {
+          {Object.entries(selectorLanguages).map(([code, label]) => {
             const isCurrent = code === lang;
             const targetUrl = code === 'es' ? '/' : `/${code}/`;
             return (
@@ -188,7 +188,7 @@ function getSectionHref(hash: string) {
         {t.header.langAria}
       </span>
       <div class="flex flex-wrap gap-2">
-        {Object.entries(languages).map(([code, label]) => {
+        {Object.entries(selectorLanguages).map(([code, label]) => {
           const isCurrent = code === lang;
           const targetUrl = code === 'es' ? '/' : `/${code}/`;
           return (

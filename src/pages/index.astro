@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
 import CorporateIntro from '../components/CorporateIntro.astro';
+import ManifestoScroll from '../components/ManifestoScroll.astro';
 import Services from '../components/Services.astro';
 import AboutUs from '../components/AboutUs.astro';
 import VideoGallery from '../components/VideoGallery.astro';
@@ -26,6 +27,7 @@ const t = useTranslations(lang);
   <main class="flex-grow">
     <Hero lang={lang} />
     <CorporateIntro lang={lang} />
+    <ManifestoScroll lang={lang} />
     <Services lang={lang} />
     <AboutUs lang={lang} />
     <VideoGallery lang={lang} />

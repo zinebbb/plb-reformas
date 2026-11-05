@@ -20,5 +20,11 @@ pnpm-debug.log*
 # macOS-specific files
 .DS_Store
 
+# Windows WSL metadata
+*Zone.Identifier
+
+# Raw source assets
+photos/
+
 # jetbrains setting folder
 .idea/

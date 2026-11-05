@@ -50,6 +50,14 @@
       }
     ]
   },
+  "manifesto": {
+    "step1": "Una forma de entender el hogar",
+    "step2": "Oficio, criterio y alma",
+    "step3Part1": "Cada espacio guarda una historia.",
+    "step3Number": "+15",
+    "step3Part2": "años ayudando a escribir la siguiente",
+    "counterTotal": "03"
+  },
   "services": {
     "eyebrow": "QUÉ HACEMOS",
     "title": "Servicios de Alta Gama en la Comunidad Valenciana",

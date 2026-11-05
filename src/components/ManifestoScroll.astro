@@ -1,0 +1,427 @@
+---
+import { useTranslations, type Lang } from '../i18n/utils';
+
+interface Props {
+  lang?: Lang;
+}
+
+const { lang = (Astro.currentLocale as Lang) || 'es' } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<section 
+  id="scrolly-section" 
+  class="scrolly-container relative bg-[#F7F5F0]"
+  aria-label={t.manifesto.step1}
+>
+  <!-- Pinned Sticky Panel -->
+  <div class="scrolly-sticky sticky top-0 w-full overflow-hidden flex items-center justify-center">
+    
+    <!-- Background Video (Cover, a sangre completa) -->
+    <video 
+      id="scrolly-video" 
+      autoplay 
+      muted 
+      loop 
+      playsinline 
+      preload="metadata" 
+      poster="/video/planos-poster.webp" 
+      class="scrolly-video absolute inset-0 w-full h-full object-cover" 
+      aria-hidden="true"
+    >
+      <source src="/video/planos.webm" type="video/webm" />
+      <source src="/video/planos.mp4" type="video/mp4" />
+    </video>
+
+    <!-- Poster de reserva para prefers-reduced-motion o fallo de vídeo -->
+    <img 
+      src="/video/planos-poster.webp" 
+      alt="" 
+      class="scrolly-poster-bg absolute inset-0 w-full h-full object-cover hidden" 
+      aria-hidden="true" 
+    />
+
+    <!-- Velo Hueso Translúcido: rgba(247, 245, 240, 0.38) -->
+    <div class="scrolly-veil absolute inset-0 pointer-events-none" aria-hidden="true"></div>
+
+    <!-- Escenario de Textos (3 pasos centrados en el mismo punto exacto) -->
+    <div class="scrolly-stage relative z-10 w-full max-w-5xl mx-auto px-6 sm:px-10 text-center pointer-events-none">
+      
+      <!-- Paso 1 -->
+      <div class="scrolly-step scrolly-step-1" data-step="1">
+        <h2 class="scrolly-title scrolly-title--standard">
+          {t.manifesto.step1}
+        </h2>
+      </div>
+
+      <!-- Paso 2 -->
+      <div class="scrolly-step scrolly-step-2" data-step="2">
+        <h2 class="scrolly-title scrolly-title--standard">
+          {t.manifesto.step2}
+        </h2>
+      </div>
+
+      <!-- Paso 3 (El más grande, ancho ~18ch, con +15 ampliado) -->
+      <div class="scrolly-step scrolly-step-3" data-step="3">
+        <h2 class="scrolly-title scrolly-title--grand">
+          <span class="block">{t.manifesto.step3Part1}</span>
+          <span class="block mt-1 sm:mt-2.5">
+            <span class="scrolly-num">{t.manifesto.step3Number}</span>
+            <span> {t.manifesto.step3Part2}</span>
+          </span>
+        </h2>
+      </div>
+
+    </div>
+
+    <!-- Detalles en Bronce #B08D6A: Contador "01 / 03" y Línea de Progreso (120px) -->
+    <div class="scrolly-indicator absolute bottom-8 sm:bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2.5 z-10 pointer-events-none select-none">
+      <span 
+        id="scrolly-counter" 
+        class="text-[12px] uppercase tracking-[0.2em] font-normal text-[#B08D6A]"
+        style="letter-spacing: 0.2em;"
+      >
+        01 / 03
+      </span>
+      <div class="scrolly-progress-track w-[120px] h-[1px] bg-black/15 relative overflow-hidden">
+        <div 
+          id="scrolly-progress-bar" 
+          class="scrolly-progress-bar absolute inset-y-0 left-0 bg-[#B08D6A] w-0"
+        ></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  /* Contenedor Exterior: 300vh en escritorio, 260vh en móvil */
+  .scrolly-container {
+    height: 300vh;
+    min-height: 300vh;
+  }
+  @media (max-width: 767px) {
+    .scrolly-container {
+      height: 260vh;
+      min-height: 260vh;
+    }
+  }
+
+  /* Panel Sticky: 100vh / 100svh en móvil */
+  .scrolly-sticky {
+    height: 100vh;
+    height: 100svh;
+  }
+
+  /* Vídeo de fondo con desenfoque y escala inicial */
+  .scrolly-video {
+    filter: blur(8px);
+    transform: scale(1.12);
+    transform-origin: center center;
+    will-change: transform, filter;
+  }
+
+  /* Velo hueso translúcido para contraste óptico */
+  .scrolly-veil {
+    background-color: rgba(247, 245, 240, 0.38);
+    backdrop-filter: blur(0px);
+  }
+
+  /* Escenario de Pasos */
+  .scrolly-stage {
+    min-height: 20rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Cada paso centrado en la misma posición absoluta */
+  .scrolly-step {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    opacity: 0;
+    transform: translateY(20px);
+    will-change: opacity, transform;
+    pointer-events: none;
+  }
+
+  /* Tipografía global de titulares: Fraunces peso 200, estilo normal */
+  .scrolly-title {
+    font-family: var(--font-titulos, 'Fraunces', serif);
+    font-weight: 200;
+    font-style: normal;
+    color: #1a1a1a;
+    text-transform: none;
+    text-wrap: balance;
+    margin: 0 auto;
+  }
+
+  /* Pasos 1 y 2: clamp(2rem, 4vw, 3.6rem) */
+  .scrolly-title--standard {
+    font-size: clamp(2rem, 4vw, 3.6rem);
+    line-height: 1.18;
+  }
+
+  /* Paso 3 (el más grande): clamp(2.2rem, 5vw, 4.8rem), line-height 1.1, ancho ~18ch */
+  .scrolly-title--grand {
+    font-size: clamp(2.2rem, 5vw, 4.8rem);
+    line-height: 1.1;
+    max-width: 18ch;
+  }
+
+  /* El número "+15" se ve 1.5x más grande, solo modificando font-size */
+  .scrolly-num {
+    font-size: 1.5em;
+    line-height: 1;
+    font-family: inherit;
+    font-weight: inherit;
+    font-style: inherit;
+    color: inherit;
+    display: inline-block;
+    vertical-align: baseline;
+  }
+
+  /* Tipografía de respaldo con soporte cirílico para ruso */
+  :global(html[lang="ru"]) .scrolly-title,
+  html[lang="ru"] .scrolly-title {
+    font-family: 'Cormorant Garamond', 'Fraunces', serif !important;
+    font-weight: 300 !important;
+  }
+
+  /* Barra de progreso de 1px */
+  .scrolly-progress-bar {
+    transform-origin: left center;
+    will-change: width;
+  }
+
+  /* Modo accesible / Reducción de movimiento / Fallo de vídeo */
+  @media (prefers-reduced-motion: reduce) {
+    .scrolly-container {
+      height: auto !important;
+      min-height: auto !important;
+    }
+    .scrolly-sticky {
+      position: relative !important;
+      height: auto !important;
+      min-height: auto !important;
+      padding: 6rem 1.5rem !important;
+    }
+    .scrolly-video {
+      display: none !important;
+    }
+    .scrolly-poster-bg {
+      display: block !important;
+    }
+    .scrolly-stage {
+      position: relative !important;
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 5rem !important;
+      min-height: auto !important;
+    }
+    .scrolly-step {
+      position: relative !important;
+      inset: auto !important;
+      opacity: 1 !important;
+      transform: none !important;
+      display: block !important;
+    }
+    .scrolly-indicator {
+      display: none !important;
+    }
+  }
+
+  /* Fallback si el vídeo falla al reproducir */
+  .scrolly-container.is-fallback {
+    height: auto !important;
+    min-height: auto !important;
+  }
+  .scrolly-container.is-fallback .scrolly-sticky {
+    position: relative !important;
+    height: auto !important;
+    min-height: auto !important;
+    padding: 6rem 1.5rem !important;
+  }
+  .scrolly-container.is-fallback .scrolly-video {
+    display: none !important;
+  }
+  .scrolly-container.is-fallback .scrolly-poster-bg {
+    display: block !important;
+  }
+  .scrolly-container.is-fallback .scrolly-stage {
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 5rem !important;
+    min-height: auto !important;
+  }
+  .scrolly-container.is-fallback .scrolly-step {
+    position: relative !important;
+    inset: auto !important;
+    opacity: 1 !important;
+    transform: none !important;
+    display: block !important;
+  }
+  .scrolly-container.is-fallback .scrolly-indicator {
+    display: none !important;
+  }
+</style>
+
+<script>
+  function initScrolly() {
+    const container = document.getElementById('scrolly-section');
+    const video = document.getElementById('scrolly-video') as HTMLVideoElement | null;
+    const step1 = document.querySelector('.scrolly-step-1') as HTMLElement | null;
+    const step2 = document.querySelector('.scrolly-step-2') as HTMLElement | null;
+    const step3 = document.querySelector('.scrolly-step-3') as HTMLElement | null;
+    const counter = document.getElementById('scrolly-counter');
+    const progressBar = document.getElementById('scrolly-progress-bar');
+
+    if (!container || !step1 || !step2 || !step3) return;
+
+    // Respetar preferencia de reducción de movimiento
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      return;
+    }
+
+    // Si el vídeo falla, activar fallback estático
+    if (video) {
+      video.addEventListener('error', () => {
+        container.classList.add('is-fallback');
+      });
+    }
+
+    // Pausar vídeo cuando la sección no esté visible
+    if (video && 'IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            video.play().catch(() => {});
+          } else {
+            video.pause();
+          }
+        });
+      }, { threshold: 0 });
+      observer.observe(container);
+    }
+
+    // Función auxiliar para calcular opacidad y desplazamiento con interpolación suave
+    function calcStepState(
+      progress: number, 
+      enterStart: number, 
+      enterEnd: number, 
+      exitStart: number, 
+      exitEnd: number
+    ): { opacity: number; translateY: number } {
+      if (progress < enterStart) {
+        return { opacity: 0, translateY: 20 };
+      }
+      if (progress >= enterStart && progress < enterEnd) {
+        const t = (progress - enterStart) / (enterEnd - enterStart);
+        // Easing cúbico suave: cubic-bezier(0.22, 1, 0.36, 1) aproximado
+        const ease = 1 - Math.pow(1 - t, 3);
+        return {
+          opacity: Math.max(0, Math.min(1, ease)),
+          translateY: 20 * (1 - ease)
+        };
+      }
+      if (progress >= enterEnd && progress <= exitStart) {
+        return { opacity: 1, translateY: 0 };
+      }
+      if (progress > exitStart && progress <= exitEnd) {
+        const t = (progress - exitStart) / (exitEnd - exitStart);
+        const ease = t * t * (3 - 2 * t);
+        return {
+          opacity: Math.max(0, Math.min(1, 1 - ease)),
+          translateY: -20 * ease
+        };
+      }
+      return { opacity: 0, translateY: -20 };
+    }
+
+    let ticking = false;
+
+    function update() {
+      if (!container) return;
+
+      const rect = container.getBoundingClientRect();
+      const totalScrollable = container.offsetHeight - window.innerHeight;
+      
+      if (totalScrollable <= 0) return;
+
+      // Progreso exacto de 0 a 1 mientras la sección está fijada (pinned)
+      const rawProgress = -rect.top / totalScrollable;
+      const progress = Math.max(0, Math.min(1, rawProgress));
+
+      // 1. Vídeo: desenfoque (8px -> 2px) y escala (1.12 -> 1.0)
+      if (video) {
+        const blur = (8 - progress * 6).toFixed(2);
+        const scale = (1.12 - progress * 0.12).toFixed(4);
+        video.style.filter = `blur(${blur}px)`;
+        video.style.transform = `scale(${scale})`;
+      }
+
+      // 2. Transiciones de los 3 pasos (con solapamiento suave entre tercios)
+      // Paso 1: Tercio 1 (~0.00 a ~0.33)
+      const s1 = calcStepState(progress, 0.00, 0.07, 0.25, 0.35);
+      step1.style.opacity = s1.opacity.toFixed(3);
+      step1.style.transform = `translateY(${s1.translateY.toFixed(1)}px)`;
+
+      // Paso 2: Tercio 2 (~0.33 a ~0.66)
+      const s2 = calcStepState(progress, 0.30, 0.39, 0.58, 0.68);
+      step2.style.opacity = s2.opacity.toFixed(3);
+      step2.style.transform = `translateY(${s2.translateY.toFixed(1)}px)`;
+
+      // Paso 3: Tercio 3 (~0.66 a ~1.00)
+      const s3 = calcStepState(progress, 0.63, 0.72, 0.95, 1.00);
+      step3.style.opacity = s3.opacity.toFixed(3);
+      step3.style.transform = `translateY(${s3.translateY.toFixed(1)}px)`;
+
+      // 3. Contador ("01 / 03", "02 / 03", "03 / 03")
+      if (counter) {
+        if (progress < 0.33) {
+          counter.textContent = '01 / 03';
+        } else if (progress < 0.66) {
+          counter.textContent = '02 / 03';
+        } else {
+          counter.textContent = '03 / 03';
+        }
+      }
+
+      // 4. Línea de progreso de 120px que se llena con el scroll
+      if (progressBar) {
+        const pct = (progress * 100).toFixed(1);
+        progressBar.style.width = `${pct}%`;
+      }
+    }
+
+    function onScroll() {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          update();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+
+    // Ejecución inicial
+    update();
+  }
+
+  // Ejecutar al cargar la página o al navegar en Astro
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initScrolly);
+  } else {
+    initScrolly();
+  }
+  document.addEventListener('astro:page-load', initScrolly);
+</script>
