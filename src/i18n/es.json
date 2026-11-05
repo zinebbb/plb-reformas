@@ -114,6 +114,10 @@
       }
     ]
   },
+  "bathroomShowcase": {
+    "caption": "Reforma integral de baño",
+    "alt": "Baño reformado con espejo redondo con luz LED, azulejo texturizado en espiga, mueble de madera y ducha con mampara de cristal"
+  },
   "about": {
     "eyebrow": "Nuestros compromisos",
     "title": "Un enfoque integral para crear espacios en los que apetece vivir",

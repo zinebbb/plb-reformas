@@ -1,0 +1,254 @@
+---
+import { Image } from 'astro:assets';
+import banoImage from '../assets/images/bano-reformado.png';
+import { useTranslations, type Lang } from '../i18n/utils';
+
+interface Props {
+  lang?: Lang;
+}
+
+const { lang = (Astro.currentLocale as Lang) || 'es' } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<section 
+  id="bano-showcase" 
+  class="showcase-section bg-[#F7F5F0] text-[#1a1a1a] relative overflow-hidden"
+  aria-label={t.bathroomShowcase.caption}
+>
+  <div class="max-w-7xl mx-auto px-0 sm:px-6 sm:px-10 lg:px-16">
+    <div class="flex flex-col lg:flex-row items-stretch lg:items-end justify-between">
+      
+      <!-- Columna Izquierda: Espacio en blanco con pie de foto discreto en la parte inferior izquierda -->
+      <div class="showcase-caption-col order-2 lg:order-1 w-full lg:w-[45%] px-6 sm:px-0 mt-6 sm:mt-8 lg:mt-0 lg:pb-3">
+        <div class="showcase-caption">
+          <!-- Línea fina de 1px (60px de ancho, bronce #B08D6A) -->
+          <span 
+            class="showcase-caption-line block w-[60px] h-[1px] bg-[#B08D6A] mb-3 select-none" 
+            aria-hidden="true"
+          ></span>
+          
+          <!-- Texto en 12px, mayúsculas, letter-spacing 0.2em, gris cálido -->
+          <p 
+            class="showcase-caption-text text-[12px] uppercase tracking-[0.2em] text-[#66645f] font-normal select-none"
+            style="letter-spacing: 0.2em; font-family: 'Outfit', system-ui, sans-serif;"
+          >
+            {t.bathroomShowcase.caption}
+          </p>
+        </div>
+      </div>
+
+      <!-- Columna Derecha: Imagen vertical 4/5 alineada a la derecha con margen de ≈ 8% -->
+      <div class="showcase-image-col order-1 lg:order-2 w-full lg:w-[40%] lg:mr-[8%] shrink-0">
+        <div class="showcase-image-frame relative aspect-[4/5] w-full overflow-hidden rounded-none shadow-none select-none">
+          
+          <!-- Contenedor para desplazamiento parallax ~6% en escritorio -->
+          <div class="showcase-parallax-inner">
+            <Image 
+              src={banoImage} 
+              alt={t.bathroomShowcase.alt}
+              format="webp"
+              quality={85}
+              width={1403}
+              height={1871}
+              loading="lazy"
+              decoding="async"
+              class="showcase-img"
+            />
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Fondo hueso #F7F5F0 y padding vertical generoso de 120px en escritorio */
+  .showcase-section {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  @media (min-width: 640px) {
+    .showcase-section {
+      padding-top: 80px;
+      padding-bottom: 80px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .showcase-section {
+      padding-top: 120px;
+      padding-bottom: 120px;
+    }
+  }
+
+  /* Marco exterior: clip-path de abajo hacia arriba en 1000ms */
+  .showcase-image-frame {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    clip-path: inset(100% 0 0 0);
+    transition: clip-path 1000ms cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: clip-path;
+    border-radius: 0;
+    box-shadow: none;
+    background-color: transparent;
+  }
+
+  .showcase-section.is-visible .showcase-image-frame {
+    clip-path: inset(0 0 0 0);
+  }
+
+  /* Contenedor de parallax interior */
+  .showcase-parallax-inner {
+    position: absolute;
+    inset-x: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    will-change: transform;
+  }
+
+  @media (min-width: 1024px) {
+    .showcase-parallax-inner {
+      top: -7%;
+      height: 114%;
+    }
+  }
+
+  /* Imagen con zoom suave de scale(1.1) a scale(1) y filtro de luminosidad */
+  .showcase-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 55%;
+    filter: brightness(1.07) contrast(1.02);
+    display: block;
+    border-radius: 0;
+    transform: scale(1.1);
+    transition: transform 1000ms cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: transform;
+  }
+
+  .showcase-section.is-visible .showcase-img {
+    transform: scale(1);
+  }
+
+  /* Pie de foto discreto */
+  .showcase-caption {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 800ms cubic-bezier(0.22, 1, 0.36, 1),
+                transform 800ms cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: 200ms;
+    will-change: opacity, transform;
+  }
+
+  .showcase-section.is-visible .showcase-caption {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Accesibilidad: Reducción de movimiento */
+  @media (prefers-reduced-motion: reduce) {
+    .showcase-image-frame {
+      clip-path: none !important;
+      transition: none !important;
+    }
+    .showcase-img {
+      transform: none !important;
+      transition: none !important;
+    }
+    .showcase-caption {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+    }
+    .showcase-parallax-inner {
+      top: 0 !important;
+      height: 100% !important;
+      transform: none !important;
+    }
+  }
+</style>
+
+<script>
+  function initBathroomShowcase() {
+    const section = document.getElementById('bano-showcase');
+    const parallaxEl = section?.querySelector<HTMLElement>('.showcase-parallax-inner');
+    if (!section) return;
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // 1. Revelación al entrar en pantalla con IntersectionObserver
+    if ('IntersectionObserver' in window && !prefersReducedMotion) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            section.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.15,
+        rootMargin: '0px 0px -40px 0px'
+      });
+
+      observer.observe(section);
+    } else {
+      section.classList.add('is-visible');
+    }
+
+    // 2. Parallax muy ligero (~6% más lento que el scroll) solo en escritorio
+    if (parallaxEl && !prefersReducedMotion) {
+      let ticking = false;
+
+      function updateParallax() {
+        if (!section || !parallaxEl) return;
+        
+        // Desactivado en móvil
+        if (window.innerWidth < 1024) {
+          parallaxEl.style.transform = 'translateY(0)';
+          ticking = false;
+          return;
+        }
+
+        const rect = section.getBoundingClientRect();
+        // Solo calcular cuando la sección está dentro o próxima a la ventana
+        if (rect.bottom > -100 && rect.top < window.innerHeight + 100) {
+          const centerDelta = (rect.top + rect.height / 2) - (window.innerHeight / 2);
+          const translateY = centerDelta * 0.06;
+          parallaxEl.style.transform = `translateY(${translateY.toFixed(2)}px)`;
+        }
+        ticking = false;
+      }
+
+      window.addEventListener('scroll', () => {
+        if (!ticking) {
+          window.requestAnimationFrame(updateParallax);
+          ticking = true;
+        }
+      }, { passive: true });
+
+      window.addEventListener('resize', () => {
+        if (!ticking) {
+          window.requestAnimationFrame(updateParallax);
+          ticking = true;
+        }
+      }, { passive: true });
+
+      updateParallax();
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initBathroomShowcase);
+  } else {
+    initBathroomShowcase();
+  }
+  document.addEventListener('astro:page-load', initBathroomShowcase);
+</script>
