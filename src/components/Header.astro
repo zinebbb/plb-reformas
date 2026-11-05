@@ -13,13 +13,13 @@ function getSectionHref(hash: string) {
   if (hash === '#') return homeUrl;
   return `${homeUrl}${hash}`;
 }
-
-const targetLangCode: Lang = lang === 'es' ? 'en' : 'es';
-const targetLangUrl = targetLangCode === 'es' ? '/' : '/en/';
 ---
 
 <header id="site-header" class="fixed inset-x-0 top-0 z-50 pointer-events-none">
-  <div class="header-inner max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 flex items-center justify-between">
+  <!-- Sutil degradado detrás de la cabecera solo cuando está transparente sobre el vídeo -->
+  <div class="header-ambient-gradient pointer-events-none" aria-hidden="true"></div>
+
+  <div class="header-inner max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 flex items-center justify-between relative z-10">
     
     <!-- Bloque del Logotipo Corporativo -->
     <a 
@@ -52,46 +52,63 @@ const targetLangUrl = targetLangCode === 'es' ? '/' : '/en/';
       <nav class="hidden md:flex items-center gap-6 lg:gap-8 pointer-events-auto" aria-label="Navegación principal">
         <a 
           href={getSectionHref('#servicios')} 
-          class="header-nav-link text-[11px] font-medium tracking-[0.1em] uppercase"
+          data-section="servicios"
+          class="header-nav-link"
         >
           {t.header.nav.services}
         </a>
         <a 
           href={getSectionHref('#nosotros')} 
-          class="header-nav-link text-[11px] font-medium tracking-[0.1em] uppercase"
+          data-section="nosotros"
+          class="header-nav-link"
         >
           {t.header.nav.about}
         </a>
+        <!-- Enlace 'Obras' oculto temporalmente; reactivar cuando haya fotos disponibles -->
+        <!--
         <a 
           href={getSectionHref('#proyectos')} 
-          class="header-nav-link text-[11px] font-medium tracking-[0.1em] uppercase"
+          data-section="proyectos"
+          class="header-nav-link"
         >
           {t.header.nav.projects}
         </a>
+        -->
         <a 
           href={getSectionHref('#proceso')} 
-          class="header-nav-link text-[11px] font-medium tracking-[0.1em] uppercase"
+          data-section="proceso"
+          class="header-nav-link"
         >
           {t.header.nav.process}
         </a>
         <a 
           href={getSectionHref('#contacto')} 
-          class="header-nav-link header-nav-link--contact text-[11px] font-medium tracking-[0.1em] uppercase"
+          class="header-nav-btn--contact"
         >
           {t.header.nav.contact}
         </a>
       </nav>
 
-      <!-- Desktop Discreet Language Switcher (Alterna discretamente entre ES y EN) -->
-      <div class="hidden md:flex items-center pointer-events-auto">
+      <!-- Desktop Language Selector: ES / EN -->
+      <div class="hidden md:flex items-center gap-1.5 text-[13px] font-medium tracking-[0.14em] uppercase select-none pointer-events-auto header-lang-switch">
         <a 
-          href={targetLangUrl}
-          data-base-href={targetLangUrl}
-          class="header-lang-btn lang-link inline-flex items-center text-[11px] font-semibold tracking-[0.14em] uppercase py-1.5 px-2.5 rounded-xs transition-colors hover:text-[#B08D6A] cursor-pointer select-none"
-          aria-label={lang === 'es' ? 'Switch to English' : 'Cambiar a Español'}
-          title={lang === 'es' ? 'English' : 'Español'}
+          href="/" 
+          data-base-href="/" 
+          class={`lang-link ${lang === 'es' ? 'opacity-100 font-semibold' : 'opacity-55 hover:opacity-100'} transition-opacity duration-300`}
+          aria-label="Versión en Español"
+          aria-current={lang === 'es' ? 'true' : undefined}
         >
-          {targetLangCode.toUpperCase()}
+          ES
+        </a>
+        <span class="opacity-40 text-[11px] font-light select-none">/</span>
+        <a 
+          href="/en/" 
+          data-base-href="/en/" 
+          class={`lang-link ${lang === 'en' ? 'opacity-100 font-semibold' : 'opacity-55 hover:opacity-100'} transition-opacity duration-300`}
+          aria-label="English version"
+          aria-current={lang === 'en' ? 'true' : undefined}
+        >
+          EN
         </a>
       </div>
 
@@ -120,66 +137,65 @@ const targetLangUrl = targetLangCode === 'es' ? '/' : '/en/';
     id="mobile-drawer" 
     class="hidden md:hidden mobile-drawer px-6 py-6 pointer-events-auto"
   >
-    <nav class="flex flex-col space-y-3 mb-6" aria-label="Navegación móvil">
-      <a 
-        href={getSectionHref('#')} 
-        class="mobile-nav-link text-xs font-medium tracking-[0.1em] uppercase py-1.5"
-      >
-        {t.header.nav.home}
-      </a>
+    <nav class="flex flex-col space-y-3.5 mb-6" aria-label="Navegación móvil">
       <a 
         href={getSectionHref('#servicios')} 
-        class="mobile-nav-link text-xs font-medium tracking-[0.1em] uppercase py-1.5"
+        class="mobile-nav-link text-[13px] font-medium tracking-[0.14em] uppercase py-1.5"
       >
         {t.header.nav.services}
       </a>
       <a 
         href={getSectionHref('#nosotros')} 
-        class="mobile-nav-link text-xs font-medium tracking-[0.1em] uppercase py-1.5"
+        class="mobile-nav-link text-[13px] font-medium tracking-[0.14em] uppercase py-1.5"
       >
         {t.header.nav.about}
       </a>
+      <!-- Enlace 'Obras' oculto temporalmente; reactivar cuando haya fotos disponibles -->
+      <!--
       <a 
         href={getSectionHref('#proyectos')} 
-        class="mobile-nav-link text-xs font-medium tracking-[0.1em] uppercase py-1.5"
+        class="mobile-nav-link text-[13px] font-medium tracking-[0.14em] uppercase py-1.5"
       >
         {t.header.nav.projects}
       </a>
+      -->
       <a 
         href={getSectionHref('#proceso')} 
-        class="mobile-nav-link text-xs font-medium tracking-[0.1em] uppercase py-1.5"
+        class="mobile-nav-link text-[13px] font-medium tracking-[0.14em] uppercase py-1.5"
       >
         {t.header.nav.process}
       </a>
+      
+      <!-- Contacto como botón a ancho completo al final -->
       <a 
         href={getSectionHref('#contacto')} 
-        class="mobile-nav-link mobile-nav-link--contact text-xs font-medium tracking-[0.1em] uppercase py-1.5"
+        class="mobile-nav-link mobile-nav-btn--contact text-center w-full mt-2"
       >
         {t.header.nav.contact}
       </a>
     </nav>
 
-    <!-- Mobile Language Selector (Estilo claro, sin recuadro ni fondo negro) -->
-    <div class="pt-4 border-t border-black/10">
-      <span class="block text-[10px] font-bold uppercase tracking-widest text-[#B08D6A] mb-3">
-        {t.header.langAria}
-      </span>
-      <div class="flex items-center gap-2">
-        <a
-          href="/"
-          data-base-href="/"
-          class={`lang-link mobile-drawer-pill ${lang === 'es' ? 'is-active' : ''}`}
-        >
-          Español
-        </a>
-        <a
-          href="/en/"
-          data-base-href="/en/"
-          class={`lang-link mobile-drawer-pill ${lang === 'en' ? 'is-active' : ''}`}
-        >
-          English
-        </a>
-      </div>
+    <!-- Mobile Language Selector: ES / EN -->
+    <div class="pt-4 border-t border-black/10 flex items-center justify-center gap-2 text-[13px] font-medium tracking-[0.14em] uppercase header-lang-switch">
+      <a
+        href="/"
+        data-base-href="/"
+        class={`lang-link ${lang === 'es' ? 'opacity-100 font-semibold' : 'opacity-55 hover:opacity-100'} transition-opacity duration-300`}
+        aria-label="Versión en Español"
+        aria-current={lang === 'es' ? 'true' : undefined}
+      >
+        ES
+      </a>
+      <span class="opacity-40 text-[11px] font-light select-none">/</span>
+      <a
+        href="/en/"
+        data-base-href="/en/"
+        class={`lang-link ${lang === 'en' ? 'opacity-100 font-semibold' : 'opacity-55 hover:opacity-100'} transition-opacity duration-300`}
+        aria-label="English version"
+        aria-current={lang === 'en' ? 'true' : undefined}
+      >
+        EN
+      </a>
     </div>
   </div>
 </header>
@@ -196,6 +212,25 @@ const targetLangUrl = targetLangCode === 'es' ? '/' : '/en/';
                 border-color 300ms ease,
                 backdrop-filter 300ms ease,
                 -webkit-backdrop-filter 300ms ease;
+  }
+
+  /* Sutil degradado detrás de la cabecera solo cuando está transparente sobre el vídeo */
+  .header-ambient-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 140px;
+    background: linear-gradient(to bottom, rgba(10, 14, 22, 0.35), rgba(10, 14, 22, 0));
+    pointer-events: none;
+    opacity: 1;
+    transition: opacity 300ms ease;
+    z-index: 0;
+  }
+
+  #site-header.header--solid .header-ambient-gradient,
+  #site-header.header--menu-open .header-ambient-gradient {
+    opacity: 0;
   }
 
   /* Padding vertical: normal sobre la portada */
@@ -268,102 +303,105 @@ const targetLangUrl = targetLangCode === 'es' ? '/' : '/en/';
     color: #8C6B3C;
   }
 
-  /* Enlaces de Navegación de Escritorio */
+  /* 2. TIPOGRAFÍA DEL MENÚ DE ESCRITORIO */
   .header-nav-link {
-    color: rgba(255, 255, 255, 0.85);
-    transition: color 300ms ease;
-  }
-  .header-nav-link:hover {
-    color: #ffffff;
-  }
-  .header-nav-link--contact {
-    color: #C5A880;
-  }
-  .header-nav-link--contact:hover {
-    color: #ffffff;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.92);
+    position: relative;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    text-decoration: none;
+    display: inline-block;
+    transition: color 300ms ease, opacity 300ms ease;
   }
 
   #site-header.header--solid .header-nav-link {
     color: #1a1a1a;
   }
-  #site-header.header--solid .header-nav-link:hover {
-    color: #8C6B3C;
-  }
-  #site-header.header--solid .header-nav-link--contact {
-    color: #8C6B3C;
-    font-weight: 600;
-  }
-  #site-header.header--solid .header-nav-link--contact:hover {
-    color: #1a1a1a;
+
+  .header-nav-link:hover {
+    color: #ffffff;
+    opacity: 1;
   }
 
-  /* Selector de Idioma de Escritorio (Botón) */
-  .header-lang-btn {
-    color: rgba(255, 255, 255, 0.9);
+  #site-header.header--solid .header-nav-link:hover {
+    color: #1a1a1a;
+    opacity: 1;
+  }
+
+  /* Hover & Sección activa: línea de 1px dibujada de izquierda a derecha en 300ms */
+  .header-nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #B08D6A;
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .header-nav-link:hover::after,
+  .header-nav-link.is-active::after {
+    transform: scaleX(1);
+  }
+
+  /* 3. "CONTACTO" COMO BOTÓN SUTIL */
+  .header-nav-btn--contact {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 2px;
+    padding: 10px 22px;
+    background-color: transparent;
+    text-decoration: none;
+    transition: background-color 300ms ease, color 300ms ease, border-color 300ms ease;
+  }
+
+  .header-nav-btn--contact:hover {
+    background-color: #B08D6A;
+    color: #ffffff;
+    border-color: #B08D6A;
+  }
+
+  #site-header.header--solid .header-nav-btn--contact {
+    color: #1a1a1a;
+    border-color: rgba(26, 26, 26, 0.7);
+    background-color: transparent;
+  }
+
+  #site-header.header--solid .header-nav-btn--contact:hover {
+    background-color: #B08D6A;
+    color: #ffffff;
+    border-color: #B08D6A;
+  }
+
+  /* 5. SELECTOR DE IDIOMA */
+  .header-lang-switch {
+    color: rgba(255, 255, 255, 0.92);
     transition: color 300ms ease;
   }
-  .header-lang-btn:hover {
-    color: #C5A880;
-  }
-  #site-header.header--solid .header-lang-btn {
+
+  #site-header.header--solid .header-lang-switch,
+  #site-header.header--menu-open .header-lang-switch,
+  .mobile-drawer .header-lang-switch {
     color: #1a1a1a;
   }
-  #site-header.header--solid .header-lang-btn:hover {
-    color: #8C6B3C;
-  }
 
-  /* Desplegable de Idioma (Desktop) - Estilo claro translúcido SIEMPRE */
-  .lang-dropdown {
-    position: absolute;
-    right: 0;
-    top: 100%;
-    margin-top: 8px;
-    min-width: max-content;
-    padding: 8px 0;
-    background: rgba(247, 245, 240, 0.85);
-    -webkit-backdrop-filter: blur(14px);
-    backdrop-filter: blur(14px);
-    border: 1px solid rgba(0, 0, 0, 0.06);
-    border-radius: 4px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-    opacity: 0;
-    pointer-events: none;
-    transform: translateY(-6px);
-    transition: opacity 200ms ease, transform 200ms ease;
-    z-index: 60;
-  }
-
-  .lang-dropdown.is-open {
-    opacity: 1;
-    pointer-events: auto;
-    transform: translateY(0);
-  }
-
-  .lang-dropdown-item {
-    display: block;
-    padding: 6px 18px;
-    color: #1a1a1a;
-    background: transparent;
-    border: none;
-    font-size: 11px;
-    font-weight: 400;
-    letter-spacing: 0.05em;
-    text-align: left;
-    white-space: nowrap;
+  .header-lang-switch a {
     text-decoration: none;
-    transition: color 200ms ease;
-  }
-
-  .lang-dropdown-item:hover {
-    color: #B08D6A;
-    background: transparent;
-  }
-
-  .lang-dropdown-item.is-active {
-    color: #B08D6A;
-    font-weight: 600;
-    background: transparent;
-    border: none;
+    color: inherit;
   }
 
   /* Botón Hamburguesa Móvil */
@@ -372,7 +410,7 @@ const targetLangUrl = targetLangCode === 'es' ? '/' : '/en/';
     transition: color 300ms ease;
   }
   .header-mobile-btn:hover {
-    color: #C5A880;
+    color: #B08D6A;
   }
   #site-header.header--solid .header-mobile-btn,
   #site-header.header--menu-open .header-mobile-btn {
@@ -398,38 +436,38 @@ const targetLangUrl = targetLangCode === 'es' ? '/' : '/en/';
     box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.08);
   }
   .mobile-nav-link {
-    color: #2d3748;
+    color: #1a1a1a;
     transition: color 200ms ease;
+    text-decoration: none;
   }
   .mobile-nav-link:hover {
-    color: #8C6B3C;
-  }
-  .mobile-nav-link--contact {
-    color: #8C6B3C;
-    font-weight: 600;
+    color: #B08D6A;
   }
 
-  /* Selector de idioma móvil (Sin fondo negro ni recuadros) */
-  .mobile-drawer-pill {
-    display: inline-block;
-    padding: 4px 10px;
+  /* Botón Contacto en Menú Móvil (ancho completo al final) */
+  .mobile-nav-btn--contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
     color: #1a1a1a;
-    background: transparent;
-    border: none;
-    font-size: 11px;
-    letter-spacing: 0.05em;
+    border: 1px solid rgba(26, 26, 26, 0.7);
+    border-radius: 2px;
+    padding: 11px 22px;
+    background-color: transparent;
     text-decoration: none;
-    transition: color 200ms ease;
+    transition: background-color 300ms ease, color 300ms ease, border-color 300ms ease;
   }
-  .mobile-drawer-pill:hover {
-    color: #B08D6A;
-    background: transparent;
-  }
-  .mobile-drawer-pill.is-active {
-    color: #B08D6A;
-    font-weight: 600;
-    background: transparent;
-    border: none;
+
+  .mobile-nav-btn--contact:hover,
+  .mobile-nav-btn--contact:active {
+    background-color: #B08D6A;
+    color: #ffffff;
+    border-color: #B08D6A;
   }
 
   /* Accesibilidad: Respetar prefers-reduced-motion */
@@ -441,12 +479,12 @@ const targetLangUrl = targetLangCode === 'es' ? '/' : '/en/';
     .header-brand-name,
     .header-brand-highlight,
     .header-nav-link,
-    .header-lang-btn,
-    .lang-dropdown,
-    .lang-dropdown-item,
+    .header-nav-link::after,
+    .header-nav-btn--contact,
     .mobile-drawer,
     .mobile-nav-link,
-    .mobile-drawer-pill {
+    .mobile-nav-btn--contact,
+    .header-ambient-gradient {
       transition: none !important;
       animation: none !important;
     }
@@ -454,7 +492,7 @@ const targetLangUrl = targetLangCode === 'es' ? '/' : '/en/';
 </style>
 
 <script>
-  // Control de scroll y visibilidad de cabecera con requestAnimationFrame
+  // 1. Control de scroll y visibilidad de cabecera con requestAnimationFrame
   const header = document.getElementById('site-header');
   let lastScrollY = typeof window !== 'undefined' ? window.scrollY : 0;
   let ticking = false;
@@ -513,7 +551,7 @@ const targetLangUrl = targetLangCode === 'es' ? '/' : '/en/';
     }
   }, { passive: true });
 
-  // Mobile Menu Toggle
+  // 2. Mobile Menu Toggle
   const mobileMenuBtn = document.getElementById('mobile-menu-btn');
   const mobileDrawer = document.getElementById('mobile-drawer');
   const menuIconOpen = document.getElementById('menu-icon-open');
@@ -560,7 +598,7 @@ const targetLangUrl = targetLangCode === 'es' ? '/' : '/en/';
     }, { passive: true });
   }
 
-  // Preservar hash de sección al cambiar de idioma
+  // 3. Preservar hash de sección al cambiar de idioma
   document.querySelectorAll('a.lang-link').forEach((link) => {
     link.addEventListener('click', () => {
       const hash = window.location.hash;
@@ -572,4 +610,74 @@ const targetLangUrl = targetLangCode === 'es' ? '/' : '/en/';
       }
     });
   });
+
+  // 4. SECCIÓN ACTIVA: IntersectionObserver para marcar la sección visible con línea de 1px en bronce
+  const sectionIds = ['servicios', 'nosotros', 'proceso'];
+  const desktopNavLinks = document.querySelectorAll<HTMLAnchorElement>('.header-nav-link[data-section]');
+
+  if ('IntersectionObserver' in window && desktopNavLinks.length > 0) {
+    const intersectingSections = new Set<string>();
+
+    function updateActiveSectionIndicator() {
+      let activeId: string | null = null;
+      let minDistance = Infinity;
+      const targetPoint = window.innerHeight * 0.35; // Punto focal superior/medio
+
+      intersectingSections.forEach((id) => {
+        const el = document.getElementById(id);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          // La sección abarca el punto focal
+          if (rect.top <= targetPoint && rect.bottom >= targetPoint) {
+            activeId = id;
+            minDistance = -1;
+          } else if (minDistance !== -1) {
+            const dist = Math.abs(rect.top - targetPoint);
+            if (dist < minDistance) {
+              minDistance = dist;
+              activeId = id;
+            }
+          }
+        }
+      });
+
+      desktopNavLinks.forEach((link) => {
+        const sec = link.getAttribute('data-section');
+        if (activeId && sec === activeId) {
+          link.classList.add('is-active');
+        } else {
+          link.classList.remove('is-active');
+        }
+      });
+    }
+
+    const sectionObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            intersectingSections.add(entry.target.id);
+          } else {
+            intersectingSections.delete(entry.target.id);
+          }
+        });
+        updateActiveSectionIndicator();
+      },
+      {
+        root: null,
+        rootMargin: '0px 0px -25% 0px',
+        threshold: [0, 0.1, 0.25, 0.5]
+      }
+    );
+
+    sectionIds.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) sectionObserver.observe(el);
+    });
+
+    window.addEventListener('scroll', () => {
+      if (intersectingSections.size > 0) {
+        updateActiveSectionIndicator();
+      }
+    }, { passive: true });
+  }
 </script>
