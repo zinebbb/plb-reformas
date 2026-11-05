@@ -118,24 +118,7 @@
     "eyebrow": "Our commitments",
     "title": "A comprehensive approach to creating spaces you truly love living in",
     "desc": "We unite all phases of your renovation under a single technical management, from initial consultation to the final finish. With our own dedicated team and no impersonal subcontractors, we take full responsibility for every millimeter executed.",
-    "quote": "A renovation is not just taking down walls and laying cables: it is conceiving a bright, balanced, and comfortable space where your family enjoys exceptional quality of life.",
-    "commitments": [
-      {
-        "num": "01",
-        "title": "In-house team",
-        "desc": "Master masons, carpenters, plumbers, and certified installers."
-      },
-      {
-        "num": "02",
-        "title": "Transparent budget",
-        "desc": "Official binding contract with no surprises."
-      },
-      {
-        "num": "03",
-        "title": "Guaranteed deadlines",
-        "desc": "Clear and strictly respected construction schedule."
-      }
-    ]
+    "quote": "A renovation is not just taking down walls and laying cables: it is conceiving a bright, balanced, and comfortable space where your family enjoys exceptional quality of life."
   },
   "gallery": {
     "eyebrow": "OUR PROJECTS",

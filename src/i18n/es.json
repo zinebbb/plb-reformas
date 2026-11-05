@@ -118,24 +118,7 @@
     "eyebrow": "Nuestros compromisos",
     "title": "Un enfoque integral para crear espacios en los que apetece vivir",
     "desc": "Reunimos bajo una sola dirección técnica todas las fases de tu reforma, desde el asesoramiento inicial hasta el último remate. Con un equipo propio y sin subcontratas impersonales, respondemos de cada milímetro ejecutado.",
-    "quote": "Una reforma no es solo tirar tabiques y tender cableado: es concebir un espacio luminoso, equilibrado y confortable donde tu familia disfrute de una calidad de vida excepcional.",
-    "commitments": [
-      {
-        "num": "01",
-        "title": "Equipo propio",
-        "desc": "Maestros albañiles, carpinteros, fontaneros e instaladores certificados."
-      },
-      {
-        "num": "02",
-        "title": "Presupuesto transparente",
-        "desc": "Contrato oficial y sin sorpresas."
-      },
-      {
-        "num": "03",
-        "title": "Plazos garantizados",
-        "desc": "Calendario de obra claro y cumplido."
-      }
-    ]
+    "quote": "Una reforma no es solo tirar tabiques y tender cableado: es concebir un espacio luminoso, equilibrado y confortable donde tu familia disfrute de una calidad de vida excepcional."
   },
   "gallery": {
     "eyebrow": "NUESTRAS OBRAS",
