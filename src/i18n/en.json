@@ -107,38 +107,25 @@
     ]
   },
   "about": {
-    "eyebrow": "PHILOSOPHY & EXPERTISE",
-    "title": "About Us",
-    "imageAlt": "Completed luxury interior renovation by PLB Reformas",
-    "badgeTitle": "Master Craftsman Guarantee",
-    "badgeDesc": "In-house team of master masons, finish carpenters, plumbers, and certified electricians.",
-    "narrativeTitle": "A holistic approach to create <br /> spaces where life unfolds beautifully",
-    "p1": "For more than 12 years, we have dedicated ourselves to high-end building, complete home remodeling, and interior architecture across Spain. We founded PLB Reformas with an unwavering commitment: bringing together under a single technical management team every phase a home requires, from initial spatial advice to the finest indirect lighting and pristine finishing touches.",
-    "p2": "Today, alongside our own project managers, certified installers, and seasoned construction masters, we execute technical projects of any scale in Benidorm and throughout the Valencian Community. We do not rely on disconnected subcontractors: we maintain dedicated in-house specialists for each craft, allowing us to guarantee flawless precision down to the millimeter.",
-    "quote": "\"To us, a renovation is far more than tearing down partitions and laying cables; it is conceiving a serene, luminous, and refined haven where your family enjoys exceptional living.\"",
-    "p3": "We work with complete integrity, binding contracts, clear pricing, and guaranteed schedules. It is this absolute rigor that leads our clients to place their complete trust in us and recommend us time and again.",
-    "signatureRole": "Technical Direction & Project Management",
-    "signatureCompany": "PLB Reformas Premium S.L. · Valencian Community",
-    "pillarsEyebrow": "NON-NEGOTIABLE COMMITMENTS",
-    "pillarsTitle": "Why Choose PLB Reformas?",
-    "pillars": [
+    "eyebrow": "Our commitments",
+    "title": "A comprehensive approach to creating spaces you truly love living in",
+    "desc": "We unite all phases of your renovation under a single technical management, from initial consultation to the final finish. With our own dedicated team and no impersonal subcontractors, we take full responsibility for every millimeter executed.",
+    "quote": "A renovation is not just taking down walls and laying cables: it is conceiving a bright, balanced, and comfortable space where your family enjoys exceptional quality of life.",
+    "commitments": [
       {
         "num": "01",
-        "title": "Punctual & Fast Start",
-        "highlight": "Starts in 2 days",
-        "desc": "We mobilize on site just 2 days after contract signing. We establish a legally binding milestone schedule and adhere strictly to agreed delivery dates."
+        "title": "In-house team",
+        "desc": "Master masons, carpenters, plumbers, and certified installers."
       },
       {
         "num": "02",
-        "title": "Official Binding Contract",
-        "highlight": "Fixed itemized quote",
-        "desc": "We sign an official contract for the full duration of the works, itemized trade by trade. What is written is exactly what you pay, with zero surprises or hidden costs."
+        "title": "Transparent budget",
+        "desc": "Official binding contract with no surprises."
       },
       {
         "num": "03",
-        "title": "Post-Construction Detailing",
-        "highlight": "Turnkey handover",
-        "desc": "We protect community corridors and elevators during works, and perform a deep professional clean upon completion. You receive the keys ready to move straight in."
+        "title": "Guaranteed deadlines",
+        "desc": "Clear and strictly respected construction schedule."
       }
     ]
   },

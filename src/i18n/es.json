@@ -107,38 +107,25 @@
     ]
   },
   "about": {
-    "eyebrow": "FILOSOFÍA & EXPERIENCIA",
-    "title": "Sobre Nosotros",
-    "imageAlt": "Interiorismo y reforma terminada por PLB Reformas",
-    "badgeTitle": "Compromiso de Autor",
-    "badgeDesc": "Equipo propio de maestros albañiles, carpinteros, fontaneros e instaladores certificados.",
-    "narrativeTitle": "Un enfoque integral para crear <br /> espacios en los que apetece vivir",
-    "p1": "Llevamos más de 12 años dedicados a la construcción, las reformas integrales y la renovación de interiores en España. Creamos PLB Reformas con un propósito irrenunciable: reunir bajo una sola dirección técnica todas las fases que requiere una vivienda, desde el asesoramiento arquitectónico inicial hasta el último foseado de iluminación y los remates más exigentes.",
-    "p2": "Hoy, junto a nuestro equipo propio de jefes de obra, instaladores certificados y maestros de la construcción, ejecutamos proyectos de cualquier nivel de complejidad técnica en Benidorm y toda la Comunidad Valenciana. No trabajamos con subcontratas impersonales: disponemos de profesionales propios para cada oficio, lo que nos permite responder con absoluta solvencia de cada milímetro ejecutado.",
-    "quote": "\"Para nosotros una reforma no es solo tirar tabiques y tender cableado; es concebir un espacio luminoso, equilibrado y confortable donde tu familia disfrute de una calidad de vida excepcional.\"",
-    "p3": "Trabajamos con honestidad, contrato oficial, presupuesto transparente y calendario con plazos garantizados. Es este rigor el que hace que nuestros clientes confíen plenamente en nosotros y nos recomienden continuamente.",
-    "signatureRole": "Dirección Técnica & Gestión de Proyectos",
-    "signatureCompany": "PLB Reformas Premium S.L. · Comunidad Valenciana",
-    "pillarsEyebrow": "COMPROMISOS INNEGOCIABLES",
-    "pillarsTitle": "¿Por Qué Elegir PLB Reformas?",
-    "pillars": [
+    "eyebrow": "Nuestros compromisos",
+    "title": "Un enfoque integral para crear espacios en los que apetece vivir",
+    "desc": "Reunimos bajo una sola dirección técnica todas las fases de tu reforma, desde el asesoramiento inicial hasta el último remate. Con un equipo propio y sin subcontratas impersonales, respondemos de cada milímetro ejecutado.",
+    "quote": "Una reforma no es solo tirar tabiques y tender cableado: es concebir un espacio luminoso, equilibrado y confortable donde tu familia disfrute de una calidad de vida excepcional.",
+    "commitments": [
       {
         "num": "01",
-        "title": "Rápido y Puntual",
-        "highlight": "Comienzo en 2 días",
-        "desc": "Iniciamos los trabajos en tan solo 2 días tras la firma del contrato. Establecemos un calendario vinculante y cumplimos rigurosamente los plazos de entrega pactados para tu tranquilidad."
+        "title": "Equipo propio",
+        "desc": "Maestros albañiles, carpinteros, fontaneros e instaladores certificados."
       },
       {
         "num": "02",
-        "title": "Contrato Oficial",
-        "highlight": "Presupuesto cerrado",
-        "desc": "Firmamos un contrato oficial para todo el período de la reforma, detallado partida por partida. Lo estipulado por escrito es exactamente lo que pagas, sin sorpresas ni costes ocultos."
+        "title": "Presupuesto transparente",
+        "desc": "Contrato oficial y sin sorpresas."
       },
       {
         "num": "03",
-        "title": "Limpieza Post-Obra",
-        "highlight": "Entrega impecable",
-        "desc": "Cuidamos las zonas comunes del edificio durante la obra y realizamos una limpieza exhaustiva y profesional al finalizar los trabajos. Recibes las llaves con tu vivienda lista para entrar a vivir."
+        "title": "Plazos garantizados",
+        "desc": "Calendario de obra claro y cumplido."
       }
     ]
   },

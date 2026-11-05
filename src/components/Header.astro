@@ -1,5 +1,5 @@
 ---
-import { useTranslations, selectorLanguages, type Lang } from '../i18n/utils';
+import { useTranslations, type Lang } from '../i18n/utils';
 
 interface Props {
   lang?: Lang;
@@ -13,6 +13,9 @@ function getSectionHref(hash: string) {
   if (hash === '#') return homeUrl;
   return `${homeUrl}${hash}`;
 }
+
+const targetLangCode: Lang = lang === 'es' ? 'en' : 'es';
+const targetLangUrl = targetLangCode === 'es' ? '/' : '/en/';
 ---
 
 <header id="site-header" class="fixed inset-x-0 top-0 z-50 pointer-events-none">
@@ -79,43 +82,17 @@ function getSectionHref(hash: string) {
         </a>
       </nav>
 
-      <!-- Desktop Language Selector -->
-      <div class="hidden md:block relative language-dropdown-container pointer-events-auto">
-        <button 
-          id="lang-btn" 
-          type="button"
-          class="header-lang-btn inline-flex items-center gap-1.5 text-[11px] font-medium tracking-[0.1em] uppercase py-1.5 px-2 rounded-xs cursor-pointer select-none"
-          aria-expanded="false"
-          aria-haspopup="true"
-          aria-label={t.header.langAria}
+      <!-- Desktop Discreet Language Switcher (Alterna discretamente entre ES y EN) -->
+      <div class="hidden md:flex items-center pointer-events-auto">
+        <a 
+          href={targetLangUrl}
+          data-base-href={targetLangUrl}
+          class="header-lang-btn lang-link inline-flex items-center text-[11px] font-semibold tracking-[0.14em] uppercase py-1.5 px-2.5 rounded-xs transition-colors hover:text-[#B08D6A] cursor-pointer select-none"
+          aria-label={lang === 'es' ? 'Switch to English' : 'Cambiar a Español'}
+          title={lang === 'es' ? 'English' : 'Español'}
         >
-          <span class="font-semibold">{lang.toUpperCase()}</span>
-          <svg class="w-3 h-3 transition-transform duration-200 stroke-current" fill="none" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-          </svg>
-        </button>
-
-        <!-- Dropdown Menu (Fondo claro translúcido siempre, apertura fade-in + translateY(-6px) a 0) -->
-        <div 
-          id="lang-dropdown"
-          class="lang-dropdown"
-          role="menu"
-        >
-          {Object.entries(selectorLanguages).map(([code, label]) => {
-            const isCurrent = code === lang;
-            const targetUrl = code === 'es' ? '/' : `/${code}/`;
-            return (
-              <a
-                href={targetUrl}
-                data-base-href={targetUrl}
-                class={`lang-dropdown-item lang-link ${isCurrent ? 'is-active' : ''}`}
-                role="menuitem"
-              >
-                {label}
-              </a>
-            );
-          })}
-        </div>
+          {targetLangCode.toUpperCase()}
+        </a>
       </div>
 
       <!-- Mobile Hamburger Button -->
@@ -187,20 +164,21 @@ function getSectionHref(hash: string) {
       <span class="block text-[10px] font-bold uppercase tracking-widest text-[#B08D6A] mb-3">
         {t.header.langAria}
       </span>
-      <div class="flex flex-wrap gap-2">
-        {Object.entries(selectorLanguages).map(([code, label]) => {
-          const isCurrent = code === lang;
-          const targetUrl = code === 'es' ? '/' : `/${code}/`;
-          return (
-            <a
-              href={targetUrl}
-              data-base-href={targetUrl}
-              class={`lang-link mobile-drawer-pill ${isCurrent ? 'is-active' : ''}`}
-            >
-              {label}
-            </a>
-          );
-        })}
+      <div class="flex items-center gap-2">
+        <a
+          href="/"
+          data-base-href="/"
+          class={`lang-link mobile-drawer-pill ${lang === 'es' ? 'is-active' : ''}`}
+        >
+          Español
+        </a>
+        <a
+          href="/en/"
+          data-base-href="/en/"
+          class={`lang-link mobile-drawer-pill ${lang === 'en' ? 'is-active' : ''}`}
+        >
+          English
+        </a>
       </div>
     </div>
   </div>
@@ -534,42 +512,6 @@ function getSectionHref(hash: string) {
       ticking = true;
     }
   }, { passive: true });
-
-  // Desktop Language Dropdown Toggle (Apertura: fade-in + translateY(-6px) a 0 en 200ms)
-  const langBtn = document.getElementById('lang-btn');
-  const langDropdown = document.getElementById('lang-dropdown');
-
-  if (langBtn && langDropdown) {
-    function openDropdown() {
-      langBtn?.setAttribute('aria-expanded', 'true');
-      langDropdown?.classList.add('is-open');
-    }
-
-    function closeDropdown() {
-      langBtn?.setAttribute('aria-expanded', 'false');
-      langDropdown?.classList.remove('is-open');
-    }
-
-    langBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const isOpen = langBtn.getAttribute('aria-expanded') === 'true';
-      if (isOpen) {
-        closeDropdown();
-      } else {
-        openDropdown();
-      }
-    });
-
-    document.addEventListener('click', (e) => {
-      if (langDropdown && langBtn && !langDropdown.contains(e.target as Node) && !langBtn.contains(e.target as Node)) {
-        closeDropdown();
-      }
-    });
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeDropdown();
-    });
-  }
 
   // Mobile Menu Toggle
   const mobileMenuBtn = document.getElementById('mobile-menu-btn');
