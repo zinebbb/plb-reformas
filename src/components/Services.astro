@@ -7,74 +7,299 @@ interface Props {
 
 const { lang = (Astro.currentLocale as Lang) || 'es' } = Astro.props;
 const t = useTranslations(lang);
-
-const icons = [
-  `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>`,
-  `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>`,
-  `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>`,
-  `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>`,
-  `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/>`,
-  `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>`,
-  `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/>`,
-  `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/>`
-];
+const contactUrl = lang === 'es' ? '/#contacto' : '/en/#contacto';
 ---
 
-<section id="servicios" class="py-24 bg-[#f8fafc] text-[#111317] relative">
-  <div class="max-w-7xl mx-auto px-4 sm:px-8">
-    
-    <!-- Section Title -->
-    <div class="fade-up text-center max-w-3xl mx-auto mb-16">
-      <span class="text-xs font-bold tracking-widest uppercase text-gold-600 block mb-2">
-        {t.services.eyebrow}
-      </span>
-      <h2 class="text-3xl sm:text-4xl md:text-5xl uppercase tracking-tight text-[#111317] mb-4">
-        {t.services.title}
-      </h2>
-      <div class="w-16 h-1 bg-gold-500 mx-auto mb-5"></div>
-      <p class="text-sm sm:text-base text-gray-600 leading-relaxed font-normal">
-        {t.services.subtitle}
-      </p>
-    </div>
-
-    <!-- Services Grid -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      {t.services.items.map((item, idx) => (
-        <div 
-          class={`fade-up delay-${(idx % 4) * 100} bg-white p-7 rounded-sm border border-gray-200/90 shadow-sm hover:shadow-xl hover:border-gold-500 transition-all duration-300 flex flex-col justify-between group transform hover:-translate-y-1`}
+<section 
+  id="servicios" 
+  class="services-section bg-[#F7F5F0] text-[#1a1a1a] relative overflow-hidden"
+  aria-label={t.services.title}
+>
+  <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
+    <div class="flex flex-col lg:flex-row items-start justify-between gap-12 lg:gap-16 xl:gap-24">
+      
+      <!-- Columna Izquierda (≈ 34%): Fija con position: sticky; top: 140px en escritorio -->
+      <aside class="services-aside w-full lg:w-[34%] shrink-0 lg:sticky lg:top-[140px]">
+        
+        <!-- Etiqueta pequeña en bronce -->
+        <span 
+          class="services-eyebrow text-[12px] uppercase tracking-[0.2em] font-normal text-[#B08D6A] block mb-3 sm:mb-4 select-none"
+          style="letter-spacing: 0.2em;"
         >
-          <div>
-            <!-- Icon -->
-            <div class="w-12 h-12 rounded-sm bg-black/5 text-gold-600 flex items-center justify-center mb-5 group-hover:bg-gold-500 group-hover:text-black transition-colors">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={icons[idx] || icons[0]}></svg>
-            </div>
+          {t.services.eyebrow}
+        </span>
+        
+        <!-- Titular en Fraunces 200 sin mayúsculas forzadas -->
+        <h2 
+          class="services-title text-[clamp(2.2rem,3.8vw,3.6rem)] leading-[1.1] font-light text-[#1a1a1a] mb-6 sm:mb-8"
+          style="font-family: var(--font-titulos, 'Fraunces', serif); font-weight: 200; font-style: normal; text-wrap: balance;"
+        >
+          {t.services.title}
+        </h2>
 
-            <!-- Tag -->
-            <span class="text-[10px] font-bold uppercase tracking-wider text-gold-600 block mb-1">
-              {item.tag}
-            </span>
+        <!-- Frase de apoyo en gris cálido (máx. 40ch) -->
+        <p 
+          class="services-support text-base sm:text-[1.05rem] text-[#55534e] font-light leading-relaxed max-w-[40ch] mb-8 sm:mb-10"
+          style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 300; line-height: 1.6;"
+        >
+          {t.services.subtitle}
+        </p>
 
-            <!-- Title -->
-            <h3 class="text-lg font-bold text-[#111317] uppercase tracking-wide mb-3 group-hover:text-gold-600 transition-colors">
-              {item.title}
-            </h3>
-
-            <!-- Description -->
-            <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
-              {item.desc}
-            </p>
-          </div>
-
+        <!-- Único enlace de texto hacia contacto con subrayado fino en bronce -->
+        <div>
           <a 
-            href="#contacto"
-            class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between text-xs font-bold uppercase tracking-wider text-gold-600 group-hover:text-gold-700 transition-colors"
+            href={contactUrl}
+            class="services-cta inline-flex items-center gap-2 text-xs sm:text-sm uppercase tracking-[0.15em] font-medium text-[#1a1a1a] hover:text-[#B08D6A] pb-1 border-b border-[#B08D6A] transition-colors duration-250 select-none"
+            style="letter-spacing: 0.15em;"
           >
-            <span>{t.services.learnMore}</span>
-            <span class="transform group-hover:translate-x-1 transition-transform">→</span>
+            <span>{t.services.cta}</span>
           </a>
         </div>
-      ))}
-    </div>
 
+      </aside>
+
+      <!-- Columna Derecha (≈ 58%): Lista interactiva de los 8 servicios -->
+      <div class="services-list w-full lg:w-[58%] border-t border-black/12">
+        {t.services.items.map((item, idx) => (
+          <a 
+            href={contactUrl}
+            class="service-row group relative block border-b border-black/12 text-left select-none"
+            style={`--row-delay: ${idx * 80}ms;`}
+            data-index={idx}
+            aria-label={`${item.num} ${item.title}: ${item.desc}`}
+          >
+            <div class="service-row-content flex items-center justify-between gap-4 sm:gap-6 py-6 sm:py-7 lg:py-8">
+              
+              <div class="flex items-baseline gap-5 sm:gap-7 flex-1 min-w-0">
+                <!-- Número pequeño "01" a "08" en bronce -->
+                <span 
+                  class="service-num text-[12px] uppercase tracking-[0.15em] font-normal text-[#B08D6A] shrink-0 pt-0.5 select-none"
+                  style="letter-spacing: 0.15em;"
+                >
+                  {item.num}
+                </span>
+
+                <!-- Bloque de Texto: Título + Frase condensada (máx 90 caracteres) + SEO oculto -->
+                <div class="flex-1 min-w-0">
+                  <h3 
+                    class="service-title text-[clamp(1.5rem,2.4vw,2.2rem)] leading-[1.15] font-light text-[#1a1a1a] mb-1.5"
+                    style="font-family: var(--font-titulos, 'Fraunces', serif); font-weight: 200; font-style: normal; text-wrap: balance;"
+                  >
+                    {item.title}
+                  </h3>
+                  
+                  <p 
+                    class="service-desc text-xs sm:text-sm text-[#55534e] font-light leading-relaxed"
+                    style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 300;"
+                  >
+                    {item.desc}
+                  </p>
+
+                  <!-- Texto descriptivo completo conservado para rastreadores de Google y lectores de pantalla -->
+                  <span class="sr-only">{item.seoDesc}</span>
+                </div>
+              </div>
+
+              <!-- Flecha fina "→" -->
+              <div class="service-arrow-box shrink-0 pl-2">
+                <span 
+                  class="service-arrow inline-block text-xl sm:text-2xl font-light text-[#B08D6A] select-none"
+                  aria-hidden="true"
+                >
+                  →
+                </span>
+              </div>
+
+            </div>
+
+            <!-- Línea inferior activa en bronce que se dibuja de izquierda a derecha -->
+            <span class="service-line-active absolute inset-x-0 bottom-0 h-[1px] bg-[#B08D6A] pointer-events-none" aria-hidden="true"></span>
+          </a>
+        ))}
+      </div>
+
+    </div>
   </div>
 </section>
+
+<style>
+  /* Espaciado generoso de 140px arriba y abajo en escritorio, 90px en móvil */
+  .services-section {
+    padding-top: 90px;
+    padding-bottom: 90px;
+  }
+  @media (min-width: 1024px) {
+    .services-section {
+      padding-top: 140px;
+      padding-bottom: 140px;
+    }
+  }
+
+  /* Entradas al hacer scroll escalonadas: fade-in + translateY(18px) en 650ms */
+  .service-row {
+    position: relative;
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 650ms cubic-bezier(0.22, 1, 0.36, 1),
+                transform 650ms cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+    text-decoration: none;
+    outline: none;
+  }
+
+  .services-section.is-visible .service-row {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: var(--row-delay, 0ms);
+  }
+
+  /* Contenedor interno del contenido que se desplaza 12px a la derecha en hover */
+  .service-row-content {
+    transition: transform 350ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  /* Título de servicio */
+  .service-title {
+    transition: color 350ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  /* Flecha: en escritorio oculta por defecto, se desliza al hover */
+  .service-arrow {
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: opacity 350ms cubic-bezier(0.22, 1, 0.36, 1),
+                transform 350ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  /* Línea inferior que se dibuja de izquierda a derecha en bronce */
+  .service-line-active {
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 350ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  /* Efecto Hover solo en pantallas con ratón (escritorio) */
+  @media (hover: hover) and (min-width: 1024px) {
+    /* Dim de las demás filas a 0.55 cuando una fila está en hover */
+    .services-list:hover .service-row {
+      opacity: 0.55;
+      transition: opacity 350ms cubic-bezier(0.22, 1, 0.36, 1),
+                  transform 350ms cubic-bezier(0.22, 1, 0.36, 1);
+      transition-delay: 0ms !important;
+    }
+
+    .services-list:hover .service-row:hover {
+      opacity: 1;
+    }
+
+    .service-row:hover .service-row-content {
+      transform: translateX(12px);
+    }
+
+    .service-row:hover .service-title {
+      color: #B08D6A;
+    }
+
+    .service-row:hover .service-arrow {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .service-row:hover .service-line-active {
+      transform: scaleX(1);
+    }
+  }
+
+  /* Enfoque accesible por teclado */
+  .service-row:focus-visible {
+    opacity: 1 !important;
+  }
+  .service-row:focus-visible .service-title {
+    color: #B08D6A;
+    text-decoration: underline;
+    text-decoration-color: #B08D6A;
+    text-underline-offset: 4px;
+  }
+  .service-row:focus-visible .service-arrow {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .service-row:focus-visible .service-line-active {
+    transform: scaleX(1);
+  }
+
+  /* Móvil: sin hover, fila táctil con flecha siempre visible y padding vertical de 22px */
+  @media (max-width: 1023px) {
+    .service-row-content {
+      padding-top: 22px;
+      padding-bottom: 22px;
+    }
+    .service-arrow {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  /* Reducción de movimiento accesible */
+  @media (prefers-reduced-motion: reduce) {
+    .service-row {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+    }
+    .service-row-content {
+      transform: none !important;
+      transition: none !important;
+    }
+    .service-title {
+      transition: none !important;
+    }
+    .service-arrow {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+    }
+    .service-line-active {
+      transition: none !important;
+    }
+    .services-list:hover .service-row {
+      opacity: 1 !important;
+    }
+  }
+</style>
+
+<script>
+  function initServices() {
+    const section = document.getElementById('servicios');
+    if (!section) return;
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      section.classList.add('is-visible');
+      return;
+    }
+
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            section.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -40px 0px'
+      });
+      observer.observe(section);
+    } else {
+      section.classList.add('is-visible');
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initServices);
+  } else {
+    initServices();
+  }
+  document.addEventListener('astro:page-load', initServices);
+</script>

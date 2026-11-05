@@ -59,50 +59,58 @@
     "counterTotal": "03"
   },
   "services": {
-    "eyebrow": "QUÉ HACEMOS",
-    "title": "Servicios de Alta Gama en la Comunidad Valenciana",
+    "eyebrow": "Servicios",
+    "title": "Todos los oficios, una sola dirección",
     "subtitle": "Abarcamos todos los oficios de la construcción y reforma con personal propio cualificado, garantizando acabados de alta gama y sin retrasos.",
-    "learnMore": "Saber más",
+    "cta": "Solicitar presupuesto →",
     "items": [
       {
+        "num": "01",
         "title": "Reformas Integrales",
-        "tag": "Servicio Completo",
-        "desc": "Renovación integral de pisos, chalets y locales comerciales en la Comunidad Valenciana. Coordinamos todos los gremios técnicos para una entrega perfecta."
+        "desc": "Pisos, chalets y locales con todos los gremios coordinados.",
+        "seoDesc": "Renovación integral de pisos, chalets y locales comerciales en la Comunidad Valenciana. Coordinamos todos los gremios técnicos para una entrega perfecta."
       },
       {
+        "num": "02",
         "title": "Cocinas de Diseño",
-        "tag": "A Medida",
-        "desc": "Diseño ergonómico, fabricación propia de muebles, encimeras porcelánicas o de granito, barras americanas y montaje completo de electrodomésticos."
+        "desc": "Muebles de fabricación propia, encimeras y electrodomésticos integrados.",
+        "seoDesc": "Diseño ergonómico, fabricación propia de muebles, encimeras porcelánicas o de granito, barras americanas y montaje completo de electrodomésticos."
       },
       {
+        "num": "03",
         "title": "Baños y Espacios de Agua",
-        "tag": "Confort & Estanqueidad",
-        "desc": "Cambio de bañera por plato de ducha antideslizante a ras de suelo, mamparas de cristal templado, impermeabilización y grifería empotrada."
+        "desc": "Platos a ras de suelo, mamparas templadas, impermeabilización y grifería.",
+        "seoDesc": "Cambio de bañera por plato de ducha antideslizante a ras de suelo, mamparas de cristal templado, impermeabilización y grifería empotrada."
       },
       {
+        "num": "04",
         "title": "Albañilería y Pladur",
-        "tag": "Estructura & Aislamiento",
-        "desc": "Tabiques secos, foseados perimetrales con luz LED indirecta, falsos techos acústicos y térmicos y nivelación milimétrica de paramentos."
+        "desc": "Tabiquería seca, foseados LED indirectos y aislamiento térmico y acústico.",
+        "seoDesc": "Tabiques secos, foseados perimetrales con luz LED indirecta, falsos techos acústicos y térmicos y nivelación milimétrica de paramentos."
       },
       {
+        "num": "05",
         "title": "Fontanería y Climatización",
-        "tag": "Eficiencia Energética",
-        "desc": "Instalaciones de agua multicapa, aire acondicionado por conductos, splits inverter, aerotermia y calderas de última generación."
+        "desc": "Redes multicapa, aire por conductos, splits inverter y aerotermia eficiente.",
+        "seoDesc": "Instalaciones de agua multicapa, aire acondicionado por conductos, splits inverter, aerotermia y calderas de última generación."
       },
       {
+        "num": "06",
         "title": "Electricidad e Iluminación",
-        "tag": "Boletines Oficiales",
-        "desc": "Renovación completa de cableado, cuadros eléctricos certificados, mecanismos modernos, domótica e iluminación arquitectónica indirecta."
+        "desc": "Cuadros certificados, boletines oficiales, domótica e iluminación técnica.",
+        "seoDesc": "Renovación completa de cableado, cuadros eléctricos certificados, mecanismos modernos, domótica e iluminación arquitectónica indirecta."
       },
       {
+        "num": "07",
         "title": "Suelos y Pavimentos",
-        "tag": "Materiales Nobles",
-        "desc": "Colocación de tarima laminada AC5 de alta resistencia, gres porcelánico rectificado de gran formato y rodapiés lacados a juego."
+        "desc": "Porcelánico rectificado de gran formato, tarima AC5 y rodapiés a juego.",
+        "seoDesc": "Colocación de tarima laminada AC5 de alta resistencia, gres porcelánico rectificado de gran formato y rodapiés lacados a juego."
       },
       {
+        "num": "08",
         "title": "Pintura y Acabados Finos",
-        "tag": "Sin Polvo",
-        "desc": "Eliminación de gotelé con lijado aspirado profesional, alisado perfecto de paredes y techos, y pintura plástica lavable de alta durabilidad."
+        "desc": "Eliminación de gotelé sin polvo, alisado fino y pintura lavable duradera.",
+        "seoDesc": "Eliminación de gotelé con lijado aspirado profesional, alisado perfecto de paredes y techos, y pintura plástica lavable de alta durabilidad."
       }
     ]
   },

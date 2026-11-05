@@ -59,50 +59,58 @@
     "counterTotal": "03"
   },
   "services": {
-    "eyebrow": "WHAT WE DO",
-    "title": "High-End Renovation Services in the Valencian Community",
+    "eyebrow": "Services",
+    "title": "Every trade, under a single direction",
     "subtitle": "We cover all construction and renovation disciplines with our own qualified master craftsmen, ensuring premier standards with zero delays.",
-    "learnMore": "Learn more",
+    "cta": "Request a quote →",
     "items": [
       {
+        "num": "01",
         "title": "Comprehensive Renovations",
-        "tag": "Turnkey Service",
-        "desc": "Complete renovation of luxury apartments, villas, and commercial premises across the Valencian Community. We coordinate all trades for flawless delivery."
+        "desc": "Apartments, villas, and premises with full trade coordination.",
+        "seoDesc": "Complete renovation of luxury apartments, villas, and commercial premises across the Valencian Community. We coordinate all trades for flawless delivery."
       },
       {
+        "num": "02",
         "title": "Designer Kitchens",
-        "tag": "Custom Built",
-        "desc": "Ergonomic layouts, bespoke cabinetry, porcelain or granite countertops, breakfast islands, and seamless built-in premium appliance installation."
+        "desc": "Bespoke cabinetry, porcelain countertops, and integrated appliances.",
+        "seoDesc": "Ergonomic layouts, bespoke cabinetry, porcelain or granite countertops, breakfast islands, and seamless built-in premium appliance installation."
       },
       {
-        "title": "Luxury Bathrooms & Wellness",
-        "tag": "Comfort & Waterproofing",
-        "desc": "Walk-in level-access resin shower trays, tempered glass screens, certified waterproofing membranes, and concealed designer brassware."
+        "num": "03",
+        "title": "Bathrooms & Water Spaces",
+        "desc": "Walk-in resin shower trays, tempered glass, and concealed brassware.",
+        "seoDesc": "Walk-in level-access resin shower trays, tempered glass screens, certified waterproofing membranes, and concealed designer brassware."
       },
       {
+        "num": "04",
         "title": "Masonry & Drywall Systems",
-        "tag": "Structure & Insulation",
-        "desc": "Acoustic and thermal partitions, perimeter ceiling recesses with indirect LED coving, and millimeter-level wall skimming."
+        "desc": "Acoustic drywalls, architectural LED ceiling coves, and smooth skimming.",
+        "seoDesc": "Acoustic and thermal partitions, perimeter ceiling recesses with indirect LED coving, and millimeter-level wall skimming."
       },
       {
+        "num": "05",
         "title": "Plumbing & Climate Control",
-        "tag": "Energy Efficiency",
-        "desc": "Multi-layer pipe networks, ducted concealed air conditioning, inverter heat pumps, aerothermal energy, and high-efficiency boilers."
+        "desc": "Multi-layer networks, ducted AC, inverter splits, and aerothermal systems.",
+        "seoDesc": "Multi-layer pipe networks, ducted concealed air conditioning, inverter heat pumps, aerothermal energy, and high-efficiency boilers."
       },
       {
-        "title": "Electrical & Lighting Design",
-        "tag": "Certified Installations",
-        "desc": "Complete rewiring, certified distribution panels, smart home automation, high-end switchgear, and architectural LED illumination."
+        "num": "06",
+        "title": "Electrical & Lighting",
+        "desc": "Certified distribution panels, official certificates, and smart automation.",
+        "seoDesc": "Complete rewiring, certified distribution panels, smart home automation, high-end switchgear, and architectural LED illumination."
       },
       {
-        "title": "Hardwood & Porcelain Flooring",
-        "tag": "Noble Materials",
-        "desc": "Heavy-duty AC5 engineered laminate flooring, large-format rectified porcelain tiles, and color-matched lacquered skirting boards."
+        "num": "07",
+        "title": "Flooring & Porcelain Tiling",
+        "desc": "Large-format rectified porcelain, AC5 laminate, and lacquered skirtings.",
+        "seoDesc": "Heavy-duty AC5 engineered laminate flooring, large-format rectified porcelain tiles, and color-matched lacquered skirting boards."
       },
       {
-        "title": "Fine Painting & Wall Finishes",
-        "tag": "Dust-Free Process",
-        "desc": "Popcorn texture removal with vacuum-assisted extraction, velvet-smooth wall plastering, and washable, eco-friendly luxury paint finishes."
+        "num": "08",
+        "title": "Fine Painting & Finishes",
+        "desc": "Dust-free texture removal, velvet plastering, and washable premium paints.",
+        "seoDesc": "Popcorn texture removal with vacuum-assisted extraction, velvet-smooth wall plastering, and washable, eco-friendly luxury paint finishes."
       }
     ]
   },
