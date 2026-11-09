@@ -121,35 +121,28 @@
     "quote": "Una reforma no es solo tirar tabiques y tender cableado: es concebir un espacio luminoso, equilibrado y confortable donde tu familia disfrute de una calidad de vida excepcional."
   },
   "process": {
-    "eyebrow": "CÓMO TRABAJAMOS",
-    "title": "Cómo Trabajamos",
-    "subtitle": "Un proceso estructurado, transparente y riguroso para que disfrutes de la reforma de tu vivienda en la Comunidad Valenciana con total tranquilidad.",
-    "stepBadge": "Paso {step} de 4",
-    "tag": "PLB Premium",
+    "title": "Un proceso claro, sin sorpresas",
+    "subtitle": "Estructurado y transparente, para que disfrutes de tu reforma con total tranquilidad.",
     "steps": [
       {
-        "num": "01",
-        "phase": "FASE 01",
-        "title": "Visita y Asesoramiento In Situ",
-        "desc": "Nos desplazamos a tu vivienda o local en cualquier punto de la Comunidad Valenciana. Evaluamos el estado técnico, escuchamos tus ideas y realizamos mediciones precisas sin coste alguno."
+        "title": "Visita y asesoramiento",
+        "desc": "Visitamos tu vivienda o local, escuchamos tus ideas y medimos sin coste.",
+        "seoDesc": "Nos desplazamos a tu vivienda o local en cualquier punto de la Comunidad Valenciana. Evaluamos el estado técnico, escuchamos tus ideas y realizamos mediciones precisas sin coste alguno."
       },
       {
-        "num": "02",
-        "phase": "FASE 02",
-        "title": "Presupuesto Cerrado por Contrato",
-        "desc": "Elaboramos una propuesta técnica desglosada partida por partida con calidades y precios cerrados. Lo estipulado en contrato es lo que pagas, sin sorpresas ni costes ocultos."
+        "title": "Presupuesto cerrado",
+        "desc": "Propuesta desglosada partida a partida. Lo firmado en contrato es lo que pagas.",
+        "seoDesc": "Elaboramos una propuesta técnica desglosada partida por partida con calidades y precios cerrados. Lo estipulado en contrato es lo que pagas, sin sorpresas ni costes ocultos."
       },
       {
-        "num": "03",
-        "phase": "FASE 03",
-        "title": "Ejecución y Dirección de Obra",
-        "desc": "Un jefe de obra dedicado coordina a nuestro equipo técnico y de especialistas. Supervisión continua de cada oficio, control riguroso de calidades y cumplimiento estricto del calendario pactado."
+        "title": "Ejecución y dirección de obra",
+        "desc": "Un jefe de obra dedicado coordina a los equipos y vigila calidades y plazos.",
+        "seoDesc": "Un jefe de obra dedicado coordina a nuestro equipo técnico y de especialistas. Supervisión continua de cada oficio, control riguroso de calidades y cumplimiento estricto del calendario pactado."
       },
       {
-        "num": "04",
-        "phase": "FASE 04",
-        "title": "Entrega Impecable y Garantía Oficial",
-        "desc": "Revisamos contigo cada acabado y detalle. Realizamos una limpieza exhaustiva post-obra y te hacemos entrega formal de la garantía por escrito de 2 años."
+        "title": "Entrega y garantía",
+        "desc": "Revisamos contigo cada detalle, limpiamos la obra y te damos garantía por escrito de 2 años.",
+        "seoDesc": "Revisamos contigo cada acabado y detalle. Realizamos una limpieza exhaustiva post-obra y te hacemos entrega formal de la garantía por escrito de 2 años."
       }
     ]
   },

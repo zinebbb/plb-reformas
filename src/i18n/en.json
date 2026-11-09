@@ -121,35 +121,28 @@
     "quote": "A renovation is not just taking down walls and laying cables: it is conceiving a bright, balanced, and comfortable space where your family enjoys exceptional quality of life."
   },
   "process": {
-    "eyebrow": "HOW WE WORK",
-    "title": "How We Work",
-    "subtitle": "A structured, transparent, and rigorous methodology so you can enjoy your renovation in the Valencian Community with total tranquility.",
-    "stepBadge": "Step {step} of 4",
-    "tag": "PLB Premium",
+    "title": "A clear process, no surprises",
+    "subtitle": "Structured and transparent, so you can enjoy your renovation with total peace of mind.",
     "steps": [
       {
-        "num": "01",
-        "phase": "PHASE 01",
-        "title": "On-Site Consultation & Survey",
-        "desc": "We visit your property anywhere in the Valencian Community. We inspect structural conditions, listen to your desires, and take accurate laser measurements free of charge."
+        "title": "Consultation & assessment",
+        "desc": "We visit your home or business, listen to your ideas, and measure at no cost.",
+        "seoDesc": "We visit your property anywhere in the Valencian Community. We inspect structural conditions, listen to your desires, and take accurate laser measurements free of charge."
       },
       {
-        "num": "02",
-        "phase": "PHASE 02",
-        "title": "Itemized Fixed-Price Contract",
-        "desc": "We draft a comprehensive technical proposal itemized trade by trade with fixed prices and certified material grades. What you sign is exactly what you pay."
+        "title": "Fixed-price quote",
+        "desc": "Itemized proposal line by line. What is signed in contract is exactly what you pay.",
+        "seoDesc": "We draft a comprehensive technical proposal itemized trade by trade with fixed prices and certified material grades. What you sign is exactly what you pay."
       },
       {
-        "num": "03",
-        "phase": "PHASE 03",
-        "title": "Execution & On-Site Supervision",
-        "desc": "A dedicated project manager oversees our technical specialists. Continuous supervision, rigorous quality control, and strict compliance with the agreed schedule."
+        "title": "Execution & site management",
+        "desc": "A dedicated project director coordinates the trades and oversees quality and deadlines.",
+        "seoDesc": "A dedicated project manager oversees our technical specialists. Continuous supervision, rigorous quality control, and strict compliance with the agreed schedule."
       },
       {
-        "num": "04",
-        "phase": "PHASE 04",
-        "title": "Flawless Handover & Official Warranty",
-        "desc": "We inspect every finish with you down to the last detail. We perform an exhaustive post-construction deep clean and deliver your written 2-year warranty."
+        "title": "Handover & warranty",
+        "desc": "We review every detail with you, clean the site thoroughly, and issue a 2-year written warranty.",
+        "seoDesc": "We inspect every finish with you down to the last detail. We perform an exhaustive post-construction deep clean and deliver your written 2-year warranty."
       }
     ]
   },

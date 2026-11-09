@@ -9,55 +9,262 @@ const { lang = (Astro.currentLocale as Lang) || 'es' } = Astro.props;
 const t = useTranslations(lang);
 ---
 
-<section id="proceso" class="py-24 bg-white text-[#111317] relative">
-  <div class="max-w-7xl mx-auto px-4 sm:px-8">
+<section 
+  id="proceso" 
+  class="process-section bg-[#F7F5F0] text-[#1a1a1a] relative"
+  aria-label={t.process.title}
+>
+  <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
     
-    <!-- Section Header (Alfa Interiorismo Style) -->
-    <div class="fade-up text-center max-w-3xl mx-auto mb-16">
-      <span class="text-xs font-bold tracking-widest uppercase text-gold-600 block mb-2">
-        {t.process.eyebrow}
-      </span>
-      <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold uppercase tracking-tight text-[#111317] mb-4">
+    <!-- Cabecera alineada a la izquierda (sin etiquetas duplicadas ni mayúsculas forzadas) -->
+    <div class="process-header max-w-3xl mb-16 lg:mb-24 text-left">
+      <h2 
+        class="process-title text-[clamp(2.2rem,3.8vw,3.6rem)] leading-[1.1] font-light text-[#1a1a1a] mb-4 sm:mb-6"
+        style="font-family: var(--font-titulos, 'Fraunces', serif); font-weight: 200; font-style: normal; text-wrap: balance;"
+      >
         {t.process.title}
       </h2>
-      <div class="w-16 h-1 bg-gold-500 mx-auto mb-5"></div>
-      <p class="text-sm sm:text-base text-gray-600 leading-relaxed font-normal">
+      <p 
+        class="process-subtitle text-base sm:text-[1.05rem] text-[#55534e] font-light leading-relaxed max-w-[50ch]"
+        style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 300; line-height: 1.6;"
+      >
         {t.process.subtitle}
       </p>
     </div>
 
-    <!-- Steps Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-      {t.process.steps.map((step, idx) => (
-        <div 
-          class={`fade-up delay-${(idx + 1) * 100} p-8 bg-[#f8fafc] border border-gray-200 hover:border-gold-500 hover:shadow-lg transition-all duration-300 rounded-sm flex flex-col justify-between group`}
-        >
-          <div>
-            <div class="flex items-center justify-between mb-6">
-              <span class="text-3xl font-extrabold text-gold-600 group-hover:scale-105 transition-transform">
-                {step.num}
-              </span>
-              <span class="text-[10px] font-bold tracking-widest uppercase text-gray-400 bg-white px-2.5 py-1 border border-gray-200 rounded-xs">
-                {step.phase}
-              </span>
+    <!-- Contenedor de la línea de tiempo (Horizontal en escritorio, vertical en móvil) -->
+    <div class="process-timeline-wrapper relative">
+
+      <!-- Línea horizontal base y de progreso (Escritorio >= 1024px) -->
+      <div class="process-line-desktop hidden lg:block absolute top-[4px] left-0 right-0 h-[1px] bg-black/15 pointer-events-none" aria-hidden="true">
+        <div class="process-line-desktop-bar h-full bg-[#B08D6A] will-change-[width]" style="width: 0%;"></div>
+      </div>
+
+      <!-- Línea vertical base y de progreso (Móvil < 1024px) -->
+      <div class="process-line-mobile lg:hidden absolute left-[4px] top-[4px] bottom-[10px] w-[1px] bg-black/15 pointer-events-none" aria-hidden="true">
+        <div class="process-line-mobile-bar w-full bg-[#B08D6A] will-change-[height]" style="height: 0%;"></div>
+      </div>
+
+      <!-- Lista ordenada accesible con los 4 pasos -->
+      <ol class="process-steps grid grid-cols-1 lg:grid-cols-4 gap-10 lg:gap-8 xl:gap-12 relative list-none m-0 p-0">
+        {t.process.steps.map((step, idx) => (
+          <li 
+            class="process-step group relative flex flex-col items-start pl-8 lg:pl-0"
+            data-step={idx}
+          >
+            <!-- Punto de 9px en móvil (< 1024px) -->
+            <span 
+              class="process-dot-mobile lg:hidden absolute left-0 top-[6px] w-[9px] h-[9px] rounded-full border border-black/25 bg-[#F7F5F0] z-10 block pointer-events-none" 
+              aria-hidden="true"
+            ></span>
+
+            <!-- Punto de 9px en escritorio (>= 1024px) -->
+            <div class="process-dot-wrapper hidden lg:flex items-center justify-start w-[9px] h-[9px] mb-8 relative z-10 pointer-events-none" aria-hidden="true">
+              <span class="process-dot w-[9px] h-[9px] rounded-full border border-black/25 bg-[#F7F5F0] block"></span>
             </div>
 
-            <h3 class="text-lg font-bold uppercase tracking-tight text-[#111317] mb-3 group-hover:text-gold-600 transition-colors">
+            <!-- Contenido de cada paso: Título Fraunces 200 + Frase concisa máx 30ch -->
+            <h3 
+              class="process-step-title text-[clamp(1.4rem,2vw,1.9rem)] leading-[1.25] font-light text-[#1a1a1a] mb-2 sm:mb-3"
+              style="font-family: var(--font-titulos, 'Fraunces', serif); font-weight: 200; font-style: normal; text-wrap: balance;"
+            >
               {step.title}
             </h3>
 
-            <p class="text-xs sm:text-sm text-gray-600 leading-relaxed font-normal">
+            <p 
+              class="process-step-desc text-sm sm:text-[0.98rem] text-[#55534e] font-light leading-relaxed max-w-[30ch]"
+              style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 300; line-height: 1.6;"
+            >
               {step.desc}
             </p>
-          </div>
 
-          <div class="mt-8 pt-4 border-t border-gray-200 flex items-center justify-between text-[11px] font-semibold text-gray-400 uppercase tracking-wider">
-            <span>{t.process.stepBadge.replace('{step}', String(idx + 1))}</span>
-            <span class="text-gold-600 font-bold">{t.process.tag}</span>
-          </div>
-        </div>
-      ))}
+            <!-- Texto descriptivo largo original conservado para SEO y lectores de pantalla -->
+            <span class="sr-only">{step.seoDesc}</span>
+          </li>
+        ))}
+      </ol>
+
     </div>
 
   </div>
 </section>
+
+<style>
+  /* Espaciado generoso de 140px arriba y abajo en escritorio, 90px en móvil */
+  .process-section {
+    padding-top: 90px;
+    padding-bottom: 90px;
+  }
+  @media (min-width: 1024px) {
+    .process-section {
+      padding-top: 140px;
+      padding-bottom: 140px;
+    }
+  }
+
+  /* Barra de progreso con suavizado fluido */
+  .process-line-desktop-bar {
+    transition: width 350ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .process-line-mobile-bar {
+    transition: height 350ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  /* Puntos de 9px: pasan de vacío (borde gris) a relleno bronce al activarse */
+  .process-dot,
+  .process-dot-mobile {
+    box-sizing: border-box;
+    transition: background-color 450ms cubic-bezier(0.22, 1, 0.36, 1),
+                border-color 450ms cubic-bezier(0.22, 1, 0.36, 1),
+                transform 450ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .process-dot.is-active,
+  .process-dot-mobile.is-active {
+    background-color: #B08D6A !important;
+    border-color: #B08D6A !important;
+    transform: scale(1.15);
+  }
+
+  /* Entradas de cada paso: fade-in + translateY(18px) en 650ms al activarse */
+  .process-step {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 650ms cubic-bezier(0.22, 1, 0.36, 1),
+                transform 650ms cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+  }
+
+  .process-step.is-active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Reducción de movimiento accesible */
+  @media (prefers-reduced-motion: reduce) {
+    .process-step {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+    }
+    .process-line-desktop-bar {
+      width: 100% !important;
+      transition: none !important;
+    }
+    .process-line-mobile-bar {
+      height: 100% !important;
+      transition: none !important;
+    }
+    .process-dot,
+    .process-dot-mobile {
+      background-color: #B08D6A !important;
+      border-color: #B08D6A !important;
+      transform: none !important;
+      transition: none !important;
+    }
+  }
+</style>
+
+<script>
+  function initProcess() {
+    const section = document.getElementById('proceso');
+    if (!section) return;
+
+    const desktopBar = section.querySelector('.process-line-desktop-bar') as HTMLElement | null;
+    const mobileBar = section.querySelector('.process-line-mobile-bar') as HTMLElement | null;
+    const steps = section.querySelectorAll<HTMLElement>('.process-step');
+    const desktopDots = section.querySelectorAll<HTMLElement>('.process-dot');
+    const mobileDots = section.querySelectorAll<HTMLElement>('.process-dot-mobile');
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (prefersReducedMotion) {
+      if (desktopBar) desktopBar.style.width = '100%';
+      if (mobileBar) mobileBar.style.height = '100%';
+      steps.forEach((s) => s.classList.add('is-active'));
+      desktopDots.forEach((d) => d.classList.add('is-active'));
+      mobileDots.forEach((d) => d.classList.add('is-active'));
+      return;
+    }
+
+    // Umbrales de activación de cada uno de los 4 pasos a lo largo del recorrido
+    const thresholds = [0.05, 0.33, 0.66, 0.95];
+
+    let ticking = false;
+
+    function updateProgress() {
+      if (!section) return;
+      const rect = section.getBoundingClientRect();
+      const vh = window.innerHeight;
+
+      // El progreso se calcula mientras la sección entra y transita por la pantalla
+      const start = vh * 0.8;
+      const end = vh * 0.2;
+      const totalDist = rect.height + (start - end);
+      const current = start - rect.top;
+
+      let progress = current / totalDist;
+      progress = Math.max(0, Math.min(1, progress));
+
+      const pct = (progress * 100).toFixed(1) + '%';
+      if (desktopBar) desktopBar.style.width = pct;
+      if (mobileBar) mobileBar.style.height = pct;
+
+      thresholds.forEach((threshold, idx) => {
+        if (progress >= threshold) {
+          if (steps[idx] && !steps[idx].classList.contains('is-active')) {
+            steps[idx].classList.add('is-active');
+          }
+          if (desktopDots[idx] && !desktopDots[idx].classList.contains('is-active')) {
+            desktopDots[idx].classList.add('is-active');
+          }
+          if (mobileDots[idx] && !mobileDots[idx].classList.contains('is-active')) {
+            mobileDots[idx].classList.add('is-active');
+          }
+        }
+      });
+
+      ticking = false;
+    }
+
+    function onScroll() {
+      if (!ticking) {
+        requestAnimationFrame(updateProgress);
+        ticking = true;
+      }
+    }
+
+    // IntersectionObserver para activar el listener únicamente cuando la sección esté en/cerca del viewport
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            window.addEventListener('scroll', onScroll, { passive: true });
+            window.addEventListener('resize', onScroll, { passive: true });
+            updateProgress();
+          } else {
+            window.removeEventListener('scroll', onScroll);
+            window.removeEventListener('resize', onScroll);
+          }
+        });
+      }, {
+        threshold: 0,
+        rootMargin: '100px 0px 100px 0px'
+      });
+      observer.observe(section);
+    } else {
+      window.addEventListener('scroll', onScroll, { passive: true });
+      updateProgress();
+    }
+
+    // Comprobación inicial de posición
+    updateProgress();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initProcess);
+  } else {
+    initProcess();
+  }
+  document.addEventListener('astro:page-load', initProcess);
+</script>
