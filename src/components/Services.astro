@@ -12,52 +12,55 @@ const contactUrl = lang === 'es' ? '/#contacto' : '/en/#contacto';
 
 <section 
   id="servicios" 
-  class="services-section bg-[#F7F5F0] text-[#1a1a1a] relative overflow-hidden"
+  class="services-section bg-[#F7F5F0] text-[#1a1a1a] relative"
   aria-label={t.services.title}
 >
   <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
     <div class="flex flex-col lg:flex-row items-start justify-between gap-12 lg:gap-16 xl:gap-24">
       
-      <!-- Columna Izquierda (≈ 34%): Fija con position: sticky; top: 120px en escritorio -->
-      <aside class="services-aside w-full lg:w-[34%] shrink-0 lg:sticky lg:top-[120px]">
+      <!-- Columna Izquierda (≈ 34%): Bloque de texto en flujo normal + vídeo sticky top: 110px en escritorio -->
+      <aside class="services-aside w-full lg:w-[34%] shrink-0 lg:self-stretch">
         
-        <!-- Etiqueta pequeña en bronce -->
-        <span 
-          class="services-eyebrow text-[12px] uppercase tracking-[0.2em] font-normal text-[#B08D6A] block mb-3 sm:mb-4 select-none"
-          style="letter-spacing: 0.2em;"
-        >
-          {t.services.eyebrow}
-        </span>
-        
-        <!-- Titular en Fraunces 200 sin mayúsculas forzadas -->
-        <h2 
-          class="services-title text-[clamp(2.2rem,3.8vw,3.6rem)] leading-[1.1] font-light text-[#1a1a1a] mb-6 sm:mb-8"
-          style="font-family: var(--font-titulos, 'Fraunces', serif); font-weight: 200; font-style: normal; text-wrap: balance;"
-        >
-          {t.services.title}
-        </h2>
-
-        <!-- Frase de apoyo en gris cálido (máx. 40ch) -->
-        <p 
-          class="services-support text-base sm:text-[1.05rem] text-[#55534e] font-light leading-relaxed max-w-[40ch] mb-8 sm:mb-10"
-          style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 300; line-height: 1.6;"
-        >
-          {t.services.subtitle}
-        </p>
-
-        <!-- Único enlace de texto hacia contacto con subrayado fino en bronce -->
-        <div>
-          <a 
-            href={contactUrl}
-            class="services-cta inline-flex items-center gap-2 text-xs sm:text-sm uppercase tracking-[0.15em] font-medium text-[#1a1a1a] hover:text-[#B08D6A] pb-1 border-b border-[#B08D6A] transition-colors duration-250 select-none"
-            style="letter-spacing: 0.15em;"
+        <!-- Bloque de texto (flujo normal, se desplaza con el scroll) -->
+        <div class="services-text-block">
+          <!-- Etiqueta pequeña en bronce -->
+          <span 
+            class="services-eyebrow text-[12px] uppercase tracking-[0.2em] font-normal text-[#B08D6A] block mb-3 sm:mb-4 select-none"
+            style="letter-spacing: 0.2em;"
           >
-            <span>{t.services.cta}</span>
-          </a>
+            {t.services.eyebrow}
+          </span>
+          
+          <!-- Titular en Fraunces 200 sin mayúsculas forzadas -->
+          <h2 
+            class="services-title text-[clamp(2.2rem,3.8vw,3.6rem)] leading-[1.1] font-light text-[#1a1a1a] mb-6 sm:mb-8"
+            style="font-family: var(--font-titulos, 'Fraunces', serif); font-weight: 200; font-style: normal; text-wrap: balance;"
+          >
+            {t.services.title}
+          </h2>
+
+          <!-- Frase de apoyo en gris cálido (máx. 40ch) -->
+          <p 
+            class="services-support text-base sm:text-[1.05rem] text-[#55534e] font-light leading-relaxed max-w-[40ch] mb-8 sm:mb-10"
+            style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 300; line-height: 1.6;"
+          >
+            {t.services.subtitle}
+          </p>
+
+          <!-- Único enlace de texto hacia contacto con subrayado fino en bronce -->
+          <div>
+            <a 
+              href={contactUrl}
+              class="services-cta inline-flex items-center gap-2 text-xs sm:text-sm uppercase tracking-[0.15em] font-medium text-[#1a1a1a] hover:text-[#B08D6A] pb-1 border-b border-[#B08D6A] transition-colors duration-250 select-none"
+              style="letter-spacing: 0.15em;"
+            >
+              <span>{t.services.cta}</span>
+            </a>
+          </div>
         </div>
 
-        <!-- Vídeo continuo tipo GIF en la columna izquierda: 48px debajo del enlace en escritorio, 40px arriba/abajo en móvil -->
-        <div class="services-aside-media mt-10 mb-10 lg:my-0 lg:mt-12 w-full">
+        <!-- Vídeo continuo vertical 4/5: separado 56px del texto, sticky top: 110px en escritorio -->
+        <div class="services-aside-media mt-10 mb-10 lg:my-0 lg:mt-14 w-full">
           <div class="services-aside-video-frame relative w-full overflow-hidden rounded-none shadow-none select-none">
             <video 
               id="services-video"
@@ -157,6 +160,7 @@ const contactUrl = lang === 'es' ? '/#contacto' : '/en/#contacto';
   .services-section {
     padding-top: 90px;
     padding-bottom: 90px;
+    overflow: clip;
   }
   @media (min-width: 1024px) {
     .services-section {
@@ -165,12 +169,36 @@ const contactUrl = lang === 'es' ? '/#contacto' : '/en/#contacto';
     }
   }
 
-  /* Marco del vídeo en la columna sticky: ancho 100%, formato 4/3 limitado a max 62vh */
+  /* Columna izquierda en escritorio: flujo normal y estirada al 100% para permitir que el vídeo se desplace sticky */
+  @media (min-width: 1024px) {
+    .services-aside {
+      align-self: stretch;
+    }
+
+    /* Vídeo con position: sticky; top: 110px y 56px de separación bajo el texto */
+    .services-aside-media {
+      position: sticky;
+      top: 110px;
+      margin-top: 56px;
+      margin-bottom: 0;
+      width: 100%;
+    }
+
+    /* Marco en escritorio: vertical 4/5, ancho 88% de la columna, alineado a la izquierda */
+    /* Altura máxima calc(100vh - 170px); si la ventana es baja, max-width reduce el ancho manteniendo 4/5 */
+    .services-aside-video-frame {
+      width: 88%;
+      max-width: calc((100vh - 170px) * 4 / 5);
+      max-height: calc(100vh - 170px);
+      aspect-ratio: 4 / 5;
+      margin-left: 0;
+      margin-right: auto;
+    }
+  }
+
+  /* Marco del vídeo: revelación con clip-path vertical en 900ms */
   .services-aside-video-frame {
     position: relative;
-    width: 100%;
-    aspect-ratio: 4 / 3;
-    max-height: 62vh;
     overflow: hidden;
     clip-path: inset(100% 0 0 0);
     transition: clip-path 900ms cubic-bezier(0.22, 1, 0.36, 1);
@@ -184,28 +212,31 @@ const contactUrl = lang === 'es' ? '/#contacto' : '/en/#contacto';
     clip-path: inset(0 0 0 0);
   }
 
-  /* Ajuste de altura responsiva si la ventana es más baja para que la columna sticky quepa entera */
-  @media (min-width: 1024px) and (max-height: 860px) {
+  /* Móvil: sin sticky, flujo natural con 40px de margen arriba y abajo, ancho completo 4/5 y altura máxima 70vh */
+  @media (max-width: 1023px) {
+    .services-aside-media {
+      position: static;
+      margin-top: 40px;
+      margin-bottom: 40px;
+      width: 100%;
+    }
+
     .services-aside-video-frame {
-      aspect-ratio: 16 / 10;
-      max-height: calc(100vh - 460px);
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      max-height: 70vh;
+      margin-left: 0;
+      margin-right: 0;
     }
   }
 
-  @media (min-width: 1024px) and (max-height: 740px) {
-    .services-aside-video-frame {
-      aspect-ratio: 16 / 9;
-      max-height: calc(100vh - 410px);
-    }
-  }
-
-  /* Vídeo continuo tipo GIF con filtro de luminosidad y zoom suave de scale(1.08) a scale(1) */
+  /* Vídeo continuo tipo GIF con filtro de luminosidad 1.1 y contraste 1.02, y zoom suave de scale(1.08) a scale(1) */
   .services-aside-video {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 50%;
-    filter: brightness(1.07) contrast(1.02);
+    object-position: center 55%;
+    filter: brightness(1.1) contrast(1.02);
     display: block;
     border-radius: 0;
     pointer-events: none;
@@ -223,8 +254,8 @@ const contactUrl = lang === 'es' ? '/#contacto' : '/en/#contacto';
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 50%;
-    filter: brightness(1.07) contrast(1.02);
+    object-position: center 55%;
+    filter: brightness(1.1) contrast(1.02);
     display: none;
     pointer-events: none;
   }
