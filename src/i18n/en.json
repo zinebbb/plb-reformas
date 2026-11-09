@@ -11,7 +11,6 @@
       "intro": "Philosophy",
       "services": "Services",
       "about": "About PLB",
-      "projects": "Projects",
       "process": "Process",
       "contact": "Contact"
     },
@@ -120,51 +119,6 @@
     "title": "A comprehensive approach to creating spaces you truly love living in",
     "desc": "We unite all phases of your renovation under a single technical management, from initial consultation to the final finish. With our own dedicated team and no impersonal subcontractors, we take full responsibility for every millimeter executed.",
     "quote": "A renovation is not just taking down walls and laying cables: it is conceiving a bright, balanced, and comfortable space where your family enjoys exceptional quality of life."
-  },
-  "gallery": {
-    "eyebrow": "OUR PROJECTS",
-    "title": "Real Works on Video",
-    "subtitle": "Unfiltered footage recorded directly on site from our completed and active renovations in the Valencian Community.",
-    "videoFallback": "Your browser does not support HTML5 video playback.",
-    "consultSimilar": "Request similar project quote",
-    "projects": [
-      {
-        "title": "Contemporary Residence with Architectural LED",
-        "category": "Comprehensive Renovation",
-        "location": "Valencian Community",
-        "duration": "18 sec",
-        "specs": [
-          { "label": "Execution time", "val": "5 weeks" },
-          { "label": "Flooring", "val": "AC5 natural oak laminate" },
-          { "label": "Lighting", "val": "3000K indirect LED coving" }
-        ],
-        "desc": "Open-concept layout redistribution, white lacquered millwork, custom timber wall paneling, and acoustic soundproofing throughout."
-      },
-      {
-        "title": "Bespoke Open Kitchen with Island Bar",
-        "category": "Custom Kitchen",
-        "location": "Valencian Community",
-        "duration": "14 sec",
-        "specs": [
-          { "label": "Execution time", "val": "2 weeks" },
-          { "label": "Countertop", "val": "Polished high-resistance granite" },
-          { "label": "Cabinetry", "val": "Matte white with soft-close hinges" }
-        ],
-        "desc": "Custom made cabinetry, fully integrated tower appliances, under-cabinet ambient lighting, and breakfast bar with stools."
-      },
-      {
-        "title": "Demolition Phase & Structural Preparation",
-        "category": "Work in Progress",
-        "location": "Valencian Community",
-        "duration": "10 sec",
-        "specs": [
-          { "label": "Phase", "val": "Demolition & Sanitation" },
-          { "label": "Safety", "val": "Full communal area protection" },
-          { "label": "MEP Works", "val": "New recessed conduits & pipes" }
-        ],
-        "desc": "Controlled removal of existing partitions, certified rubble management in compliant sacks, and laser subfloor leveling."
-      }
-    ]
   },
   "process": {
     "eyebrow": "HOW WE WORK",

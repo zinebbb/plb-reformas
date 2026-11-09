@@ -11,7 +11,6 @@
       "intro": "Filosofía",
       "services": "Servicios",
       "about": "Sobre PLB",
-      "projects": "Obras",
       "process": "Proceso",
       "contact": "Contacto"
     },
@@ -120,51 +119,6 @@
     "title": "Un enfoque integral para crear espacios en los que apetece vivir",
     "desc": "Reunimos bajo una sola dirección técnica todas las fases de tu reforma, desde el asesoramiento inicial hasta el último remate. Con un equipo propio y sin subcontratas impersonales, respondemos de cada milímetro ejecutado.",
     "quote": "Una reforma no es solo tirar tabiques y tender cableado: es concebir un espacio luminoso, equilibrado y confortable donde tu familia disfrute de una calidad de vida excepcional."
-  },
-  "gallery": {
-    "eyebrow": "NUESTRAS OBRAS",
-    "title": "Obras Reales en Vídeo",
-    "subtitle": "Grabaciones directas desde nuestras reformas finalizadas y en ejecución en la Comunidad Valenciana.",
-    "videoFallback": "Tu navegador no soporta la reproducción de vídeo.",
-    "consultSimilar": "Consultar reforma similar",
-    "projects": [
-      {
-        "title": "Vivienda Contemporánea con Iluminación LED",
-        "category": "Reforma Integral",
-        "location": "Comunidad Valenciana",
-        "duration": "18 seg",
-        "specs": [
-          { "label": "Plazo de ejecución", "val": "5 semanas" },
-          { "label": "Pavimento", "val": "Laminado AC5 roble natural" },
-          { "label": "Iluminación", "val": "Foseados LED indirectos 3000K" }
-        ],
-        "desc": "Redistribución diáfana de espacios, carpintería lacada en blanco, panelado de madera y aislamiento acústico integral."
-      },
-      {
-        "title": "Cocina de Diseño Abierta con Barra",
-        "category": "Cocina a Medida",
-        "location": "Comunidad Valenciana",
-        "duration": "14 seg",
-        "specs": [
-          { "label": "Plazo de ejecución", "val": "2 semanas" },
-          { "label": "Encimera", "val": "Granito pulido de alta resistencia" },
-          { "label": "Mobiliario", "val": "Blanco mate con freno amortiguado" }
-        ],
-        "desc": "Mobiliario de fabricación a medida, electrodomésticos integrados en columna y zona de desayuno con taburetes."
-      },
-      {
-        "title": "Fase de Demolición y Proceso Constructivo",
-        "category": "Evolución de Obra",
-        "location": "Comunidad Valenciana",
-        "duration": "10 seg",
-        "specs": [
-          { "label": "Fase", "val": "Demolición & Saneado" },
-          { "label": "Seguridad", "val": "Protección integral comunitaria" },
-          { "label": "Instalaciones", "val": "Nuevas canalizaciones empotradas" }
-        ],
-        "desc": "Retirada controlada de tabiquería antigua, desescombro en sacos homologados y preparación de solera."
-      }
-    ]
   },
   "process": {
     "eyebrow": "CÓMO TRABAJAMOS",
