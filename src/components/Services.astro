@@ -1,6 +1,4 @@
 ---
-import { Image } from 'astro:assets';
-import banoImage from '../assets/images/bano-reformado.png';
 import { useTranslations, type Lang } from '../i18n/utils';
 
 interface Props {
@@ -58,19 +56,32 @@ const contactUrl = lang === 'es' ? '/#contacto' : '/en/#contacto';
           </a>
         </div>
 
-        <!-- Foto real de obra terminada: 48px debajo del enlace en escritorio, 40px arriba/abajo en móvil -->
+        <!-- Vídeo continuo tipo GIF en la columna izquierda: 48px debajo del enlace en escritorio, 40px arriba/abajo en móvil -->
         <div class="services-aside-media mt-10 mb-10 lg:my-0 lg:mt-12 w-full">
-          <div class="services-aside-image-frame relative w-full overflow-hidden rounded-none shadow-none select-none">
-            <Image 
-              src={banoImage} 
-              alt={t.services.imageAlt} 
-              format="webp"
-              quality={85}
-              width={banoImage.width}
-              height={banoImage.height}
-              loading="lazy"
-              decoding="async"
-              class="services-aside-img"
+          <div class="services-aside-video-frame relative w-full overflow-hidden rounded-none shadow-none select-none">
+            <video 
+              id="services-video"
+              autoplay 
+              muted 
+              loop 
+              playsinline 
+              preload="auto"
+              disablePictureInPicture
+              controlsList="nodownload nofullscreen noremoteplayback"
+              poster="/video/servicios-reforma-poster.webp"
+              class="services-aside-video w-full h-full object-cover rounded-none pointer-events-none"
+              aria-hidden="true"
+            >
+              <source src="/video/servicios-reforma.webm" type="video/webm" />
+              <source src="/video/servicios-reforma.mp4" type="video/mp4" />
+            </video>
+
+            <!-- Poster estático para prefers-reduced-motion -->
+            <img 
+              src="/video/servicios-reforma-poster.webp" 
+              alt="" 
+              class="services-aside-poster-static w-full h-full object-cover pointer-events-none" 
+              aria-hidden="true" 
             />
           </div>
         </div>
@@ -154,11 +165,12 @@ const contactUrl = lang === 'es' ? '/#contacto' : '/en/#contacto';
     }
   }
 
-  /* Marco de la imagen en la columna sticky: ancho 100%, formato 4/3 por defecto */
-  .services-aside-image-frame {
+  /* Marco del vídeo en la columna sticky: ancho 100%, formato 4/3 limitado a max 62vh */
+  .services-aside-video-frame {
     position: relative;
     width: 100%;
     aspect-ratio: 4 / 3;
+    max-height: 62vh;
     overflow: hidden;
     clip-path: inset(100% 0 0 0);
     transition: clip-path 900ms cubic-bezier(0.22, 1, 0.36, 1);
@@ -168,41 +180,53 @@ const contactUrl = lang === 'es' ? '/#contacto' : '/en/#contacto';
     background-color: transparent;
   }
 
-  .services-section.is-visible .services-aside-image-frame {
+  .services-section.is-visible .services-aside-video-frame {
     clip-path: inset(0 0 0 0);
   }
 
   /* Ajuste de altura responsiva si la ventana es más baja para que la columna sticky quepa entera */
   @media (min-width: 1024px) and (max-height: 860px) {
-    .services-aside-image-frame {
+    .services-aside-video-frame {
       aspect-ratio: 16 / 10;
       max-height: calc(100vh - 460px);
     }
   }
 
-  @media (min-width: 1024px) and (max-height: 750px) {
-    .services-aside-image-frame {
+  @media (min-width: 1024px) and (max-height: 740px) {
+    .services-aside-video-frame {
       aspect-ratio: 16 / 9;
       max-height: calc(100vh - 410px);
     }
   }
 
-  /* Imagen: zoom suave de scale(1.08) a scale(1) y filtro sutil de luminosidad por CSS */
-  .services-aside-img {
+  /* Vídeo continuo tipo GIF con filtro de luminosidad y zoom suave de scale(1.08) a scale(1) */
+  .services-aside-video {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 60%;
+    object-position: center 50%;
     filter: brightness(1.07) contrast(1.02);
     display: block;
     border-radius: 0;
+    pointer-events: none;
     transform: scale(1.08);
     transition: transform 900ms cubic-bezier(0.22, 1, 0.36, 1);
     will-change: transform;
   }
 
-  .services-section.is-visible .services-aside-img {
+  .services-section.is-visible .services-aside-video {
     transform: scale(1);
+  }
+
+  /* Poster estático para prefers-reduced-motion */
+  .services-aside-poster-static {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 50%;
+    filter: brightness(1.07) contrast(1.02);
+    display: none;
+    pointer-events: none;
   }
 
   /* Entradas al hacer scroll escalonadas: fade-in + translateY(18px) en 650ms */
@@ -312,11 +336,15 @@ const contactUrl = lang === 'es' ? '/#contacto' : '/en/#contacto';
 
   /* Reducción de movimiento accesible */
   @media (prefers-reduced-motion: reduce) {
-    .services-aside-image-frame {
+    .services-aside-video-frame {
       clip-path: none !important;
       transition: none !important;
     }
-    .services-aside-img {
+    .services-aside-video {
+      display: none !important;
+    }
+    .services-aside-poster-static {
+      display: block !important;
       transform: none !important;
       transition: none !important;
     }
@@ -347,30 +375,90 @@ const contactUrl = lang === 'es' ? '/#contacto' : '/en/#contacto';
 </style>
 
 <script>
+  // Velocidad de reproducción ajustable del vídeo decorativo (1.15 = 15% más rápido)
+  const VIDEO_SPEED = 1.15;
+
   function initServices() {
     const section = document.getElementById('servicios');
+    const video = document.getElementById('services-video') as HTMLVideoElement | null;
     if (!section) return;
 
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      section.classList.add('is-visible');
-      return;
-    }
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    if ('IntersectionObserver' in window) {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            section.classList.add('is-visible');
-            observer.unobserve(entry.target);
-          }
+    if (video) {
+      const applySpeed = () => {
+        try {
+          video.playbackRate = VIDEO_SPEED;
+        } catch (_) {}
+      };
+
+      // Aplicar velocidad al cargar metadatos y en cada evento play
+      video.addEventListener('loadedmetadata', applySpeed);
+      video.addEventListener('play', applySpeed);
+      applySpeed();
+
+      const safePlay = () => {
+        if (!prefersReducedMotion && video.paused) {
+          applySpeed();
+          video.play().catch(() => {});
+        }
+      };
+
+      const safePause = () => {
+        if (!video.paused) {
+          video.pause();
+        }
+      };
+
+      // Pausar cuando la sección no esté visible y reanudar al volver
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              section.classList.add('is-visible');
+              safePlay();
+            } else {
+              safePause();
+            }
+          });
+        }, {
+          threshold: 0.08,
+          rootMargin: '0px 0px -40px 0px'
         });
-      }, {
-        threshold: 0.1,
-        rootMargin: '0px 0px -40px 0px'
+        observer.observe(section);
+      } else {
+        section.classList.add('is-visible');
+        safePlay();
+      }
+
+      // Reanudar cuando la pestaña vuelva a estar visible si la sección está en pantalla
+      document.addEventListener('visibilitychange', () => {
+        if (!document.hidden && section.classList.contains('is-visible')) {
+          safePlay();
+        } else if (document.hidden) {
+          safePause();
+        }
       });
-      observer.observe(section);
+
+      // Intento inicial forzado con catch silencioso
+      safePlay();
     } else {
-      section.classList.add('is-visible');
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              section.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.1,
+          rootMargin: '0px 0px -40px 0px'
+        });
+        observer.observe(section);
+      } else {
+        section.classList.add('is-visible');
+      }
     }
   }
 
