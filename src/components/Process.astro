@@ -102,21 +102,21 @@ const t = useTranslations(lang);
     }
   }
 
-  /* Barra de progreso con suavizado fluido */
+  /* Barra de progreso con respuesta rápida e inmediata */
   .process-line-desktop-bar {
-    transition: width 350ms cubic-bezier(0.22, 1, 0.36, 1);
+    transition: width 150ms ease-out;
   }
   .process-line-mobile-bar {
-    transition: height 350ms cubic-bezier(0.22, 1, 0.36, 1);
+    transition: height 150ms ease-out;
   }
 
-  /* Puntos de 9px: pasan de vacío (borde gris) a relleno bronce al activarse */
+  /* Puntos de 9px: transición ágil al activarse */
   .process-dot,
   .process-dot-mobile {
     box-sizing: border-box;
-    transition: background-color 450ms cubic-bezier(0.22, 1, 0.36, 1),
-                border-color 450ms cubic-bezier(0.22, 1, 0.36, 1),
-                transform 450ms cubic-bezier(0.22, 1, 0.36, 1);
+    transition: background-color 200ms ease-out,
+                border-color 200ms ease-out,
+                transform 200ms cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .process-dot.is-active,
@@ -126,12 +126,12 @@ const t = useTranslations(lang);
     transform: scale(1.15);
   }
 
-  /* Entradas de cada paso: fade-in + translateY(18px) en 650ms al activarse */
+  /* Entradas de cada paso: fade-in + translateY más ágil en 380ms al activarse */
   .process-step {
     opacity: 0;
     transform: translateY(18px);
-    transition: opacity 650ms cubic-bezier(0.22, 1, 0.36, 1),
-                transform 650ms cubic-bezier(0.22, 1, 0.36, 1);
+    transition: opacity 380ms cubic-bezier(0.16, 1, 0.3, 1),
+                transform 380ms cubic-bezier(0.16, 1, 0.3, 1);
     will-change: opacity, transform;
   }
 
@@ -187,8 +187,8 @@ const t = useTranslations(lang);
       return;
     }
 
-    // Umbrales de activación de cada uno de los 4 pasos a lo largo del recorrido
-    const thresholds = [0.05, 0.33, 0.66, 0.95];
+    // Umbrales de activación rápidos para los 4 pasos
+    const thresholds = [0.0, 0.25, 0.50, 0.75];
 
     let ticking = false;
 
@@ -197,13 +197,13 @@ const t = useTranslations(lang);
       const rect = section.getBoundingClientRect();
       const vh = window.innerHeight;
 
-      // El progreso se calcula mientras la sección entra y transita por la pantalla
-      const start = vh * 0.8;
-      const end = vh * 0.2;
-      const totalDist = rect.height + (start - end);
+      // Progreso ágil: inicia cuando el encabezado entra en el 75% del viewport
+      // y se completa rápidamente en ~240px de scroll
+      const start = vh * 0.75;
+      const scrollSpan = Math.min(rect.height * 0.45, 240);
       const current = start - rect.top;
 
-      let progress = current / totalDist;
+      let progress = current / scrollSpan;
       progress = Math.max(0, Math.min(1, progress));
 
       const pct = (progress * 100).toFixed(1) + '%';
