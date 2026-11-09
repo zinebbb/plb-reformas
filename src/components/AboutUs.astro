@@ -30,19 +30,19 @@ const t = useTranslations(lang);
             preload="auto"
             disablePictureInPicture
             controlsList="nodownload nofullscreen noremoteplayback"
-            poster="/video/video_reforma_mejorado-poster.webp"
+            poster="/video/about-reforma-poster.webp"
             class="about-video w-full h-full object-cover rounded-none pointer-events-none"
             aria-hidden="true"
           >
-            <source src="/video/video_reforma_mejorado.webm" type="video/webm" />
-            <source src="/video/video_reforma_mejorado.mp4" type="video/mp4" />
+            <source src="/video/about-reforma.webm" type="video/webm" />
+            <source src="/video/about-reforma.mp4" type="video/mp4" />
           </video>
 
           <!-- Poster estático para prefers-reduced-motion -->
           <img 
-            src="/video/video_reforma_mejorado-poster.webp" 
+            src="/video/about-reforma-poster.webp" 
             alt="" 
-            class="about-poster-static w-full h-full object-cover hidden" 
+            class="about-poster-static w-full h-full object-cover pointer-events-none" 
             aria-hidden="true" 
           />
         </div>
@@ -116,11 +116,41 @@ const t = useTranslations(lang);
   /* Revelación de vídeo con clip-path de abajo hacia arriba en 900ms */
   .about-media-frame {
     clip-path: inset(100% 0 0 0);
-    transition: clip-path 900ms cubic-bezier(0.16, 1, 0.3, 1);
+    transition: clip-path 900ms cubic-bezier(0.22, 1, 0.36, 1);
     will-change: clip-path;
   }
   .about-section.is-visible .about-media-frame {
     clip-path: inset(0 0 0 0);
+  }
+
+  /* Vídeo continuo tipo GIF con filtro de luminosidad 1.1 y contraste 1.02, y zoom suave de scale(1.08) a scale(1) */
+  .about-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 55%;
+    filter: brightness(1.1) contrast(1.02);
+    display: block;
+    border-radius: 0;
+    pointer-events: none;
+    transform: scale(1.08);
+    transition: transform 900ms cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: transform;
+  }
+
+  .about-section.is-visible .about-video {
+    transform: scale(1);
+  }
+
+  /* Poster estático para prefers-reduced-motion */
+  .about-poster-static {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 55%;
+    filter: brightness(1.1) contrast(1.02);
+    display: none;
+    pointer-events: none;
   }
 
   /* Entradas escalonadas al hacer scroll: fade-in + translateY(20px) en 700ms con retraso de 120ms */
@@ -160,6 +190,8 @@ const t = useTranslations(lang);
     }
     .about-poster-static {
       display: block !important;
+      transform: none !important;
+      transition: none !important;
     }
     .about-reveal {
       opacity: 1 !important;
@@ -170,6 +202,9 @@ const t = useTranslations(lang);
 </style>
 
 <script>
+  // Velocidad de reproducción ajustable del vídeo decorativo (1.15 = 15% más rápido)
+  const VIDEO_SPEED = 1.15;
+
   function initAbout() {
     const section = document.getElementById('nosotros');
     const video = document.getElementById('about-video') as HTMLVideoElement | null;
@@ -178,46 +213,66 @@ const t = useTranslations(lang);
     // Respetar preferencia de reducción de movimiento
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    function playVideo() {
-      if (video && !prefersReducedMotion) {
-        video.play().catch(() => {});
-      }
-    }
+    if (video) {
+      const applySpeed = () => {
+        try {
+          video.playbackRate = VIDEO_SPEED;
+        } catch (_) {}
+      };
 
-    // IntersectionObserver para activar animaciones de entrada y pausar/reanudar vídeo
-    if ('IntersectionObserver' in window) {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            section.classList.add('is-visible');
-            playVideo();
-          } else {
-            if (video && !prefersReducedMotion) {
-              video.pause();
+      video.addEventListener('loadedmetadata', applySpeed);
+      video.addEventListener('play', applySpeed);
+      applySpeed();
+
+      const safePlay = () => {
+        if (!prefersReducedMotion && video.paused) {
+          applySpeed();
+          video.play().catch(() => {});
+        }
+      };
+
+      const safePause = () => {
+        if (!video.paused) {
+          video.pause();
+        }
+      };
+
+      // IntersectionObserver para activar animaciones de entrada y pausar/reanudar vídeo
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              section.classList.add('is-visible');
+              safePlay();
+            } else {
+              safePause();
             }
-          }
+          });
+        }, {
+          threshold: 0.12,
+          rootMargin: '0px 0px -40px 0px'
         });
-      }, {
-        threshold: 0.15,
-        rootMargin: '0px 0px -40px 0px'
+
+        observer.observe(section);
+      } else {
+        section.classList.add('is-visible');
+        safePlay();
+      }
+
+      // Reanudar/pausar al cambiar la visibilidad de pestaña
+      document.addEventListener('visibilitychange', () => {
+        if (!document.hidden && section.classList.contains('is-visible')) {
+          safePlay();
+        } else if (document.hidden) {
+          safePause();
+        }
       });
 
-      observer.observe(section);
+      // Intento inicial silencioso
+      safePlay();
     } else {
-      // Fallback si IntersectionObserver no está soportado
       section.classList.add('is-visible');
-      playVideo();
     }
-
-    // Forzar play al volver visible la pestaña
-    document.addEventListener('visibilitychange', () => {
-      if (!document.hidden && section.classList.contains('is-visible')) {
-        playVideo();
-      }
-    });
-
-    // Intento inicial silencioso
-    playVideo();
   }
 
   if (document.readyState === 'loading') {

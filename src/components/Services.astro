@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+import banoImage from '../assets/images/bano-reformado.png';
 import { useTranslations, type Lang } from '../i18n/utils';
 
 interface Props {
@@ -59,32 +61,19 @@ const contactUrl = lang === 'es' ? '/#contacto' : '/en/#contacto';
           </div>
         </div>
 
-        <!-- Vídeo continuo vertical 4/5: separado 56px del texto, sticky top: 110px en escritorio -->
+        <!-- Foto real de obra terminada: vertical 4/5, separada 56px del texto, sticky top: 110px en escritorio -->
         <div class="services-aside-media mt-10 mb-10 lg:my-0 lg:mt-14 w-full">
-          <div class="services-aside-video-frame relative w-full overflow-hidden rounded-none shadow-none select-none">
-            <video 
-              id="services-video"
-              autoplay 
-              muted 
-              loop 
-              playsinline 
-              preload="auto"
-              disablePictureInPicture
-              controlsList="nodownload nofullscreen noremoteplayback"
-              poster="/video/servicios-reforma-poster.webp"
-              class="services-aside-video w-full h-full object-cover rounded-none pointer-events-none"
-              aria-hidden="true"
-            >
-              <source src="/video/servicios-reforma.webm" type="video/webm" />
-              <source src="/video/servicios-reforma.mp4" type="video/mp4" />
-            </video>
-
-            <!-- Poster estático para prefers-reduced-motion -->
-            <img 
-              src="/video/servicios-reforma-poster.webp" 
-              alt="" 
-              class="services-aside-poster-static w-full h-full object-cover pointer-events-none" 
-              aria-hidden="true" 
+          <div class="services-aside-image-frame relative w-full overflow-hidden rounded-none shadow-none select-none">
+            <Image 
+              src={banoImage} 
+              alt={t.services.imageAlt} 
+              format="webp"
+              quality={85}
+              width={banoImage.width}
+              height={banoImage.height}
+              loading="lazy"
+              decoding="async"
+              class="services-aside-img"
             />
           </div>
         </div>
@@ -175,7 +164,7 @@ const contactUrl = lang === 'es' ? '/#contacto' : '/en/#contacto';
       align-self: stretch;
     }
 
-    /* Vídeo con position: sticky; top: 110px y 56px de separación bajo el texto */
+    /* Imagen con position: sticky; top: 110px y 56px de separación bajo el texto */
     .services-aside-media {
       position: sticky;
       top: 110px;
@@ -186,7 +175,7 @@ const contactUrl = lang === 'es' ? '/#contacto' : '/en/#contacto';
 
     /* Marco en escritorio: vertical 4/5, ancho 88% de la columna, alineado a la izquierda */
     /* Altura máxima calc(100vh - 170px); si la ventana es baja, max-width reduce el ancho manteniendo 4/5 */
-    .services-aside-video-frame {
+    .services-aside-image-frame {
       width: 88%;
       max-width: calc((100vh - 170px) * 4 / 5);
       max-height: calc(100vh - 170px);
@@ -196,8 +185,8 @@ const contactUrl = lang === 'es' ? '/#contacto' : '/en/#contacto';
     }
   }
 
-  /* Marco del vídeo: revelación con clip-path vertical en 900ms */
-  .services-aside-video-frame {
+  /* Marco de la imagen: revelación con clip-path vertical en 900ms */
+  .services-aside-image-frame {
     position: relative;
     overflow: hidden;
     clip-path: inset(100% 0 0 0);
@@ -208,7 +197,7 @@ const contactUrl = lang === 'es' ? '/#contacto' : '/en/#contacto';
     background-color: transparent;
   }
 
-  .services-section.is-visible .services-aside-video-frame {
+  .services-section.is-visible .services-aside-image-frame {
     clip-path: inset(0 0 0 0);
   }
 
@@ -221,7 +210,7 @@ const contactUrl = lang === 'es' ? '/#contacto' : '/en/#contacto';
       width: 100%;
     }
 
-    .services-aside-video-frame {
+    .services-aside-image-frame {
       width: 100%;
       aspect-ratio: 4 / 5;
       max-height: 70vh;
@@ -230,8 +219,8 @@ const contactUrl = lang === 'es' ? '/#contacto' : '/en/#contacto';
     }
   }
 
-  /* Vídeo continuo tipo GIF con filtro de luminosidad 1.1 y contraste 1.02, y zoom suave de scale(1.08) a scale(1) */
-  .services-aside-video {
+  /* Foto de obra terminada con filtro de luminosidad 1.1 y contraste 1.02, y zoom suave de scale(1.08) a scale(1) */
+  .services-aside-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -245,19 +234,8 @@ const contactUrl = lang === 'es' ? '/#contacto' : '/en/#contacto';
     will-change: transform;
   }
 
-  .services-section.is-visible .services-aside-video {
+  .services-section.is-visible .services-aside-img {
     transform: scale(1);
-  }
-
-  /* Poster estático para prefers-reduced-motion */
-  .services-aside-poster-static {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center 55%;
-    filter: brightness(1.1) contrast(1.02);
-    display: none;
-    pointer-events: none;
   }
 
   /* Entradas al hacer scroll escalonadas: fade-in + translateY(18px) en 650ms */
@@ -367,15 +345,11 @@ const contactUrl = lang === 'es' ? '/#contacto' : '/en/#contacto';
 
   /* Reducción de movimiento accesible */
   @media (prefers-reduced-motion: reduce) {
-    .services-aside-video-frame {
+    .services-aside-image-frame {
       clip-path: none !important;
       transition: none !important;
     }
-    .services-aside-video {
-      display: none !important;
-    }
-    .services-aside-poster-static {
-      display: block !important;
+    .services-aside-img {
       transform: none !important;
       transition: none !important;
     }
@@ -406,90 +380,30 @@ const contactUrl = lang === 'es' ? '/#contacto' : '/en/#contacto';
 </style>
 
 <script>
-  // Velocidad de reproducción ajustable del vídeo decorativo (1.15 = 15% más rápido)
-  const VIDEO_SPEED = 1.15;
-
   function initServices() {
     const section = document.getElementById('servicios');
-    const video = document.getElementById('services-video') as HTMLVideoElement | null;
     if (!section) return;
 
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      section.classList.add('is-visible');
+      return;
+    }
 
-    if (video) {
-      const applySpeed = () => {
-        try {
-          video.playbackRate = VIDEO_SPEED;
-        } catch (_) {}
-      };
-
-      // Aplicar velocidad al cargar metadatos y en cada evento play
-      video.addEventListener('loadedmetadata', applySpeed);
-      video.addEventListener('play', applySpeed);
-      applySpeed();
-
-      const safePlay = () => {
-        if (!prefersReducedMotion && video.paused) {
-          applySpeed();
-          video.play().catch(() => {});
-        }
-      };
-
-      const safePause = () => {
-        if (!video.paused) {
-          video.pause();
-        }
-      };
-
-      // Pausar cuando la sección no esté visible y reanudar al volver
-      if ('IntersectionObserver' in window) {
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              section.classList.add('is-visible');
-              safePlay();
-            } else {
-              safePause();
-            }
-          });
-        }, {
-          threshold: 0.08,
-          rootMargin: '0px 0px -40px 0px'
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            section.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
         });
-        observer.observe(section);
-      } else {
-        section.classList.add('is-visible');
-        safePlay();
-      }
-
-      // Reanudar cuando la pestaña vuelva a estar visible si la sección está en pantalla
-      document.addEventListener('visibilitychange', () => {
-        if (!document.hidden && section.classList.contains('is-visible')) {
-          safePlay();
-        } else if (document.hidden) {
-          safePause();
-        }
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -40px 0px'
       });
-
-      // Intento inicial forzado con catch silencioso
-      safePlay();
+      observer.observe(section);
     } else {
-      if ('IntersectionObserver' in window) {
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              section.classList.add('is-visible');
-              observer.unobserve(entry.target);
-            }
-          });
-        }, {
-          threshold: 0.1,
-          rootMargin: '0px 0px -40px 0px'
-        });
-        observer.observe(section);
-      } else {
-        section.classList.add('is-visible');
-      }
+      section.classList.add('is-visible');
     }
   }
 
