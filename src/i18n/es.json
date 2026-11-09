@@ -146,33 +146,6 @@
       }
     ]
   },
-  "whyUs": {
-    "eyebrow": "NOSOTROS",
-    "title": "Por Qué Elegir PLB Reformas",
-    "subtitle": "Trabajamos bajo estándares rigurosos de calidad en la Comunidad Valenciana, ofreciendo compromisos reales que protegen tu inversión.",
-    "pillars": [
-      {
-        "title": "Rápido y Plazos Cumplidos",
-        "desc": "Fijamos contractualmente la fecha de inicio y de entrega de llaves. Cumplimos escrupulosamente los tiempos pactados para tu tranquilidad."
-      },
-      {
-        "title": "Contrato Oficial y Precio Cerrado",
-        "desc": "Presupuesto transparente y detallado partida a partida. Lo que firmas es exactamente lo que pagas, sin sorpresas ni sobrecostes."
-      },
-      {
-        "title": "Limpieza Rigurosa Post-Obra",
-        "desc": "Cuidamos las zonas comunes del edificio, ascensores y portales. Al finalizar, entregamos la vivienda impecable, lista para entrar a vivir."
-      },
-      {
-        "title": "Garantía Oficial por Contrato",
-        "desc": "Entregamos documento oficial de garantía por 2 años en todas nuestras instalaciones y revestimientos, con servicio de asistencia técnica."
-      },
-      {
-        "title": "Equipo Multidisciplinar Propio",
-        "desc": "Sin intermediarios. Albañiles, fontaneros, instaladores y carpinteros supervisados por un jefe de obra dedicado en la Comunidad Valenciana."
-      }
-    ]
-  },
   "testimonials": {
     "eyebrow": "CLIENTES SATISFECHOS",
     "title": "Opiniones y Experiencias Reales",

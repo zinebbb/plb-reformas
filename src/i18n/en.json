@@ -146,33 +146,6 @@
       }
     ]
   },
-  "whyUs": {
-    "eyebrow": "WHY PLB",
-    "title": "Why Choose PLB Reformas",
-    "subtitle": "We operate under the highest building standards in the Valencian Community, delivering solid contractual commitments that safeguard your investment.",
-    "pillars": [
-      {
-        "title": "Prompt Start & Guaranteed Deadlines",
-        "desc": "We specify exact start and completion dates in our contract. We strictly adhere to agreed milestones for your complete peace of mind."
-      },
-      {
-        "title": "Official Contract & Fixed Price",
-        "desc": "Completely transparent quote itemized trade by trade. What you sign is strictly what you pay, free from unexpected surcharges."
-      },
-      {
-        "title": "Rigorous Post-Work Cleaning",
-        "desc": "We protect building common areas, elevators, and entrances. Upon completion, we deliver your home spotless, ready for immediate move-in."
-      },
-      {
-        "title": "Official 2-Year Written Warranty",
-        "desc": "We issue an official signed warranty covering all installations, structural works, and finishes, backed by prompt post-sale assistance."
-      },
-      {
-        "title": "Dedicated In-House Multidisciplinary Team",
-        "desc": "Zero middlemen. Skilled masons, plumbers, certified electricians, and carpenters overseen by an assigned project manager."
-      }
-    ]
-  },
   "testimonials": {
     "eyebrow": "SATISFIED CLIENTS",
     "title": "Verified Client Reviews",
