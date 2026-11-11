@@ -25,7 +25,7 @@
   "intro": {
     "eyebrow1": "FILOSOFÍA & TRAYECTORIA",
     "title1": "PLB Reformas Premium: interiorismo, arquitectura y reformas con alma.",
-    "col1": "En PLB Obras y Reformas Premium S.L. transformamos espacios residenciales y comerciales con calidad, compromiso y plena dirección técnica. Con más de 15 años de experiencia en la Comunidad Valenciana, nos implicamos en cada fase del proyecto para ofrecerte absoluta tranquilidad, confianza y un servicio integral llave en mano desde el primer contacto hasta la entrega de llaves.",
+    "col1": "En PLB Obras y Reformas Premium S.L. transformamos espacios residenciales y comerciales combinando rigor constructivo, sensibilidad estética y compromiso ético. Nos implicamos en cada detalle para ofrecerte tranquilidad y una ejecución ordenada y fluida, desde las primeras decisiones de diseño hasta el último remate.",
     "col2": "Cada espacio empieza escuchando tus necesidades. No nos limitamos a ejecutar una obra: coordinamos de forma meticulosa todos los gremios implicados, fusionando decoración, interiorismo y acabados impecables para convertir tus ideas en una realidad funcional, elegante y con identidad propia.",
     "eyebrow2": "VISUALIZACIÓN & PROYECTOS 3D",
     "title2": "Arquitectura y Diseño 3D: Visualiza antes de construir.",
@@ -33,19 +33,19 @@
     "specialties": [
       {
         "title": "Reformas Integrales",
-        "desc": "Viviendas, apartamentos y locales comerciales en la Comunidad Valenciana."
+        "desc": "Transformaciones completas que redistribuyen el espacio, potencian la luz natural y renuevan todas las instalaciones."
       },
       {
         "title": "Construcción y Arquitectura",
-        "desc": "Proyectos a medida, diseño conceptual y dirección técnica de obra."
+        "desc": "Proyectos a medida, diseño conceptual, cálculo de estructuras y optimización constructiva."
       },
       {
         "title": "Diseño de Interiores & 3D",
         "desc": "Estudio ergonómico de espacios, iluminación escenográfica y selección de acabados nobles."
       },
       {
-        "title": "Gestión Integral Llave en Mano",
-        "desc": "Contrato oficial, presupuesto cerrado partida a partida y garantía por escrito de 2 años."
+        "title": "Planificación y Gestión Integral",
+        "desc": "Tramitación de licencias, sincronización de gremios y control riguroso de fases para que tu proyecto avance sin contratiempos."
       }
     ]
   },
@@ -60,7 +60,7 @@
   "services": {
     "eyebrow": "Servicios",
     "title": "Todos los oficios, una sola dirección",
-    "subtitle": "Abarcamos todos los oficios de la construcción y reforma con personal propio cualificado, garantizando acabados de alta gama y sin retrasos.",
+    "subtitle": "Integramos albañilería, instalaciones, carpintería y acabados bajo un único criterio de ejecución, evitando discrepancias entre gremios y desviaciones de calendario.",
     "cta": "Solicitar presupuesto →",
     "imageAlt": "Baño reformado con espejo redondo con luz LED, azulejo texturizado en espiga, mueble de madera y ducha con mampara de cristal",
     "items": [
@@ -149,7 +149,7 @@
   "contact": {
     "eyebrow": "CONTACTO DIRECTO",
     "title": "Obtener Presupuesto",
-    "callout": "Pide la visita técnica gratuita de medición el mismo día que lo solicitas.",
+    "callout": "Solicita tu valoración técnica y medición in situ sin compromiso.",
     "desc": "Todos nuestros proyectos comienzan con una reunión. Déjanos tus datos o contáctanos directamente para recibir una consulta detallada sobre tu proyecto, así como un desglose de costes y plazos de obra garantizados.",
     "phoneLabel": "Atención Telefónica",
     "emailLabel": "Email",
@@ -160,7 +160,7 @@
     "technicalVisitsLabel": "Visita Técnica",
     "technicalVisitsVal": "Medición in situ · Sin coste",
     "formTitle": "Envíanos tu consulta",
-    "formSubtitle": "Te contactaremos en menos de 24 horas para coordinar la visita técnica gratuita.",
+    "formSubtitle": "Te responderemos en menos de 24 horas para resolver cualquier duda y fijar el día de la visita.",
     "nameLabel": "Nombre completo *",
     "namePlaceholder": "Tu nombre",
     "phoneInputLabel": "Teléfono de contacto *",
@@ -184,7 +184,7 @@
     "privacyNote": "Tus datos son 100% confidenciales. Presupuesto sin compromiso."
   },
   "footer": {
-    "desc": "Empresa de reformas integrales, diseño de interiores y construcción en la Comunidad Valenciana. Proyectos llave en mano con contrato cerrado, máxima transparencia y garantía por escrito de 2 años.",
+    "desc": "Empresa de reformas integrales, diseño de interiores y arquitectura residencial. Proyectos llave en mano con contrato cerrado, máxima transparencia y garantía por escrito de 2 años.",
     "coverageBadge": "Toda la Comunidad Valenciana",
     "servicesTitle": "Servicios",
     "services": [

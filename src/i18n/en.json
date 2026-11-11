@@ -25,7 +25,7 @@
   "intro": {
     "eyebrow1": "PHILOSOPHY & EXPERIENCE",
     "title1": "PLB Reformas Premium: interior architecture and renovations with soul.",
-    "col1": "At PLB Obras y Reformas Premium S.L., we transform residential and commercial properties with uncompromising quality, rigorous commitment, and expert technical direction. Backed by more than 15 years of proven experience across the Valencian Community, we guide every stage of your project to provide absolute peace of mind and an all-inclusive turnkey service from initial concept to key handover.",
+    "col1": "At PLB Obras y Reformas Premium S.L., we transform residential and commercial properties by combining construction rigor, architectural sensitivity, and genuine commitment. We immerse ourselves in every detail to deliver complete peace of mind and a smooth, structured execution from the earliest design choices to the final touches.",
     "col2": "Every exceptional space begins by listening closely to your lifestyle. We never just execute construction work: our team meticulously coordinates every trade, harmonizing architectural layout, interior design, and flawless finishes to transform your vision into an elegant, functional sanctuary with genuine identity.",
     "eyebrow2": "3D VISUALIZATION & ARCHITECTURE",
     "title2": "Architecture and 3D Design: Visualize before you build.",
@@ -33,19 +33,19 @@
     "specialties": [
       {
         "title": "Comprehensive Renovations",
-        "desc": "High-end homes, luxury apartments, and commercial spaces throughout the Valencian Community."
+        "desc": "Complete transformations that reorganize spatial flow, maximize natural light, and thoroughly renew all building infrastructure."
       },
       {
         "title": "Construction & Architecture",
-        "desc": "Bespoke projects, conceptual design, structural calculations, and full on-site management."
+        "desc": "Bespoke projects, conceptual design, structural calculations, and construction optimization."
       },
       {
         "title": "Interior Architecture & 3D",
         "desc": "Ergonomic spatial planning, architectural lighting schemes, and curated noble materials."
       },
       {
-        "title": "Turnkey Project Management",
-        "desc": "Official binding contract, itemized fixed pricing, and an official written 2-year warranty."
+        "title": "Comprehensive Project Planning",
+        "desc": "Permit handling, trade synchronization, and rigorous milestone tracking to ensure your renovation progresses seamlessly."
       }
     ]
   },
@@ -60,7 +60,7 @@
   "services": {
     "eyebrow": "Services",
     "title": "Every trade, under a single direction",
-    "subtitle": "We cover all construction and renovation disciplines with our own qualified master craftsmen, ensuring premier standards with zero delays.",
+    "subtitle": "We unite masonry, MEP installations, custom joinery, and fine finishes under unified technical criteria, eliminating trade disputes and scheduling delays.",
     "cta": "Request a quote →",
     "imageAlt": "Renovated bathroom with round LED mirror, textured herringbone tiles, wooden vanity and glass-enclosed shower",
     "items": [
@@ -149,7 +149,7 @@
   "contact": {
     "eyebrow": "DIRECT CONTACT",
     "title": "Request a Quote",
-    "callout": "Request your free on-site survey and laser measurement consultation on the same day.",
+    "callout": "Schedule your technical assessment and on-site laser survey without obligation.",
     "desc": "Every project begins with a personal conversation. Leave your details or contact us directly to receive expert consultation on your renovation, alongside an itemized cost estimate and guaranteed completion dates.",
     "phoneLabel": "Phone Assistance",
     "emailLabel": "Email",
@@ -160,7 +160,7 @@
     "technicalVisitsLabel": "Technical Visit",
     "technicalVisitsVal": "On-site survey · Complimentary",
     "formTitle": "Send us your inquiry",
-    "formSubtitle": "We will contact you within 24 hours to schedule your complimentary on-site technical visit.",
+    "formSubtitle": "We will respond within 24 hours to answer your questions and arrange a convenient date.",
     "nameLabel": "Full name *",
     "namePlaceholder": "Your name",
     "phoneInputLabel": "Contact telephone *",
@@ -184,7 +184,7 @@
     "privacyNote": "Your information is 100% confidential. No-obligation personalized quote."
   },
   "footer": {
-    "desc": "Comprehensive renovations, interior architecture, and luxury construction in the Valencian Community. Turnkey projects with binding contracts, total transparency, and an official 2-year warranty.",
+    "desc": "Comprehensive renovations, interior design, and residential architecture. Turnkey projects with binding contracts, total transparency, and an official 2-year warranty.",
     "coverageBadge": "Throughout the Valencian Community",
     "servicesTitle": "Services",
     "services": [
