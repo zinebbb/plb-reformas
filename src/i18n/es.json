@@ -146,38 +146,6 @@
       }
     ]
   },
-  "testimonials": {
-    "eyebrow": "CLIENTES SATISFECHOS",
-    "title": "Opiniones y Experiencias Reales",
-    "subtitle": "Más del 85% de nuestros nuevos proyectos en la Comunidad Valenciana provienen de recomendaciones directas de familias y propietarios.",
-    "verified": "Cliente Verificado",
-    "reviews": [
-      {
-        "num": "01",
-        "author": "Familia Gómez R.",
-        "location": "Comunidad Valenciana",
-        "project": "Reforma Integral de Apartamento · 95 m²",
-        "tag": "Plazos Cumplidos",
-        "quote": "Reformamos por completo nuestro piso frente al mar. Cumplieron con la fecha de entrega al día pactado, el presupuesto no varió un solo euro y los acabados de iluminación LED y pladur han transformado toda la estancia. Totalmente recomendables."
-      },
-      {
-        "num": "02",
-        "author": "Elena & Marcus V.",
-        "location": "Comunidad Valenciana",
-        "project": "Cocina con Isla y Baños de Diseño",
-        "tag": "Calidad y Acabados",
-        "quote": "La cocina quedó exactamente como la habíamos soñado. Nos asesoraron en cada detalle de la distribución, encimera y carpintería oculta. El cumplimiento del calendario y la seriedad del equipo nos dio muchísima seguridad y dejaron todo impecable."
-      },
-      {
-        "num": "03",
-        "author": "David M.",
-        "location": "Comunidad Valenciana",
-        "project": "Pavimento Porcelánico, Clima y Pintura",
-        "tag": "Garantía Oficial",
-        "quote": "Gran seriedad y rigor profesional. El jefe de obra estuvo permanentemente localizable para coordinar a los gremios. Cuidaron muchísimo la finca comunitaria y la garantía por contrato te permite estar totalmente tranquilo."
-      }
-    ]
-  },
   "contact": {
     "eyebrow": "CONTACTO DIRECTO",
     "title": "Obtener Presupuesto",

@@ -146,38 +146,6 @@
       }
     ]
   },
-  "testimonials": {
-    "eyebrow": "SATISFIED CLIENTS",
-    "title": "Verified Client Reviews",
-    "subtitle": "Over 85% of our new projects in the Valencian Community originate from direct recommendations by satisfied homeowners.",
-    "verified": "Verified Client",
-    "reviews": [
-      {
-        "num": "01",
-        "author": "Gómez R. Family",
-        "location": "Valencian Community",
-        "project": "Full Apartment Renovation · 95 m²",
-        "tag": "Deadlines Met",
-        "quote": "We completely renovated our beachfront apartment. They delivered the keys on the exact day agreed, the quote did not deviate by a single euro, and the architectural LED lighting and drywall work transformed the space completely. Highly recommended."
-      },
-      {
-        "num": "02",
-        "author": "Elena & Marcus V.",
-        "location": "Valencian Community",
-        "project": "Designer Kitchen Island & Luxury Bathrooms",
-        "tag": "Quality & Craftsmanship",
-        "quote": "The kitchen turned out exactly as we dreamed. They guided us on every detail regarding flow, stone worktops, and hidden joinery. The strict adherence to deadlines and the team's professionalism gave us complete peace of mind, leaving everything spotless."
-      },
-      {
-        "num": "03",
-        "author": "David M.",
-        "location": "Valencian Community",
-        "project": "Porcelain Flooring, Ducted Climate & Paint",
-        "tag": "Official Warranty",
-        "quote": "Outstanding professionalism and discipline. The site manager was constantly available to coordinate the trades. They took immense care of the building common areas and the contractual warranty provides total peace of mind."
-      }
-    ]
-  },
   "contact": {
     "eyebrow": "DIRECT CONTACT",
     "title": "Request a Quote",
