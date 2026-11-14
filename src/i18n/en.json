@@ -7,14 +7,12 @@
     "brandName": "REFORMAS",
     "brandHighlight": "PREMIUM",
     "nav": {
-      "home": "Home",
       "intro": "Philosophy",
       "services": "Services",
       "about": "About PLB",
       "process": "Process",
       "contact": "Contact"
     },
-    "langAria": "Language selector",
     "mobileMenuAria": "Open navigation menu"
   },
   "hero": {
@@ -54,8 +52,7 @@
     "step2": "Craftsmanship, vision, and soul",
     "step3Part1": "Every space holds a story.",
     "step3Number": "+15",
-    "step3Part2": "years helping write the next",
-    "counterTotal": "03"
+    "step3Part2": "years helping write the next"
   },
   "services": {
     "eyebrow": "Services",

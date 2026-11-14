@@ -1,0 +1,35 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { useTranslations } from '../i18n/utils';
+
+const lang = 'es';
+const t = useTranslations(lang);
+---
+
+<Layout 
+  title="Página no encontrada - PLB Reformas"
+  description="La página que buscas no existe o ha sido movida."
+  lang={lang}
+>
+  <Header lang={lang} />
+  <main class="flex-grow flex items-center justify-center min-h-[60vh] bg-[#F7F5F0] px-6 py-24 text-center">
+    <div class="max-w-lg mx-auto">
+      <span class="text-[#B08D6A] text-sm tracking-widest uppercase font-medium">Error 404</span>
+      <h1 class="text-4xl sm:text-5xl font-['Fraunces'] font-extralight text-[#1a1a1a] mt-4 mb-6">
+        Página no encontrada
+      </h1>
+      <p class="text-[#555] font-light leading-relaxed mb-8">
+        Lo sentimos, la página que buscas no existe o ha cambiado de dirección.
+      </p>
+      <a 
+        href="/" 
+        class="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-[#1a1a1a] text-white hover:bg-[#B08D6A] transition-colors duration-300 text-sm tracking-wide font-medium shadow-sm"
+      >
+        Volver al inicio
+      </a>
+    </div>
+  </main>
+  <Footer lang={lang} />
+</Layout>

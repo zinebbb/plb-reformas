@@ -7,14 +7,12 @@
     "brandName": "REFORMAS",
     "brandHighlight": "PREMIUM",
     "nav": {
-      "home": "Inicio",
       "intro": "Filosofía",
       "services": "Servicios",
       "about": "Sobre PLB",
       "process": "Proceso",
       "contact": "Contacto"
     },
-    "langAria": "Selector de idioma",
     "mobileMenuAria": "Abrir menú de navegación"
   },
   "hero": {
@@ -54,8 +52,7 @@
     "step2": "Oficio, criterio y alma",
     "step3Part1": "Cada espacio guarda una historia.",
     "step3Number": "+15",
-    "step3Part2": "años ayudando a escribir la siguiente",
-    "counterTotal": "03"
+    "step3Part2": "años ayudando a escribir la siguiente"
   },
   "services": {
     "eyebrow": "Servicios",

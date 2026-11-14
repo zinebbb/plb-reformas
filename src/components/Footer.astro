@@ -21,15 +21,22 @@ const whatsappUrl = `https://wa.me/34602525866?text=${encodeURIComponent(t.whats
       <!-- Column 1: Brand & Description (Sin cajas ni iconos con borde) -->
       <div class="space-y-4">
         <div class="flex items-center gap-3">
-          <img 
-            src="/images/logo-icon-original.png" 
-            alt="PLB Reformas Premium S.L." 
-            class="h-9 w-auto object-contain"
-          />
+          <picture>
+            <source srcset="/images/logo-icon-original.webp" type="image/webp" />
+            <img 
+              src="/images/logo-icon-original.png" 
+              alt="PLB Reformas Premium S.L." 
+              width="48"
+              height="36"
+              class="h-9 w-auto object-contain"
+              loading="lazy"
+              decoding="async"
+            />
+          </picture>
           <div class="flex flex-col">
             <span 
               class="text-xs uppercase font-light tracking-[0.22em] text-[#1a1a1a] leading-none"
-              style="font-family: 'Montserrat', system-ui, sans-serif; letter-spacing: 0.22em;"
+              style="font-family: 'Outfit', system-ui, sans-serif; letter-spacing: 0.22em;"
             >
               PLB <span class="text-[#B08D6A] font-medium">REFORMAS</span>
             </span>
@@ -90,7 +97,7 @@ const whatsappUrl = `https://wa.me/34602525866?text=${encodeURIComponent(t.whats
             <a 
               href="tel:+34602525866" 
               class="text-base text-[#1a1a1a] hover:text-[#B08D6A] transition-colors font-light"
-              style="font-family: 'Inter', system-ui, -apple-system, sans-serif; font-weight: 300;"
+              style="font-family: 'Outfit', system-ui, -apple-system, sans-serif; font-weight: 300;"
             >
               +34 602 525 866
             </a>
@@ -113,7 +120,7 @@ const whatsappUrl = `https://wa.me/34602525866?text=${encodeURIComponent(t.whats
             >
               {t.footer.hoursLabel}
             </span>
-            <span class="text-xs text-[#55534e] font-normal" style="font-family: 'Inter', system-ui, -apple-system, sans-serif;">{t.footer.hoursVal}</span>
+            <span class="text-xs text-[#55534e] font-normal" style="font-family: 'Outfit', system-ui, -apple-system, sans-serif;">{t.footer.hoursVal}</span>
           </li>
           <li>
             <span 
@@ -122,7 +129,7 @@ const whatsappUrl = `https://wa.me/34602525866?text=${encodeURIComponent(t.whats
             >
               {t.footer.technicalVisitsLabel}
             </span>
-            <span class="text-xs text-[#55534e] font-normal" style="font-family: 'Inter', system-ui, -apple-system, sans-serif;">{t.footer.technicalVisitsVal}</span>
+            <span class="text-xs text-[#55534e] font-normal" style="font-family: 'Outfit', system-ui, -apple-system, sans-serif;">{t.footer.technicalVisitsVal}</span>
           </li>
         </ul>
       </div>
@@ -164,6 +171,10 @@ const whatsappUrl = `https://wa.me/34602525866?text=${encodeURIComponent(t.whats
 </footer>
 
 <style>
+  footer {
+    padding-bottom: max(3rem, calc(2rem + env(safe-area-inset-bottom, 0px)));
+  }
+
   .whatsapp-float {
     width: 56px;
     height: 56px;
@@ -171,10 +182,14 @@ const whatsappUrl = `https://wa.me/34602525866?text=${encodeURIComponent(t.whats
     background-color: #25D366;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
     transition: transform 250ms ease-in-out;
+    bottom: max(1.25rem, calc(1rem + env(safe-area-inset-bottom, 0px)));
+    right: max(1.25rem, calc(1rem + env(safe-area-inset-right, 0px)));
   }
 
-  .whatsapp-float:hover {
-    transform: scale(1.08);
+  @media (hover: hover) and (pointer: fine) {
+    .whatsapp-float:hover {
+      transform: scale(1.08);
+    }
   }
 
   .whatsapp-pulse-ring {

@@ -10,21 +10,42 @@ const t = useTranslations(lang);
 ---
 
 <section 
-  class="relative h-screen min-h-[640px] w-full flex flex-col justify-end text-white overflow-hidden"
+  class="hero-section relative min-h-[560px] sm:min-h-[640px] w-full flex flex-col justify-end text-white overflow-hidden"
   style="font-family: 'Outfit', sans-serif;"
 >
   
   <!-- Cinematic Background Video (Benidorm & Costa Blanca mix) -->
   <div class="absolute inset-0 z-0 pointer-events-none">
+    <!-- Responsive LCP Picture Poster -->
+    <picture class="absolute inset-0 w-full h-full">
+      <source media="(max-width: 768px)" srcset="/images/hero-benidorm-poster-mobile.avif" type="image/avif" />
+      <source media="(max-width: 768px)" srcset="/images/hero-benidorm-poster-mobile.webp" type="image/webp" />
+      <source srcset="/images/hero-benidorm-poster-desktop.avif" type="image/avif" />
+      <source srcset="/images/hero-benidorm-poster-desktop.webp" type="image/webp" />
+      <img 
+        src="/images/hero-benidorm-poster-desktop.webp" 
+        alt="" 
+        fetchpriority="high"
+        decoding="sync"
+        class="w-full h-full object-cover" 
+        aria-hidden="true"
+      />
+    </picture>
+
+    <!-- Optimized Background Video: preload metadata, smooth fade-in over poster -->
     <video 
+      id="hero-bg-video"
       autoplay 
       loop 
       muted 
       playsinline 
-      poster="/images/hero-benidorm-poster.jpg" 
-      class="w-full h-full object-cover"
+      preload="metadata"
+      class="hero-video-el absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700 pointer-events-none"
     >
-      <source src="/videos/hero-benidorm-costa-blanca.mp4" type="video/mp4" />
+      <source media="(max-width: 768px)" src="/video/hero-mobile.mp4" type="video/mp4" />
+      <source media="(max-width: 768px)" src="/video/hero-mobile.webm" type="video/webm" />
+      <source src="/video/hero-desktop.mp4" type="video/mp4" />
+      <source src="/video/hero-desktop.webm" type="video/webm" />
     </video>
     
     <!-- Flat Dark Contrast Overlay (Clean contrast so white text floats clearly) -->
@@ -38,17 +59,17 @@ const t = useTranslations(lang);
   </div>
 
   <!-- Main Text Container (Bottom-Left corner, aligned to the left, floating cleanly) -->
-  <div class="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 pb-20 sm:pb-24 lg:pb-28 text-left">
+  <div class="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 pb-16 sm:pb-24 lg:pb-28 text-left">
     <div class="max-w-5xl text-left">
       
       <!-- Main Title -->
-      <h1 class="hero-title text-white mb-4 sm:mb-5 text-left">
+      <h1 class="hero-title text-white mb-3 sm:mb-5 text-left">
         {t.hero.title}
       </h1>
 
-      <!-- Subtitle: Outfit, font-weight: 300, color: rgba(255, 255, 255, 0.85), line-height: 1.6, text-shadow: none, Sin Benidorm -->
+      <!-- Subtitle: Outfit, font-weight: 300, color: rgba(255, 255, 255, 0.85), line-height: 1.6, text-shadow: none -->
       <p 
-        class="hero-subtitle text-sm sm:text-base md:text-lg max-w-2xl mb-6 sm:mb-8 text-left"
+        class="hero-subtitle text-sm sm:text-base md:text-lg max-w-2xl mb-5 sm:mb-8 text-left"
         style="font-family: 'Outfit', system-ui, -apple-system, sans-serif; font-weight: 300; line-height: 1.6; color: rgba(255, 255, 255, 0.85); text-shadow: none;"
       >
         {t.hero.subtitle}
@@ -56,7 +77,7 @@ const t = useTranslations(lang);
 
       <!-- Fina barra horizontal blanca fija justo debajo del texto -->
       <div 
-        class="hero-divider w-32 sm:w-48 h-[1px] bg-white" 
+        class="hero-divider w-28 sm:w-48 h-[1px] bg-white" 
         style="height: 1px; background-color: #ffffff;"
         aria-hidden="true"
       ></div>
@@ -65,25 +86,70 @@ const t = useTranslations(lang);
   </div>
 
   <!-- Indicador de Scroll: Parte inferior central, texto pequeño semi-transparente -->
-  <div class="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 z-20 text-center pointer-events-none select-none">
+  <div class="absolute bottom-4 sm:bottom-8 left-1/2 -translate-x-1/2 z-20 text-center pointer-events-none select-none">
     <span 
-      class="text-[11px] sm:text-xs tracking-[0.25em] uppercase font-light block"
+      class="text-[10px] sm:text-xs tracking-[0.25em] uppercase font-light block"
       style="font-family: 'Outfit', system-ui, -apple-system, sans-serif; font-weight: 300; color: rgba(255, 255, 255, 0.7); text-shadow: none;"
     >
       {t.hero.scrollIndicator}
     </span>
-    <div class="w-[1px] h-3.5 bg-white/40 mx-auto mt-2"></div>
+    <div class="w-[1px] h-3 sm:h-3.5 bg-white/40 mx-auto mt-1.5 sm:mt-2"></div>
   </div>
 
 </section>
 
+<script>
+  function initHeroVideo() {
+    const video = document.getElementById('hero-bg-video') as HTMLVideoElement | null;
+    if (!video) return;
+
+    // Check data-saver, slow network, or reduced motion
+    const conn = (navigator as any).connection;
+    const isSaveData = Boolean(conn?.saveData);
+    const isSlowConn = conn?.effectiveType === 'slow-2g' || conn?.effectiveType === '2g' || conn?.effectiveType === '3g';
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (isSaveData || isSlowConn || prefersReducedMotion) {
+      // Don't load/play video, keep poster only
+      video.remove();
+      return;
+    }
+
+    const showVideo = () => {
+      video.classList.remove('opacity-0');
+      video.classList.add('opacity-100');
+    };
+
+    if (video.readyState >= 2) {
+      video.play().then(showVideo).catch(() => {});
+    } else {
+      video.addEventListener('playing', showVideo, { once: true });
+      video.addEventListener('canplay', () => {
+        video.play().catch(() => {});
+      }, { once: true });
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initHeroVideo);
+  } else {
+    initHeroVideo();
+  }
+</script>
+
 <style>
+  .hero-section {
+    height: 100vh;
+    height: 100svh;
+    height: 100dvh;
+  }
+
   .hero-title {
     font-family: var(--font-titulos);
     font-weight: 200 !important;
     font-style: normal !important;
     font-optical-sizing: auto;
-    font-size: clamp(2.2rem, 5vw, 4.5rem) !important;
+    font-size: clamp(1.9rem, 5.2vw, 4.5rem) !important;
     line-height: 1.1 !important;
     letter-spacing: -0.02em;
     color: #ffffff !important;
@@ -94,7 +160,6 @@ const t = useTranslations(lang);
     animation: heroFadeIn 800ms ease-out forwards;
     will-change: opacity, transform;
   }
-
 
   @keyframes heroFadeIn {
     from {
@@ -109,7 +174,6 @@ const t = useTranslations(lang);
 
   @media (min-width: 1024px) {
     .hero-title {
-      /* Permite mantenerse en una línea si hay espacio, o 2 líneas balanceadas si excede el ancho */
       max-width: 100%;
     }
   }

@@ -28,17 +28,22 @@ function getSectionHref(hash: string) {
       aria-label="PLB Reformas Premium, inicio"
     >
       <!-- Icono del Imagotipo (fondo transparente) -->
-      <img 
-        src="/images/logo-icon-white.png" 
-        alt="PLB Reformas Imagotipo" 
-        class="header-logo-img h-9 sm:h-11 w-auto object-contain shrink-0"
-      />
+      <picture>
+        <source srcset="/images/logo-icon-white.webp" type="image/webp" />
+        <img 
+          src="/images/logo-icon-white.png" 
+          alt="PLB Reformas Imagotipo" 
+          width="50"
+          height="44"
+          class="header-logo-img h-9 sm:h-11 w-auto object-contain shrink-0"
+        />
+      </picture>
 
       <!-- Texto de Identidad -->
       <div class="flex flex-col justify-end pb-1 sm:pb-1.5">
         <span 
           class="header-brand-title text-[9px] sm:text-[10px] uppercase font-light tracking-[0.22em] leading-none select-none"
-          style="font-family: 'Montserrat', system-ui, -apple-system, sans-serif; font-weight: 300; letter-spacing: 0.22em;"
+          style="font-family: 'Outfit', system-ui, -apple-system, sans-serif; font-weight: 300; letter-spacing: 0.22em;"
         >
           <span class="header-brand-name">{t.header.brandName}</span> <span class="header-brand-highlight">{t.header.brandHighlight}</span>
         </span>
@@ -49,7 +54,7 @@ function getSectionHref(hash: string) {
     <div class="flex items-center gap-6 lg:gap-8">
       
       <!-- Desktop Navigation Menu -->
-      <nav class="hidden md:flex items-center gap-6 lg:gap-8 pointer-events-auto" aria-label="Navegación principal">
+      <nav class="hidden lg:flex items-center gap-6 lg:gap-8 pointer-events-auto" aria-label="Navegación principal">
         <a 
           href={getSectionHref('#servicios')} 
           data-section="servicios"
@@ -80,7 +85,7 @@ function getSectionHref(hash: string) {
       </nav>
 
       <!-- Desktop Language Selector: ES / EN -->
-      <div class="hidden md:flex items-center gap-1.5 text-[13px] font-medium tracking-[0.14em] uppercase select-none pointer-events-auto header-lang-switch">
+      <div class="hidden lg:flex items-center gap-1.5 text-[13px] font-medium tracking-[0.14em] uppercase select-none pointer-events-auto header-lang-switch">
         <a 
           href="/" 
           data-base-href="/" 
@@ -106,7 +111,7 @@ function getSectionHref(hash: string) {
       <button
         id="mobile-menu-btn"
         type="button"
-        class="header-mobile-btn md:hidden inline-flex items-center justify-center p-2 focus:outline-none pointer-events-auto"
+        class="header-mobile-btn lg:hidden inline-flex items-center justify-center p-2 min-w-[44px] min-h-[44px] focus:outline-none pointer-events-auto"
         aria-expanded="false"
         aria-label={t.header.mobileMenuAria}
       >
@@ -125,24 +130,24 @@ function getSectionHref(hash: string) {
   <!-- Mobile Drawer Menu -->
   <div 
     id="mobile-drawer" 
-    class="hidden md:hidden mobile-drawer px-6 py-6 pointer-events-auto"
+    class="hidden lg:hidden mobile-drawer px-6 py-6 pointer-events-auto"
   >
-    <nav class="flex flex-col space-y-3.5 mb-6" aria-label="Navegación móvil">
+    <nav class="flex flex-col space-y-2 mb-6" aria-label="Navegación móvil">
       <a 
         href={getSectionHref('#servicios')} 
-        class="mobile-nav-link text-[13px] font-medium tracking-[0.14em] uppercase py-1.5"
+        class="mobile-nav-link text-[13px] font-medium tracking-[0.14em] uppercase py-2.5 min-h-[44px] flex items-center"
       >
         {t.header.nav.services}
       </a>
       <a 
         href={getSectionHref('#nosotros')} 
-        class="mobile-nav-link text-[13px] font-medium tracking-[0.14em] uppercase py-1.5"
+        class="mobile-nav-link text-[13px] font-medium tracking-[0.14em] uppercase py-2.5 min-h-[44px] flex items-center"
       >
         {t.header.nav.about}
       </a>
       <a 
         href={getSectionHref('#proceso')} 
-        class="mobile-nav-link text-[13px] font-medium tracking-[0.14em] uppercase py-1.5"
+        class="mobile-nav-link text-[13px] font-medium tracking-[0.14em] uppercase py-2.5 min-h-[44px] flex items-center"
       >
         {t.header.nav.process}
       </a>
@@ -150,14 +155,14 @@ function getSectionHref(hash: string) {
       <!-- Contacto como botón a ancho completo al final -->
       <a 
         href={getSectionHref('#contacto')} 
-        class="mobile-nav-link mobile-nav-btn--contact text-center w-full mt-2"
+        class="mobile-nav-link mobile-nav-btn--contact text-center w-full min-h-[48px] mt-3"
       >
         {t.header.nav.contact}
       </a>
     </nav>
 
     <!-- Mobile Language Selector: ES / EN -->
-    <div class="pt-4 border-t border-black/10 flex items-center justify-center gap-2 text-[13px] font-medium tracking-[0.14em] uppercase header-lang-switch">
+    <div class="pt-4 border-t border-black/10 flex items-center justify-center gap-4 text-[13px] font-medium tracking-[0.14em] uppercase header-lang-switch min-h-[44px]">
       <a
         href="/"
         data-base-href="/"
@@ -184,6 +189,7 @@ function getSectionHref(hash: string) {
 <style>
   /* 1. Cabecera sobre la portada (scroll en la parte superior): fondo transparente */
   #site-header {
+    padding-top: env(safe-area-inset-top, 0px);
     transform: translateY(0);
     background-color: transparent;
     border-bottom: 1px solid transparent;
@@ -415,6 +421,9 @@ function getSectionHref(hash: string) {
     backdrop-filter: blur(14px);
     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.08);
+    max-height: calc(100dvh - 72px);
+    overflow-y: auto;
+    padding-bottom: max(1.5rem, calc(1rem + env(safe-area-inset-bottom, 0px)));
   }
   .mobile-nav-link {
     color: #1a1a1a;
@@ -546,6 +555,7 @@ function getSectionHref(hash: string) {
       mobileMenuBtn?.setAttribute('aria-expanded', 'true');
       header?.classList.add('header--menu-open');
       header?.classList.remove('header--hidden');
+      document.body.style.overflow = 'hidden';
     }
 
     function closeMobileMenu() {
@@ -554,6 +564,7 @@ function getSectionHref(hash: string) {
       menuIconClose?.classList.add('hidden');
       mobileMenuBtn?.setAttribute('aria-expanded', 'false');
       header?.classList.remove('header--menu-open');
+      document.body.style.overflow = '';
       handleScrollUpdate();
     }
 
@@ -573,7 +584,7 @@ function getSectionHref(hash: string) {
 
     // Cerrar drawer en caso de redimensionar a pantalla de escritorio
     window.addEventListener('resize', () => {
-      if (window.innerWidth >= 768 && header.classList.contains('header--menu-open')) {
+      if (window.innerWidth >= 1024 && header.classList.contains('header--menu-open')) {
         closeMobileMenu();
       }
     }, { passive: true });

@@ -51,7 +51,7 @@ const t = useTranslations(lang);
           <a 
             href="tel:+34602525866" 
             class="inline-block text-2xl sm:text-[1.75rem] text-[#1a1a1a] hover:text-[#B08D6A] transition-colors leading-tight font-light"
-            style="font-family: 'Inter', system-ui, -apple-system, sans-serif; font-weight: 300; letter-spacing: 0.02em;"
+            style="font-family: 'Outfit', system-ui, -apple-system, sans-serif; font-weight: 300; letter-spacing: 0.02em;"
             aria-label="Llamar a PLB Reformas: +34 602 525 866"
           >
             +34 602 525 866
@@ -97,7 +97,7 @@ const t = useTranslations(lang);
               </span>
               <span 
                 class="text-xs text-[#66645f] font-normal block"
-                style="font-family: 'Inter', system-ui, -apple-system, sans-serif;"
+                style="font-family: 'Outfit', system-ui, -apple-system, sans-serif;"
               >
                 {t.contact.hoursVal}
               </span>
@@ -111,7 +111,7 @@ const t = useTranslations(lang);
               </span>
               <span 
                 class="text-xs text-[#66645f] font-normal block"
-                style="font-family: 'Inter', system-ui, -apple-system, sans-serif;"
+                style="font-family: 'Outfit', system-ui, -apple-system, sans-serif;"
               >
                 {t.contact.technicalVisitsVal}
               </span>
@@ -212,7 +212,7 @@ const t = useTranslations(lang);
             <button 
               type="submit" 
               data-success-text={t.contact.submitSuccess}
-              class="w-full sm:w-auto px-10 py-4 bg-[#1a1a1a] hover:bg-[#B08D6A] text-white font-normal text-xs uppercase tracking-[0.15em] rounded-[1px] transition-colors duration-250 cursor-pointer shadow-none"
+              class="w-full sm:w-auto min-h-[48px] px-10 py-4 bg-[#1a1a1a] hover:bg-[#B08D6A] text-white font-normal text-xs uppercase tracking-[0.15em] rounded-[1px] transition-colors duration-250 cursor-pointer shadow-none inline-flex items-center justify-center"
               style="letter-spacing: 0.15em;"
             >
               {t.contact.submitBtn}
@@ -233,11 +233,13 @@ const t = useTranslations(lang);
 <style>
   .contact-field {
     width: 100%;
+    min-height: 48px;
     background-color: transparent;
     border: none;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-    padding: 12px 0;
-    font-size: 0.95rem;
+    padding: 13px 0;
+    font-size: 16px;
+    line-height: 1.5;
     color: #1a1a1a;
     border-radius: 0;
     outline: none;
@@ -249,8 +251,14 @@ const t = useTranslations(lang);
     opacity: 0.8;
   }
 
-  .contact-field:focus {
+  .contact-field:focus,
+  .contact-field:focus-visible {
     border-bottom-color: #B08D6A;
+  }
+
+  button[type="submit"]:focus-visible {
+    outline: 2px solid #B08D6A;
+    outline-offset: 3px;
   }
 
   select.contact-field {
